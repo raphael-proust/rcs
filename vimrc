@@ -1,6 +1,10 @@
 "I want vim, not vi
 set nocompatible
 
+" Pathogen
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 syntax on
 filetype plugin indent on
 
@@ -136,9 +140,6 @@ au FileType make set noexpandtab
 au FileType latex set formatoptions+=a
 
 au FileType pdc set formatoptions+=n
-
-"support lwt syntax extension
-au FileType ocaml syn keyword ocamlKeyword lwt match_lwt try_lwt finally raise_lwt for_lwt while_lwt
 
 "Status line with a little more information
 set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
