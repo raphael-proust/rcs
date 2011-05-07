@@ -1,0 +1,92 @@
+
+set runtimepath=~/.pentadactyl
+
+" vim: set ft=pentadactyl:
+
+" use g' for previously selected tab
+map g\' <C-^>
+nmap g\' <C-^>
+vmap g\' <C-^>
+
+" making the :tabopen! easy
+map ! :tabopen! 
+
+" custom searchs (using keywords)
+map st ttz 
+map sw twken 
+map sg tgg 
+map su turb 
+map sa tamo 
+map si timg 
+map sy tyt 
+map sm tmap 
+map sb tblk 
+map sd tddg 
+
+" mapping h, j, k and l to scroll faster
+noremap h 4h
+noremap j 4j
+noremap k 4k
+noremap l 4l
+
+" making ; act as :
+noremap ; :
+
+" TabGroup thingy
+noremap <C-w> <C-S-e>
+
+" avoiding accidental closing
+noremap <C-q> <Nop>
+
+"Changing leader
+set mapleader=,
+
+" activation
+set activate=addons,bookmarks,downloads,extoptions,help,tabopen
+
+" cookies
+set cookieaccept=samesite
+
+" default search to DuckDuckGo (through keyword)
+set defsearch=ddg
+
+" Stop changing focus
+set strictfocus
+
+" The best followhint
+set followhints=1
+
+" GUI and all
+set guioptions=nCMcs
+set showstatuslinks=command
+set showtabline=always
+set noerrorbells
+set novisualbell
+
+" command line history
+set history=100
+
+" Searching
+set hlfind
+set incfind
+map <F1> :set hlf!<CR>
+
+" Open everything in a new tab
+set newtab=addons,downloads,help,prefs,extoptions
+
+" Wildmode isn't satisfying, but it's better...
+set wildmode=list:longest
+
+" Separate urls by ";"
+set urlseparator=;
+
+" commands for scrapbook
+" command scrap emenu ScrapBook.Capture de la page
+command book sidebar ScrapBook
+
+" auto scrapbook wikipedia pages and Bookmarks
+" autocmd BookmarkAdd .* :scrap
+" autocmd LocationChange (en|fr)\.wikipedia\.org :scrap
+
+" if gvim is not installed
+"set editor="xterm -e vim -f"
