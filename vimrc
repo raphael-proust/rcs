@@ -150,3 +150,14 @@ let g:ocaml_folding = 0
 " setting ; as :
 noremap ; :
 
+" When setting things up, don't forget to install
+" align         (to have nice column)
+" backups       (numbered backups)
+" histwin.vim   (history window)
+" matchit       (jump between matching syntax construct)
+" ocaml_lwt.vim (lwt syntax extension support)
+" pdc           (pandoc files)
+" supertab      (MUST HAVE: do completion with <tab>)
+" vim-conque    (a shell in the editor)
+" vim-surround  (add, edit, remove delimiters)
+" zoomwin       (extend <C-w-o> capabilities)
