@@ -1,0 +1,10 @@
+startup_message off
+defscrollback   3000
+screen          zsh
+scrollback      0
+title           "priv"
+screen          zsh
+title           "main"
+hardstatus alwayslastline
+hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][%= %{= kw}%?%-Lw%?%{= kW}%n*%f %t%?%?%{= kw}%?%+Lw%?%?%= ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'
+
