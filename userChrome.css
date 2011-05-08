@@ -1,0 +1,13 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");  
+
+.tabs-newtab-button { display : none !important; }
+.tabs-closebutton-box { display: none !important; }
+.tabs-container > stack  {display:none!important}
+tab {
+  font-size : x-small !important ;
+  padding : 0px !important ;
+  border  : 0px !important ;
+  margin  : 0px !important ;
+}
+
+#download-monitor{ display : none !important ; }
