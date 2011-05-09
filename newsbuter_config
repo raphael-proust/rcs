@@ -1,0 +1,15 @@
+auto-reload yes
+browser "links %u"
+reload-time 45
+save-path "~/"
+download-path "~/"
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key N prev-unread
+bind-key P next-unread
+bind-key f toggle-show-read-feeds
+bind-key C pb-purge
+confirm-exit yes
