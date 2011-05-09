@@ -46,6 +46,7 @@ set splitbelow
 "Search
 set smartcase
 set hlsearch
+set magic
 
 "matching bras and kets
 set showmatch
