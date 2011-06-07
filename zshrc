@@ -28,9 +28,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias ls='ls --color=auto'
-alias l='ls -alF'
+alias l='ls -alhF'
 alias ld="ls -l | grep ^d"
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -lah'
 
 alias o='less'
@@ -57,5 +57,4 @@ if [ "x$SSH_CONNECTION" != "x" ]; then
 fi
 export EDITOR=vim
 
-export PATH=$HOME/bin:$HOME/bin/mir-inst/bin:$HOME/bin/godi/bin:$HOME/bin/godi/sbin:/sbin:/usr/sbin:$PATH
-export MANPATH=$HOME/bin/godi/man:$MANPATH
+export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
