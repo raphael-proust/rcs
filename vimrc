@@ -94,11 +94,10 @@ map <C-l> <C-w>l
 nnoremap <F5> :ls<CR>
 
 "Security
-set nomodeline
+"set nomodeline
 
 " Highlights long lines
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+set colorcolumn=+1
 
 " Ignore irrelevant suffixes for filename completion
 set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.dvi,*.out,*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot,*.exe,*.pyc,*.class
@@ -142,11 +141,16 @@ au FileType latex set formatoptions+=a
 
 au FileType pdc set formatoptions+=n
 
+"for small screens
+"au BufEnter * vert res 80
+
+
 "Status line with a little more information
 set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
 
 "OCaml
 let g:ocaml_folding = 0
+au FileType ocaml_lwt :%foldo!
 
 " setting ; as :
 noremap ; :
