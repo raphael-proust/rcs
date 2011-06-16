@@ -111,6 +111,7 @@ map g$ :tablast<CR>
 nnoremap ' `
 nnoremap ` '
 map <leader>cd :cd %:p:h<CR>
+map K :.-,.join<CR>
 
 "Delete without a trace
 nmap <silent> <leader>d "_d
