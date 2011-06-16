@@ -12,7 +12,7 @@ filetype plugin indent on
 let maplocalleader=","
 let mapleader=","
 
-"latex suite
+"latex suite (prefer pandoc)
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor= "latex"
 
@@ -46,6 +46,8 @@ set splitbelow
 "Search
 set smartcase
 set hlsearch
+map <F1> :set hls!<CR>
+imap <F1> :set hls!<CR>
 set magic
 
 "matching bras and kets
@@ -61,6 +63,7 @@ set visualbell
 
 "Lines
 set textwidth=80
+nmap Q gq
 set nojoinspaces
 set wrap
 
@@ -77,12 +80,16 @@ set encoding=utf-8
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
 
-"Paste from the outside
+"Copy-Pasta
 set pastetoggle=<F2>
 nmap <leader>y "+y
 nmap <leader>Y "+yy
 nmap <leader>p "+p
 nmap <leader>P "+P
+nmap Y y$
+nmap <silent> <leader>d "_d
+vmap <silent> <leader>d "_d
+
 
 "Buffers and window handling
 set switchbuf=useopen
@@ -92,6 +99,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 nnoremap <F5> :ls<CR>
+map g0 :tabfirst<CR>
+map g$ :tablast<CR>
 
 "Security
 "set nomodeline
@@ -103,21 +112,12 @@ set colorcolumn=+1
 set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.dvi,*.out,*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot,*.exe,*.pyc,*.class
 
 " maps
-map Q gq
-map <F1> :set hls!<CR>
-nmap Y y$
-map g0 :tabfirst<CR>
-map g$ :tablast<CR>
 nnoremap ' `
 nnoremap ` '
 map <leader>cd :cd %:p:h<CR>
 map K :.-,.join<CR>
 
-"Delete without a trace
-nmap <silent> <leader>d "_d
-vmap <silent> <leader>d "_d
-
-"alignement
+" Alignment
 nmap <leader>al :left<CR>
 nmap <leader>ar :right<CR>
 nmap <leader>ac :center<CR>
@@ -125,22 +125,26 @@ vmap <leader>al :left<CR>
 vmap <leader>ar :right<CR>
 vmap <leader>ac :center<CR>
 
-"Sanitazation
+" Text Sanitization
 command Trailing :%s/\s\+$//
 command Nbsp :%s/\%d160//<CR>
 
-"Spelling
+" Spelling
 command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
 command Spellus :setlocal spell | :setlocal spelllang=en_us
-command Spelluk :setlocal spell | :setlocal spelllang=en_uk
+command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
-"filetype specific options
+" filetype specific options
 
 au FileType make set noexpandtab
 
 au FileType latex set formatoptions+=a
 
 au FileType pdc set formatoptions+=n
+
+let g:ocaml_folding = 0
+au FileType ocaml_lwt :%foldo!
+
 
 "for small screens
 "au BufEnter * vert res 80
@@ -149,17 +153,12 @@ au FileType pdc set formatoptions+=n
 "Status line with a little more information
 set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
 
-"OCaml
-let g:ocaml_folding = 0
-au FileType ocaml_lwt :%foldo!
-
 " setting ; as :
 noremap ; :
 
 " When setting things up, don't forget to install
 " align         (to have nice column)
 " backups       (numbered backups)
-" histwin.vim   (history window)
 " matchit       (jump between matching syntax construct)
 " ocaml_lwt.vim (lwt syntax extension support)
 " pdc           (pandoc files)
