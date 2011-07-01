@@ -52,7 +52,7 @@ set cookieaccept=samesite
 set defsearch=ddg
 
 " Stop changing focus
-set strictfocus
+set strictfocus=despotic
 
 " The best followhint
 set followhints=1
