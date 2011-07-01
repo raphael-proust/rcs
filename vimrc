@@ -145,9 +145,16 @@ au FileType pdc set formatoptions+=n
 let g:ocaml_folding = 0
 au FileType ocaml_lwt :%foldo!
 
+"Handling missing spell files
+let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
+:au SpellFileMissing * call Download_spell_file(expand('<amatch>'))
+
 
 "for small screens
 "au BufEnter * vert res 80
+
+"On the fly sudo
+command Sudow :w !sudo tee %
 
 
 "Status line with a little more information
