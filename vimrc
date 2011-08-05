@@ -63,7 +63,7 @@ set visualbell
 
 "Lines
 set textwidth=80
-nmap Q gq
+map Q gq
 set nojoinspaces
 set wrap
 
@@ -109,7 +109,7 @@ map g$ :tablast<CR>
 set colorcolumn=+1
 
 " Ignore irrelevant suffixes for filename completion
-set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.dvi,*.out,*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot,*.exe,*.pyc,*.class
+set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.dvi,*.pdf,*.out,*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot,*.exe,*.pyc,*.class
 
 " maps
 nnoremap ' `
@@ -126,8 +126,9 @@ vmap <leader>ar :right<CR>
 vmap <leader>ac :center<CR>
 
 " Text Sanitization
-command Trailing :%s/\s\+$//
-command Nbsp :%s/\%d160//<CR>
+command Trailing :%s/\s\+$//e
+command Tabs4 :%s/\t/    /ge
+command Nbsp :%s/\%d160//e
 
 " Spelling
 command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
@@ -143,7 +144,7 @@ au FileType latex set formatoptions+=a
 au FileType pdc set formatoptions+=n
 
 let g:ocaml_folding = 0
-au FileType ocaml_lwt :%foldo!
+au FileType ocaml_lwt :set foldlevel 9
 
 "Handling missing spell files
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
