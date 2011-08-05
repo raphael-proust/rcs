@@ -143,8 +143,7 @@ au FileType latex set formatoptions+=a
 
 au FileType pdc set formatoptions+=n
 
-let g:ocaml_folding = 0
-au FileType ocaml_lwt :set foldlevel 9
+au FileType ocaml_lwt :set foldlevel=9
 
 "Handling missing spell files
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
