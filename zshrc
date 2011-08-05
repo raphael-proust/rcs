@@ -35,26 +35,18 @@ alias la='ls -lah'
 
 alias o='less'
 
-alias godi='godi_console'
 
+f() { find . -iname "*$1*" }
 
-f() {
-  echo "find . -iname \"*$1*\""
-  find . -iname "*$1*"
-}
+md () { mkdir -p $1 && cd $1 }
 
-md () {
-  mkdir -p $1 && cd $1
-}
-
-kill9 () {
-  kill -9 $(gps $1 | grep $1 | awk '{ print $3}')
-}
+kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 
 export PS1="$(print '%{\e[1;32m%}%n %{\e[1;34m%}%~ \$ %{\e[0m%}')"
 if [ "x$SSH_CONNECTION" != "x" ]; then
   export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
 fi
 export EDITOR=vim
+export SHELL=zsh
 
 export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
