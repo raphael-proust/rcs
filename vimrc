@@ -3,8 +3,7 @@ set nocompatible
 
 " Pathogen
 filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -92,7 +91,7 @@ vmap <silent> <leader>d "_d
 
 
 "Buffers and window handling
-set switchbuf=useopen
+set switchbuf=usetab,newtab
 map <C-w>! :vertical resize 80<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
