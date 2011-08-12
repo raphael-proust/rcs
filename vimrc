@@ -63,7 +63,7 @@ set visualbell
 
 "Lines
 set textwidth=80
-map Q gq
+noremap Q gq
 set nojoinspaces
 set wrap
 
