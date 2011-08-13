@@ -36,8 +36,9 @@ noremap g; ;
 " TabGroup thingy
 noremap <C-w> <C-S-e>
 
-" avoiding accidental closing
+" avoid accidents
 noremap <C-q> <Nop>
+noremap ZQ ZZ
 
 "Changing leader
 set mapleader=,
@@ -58,7 +59,7 @@ set strictfocus=despotic
 set followhints=1
 
 " GUI and all
-set guioptions=nCMcs
+set guioptions=CMcs
 set showstatuslinks=command
 set showtabline=always
 set noerrorbells
