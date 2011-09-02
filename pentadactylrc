@@ -82,13 +82,5 @@ set wildmode=list:longest
 " Separate urls by ";"
 set urlseparator=;
 
-" commands for scrapbook
-" command scrap emenu ScrapBook.Capture de la page
-command book sidebar ScrapBook
-
-" auto scrapbook wikipedia pages and Bookmarks
-" autocmd BookmarkAdd .* :scrap
-" autocmd LocationChange (en|fr)\.wikipedia\.org :scrap
-
 " if gvim is not installed
 "set editor="xterm -e vim -f"
