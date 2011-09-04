@@ -16,6 +16,10 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+bindkey -M viins '\e[A' history-beginning-search-backward
+bindkey -M vicmd '\e[A' history-beginning-search-backward
+bindkey -M viins '\e[B' history-beginning-search-forward
+bindkey -M vicmd '\e[B' history-beginning-search-forward
 
 setopt RM_STAR_WAIT
 export RPS1="$(print '[ %{\e[1;36m%}%T%{\e[0m%} ]')"
