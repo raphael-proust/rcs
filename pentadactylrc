@@ -73,6 +73,10 @@ set hlfind
 set incfind
 map <F1> :set hlf!<CR>
 
+" Copypasta
+inoremap <C-S-c> <C-v><C-c>
+inoremap <C-S-v> <C-v><C-v>
+
 " Open everything in a new tab
 set newtab=addons,downloads,help,prefs,extoptions
 
