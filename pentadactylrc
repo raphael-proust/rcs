@@ -82,5 +82,8 @@ set wildmode=list:longest
 " Separate urls by ";"
 set urlseparator=;
 
+"duplication via :du
+command -nargs 0 -count -bang -description 'Duplicate current tab' du,dup,duplicate :<count>tabduplicate<bang>
+
 " if gvim is not installed
 "set editor="xterm -e vim -f"
