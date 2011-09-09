@@ -79,7 +79,7 @@ inoremap <C-S-c> <C-v><C-c>
 inoremap <C-S-v> <C-v><C-v>
 
 " Open everything in a new tab
-set newtab=addons,downloads,help,prefs,extoptions
+set newtab=all
 
 " Wildmode isn't satisfying, but it's better...
 set wildmode=list:longest
