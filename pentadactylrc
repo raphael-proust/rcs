@@ -51,6 +51,7 @@ set cookieaccept=samesite
 
 " default search to DuckDuckGo (through keyword)
 set defsearch=ddg
+set suggestengines=
 
 " Stop changing focus
 set strictfocus='chrome:*':laissez-faire,*:despotic
