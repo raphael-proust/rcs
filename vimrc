@@ -59,6 +59,7 @@ set showcmd
 set ruler
 set visualbell
 "set lazyredraw
+set shortmess+=filmnrxtI
 
 "Lines
 set textwidth=80
@@ -91,7 +92,7 @@ vmap <silent> <leader>d "_d
 
 
 "Buffers and window handling
-set switchbuf=usetab,newtab
+set switchbuf=usetab
 map <C-w>! :vertical resize 80<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
