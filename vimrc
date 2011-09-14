@@ -31,6 +31,8 @@ set tabstop=4
 set autoindent
 set copyindent
 set shiftround
+vnoremap < <gv
+vnoremap > >gv
 
 "Moving around
 set backspace=indent,start
@@ -42,12 +44,13 @@ set nostartofline
 set splitright
 set splitbelow
 
-"Search
+"Search and substitute
 set smartcase
 set hlsearch
 map <F1> :set hls!<CR>
 imap <F1> :set hls!<CR>
 set magic
+set gdefault
 
 "matching bras and kets
 set showmatch
