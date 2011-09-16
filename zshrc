@@ -16,9 +16,23 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-bindkey -M viins '\e[A' history-beginning-search-backward
+history-beginning-search-forward-and-vicmd() {
+  zle vi-cmd-mode
+  zle forward-char
+  zle history-beginning-search-forward
+}
+zle -N history-beginning-search-forward-and-vicmd
+
+history-beginning-search-backward-and-vicmd() {
+  zle vi-cmd-mode
+  zle forward-char
+  zle history-beginning-search-backward
+}
+zle -N history-beginning-search-backward-and-vicmd
+
+bindkey -M viins '\e[A' history-beginning-search-backward-and-vicmd
 bindkey -M vicmd '\e[A' history-beginning-search-backward
-bindkey -M viins '\e[B' history-beginning-search-forward
+bindkey -M viins '\e[B' history-beginning-search-forward-and-vicmd
 bindkey -M vicmd '\e[B' history-beginning-search-forward
 
 setopt RM_STAR_WAIT
