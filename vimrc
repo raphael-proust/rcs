@@ -23,6 +23,9 @@ let g:ConqueTerm_Color = 0
 "backups plugin
 let g:backup_purge=32
 
+"gundo plugin
+nnoremap <F3> :GundoToggle<CR>
+
 "Tabs, indent and the such
 set smarttab
 set expandtab
@@ -31,8 +34,6 @@ set tabstop=4
 set autoindent
 set copyindent
 set shiftround
-vnoremap < <gv
-vnoremap > >gv
 
 "Moving around
 set backspace=indent,start
@@ -176,3 +177,4 @@ noremap ; :
 " vim-conque    (a shell in the editor)
 " vim-surround  (add, edit, remove delimiters)
 " zoomwin       (extend <C-w-o> capabilities)
+" gundo         (replace undo list with a graphical tree)
