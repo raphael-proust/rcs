@@ -36,7 +36,14 @@ bindkey -M viins '\e[B' history-beginning-search-forward-and-vicmd
 bindkey -M vicmd '\e[B' history-beginning-search-forward
 
 setopt RM_STAR_WAIT
-export RPS1="$(print '[ %{\e[1;36m%}%T%{\e[0m%} ]')"
+
+#not perfect RPS (lacks colours, does not always update) but still usefull
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/[-- CMD --]}/(main|viins)/[-- INS --]}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 
 # aliases
