@@ -26,6 +26,12 @@ let g:backup_purge=32
 "gundo plugin
 nnoremap <F3> :GundoToggle<CR>
 
+"threesome plugin
+let g:threesome_initial_mode = "grid"
+let g:threesome_initial_layout_grid = 1
+let g:threesome_initial_diff_grid = 1
+let g:threesome_initial_scrollbind_grid = 1
+
 "Tabs, indent and the such
 set smarttab
 set expandtab
@@ -178,3 +184,4 @@ noremap ; :
 " vim-surround  (add, edit, remove delimiters)
 " zoomwin       (extend <C-w-o> capabilities)
 " gundo         (replace undo list with a graphical tree)
+" threesome     (three way merge tool)
