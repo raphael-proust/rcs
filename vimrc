@@ -137,7 +137,7 @@ vmap <leader>ac :center<CR>
 
 " Text Sanitization
 command Trailing :%s/\s\+$//e
-command Tabs4 :%s/\t/    /ge
+command Tabs4 :%s/\t/    /e
 command Nbsp :%s/\%d160//e
 
 " Spelling
