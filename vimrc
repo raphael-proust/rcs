@@ -26,6 +26,12 @@ let g:backup_purge=32
 "gundo plugin
 nnoremap <F3> :GundoToggle<CR>
 
+"threesome plugin
+let g:threesome_initial_mode = "grid"
+let g:threesome_initial_layout_grid = 1
+let g:threesome_initial_diff_grid = 1
+let g:threesome_initial_scrollbind_grid = 1
+
 "Tabs, indent and the such
 set smarttab
 set expandtab
@@ -46,6 +52,7 @@ set splitright
 set splitbelow
 
 "Search and substitute
+set ignorecase
 set smartcase
 set hlsearch
 map <F1> :set hls!<CR>
@@ -135,7 +142,7 @@ vmap <leader>ac :center<CR>
 
 " Text Sanitization
 command Trailing :%s/\s\+$//e
-command Tabs4 :%s/\t/    /ge
+command Tabs4 :%s/\t/    /e
 command Nbsp :%s/\%d160//e
 
 " Spelling
@@ -182,3 +189,4 @@ noremap ; :
 " vim-surround  (add, edit, remove delimiters)
 " zoomwin       (extend <C-w-o> capabilities)
 " gundo         (replace undo list with a graphical tree)
+" threesome     (three way merge tool)

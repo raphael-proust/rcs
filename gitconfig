@@ -1,0 +1,10 @@
+[user]
+	name = Raphaël Proust
+	email = raphlalou@gmail.com
+
+[merge]
+  tool = threesome
+
+[mergetool "threesome"]
+  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+  trustExitCode = true
