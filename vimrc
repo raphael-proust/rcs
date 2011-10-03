@@ -79,10 +79,14 @@ set undolevels=100
 set title
 set termencoding=utf-8
 set encoding=utf-8
+set t_Co=256
+set bg=dark
 
 "Beautiful additional chars
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
+set fillchars-=vert:\|
+set fillchars+=vert:\ 
 
 "Copy-Pasta
 set pastetoggle=<F2>
