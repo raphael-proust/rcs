@@ -52,6 +52,7 @@ set splitright
 set splitbelow
 
 "Search and substitute
+set ignorecase
 set smartcase
 set hlsearch
 map <F1> :set hls!<CR>
@@ -85,10 +86,14 @@ set undolevels=100
 set title
 set termencoding=utf-8
 set encoding=utf-8
+set t_Co=256
+set bg=dark
 
 "Beautiful additional chars
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
+set fillchars-=vert:\|
+set fillchars+=vert:\ 
 
 "Copy-Pasta
 set pastetoggle=<F2>
@@ -137,7 +142,7 @@ vmap <leader>ac :center<CR>
 
 " Text Sanitization
 command Trailing :%s/\s\+$//e
-command Tabs4 :%s/\t/    /ge
+command Tabs4 :%s/\t/    /e
 command Nbsp :%s/\%d160//e
 
 " Spelling
