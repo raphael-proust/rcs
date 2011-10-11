@@ -16,6 +16,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+#vi-like-ish Up and Down arrows
 history-beginning-search-forward-and-vicmd() {
   zle vi-cmd-mode
   zle forward-char
@@ -35,15 +36,8 @@ bindkey -M vicmd '\e[A' history-beginning-search-backward
 bindkey -M viins '\e[B' history-beginning-search-forward-and-vicmd
 bindkey -M vicmd '\e[B' history-beginning-search-forward
 
+#Make 'rm *' safe
 setopt RM_STAR_WAIT
-
-#not perfect RPS (lacks colours, does not always update) but still usefull
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/[-- CMD --]}/(main|viins)/[-- INS --]}"
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
 
 
 # aliases
@@ -60,17 +54,28 @@ alias la='ls -lah'
 
 alias o='less'
 
-
+#functions
 f() { find . -iname "*$1*" }
 
 md () { mkdir -p $1 && cd $1 }
 
 kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 
+#PS
 export PS1="$(print '%{\e[1;32m%}%n %{\e[1;34m%}%~ \$ %{\e[0m%}')"
 if [ "x$SSH_CONNECTION" != "x" ]; then
   export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
 fi
+#not perfect RPS (lacks colours, does not always update) but still usefull
+#RPS shows current mode
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/[-- CMD --]}/(main|viins)/[-- INS --]}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+#exports
 export EDITOR=vim
 export SHELL=zsh
 
