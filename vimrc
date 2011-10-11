@@ -52,7 +52,6 @@ set splitright
 set splitbelow
 
 "Search and substitute
-set ignorecase
 set smartcase
 set hlsearch
 map <F1> :set hls!<CR>
