@@ -180,6 +180,10 @@ set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
 " setting ; as :
 noremap ; :
 
+"making mapped command availables
+noremap <leader>, ,
+noremap <leader>; ;
+
 " When setting things up, don't forget to install
 " align         (to have nice column)
 " backups       (numbered backups)
