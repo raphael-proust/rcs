@@ -79,7 +79,10 @@ set wrap
 
 "More history
 set history=500
-set undolevels=100
+set undolevels=500
+set undoreload=10000
+set undofile
+set undodir=$HOME/.vim/undofiles
 
 "Window and term
 set title
