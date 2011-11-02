@@ -161,6 +161,7 @@ au FileType make set noexpandtab
 
 au FileType latex set formatoptions+=a
 
+au BufRead *.pdc set ft=pdc
 au FileType pdc set formatoptions+=n
 
 au FileType ocaml_lwt :set foldlevel=9
