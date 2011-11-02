@@ -32,6 +32,9 @@ let g:threesome_initial_layout_grid = 1
 let g:threesome_initial_diff_grid = 1
 let g:threesome_initial_scrollbind_grid = 1
 
+"colorscheme
+colorscheme molokai
+
 "Tabs, indent and the such
 set smarttab
 set expandtab
@@ -95,8 +98,8 @@ set bg=dark
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
 set showbreak=#\ 
-set fillchars-=vert:\|
-set fillchars+=vert:\ 
+"set fillchars-=vert:\|
+"set fillchars+=vert:\ 
 
 "Copy-Pasta
 set pastetoggle=<F2>
@@ -160,6 +163,7 @@ au FileType make set noexpandtab
 
 au FileType latex set formatoptions+=a
 
+au BufRead *.pdc set ft=pdc
 au FileType pdc set formatoptions+=n
 
 au FileType ocaml_lwt :set foldlevel=9

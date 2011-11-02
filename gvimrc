@@ -5,4 +5,4 @@ set guioptions-=r
 set guifont=Monospace\ 9
 set lines=999
 set columns=80
-colorscheme slate
+"colorscheme slate
