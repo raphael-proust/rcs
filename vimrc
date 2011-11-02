@@ -32,6 +32,9 @@ let g:threesome_initial_layout_grid = 1
 let g:threesome_initial_diff_grid = 1
 let g:threesome_initial_scrollbind_grid = 1
 
+"colorscheme
+colorscheme molokai
+
 "Tabs, indent and the such
 set smarttab
 set expandtab
@@ -94,8 +97,8 @@ set bg=dark
 "Beautiful additional chars
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
-set fillchars-=vert:\|
-set fillchars+=vert:\ 
+"set fillchars-=vert:\|
+"set fillchars+=vert:\ 
 
 "Copy-Pasta
 set pastetoggle=<F2>
