@@ -32,9 +32,6 @@ let g:threesome_initial_layout_grid = 1
 let g:threesome_initial_diff_grid = 1
 let g:threesome_initial_scrollbind_grid = 1
 
-"colorscheme
-colorscheme molokai
-
 "Tabs, indent and the such
 set smarttab
 set expandtab
@@ -93,6 +90,10 @@ set termencoding=utf-8
 set encoding=utf-8
 set t_Co=256
 set bg=dark
+"
+"colorscheme
+colorscheme molokai
+
 
 "Beautiful additional chars
 set list
