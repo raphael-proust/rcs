@@ -11,17 +11,21 @@ vmap g\' <C-^>
 " making the :tabopen! easy
 map ! :tabopen! 
 
-" custom searchs (using keywords)
-map st ttz 
-map sw twken 
-map sg tgg 
-map su turb 
-map sa tamo 
-map si timg 
-map sy tyt 
-map sm tmap 
-map sb tblk 
+" custom searchs (using a DuckDuckGo keyword and bangs)
+" To add the ddg keyword, run the following
+" bmark -title='test at DuckDuckGo' https://duckduckgo.com/?q=%s -keyword=ddg
 map sd tddg 
+map s! tddg !
+map st tddg !torrentz 
+map sw tddg !w 
+map sf tddg !wfr 
+map sg tddg !g 
+map su tddg !urban 
+map sa tddg !amo 
+map si tddg !i 
+map sy tddg !v 
+map sm tddg !m 
+map so tddg !osm 
 
 " mapping h, j, k and l to scroll faster
 noremap h 4h
