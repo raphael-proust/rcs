@@ -12,6 +12,7 @@ vmap g\' <C-^>
 map ! :tabopen! 
 
 " custom searchs (using a DuckDuckGo keyword and bangs)
+" see https://duckduckgo.com/bang.html
 " To add the ddg keyword, run the following
 " bmark -title='test at DuckDuckGo' https://duckduckgo.com/?q=%s -keyword=ddg
 map sd tddg 
@@ -21,7 +22,7 @@ map sw tddg !w
 map sf tddg !wfr 
 map sg tddg !g 
 map su tddg !urban 
-map sa tddg !amo 
+map sa tddg !archwiki 
 map si tddg !i 
 map sy tddg !v 
 map sm tddg !m 
