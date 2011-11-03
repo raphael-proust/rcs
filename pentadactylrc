@@ -20,7 +20,7 @@ map s! tddg !
 map st tddg !torrentz 
 map sw tddg !w 
 map sf tddg !wfr 
-map sg tddg !g 
+map sg tddg !github 
 map su tddg !urban 
 map sa tddg !archwiki 
 map si tddg !i 
