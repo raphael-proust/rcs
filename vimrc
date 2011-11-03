@@ -90,7 +90,7 @@ set termencoding=utf-8
 set encoding=utf-8
 set t_Co=256
 set bg=dark
-"
+
 "colorscheme
 colorscheme molokai
 
@@ -192,14 +192,39 @@ noremap <leader>, ,
 noremap <leader>; ;
 
 " When setting things up, don't forget to install
+"
 " align         (to have nice column)
-" backups       (numbered backups)
+" https://github.com/tsaleh/vim-align.git
+"
 " matchit       (jump between matching syntax construct)
+" https://github.com/edsono/vim-matchit.git
+"
 " ocaml_lwt.vim (lwt syntax extension support)
+" git://github.com/raphael-proust/ocaml_lwt.vim.git
+"
 " pdc           (pandoc files)
+" https://github.com/vim-scripts/pdc.vim.git
+"
 " supertab      (MUST HAVE: do completion with <tab>)
-" vim-conque    (a shell in the editor)
-" vim-surround  (add, edit, remove delimiters)
+" https://github.com/vim-scripts/SuperTab.git
+"
+" conque        (a shell in the editor)
+" https://github.com/rson/vim-conque.git
+"
+" surround      (add, edit, remove delimiters)
+" https://github.com/vim-scripts/surround.vim.git
+"
 " zoomwin       (extend <C-w-o> capabilities)
+" https://github.com/vim-scripts/ZoomWin.git
+"
 " gundo         (replace undo list with a graphical tree)
+" http://github.com/sjl/gundo.vim.git
+"
+" fugitive      (command git from within vim)
+" https://github.com/tpope/vim-fugitive.git
+"
 " threesome     (three way merge tool)
+" https://github.com/sjl/threesome.vim.git
+"
+" molokai       (colorscheme)
+" https://github.com/tomasr/molokai
