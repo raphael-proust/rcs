@@ -49,6 +49,7 @@ set shiftround
 set backspace=indent,start
 set virtualedit=block
 set scrolloff=5
+set sidescrolloff=5
 set nostartofline
 
 "Splits
