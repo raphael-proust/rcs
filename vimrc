@@ -32,6 +32,10 @@ let g:threesome_initial_layout_grid = 1
 let g:threesome_initial_diff_grid = 1
 let g:threesome_initial_scrollbind_grid = 1
 
+"Better diffs (with switchable whitespace ignoring)
+set diffopt=filler,vertical,context:5
+nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
+
 "Tabs, indent and the such
 set smarttab
 set expandtab
