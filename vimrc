@@ -90,7 +90,7 @@ set termencoding=utf-8
 set encoding=utf-8
 set t_Co=256
 set bg=dark
-"
+
 "colorscheme
 colorscheme molokai
 
@@ -99,8 +99,12 @@ colorscheme molokai
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
 set showbreak=#\ 
-"set fillchars-=vert:\|
-"set fillchars+=vert:\ 
+set fillchars-=vert:\|
+set fillchars+=vert:\ 
+set fillchars-=fold:-
+set fillchars+=fold:—
+set fillchars-=diff:-
+set fillchars+=diff:—
 
 "Copy-Pasta
 set pastetoggle=<F2>
