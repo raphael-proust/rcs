@@ -54,8 +54,6 @@ alias la='ls -lah'
 
 alias o='less'
 
-alias tmux='TERM=xterm-256color tmux'
-
 #functions
 f() { find . -iname "*$1*" }
 
