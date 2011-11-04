@@ -103,8 +103,12 @@ colorscheme molokai
 set list
 set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
 set showbreak=#\ 
-"set fillchars-=vert:\|
-"set fillchars+=vert:\ 
+set fillchars-=vert:\|
+set fillchars+=vert:\ 
+set fillchars-=fold:-
+set fillchars+=fold:—
+set fillchars-=diff:-
+set fillchars+=diff:—
 
 "Copy-Pasta
 set pastetoggle=<F2>

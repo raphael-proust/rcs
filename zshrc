@@ -54,6 +54,8 @@ alias la='ls -lah'
 
 alias o='less'
 
+alias tmux='TERM=xterm-256color tmux'
+
 #functions
 f() { find . -iname "*$1*" }
 
@@ -66,14 +68,6 @@ export PS1="$(print '%{\e[1;32m%}%n %{\e[1;34m%}%~ \$ %{\e[0m%}')"
 if [ "x$SSH_CONNECTION" != "x" ]; then
   export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
 fi
-#not perfect RPS (lacks colours, does not always update) but still usefull
-#RPS shows current mode
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/[-- CMD --]}/(main|viins)/[-- INS --]}"
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
 
 #exports
 export EDITOR=vim
