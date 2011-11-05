@@ -8,6 +8,7 @@ syntax on
 filetype plugin indent on
 
 " Change leader to , (comma)
+"TODO? different leaders?
 let maplocalleader=","
 let mapleader=","
 
@@ -57,7 +58,6 @@ set splitright
 set splitbelow
 
 "Search and substitute
-set smartcase
 set hlsearch
 map <F1> :set hls!<CR>
 imap <F1> :set hls!<CR>
@@ -73,7 +73,6 @@ set laststatus=2
 set showcmd
 set ruler
 set visualbell
-"set lazyredraw
 set shortmess+=filmnrxtI
 
 "Lines
@@ -99,7 +98,6 @@ set bg=dark
 "colorscheme
 colorscheme molokai
 
-
 "Beautiful additional chars
 set list
 set listchars=tab:›·,trail:·,extends:›,precedes:›,nbsp:—
@@ -121,7 +119,6 @@ nmap Y y$
 nmap <silent> <leader>d "_d
 vmap <silent> <leader>d "_d
 
-
 "Buffers and window handling
 set switchbuf=usetab
 map <C-w>! :vertical resize 80<CR>
@@ -132,9 +129,6 @@ map <C-l> <C-w>l
 nnoremap <F5> :ls<CR>
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
-
-"Security
-"set nomodeline
 
 " Highlights long lines
 set colorcolumn=+1
@@ -168,27 +162,17 @@ command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
 " filetype specific options
-
 au FileType make set noexpandtab
-
 au FileType latex set formatoptions+=a
-
 au BufRead *.pdc set ft=pdc
 au FileType pdc set formatoptions+=n
-
 au FileType ocaml_lwt :set foldlevel=9
 
-"Handling missing spell files
-let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
-:au SpellFileMissing * call Download_spell_file(expand('<amatch>'))
-
-
-"for small screens
+"for small screens (less than (2×80+1))
 "au BufEnter * vert res 80
 
 "On the fly sudo
 command Sudow :w !sudo tee %
-
 
 "Status line with a little more information
 set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
