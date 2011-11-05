@@ -102,8 +102,8 @@ colorscheme molokai
 
 "Beautiful additional chars
 set list
-set listchars=tab:›·,trail:·,extends:#,precedes:#,nbsp:—
-set showbreak=#\ 
+set listchars=tab:›·,trail:·,extends:›,precedes:›,nbsp:—
+set showbreak=››
 set fillchars-=vert:\|
 set fillchars+=vert:\ 
 set fillchars-=fold:-
