@@ -1,4 +1,6 @@
 startup_message off
+escape          ^Bb
+term            screen-256color
 defscrollback   3000
 screen          zsh
 scrollback      0
