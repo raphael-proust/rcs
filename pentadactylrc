@@ -51,9 +51,6 @@ set mapleader=,
 " activation
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
 
-" cookies
-set cookieaccept=samesite
-
 " default search to DuckDuckGo (through keyword)
 set defsearch=ddg
 set suggestengines=
