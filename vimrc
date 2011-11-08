@@ -220,4 +220,4 @@ noremap <leader>; ;
 " https://github.com/sjl/threesome.vim.git
 "
 " molokai       (colorscheme)
-" https://github.com/tomasr/molokai
+" git@github.com:raphael-proust/molokai.git
