@@ -1,0 +1,46 @@
+
+set runtimepath=~/.teledactyl
+
+" vim: set ft=teledactyl:
+
+" mapping h, j, k and l to scroll faster
+noremap h 4h
+noremap j 4j
+noremap k 4k
+noremap l 4l
+
+" making ; act as :
+noremap ; :
+noremap g; ;
+
+" avoid accidents
+noremap <C-q> <Nop>
+noremap ZQ ZZ
+
+"Changing leader
+set mapleader=,
+
+" GUI and all
+set guioptions=CfFMs
+set showstatuslinks=command
+set showtabline=always
+set noerrorbells
+set novisualbell
+
+" command line history
+set history=100
+
+" Searching
+set hlfind
+set incfind
+map <F1> :set hlf!<CR>
+
+" Copypasta
+noremap -modes=main <C-S-c> <C-v><C-c>
+noremap -modes=main <C-S-v> <C-v><C-v>
+
+" Wildmode isn't satisfying, but it's better...
+set wildmode=list:longest
+
+" if gvim is not installed
+"set editor="xterm -e vim -f"
