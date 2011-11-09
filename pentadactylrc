@@ -11,10 +11,14 @@ vmap g\' <C-^>
 " making the :tabopen! easy
 map ! :tabopen! 
 
-" custom searchs (using a DuckDuckGo keyword and bangs)
-" see https://duckduckgo.com/bang.html
-" To add the ddg keyword, run the following
-" bmark -title='test at DuckDuckGo' https://duckduckgo.com/?q=%s -keyword=ddg
+"Searching: use DuckDuckGo
+"initialisation: bmark -title='DuckDuckGo' https://duckduckgo.com/?q=%s -keyword=ddg
+
+"ddg is the default
+set defsearch=ddg
+set suggestengines=
+
+" custom searches (using bangs: https://duckduckgo.com/bang.html)
 map sd tddg 
 map s! tddg !
 map st tddg !torrentz 
@@ -51,9 +55,6 @@ set mapleader=,
 " activation
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
 
-" default search to DuckDuckGo (through keyword)
-set defsearch=ddg
-set suggestengines=
 
 " Stop changing focus
 set strictfocus='chrome:*':laissez-faire,*:despotic
