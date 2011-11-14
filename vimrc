@@ -195,7 +195,7 @@ noremap <leader>; ;
 " git://github.com/raphael-proust/ocaml_lwt.vim.git
 "
 " pdc           (pandoc files)
-" https://github.com/vim-scripts/pdc.vim.git
+" git@github.com:raphael-proust/pdc.vim.git
 "
 " supertab      (MUST HAVE: do completion with <tab>)
 " https://github.com/vim-scripts/SuperTab.git
