@@ -66,6 +66,7 @@ set followhints=1
 set guioptions=CMcs
 set showstatuslinks=command
 set showtabline=always
+set maxitems=7
 set noerrorbells
 set novisualbell
 
@@ -76,6 +77,7 @@ set history=100
 set hlfind
 set incfind
 map <F1> :set hlf!<CR>
+set findcase=ignore
 
 " Copypasta
 noremap -modes=main <C-S-c> <C-v><C-c>
