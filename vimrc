@@ -178,6 +178,7 @@ set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
 
 " setting ; as :
 noremap ; :
+noremap q; q:
 
 "making mapped command availables
 noremap <leader>, ,
