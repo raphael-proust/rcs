@@ -9,3 +9,5 @@ map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 map <ScrollWheelLeft> zh
 map <ScrollWheelRight> zl
+
+command Focus :set guifont=Monospace\ 22
