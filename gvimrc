@@ -10,4 +10,4 @@ map <ScrollWheelDown> <C-E>
 map <ScrollWheelLeft> zh
 map <ScrollWheelRight> zl
 
-command Focus :set guifont=Monospace\ 22
+command Focus :set laststatus=0 |set guifont=Monospace\ 20
