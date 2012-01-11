@@ -43,3 +43,6 @@
 [submodule "bundle/fugitive.vim"]
 	path = bundle/fugitive.vim
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pathogen.vim"]
+	path = pathogen.vim
+	url = git://github.com/tpope/vim-pathogen.git
