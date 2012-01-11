@@ -1,0 +1,45 @@
+[submodule "bundle/align.vim"]
+	path = bundle/align.vim
+	url = https://github.com/tsaleh/vim-align.git
+[submodule "bundle/matchit.vim"]
+	path = bundle/matchit.vim
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "bundle/pdc.vim"]
+	path = bundle/pdc.vim
+	url = git@github.com:raphael-proust/pdc.vim.git
+[submodule "bundle/ocaml_lwt.vim"]
+	path = bundle/ocaml_lwt.vim
+	url = git://github.com/raphael-proust/ocaml_lwt.vim.git
+[submodule "bundle/supertab.vim"]
+	path = bundle/supertab.vim
+	url = https://github.com/vim-scripts/SuperTab.git
+[submodule "bundle/conque.vim"]
+	path = bundle/conque.vim
+	url = https://github.com/rson/vim-conque.git
+[submodule "surround.vim"]
+	path = surround.vim
+	url = https://github.com/vim-scripts/surround.vim.git
+[submodule "bundle/surround.vim"]
+	path = bundle/surround.vim
+	url = https://github.com/vim-scripts/surround.vim.git
+[submodule "bundle/zoomwin.vim"]
+	path = bundle/zoomwin.vim
+	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "bundle/gundo.vim"]
+	path = bundle/gundo.vim
+	url = http://github.com/sjl/gundo.vim.git
+[submodule "fugitive.vim"]
+	path = fugitive.vim
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "threesome.vim"]
+	path = threesome.vim
+	url = https://github.com/sjl/threesome.vim.git
+[submodule "bundle/molokai.vim"]
+	path = bundle/molokai.vim
+	url = git@github.com:raphael-proust/molokai.git
+[submodule "bundle/threesome.vim"]
+	path = bundle/threesome.vim
+	url = https://github.com/sjl/threesome.vim.git
+[submodule "bundle/fugitive.vim"]
+	path = bundle/fugitive.vim
+	url = https://github.com/tpope/vim-fugitive.git
