@@ -54,7 +54,10 @@ alias la='ls -lah'
 
 alias o='less'
 
-alias pac='sudo pacman-color -Syyu'
+alias pacu='sudo pacman-color -Syyu'
+alias pacs='sudo pacman-color -Ss'
+alias paci='sudo pacman-color -S'
+
 
 #functions
 f() { find . -iname "*$1*" }
