@@ -1,11 +1,37 @@
-"I want vim, not vi
 set nocompatible
-
-" Pathogen
 filetype off
-call pathogen#infect()
-syntax on
+
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+Bundle 'gmarik/vundle'
+
+Bundle  'tsaleh/vim-align.git'
+Bundle  'edsono/vim-matchit.git'
+Bundle  'raphael-proust/ocaml_lwt.vim.git'
+Bundle  'raphael-proust/pdc.vim.git'
+Bundle  'vim-scripts/SuperTab.git'
+Bundle  'rson/vim-conque.git'
+Bundle  'vim-scripts/surround.vim.git'
+Bundle  'vim-scripts/ZoomWin.git'
+Bundle  'sjl/gundo.vim.git'
+Bundle  'tpope/vim-fugitive.git'
+Bundle  'sjl/threesome.vim.git'
+Bundle  'raphael-proust/molokai.git'
+
+
 filetype plugin indent on
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
 
 " Change leader to , (comma)
 "TODO? different leaders?
@@ -184,40 +210,3 @@ noremap q; q:
 noremap <leader>, ,
 noremap <leader>; ;
 
-" When setting things up, don't forget to install
-"
-" align         (to have nice column)
-" https://github.com/tsaleh/vim-align.git
-"
-" matchit       (jump between matching syntax construct)
-" https://github.com/edsono/vim-matchit.git
-"
-" ocaml_lwt.vim (lwt syntax extension support)
-" git://github.com/raphael-proust/ocaml_lwt.vim.git
-"
-" pdc           (pandoc files)
-" git@github.com:raphael-proust/pdc.vim.git
-"
-" supertab      (MUST HAVE: do completion with <tab>)
-" https://github.com/vim-scripts/SuperTab.git
-"
-" conque        (a shell in the editor)
-" https://github.com/rson/vim-conque.git
-"
-" surround      (add, edit, remove delimiters)
-" https://github.com/vim-scripts/surround.vim.git
-"
-" zoomwin       (extend <C-w-o> capabilities)
-" https://github.com/vim-scripts/ZoomWin.git
-"
-" gundo         (replace undo list with a graphical tree)
-" http://github.com/sjl/gundo.vim.git
-"
-" fugitive      (command git from within vim)
-" https://github.com/tpope/vim-fugitive.git
-"
-" threesome     (three way merge tool)
-" https://github.com/sjl/threesome.vim.git
-"
-" molokai       (colorscheme)
-" git@github.com:raphael-proust/molokai.git
