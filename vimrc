@@ -19,6 +19,7 @@ Bundle  'sjl/gundo.vim.git'
 Bundle  'tpope/vim-fugitive.git'
 Bundle  'sjl/threesome.vim.git'
 Bundle  'raphael-proust/molokai.git'
+Bundle  'ocamlMultiAnnot'
 
 
 filetype plugin indent on
@@ -189,9 +190,9 @@ command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
 " filetype specific options
 au FileType make set noexpandtab
-au FileType latex set formatoptions+=a
-au FileType pdc set formatoptions+=n
-au FileType ocaml_lwt :set foldlevel=9
+au FileType latex set formatoptions+=a1
+au FileType pdc set formatoptions+=an1
+au FileType ocaml_lwt set foldlevel=9
 
 "for small screens (less than (2×80+1))
 "au BufEnter * vert res 80
