@@ -1,6 +1,6 @@
 auto-reload yes
 browser "links %u"
-reload-time 45
+reload-time 60
 save-path "~/"
 download-path "~/"
 bind-key j down
@@ -13,3 +13,4 @@ bind-key P next-unread
 bind-key f toggle-show-read-feeds
 bind-key C pb-purge
 confirm-exit yes
+max-items 1000
