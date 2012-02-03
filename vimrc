@@ -1,12 +1,12 @@
 set nocompatible
-filetype off
 
+"Vundle initialisation
+filetype off
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 Bundle 'gmarik/vundle'
 
+"Loading the bundles
 Bundle  'tsaleh/vim-align.git'
 Bundle  'edsono/vim-matchit.git'
 Bundle  'raphael-proust/ocaml_lwt.vim.git'
@@ -21,17 +21,9 @@ Bundle  'sjl/threesome.vim.git'
 Bundle  'raphael-proust/molokai.git'
 Bundle  'ocamlMultiAnnot'
 
-
+"Vundle post-initialisation phase
 filetype plugin indent on
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+syntax on
 
 
 " Change leader to , (comma)
