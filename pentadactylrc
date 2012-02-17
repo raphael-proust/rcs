@@ -3,6 +3,14 @@ set runtimepath=~/.pentadactyl
 
 " vim: set ft=pentadactyl:
 
+" TODO:
+" use https://github.com/maksimr/octopus
+" use https://github.com/maksimr/spliter-penta
+" use http://dactyl.sourceforge.net/pentadactyl/plugins#fix-focus-plugin
+" use http://dactyl.sourceforge.net/pentadactyl/plugins#flashblock-plugin
+" use http://dactyl.sourceforge.net/pentadactyl/plugins#tab-options-plugin
+
+
 " use g' for previously selected tab
 map g\' <C-^>
 nmap g\' <C-^>
