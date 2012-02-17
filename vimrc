@@ -153,7 +153,9 @@ map g$ :tablast<CR>
 set colorcolumn=+1
 
 " Ignore irrelevant suffixes for filename completion
-set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.dvi,*.pdf,*.out,*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot,*.exe,*.pyc,*.class
+set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.out,*.exe,*.pyc,*.class
+set wildignore+=*.dvi,*.pdf,*.bbl,*.aux,*.bbl,*.blg
+set wildignore+=*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot
 
 " maps
 nnoremap ' `
