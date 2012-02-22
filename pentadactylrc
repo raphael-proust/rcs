@@ -57,9 +57,6 @@ noremap <C-w> <C-S-e>
 noremap <C-q> <Nop>
 noremap ZQ ZZ
 
-"Changing leader
-set mapleader=,
-
 " activation
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
 
