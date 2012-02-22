@@ -172,6 +172,7 @@ vmap <leader>ar :right<CR>
 vmap <leader>ac :center<CR>
 
 " Text Sanitization
+" Should I use tabs as advertised in: http://intellindent.info/seriously/
 command Trailing :%s/\s\+$//e
 command Tabs4 :%s/\t/    /e
 command Tabs8 :%s/\t/        /e
