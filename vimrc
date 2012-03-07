@@ -187,6 +187,7 @@ au FileType make set noexpandtab
 au FileType latex set formatoptions+=a1
 au FileType pdc set formatoptions+=an1
 au FileType ocaml_lwt set foldlevel=9
+au BufRead,BufNewFile *.v   set filetype=coq
 
 "for small screens (less than (2×80+1))
 "au BufEnter * vert res 80
