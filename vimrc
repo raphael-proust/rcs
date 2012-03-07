@@ -112,7 +112,7 @@ set title
 set termencoding=utf-8
 set encoding=utf-8
 set t_Co=256
-set bg=dark
+set background=dark
 
 "colorscheme
 colorscheme molokai
@@ -183,11 +183,11 @@ command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
 " filetype specific options
-au FileType make set noexpandtab
-au FileType latex set formatoptions+=a1
-au FileType pdc set formatoptions+=an1
-au FileType ocaml_lwt set foldlevel=9
-au BufRead,BufNewFile *.v   set filetype=coq
+autocmd FileType make set noexpandtab
+autocmd FileType latex set formatoptions+=a1
+autocmd FileType pdc set formatoptions+=an1
+autocmd FileType ocaml_lwt set foldlevel=9
+autocmd BufRead,BufNewFile *.v   set filetype=coq
 
 "for small screens (less than (2×80+1))
 "au BufEnter * vert res 80
