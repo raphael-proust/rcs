@@ -19,7 +19,6 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'sjl/threesome.vim.git'
 Bundle 'raphael-proust/molokai.git'
-Bundle 'Coq-indent'
 Bundle 'coq-syntax'
 Bundle 'ocamlMultiAnnot'
 
