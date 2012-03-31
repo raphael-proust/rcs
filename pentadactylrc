@@ -20,7 +20,7 @@ vmap g\' <C-^>
 map ! :tabopen! 
 
 "Searching: use DuckDuckGo
-"initialisation: bmark -title='DuckDuckGo' https://duckduckgo.com/?q=%s -keyword=ddg
+"bmark -title='DuckDuckGo' https://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=%s -keyword=ddg
 
 "ddg is the default
 set defsearch=ddg
