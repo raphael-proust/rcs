@@ -1,0 +1,28 @@
+#!/bin/bash
+
+. /etc/rc.conf
+. /etc/rc.d/functions
+
+case "$1" in
+
+   start)
+   echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
+   echo "OFF"  > /sys/kernel/debug/vgaswitcheroo/switch
+   ;;
+
+   stop)
+   echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
+   echo "DDIS" > /sys/kernel/debug/vgaswitcheroo/switch
+   ;;
+
+   restart)
+     stat_busy "Restarting radeon_off ..."
+     $0 stop
+     $0 start
+     stat_done
+   ;;
+
+   *)
+cat /sys/kernel/debug/vgaswitcheroo/switch
+     echo "usage: $0 {start|stop|restart}"
+esac
