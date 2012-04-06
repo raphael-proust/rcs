@@ -6,20 +6,22 @@
 case "$1" in
 
    start)
-   echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
-   echo "OFF"  > /sys/kernel/debug/vgaswitcheroo/switch
+     stat_busy "Starting radeon_gc_off ..."
+     echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
+     echo "OFF"  > /sys/kernel/debug/vgaswitcheroo/switch
+     stat_done
    ;;
 
    stop)
-   echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
-   echo "DDIS" > /sys/kernel/debug/vgaswitcheroo/switch
+     stat_busy "Stopping radeon_gc_off ..."
+     echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
+     echo "DDIS" > /sys/kernel/debug/vgaswitcheroo/switch
+     stat_done
    ;;
 
    restart)
-     stat_busy "Restarting radeon_off ..."
      $0 stop
      $0 start
-     stat_done
    ;;
 
    *)
