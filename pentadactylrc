@@ -41,21 +41,21 @@ map sm tddg !m
 map so tddg !osm 
 
 " mapping h, j, k and l to scroll faster
-noremap h 4h
-noremap j 4j
-noremap k 4k
-noremap l 4l
+map -builtin h 4h
+map -builtin j 4j
+map -builtin k 4k
+map -builtin l 4l
 
 " making ; act as :
-noremap ; :
-noremap g; ;
+map -builtin ; :
+map -builtin g; ;
 
 " TabGroup thingy
-noremap <C-w> <C-S-e>
+map -builtin <C-w> <C-S-e>
 
 " avoid accidents
-noremap <C-q> <Nop>
-noremap ZQ ZZ
+map -builtin <C-q> <Nop>
+map -builtin ZQ ZZ
 
 " activation
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
@@ -85,8 +85,8 @@ map <F1> :set hlf!<CR>
 set findcase=ignore
 
 " Copypasta
-noremap -modes=main <C-S-c> <C-v><C-c>
-noremap -modes=main <C-S-v> <C-v><C-v>
+map -builtin -modes=main <C-S-c> <C-v><C-c>
+map -builtin -modes=main <C-S-v> <C-v><C-v>
 
 " Open everything in a new tab
 set newtab=all
