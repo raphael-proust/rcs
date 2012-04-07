@@ -186,8 +186,6 @@ command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
 " filetype specific options
 autocmd FileType make set noexpandtab
-autocmd FileType latex set formatoptions+=a1
-autocmd FileType pdc set formatoptions+=an1
 autocmd FileType ocaml_lwt set foldlevel=9
 autocmd BufRead,BufNewFile *.v   set filetype=coq
 
