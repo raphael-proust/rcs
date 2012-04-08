@@ -1,2 +1,1 @@
-setxkbmap -option compose:menu
-xmodmap .xmodmap
+eval $(ssh-agent)
