@@ -2,10 +2,10 @@
 "amixer set Master toggle"
     m:0x0 + c:121
     XF86AudioMute
-"amixer set Master playback 1-"
+"amixer set Master playback 3-"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"amixer set Master playback 1+"
+"amixer set Master playback 3+"
     m:0x0 + c:123
     XF86AudioRaiseVolume
 #Wifi switch
