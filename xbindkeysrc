@@ -12,3 +12,17 @@
 "rfswitch"
     m:0x0 + c:246
     XF86WLAN
+#Media keys
+"mpc prev"
+    m:0x0 + c:173
+    XF86AudioPrev
+"mpc toggle"
+    m:0x0 + c:172
+    XF86AudioPlay
+"mpc next"
+    m:0x0 + c:171
+    XF86AudioNext
+#lock
+"slock"
+    m:0x40 + c:9
+    Mod4 + Escape
