@@ -1,4 +1,4 @@
-xbindkeys
+xbindkeys -f $HOME/.xbindkeysrc
 setxkbmap -option compose:menu
-xmodmap .xmodmap
+xmodmap $HOME/.xmodmap
 exec ck-launch-session wmii
