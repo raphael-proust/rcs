@@ -21,6 +21,7 @@ Bundle 'sjl/threesome.vim.git'
 Bundle 'raphael-proust/molokai.git'
 Bundle 'coq-syntax'
 Bundle 'ocamlMultiAnnot'
+Bundle 'taglist'
 
 "Vundle post-initialisation phase
 filetype plugin indent on
