@@ -16,11 +16,11 @@ noticetimeout=5
 noticebar=/rbar/!notice
 
 # Colors tuples: "<text> <background> <border>"
-export WMII_NORMCOLORS='#000000 #ccccff #aaaaff'
-export WMII_FOCUSCOLORS='#000000 #aaaaff #000000'
+export WMII_NORMCOLORS='#000000 #aaaaff #8888ff'
+export WMII_FOCUSCOLORS='#000000 #8888ff #000000'
 
-export WMII_BACKGROUND='#333333'
-export WMII_FONT='-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
+export WMII_BACKGROUND='#111111'
+export WMII_FONT='-*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 export WMII_TERM="st"
@@ -245,6 +245,7 @@ wmiir write /ctl <<!
 	border 1
 !
 xsetroot -solid "$WMII_BACKGROUND" &
+#feh --bg-fill /path/to/image &
 
 # Misc
 progsfile="$(wmiir namespace)/.proglist"
