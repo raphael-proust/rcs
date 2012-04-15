@@ -1,6 +1,7 @@
 echo -n ' ' \
   'Vol:' $(amixer get Master | grep "Front Left:" | sed -e "s/.*\[\([0-9]*%\)\].*\[\(.*\)\]$/\2 \1/") '|' \
   'Wlan0:' $(iwconfig wlan0 | awk '/Quality/{print $2}' | sed 's/.*=//' | awk -F"/" '{printf("%.0f%%", $1/$2*100)}') '|' \
-  $(acpi | sed 's/.*Battery .: /Bat: /g; s/Discharging/-/g; s/Charging/+/g; s/Unknown//g; s/%.*/%/g; s/, //g') '|' \
+  $(acpi -a | sed 's/Adapter .: //; s/on-line/AC: /g; s/off-line/Bat :/g;') \
+  $(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') '|' \
   $(cpufreq-info -c 0 -p | awk '{print $3}') ':' $(uptime | sed 's/.*: //; s/,//g' | awk '{print $1}') '|' \
   $(date '+%Y-%m-%d %a  %H:%M')
