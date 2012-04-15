@@ -244,8 +244,8 @@ wmiir write /ctl <<!
 	grabmod $MODKEY
 	border 1
 !
-xsetroot -solid "$WMII_BACKGROUND" &
-#feh --bg-fill /path/to/image &
+#xsetroot -solid "$WMII_BACKGROUND" &
+feh --bg-center --no-fehbg $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
 
 # Misc
 progsfile="$(wmiir namespace)/.proglist"
