@@ -26,3 +26,7 @@
 "slock"
     m:0x40 + c:9
     Mod4 + Escape
+#open xsel-ed link in firefox
+"firefox $(xsel)"
+    m:0x40 + c:32
+    Mod4 + o
