@@ -4,4 +4,5 @@ echo -n ' ' \
   $(acpi -a | sed 's/Adapter .: //; s/on-line/AC: /g; s/off-line/Bat :/g;') \
   $(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') '|' \
   $(cpufreq-info -c 0 -p | awk '{print $3}') ':' $(cpufreq-info -c 0 -f -m) '|' \
+  $(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/GPU: \1/') '|' \
   $(date '+%Y-%m-%d %a  %H:%M')
