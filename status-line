@@ -3,5 +3,5 @@ echo -n ' ' \
   'Wlan0:' $(iwconfig wlan0 | awk '/Quality/{print $2}' | sed 's/.*=//' | awk -F"/" '{printf("%.0f%%", $1/$2*100)}') '|' \
   $(acpi -a | sed 's/Adapter .: //; s/on-line/AC: /g; s/off-line/Bat :/g;') \
   $(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') '|' \
-  $(cpufreq-info -c 0 -p | awk '{print $3}') ':' $(uptime | sed 's/.*: //; s/,//g' | awk '{print $1}') '|' \
+  $(cpufreq-info -c 0 -p | awk '{print $3}') ':' $(cpufreq-info -c 0 -f -m) '|' \
   $(date '+%Y-%m-%d %a  %H:%M')
