@@ -30,3 +30,7 @@
 "firefox $(xsel)"
     m:0x40 + c:32
     Mod4 + o
+#VGA/LVDS toggling
+"togglevga.sh"
+    m:0x0 + c:235
+    XF86Display
