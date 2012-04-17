@@ -60,7 +60,7 @@ alias paci='sudo pacman-color -S'
 
 
 #functions
-f() { find . -iname "*$1*" }
+f() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
 
 md () { mkdir -p $1 && cd $1 }
 
