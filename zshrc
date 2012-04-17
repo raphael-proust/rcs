@@ -57,6 +57,7 @@ alias o='less'
 alias pacu='sudo pacman-color -Syyu'
 alias pacs='sudo pacman-color -Ss'
 alias paci='sudo pacman-color -S'
+alias pacr='sudo pacman-color -R'
 
 
 #functions
