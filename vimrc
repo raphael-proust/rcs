@@ -59,13 +59,13 @@ set diffopt=filler,vertical,context:5
 nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
 
 "Tabs, indent and the such
-set smarttab
-set expandtab
+set noexpandtab
+set softtabstop=2
 set shiftwidth=2
-set tabstop=4
-set autoindent
+set tabstop=2
 set copyindent
-set shiftround
+set preserveindent
+
 
 "Moving around
 set backspace=indent,start
@@ -174,7 +174,6 @@ vmap <leader>ar :right<CR>
 vmap <leader>ac :center<CR>
 
 " Text Sanitization
-" Should I use tabs as advertised in: http://intellindent.info/seriously/
 command Trailing :%s/\s\+$//e
 command Tabs4 :%s/\t/    /e
 command Tabs8 :%s/\t/        /e
