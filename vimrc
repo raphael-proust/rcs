@@ -22,6 +22,7 @@ Bundle 'raphael-proust/molokai.git'
 Bundle 'coq-syntax'
 Bundle 'ocamlMultiAnnot'
 Bundle 'taglist'
+Bundle 'scrooloose/nerdtree'
 
 "Vundle post-initialisation phase
 filetype plugin indent on
@@ -175,9 +176,11 @@ vmap <leader>ac :center<CR>
 
 " Text Sanitization
 command Trailing :%s/\s\+$//e
-command Tabs4 :%s/\t/    /e
-command Tabs8 :%s/\t/        /e
+command SubsTabs4 :%s/\t/    /e
+command SubsTabs8 :%s/\t/        /e
+command -nargs=1 Tabs :set sts=<args> sw=<args> ts=<args>
 command Nbsp :%s/\%d160//e
+command Textsc :%s/\(\<\u\+\>\)/\\textsc{\L\1\E}/c
 
 " Spelling
 command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
