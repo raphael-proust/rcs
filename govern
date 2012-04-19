@@ -1,0 +1,20 @@
+#!/bin/bash
+
+case "$1" in
+
+  ondemand)
+    cpufreq-set -r -g ondemand
+    ;;
+
+  powersave)
+    cpufreq-set -r -g powersave
+    ;;
+
+  performance)
+    cpufreq-set -r -g performance
+    ;;
+
+  *)
+    echo "usage: $0 {ondemand|powersave|performance}"
+esac
+exit 0
