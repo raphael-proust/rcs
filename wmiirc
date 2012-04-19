@@ -245,7 +245,7 @@ wmiir write /ctl <<!
 	border 1
 !
 #xsetroot -solid "$WMII_BACKGROUND" &
-feh --bg-center --no-fehbg $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
+$HOME/bin/set_bg.sh &
 
 #hide mouse when inactive
 #This makes things awkward
