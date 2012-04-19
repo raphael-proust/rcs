@@ -187,6 +187,11 @@ command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
 command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
+"Surround additional characters
+let g:surround_171="« \r »"
+let g:surround_8249="‹ \r ›"
+"French typographic rules impose non-breakable space
+
 " filetype specific options
 autocmd FileType make set noexpandtab
 autocmd FileType ocaml_lwt set foldlevel=9
