@@ -1,0 +1,2 @@
+#!/bin/sh
+exec nohup startx 2>&1 > .xlog & vlock
