@@ -152,6 +152,9 @@ nnoremap <F5> :ls<CR>
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
 
+"NERDTree invocation
+nnoremap <F6> :NERDTreeToggle<CR>
+
 " Highlights long lines
 set colorcolumn=+1
 
@@ -206,11 +209,6 @@ command Sudow :w !sudo tee %
 "Status line with a little more information
 set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
 
-" setting ; as :
-noremap ; :
-noremap q; q:
+" setting ; as : (obsolete because of xmodmap and betterus map)
 
-"making mapped command availables
-noremap <leader>, ,
-noremap <leader>; ;
 
