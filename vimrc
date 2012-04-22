@@ -114,7 +114,6 @@ set undodir=$HOME/.vim/undofiles
 set title
 set termencoding=utf-8
 set encoding=utf-8
-set t_Co=256
 set background=dark
 
 "colorscheme
