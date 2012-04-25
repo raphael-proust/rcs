@@ -18,16 +18,16 @@ bindkey -v
 
 #vi-like-ish Up and Down arrows
 history-beginning-search-forward-and-vicmd() {
-  zle vi-cmd-mode
-  zle forward-char
-  zle history-beginning-search-forward
+	zle vi-cmd-mode
+	zle forward-char
+	zle history-beginning-search-forward
 }
 zle -N history-beginning-search-forward-and-vicmd
 
 history-beginning-search-backward-and-vicmd() {
-  zle vi-cmd-mode
-  zle forward-char
-  zle history-beginning-search-backward
+	zle vi-cmd-mode
+	zle forward-char
+	zle history-beginning-search-backward
 }
 zle -N history-beginning-search-backward-and-vicmd
 
@@ -74,18 +74,18 @@ flag.io () {
 
 #automatic function to change title of terminal
 chpwd () {
-   [[ -t 1 ]] || return
-    case $TERM in
-      st*|*xterm*|rxvt) print -Pn "\e]2;%~\a"
-        ;;
-    esac
+	[[ -t 1 ]] || return
+		case $TERM in
+			st*|*xterm*|rxvt) print -Pn "\e]2;%~\a"
+		;;
+		esac
 }
 
 
 #PS
 export PS1="$(print '%{\e[1;32m%}%n %{\e[1;34m%}%~ \$ %{\e[0m%}')"
 if [ "x$SSH_CONNECTION" != "x" ]; then
-  export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
+	export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
 fi
 
 #exports
