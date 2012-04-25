@@ -202,6 +202,7 @@ autocmd FileType ocaml_lwt set foldlevel=9
 autocmd BufRead,BufNewFile *.v   set filetype=coq
 "mlton files
 autocmd BufRead,BufNewFile *.fun   set filetype=sml
+autocmd BufRead,BufNewFile *.sig   set filetype=sml
 
 "for small screens (less than (2×80+1), greater than (80+1+1))
 "au BufEnter * vert res 80
