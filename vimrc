@@ -147,12 +147,11 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-nnoremap <F5> :ls<CR>
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
 
 "NERDTree invocation
-nnoremap <F6> :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
 
 " Highlights long lines
 set colorcolumn=+1
@@ -188,6 +187,8 @@ command Textsc :%s/\(\<\u\+\>\)/\\textsc{\L\1\E}/c
 command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
 command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
+
+command -range=% Vpaste :exec "<line1>,<line2>w !vpaste ft=".&ft
 
 "Surround additional characters
 let g:surround_171="« \r »"
