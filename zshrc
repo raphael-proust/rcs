@@ -67,6 +67,11 @@ md () { mkdir -p $1 && cd $1 }
 
 kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 
+flag.io () {
+	[[ -n $1 ]] || return
+	curl -s -T $1 flag.io | grep -v "^#"
+}
+
 #automatic function to change title of terminal
 chpwd () {
    [[ -t 1 ]] || return
