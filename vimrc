@@ -34,7 +34,6 @@ syntax on
 let g:showmarks_textlower="'\t"
 let g:showmarks_textupper="'\t"
 let g:showmarks_textother="'\t"
-let g:showmarks_hlline_upper=1
 let g:showmarks_ignore_type="hqmp"
 
 "updatetime influences CursorHold events
