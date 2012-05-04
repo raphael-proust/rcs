@@ -48,7 +48,6 @@ alias ...='cd ../..'
 
 alias ls='ls --color=auto'
 alias l='ls -alhF'
-alias ld="ls -l | grep ^d"
 alias ll='ls -lh'
 alias la='ls -lah'
 
