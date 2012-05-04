@@ -23,7 +23,6 @@ Bundle 'coq-syntax'
 Bundle 'ocamlMultiAnnot'
 Bundle 'taglist'
 Bundle 'scrooloose/nerdtree'
-Bundle 'SearchComplete'
 Bundle 'ShowMarks7'
 
 "Vundle post-initialisation phase
@@ -70,12 +69,13 @@ set diffopt=filler,vertical,context:5
 nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
 
 "Tabs, indent and the such
-set noexpandtab
+set smarttab
+set expandtab
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set copyindent
-set preserveindent
+set noshiftround
 
 
 "Moving around
@@ -187,6 +187,7 @@ vmap <leader>ac :center<CR>
 
 " Text Sanitization
 command Trailing :%s/\s\+$//e
+command SubsTabs2 :%s/\t/  /e
 command SubsTabs4 :%s/\t/    /e
 command SubsTabs8 :%s/\t/        /e
 command -nargs=1 Tabs :set sts=<args> sw=<args> ts=<args>
