@@ -1,4 +1,9 @@
+#!/bin/sh
+
 xbindkeys -f $HOME/.xbindkeysrc
 setxkbmap -option compose:menu
+setxkbmap -option compose:prsc
 xmodmap $HOME/.xmodmap
-exec ck-launch-session wmii
+
+wm_bin="$1"
+exec ${wm_bin}
