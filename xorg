@@ -1,2 +1,3 @@
 #!/bin/sh
-exec nohup startx 2>&1 > .xlog & vlock
+client="$HOME/.xinitrc wmii"
+exec nohup startx $client 2>&1 > .xlog & vlock
