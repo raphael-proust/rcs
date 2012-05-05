@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $(rfkill list wifi | grep "Soft blocked: yes" | wc -l) -eq 1 ]
+then
+  echo "going on" >$HOME/.rfdebug
+  sudo rfkill unblock wifi
+else
+  echo "going off" >$HOME/.rfdebug
+  sudo rfkill block wifi
+fi

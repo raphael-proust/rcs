@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ $(rfkill list wifi | grep "Soft blocked: yes" | wc -l) -eq 1 ] ; then
-  sudo rfkill unblock wifi
-else
-  sudo rfkill block wifi
-fi
