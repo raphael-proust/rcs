@@ -7,40 +7,71 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "Loading the bundles
+
 Bundle 'tsaleh/vim-align.git'
+autocmd BufRead,BufNewFile * AlignCtrl rl:
+
 Bundle 'edsono/vim-matchit.git'
+
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
-Bundle 'raphael-proust/pdc.vim.git'
-Bundle 'vim-scripts/SuperTab.git'
-Bundle 'rson/vim-conque.git'
-Bundle 'vim-scripts/surround.vim.git'
-Bundle 'vim-scripts/ZoomWin.git'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'sjl/threesome.vim.git'
-Bundle 'raphael-proust/molokai.git'
-Bundle 'coq-syntax'
 Bundle 'ocamlMultiAnnot'
+autocmd FileType ocaml_lwt set foldlevel=9
+
+Bundle 'raphael-proust/pdc.vim.git'
+
+Bundle 'vim-scripts/SuperTab.git'
+
+Bundle 'rson/vim-conque.git'
+let g:ConqueTerm_CWInsert = 1
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_Color = 0
+
+Bundle 'vim-scripts/surround.vim.git'
+"French typographic rules impose non-breakable space
+let g:surround_171="« \r »"
+let g:surround_8249="‹ \r ›"
+
+Bundle 'vim-scripts/ZoomWin.git'
+
+Bundle 'sjl/gundo.vim.git'
+nnoremap <F3> :GundoToggle<CR>
+
+Bundle 'tpope/vim-fugitive.git'
+
+Bundle 'sjl/threesome.vim.git'
+let g:threesome_initial_mode = "grid"
+let g:threesome_initial_layout_grid = 1
+let g:threesome_initial_diff_grid = 1
+let g:threesome_initial_scrollbind_grid = 1
+
+Bundle 'raphael-proust/molokai.git'
+colorscheme molokai
+
+Bundle 'coq-syntax'
+autocmd BufRead,BufNewFile *.v   set filetype=coq
+
 Bundle 'taglist'
+
 Bundle 'scrooloose/nerdtree'
+nnoremap <F5> :NERDTreeToggle<CR>
+
 Bundle 'ShowMarks7'
-
-"Vundle post-initialisation phase
-filetype plugin indent on
-syntax on
-
-"ShowMarks7 configuration
 let g:showmarks_enable=0
 let g:showmarks_textlower="'\t"
 let g:showmarks_textupper="'\t"
 let g:showmarks_textother="'\t"
 let g:showmarks_ignore_type="hqmp"
 
+
+"Vundle post-initialisation phase
+filetype plugin indent on
+syntax on
+
 "updatetime influences CursorHold events
 set updatetime=2000
 
 " Change leader to , (comma)
-"TODO? different leaders?
+"TODO: different leaders
 let maplocalleader=","
 let mapleader=","
 
@@ -48,28 +79,11 @@ let mapleader=","
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor= "latex"
 
-"conq plugin
-let g:ConqueTerm_CWInsert = 1
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_Color = 0
-
-"backups plugin
-let g:backup_purge=32
-
-"gundo plugin
-nnoremap <F3> :GundoToggle<CR>
-
-"threesome plugin
-let g:threesome_initial_mode = "grid"
-let g:threesome_initial_layout_grid = 1
-let g:threesome_initial_diff_grid = 1
-let g:threesome_initial_scrollbind_grid = 1
-
 "Better diffs (with switchable whitespace ignoring)
 set diffopt=filler,vertical,context:5
 nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
 
-"Tabs, indent and the such
+"Tabs (the absence of), indent and the such
 set smarttab
 set expandtab
 set softtabstop=2
@@ -77,7 +91,6 @@ set shiftwidth=2
 set tabstop=2
 set copyindent
 set noshiftround
-
 
 "Moving around
 set backspace=indent,start
@@ -125,10 +138,6 @@ set undodir=$HOME/.vim/undofiles
 set title
 set termencoding=utf-8
 set encoding=utf-8
-set background=dark
-
-"colorscheme
-colorscheme molokai
 
 "Beautiful additional chars
 set list
@@ -161,9 +170,6 @@ map <C-l> <C-w>l
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
 
-"NERDTree invocation
-nnoremap <F5> :NERDTreeToggle<CR>
-
 " Highlights long lines
 set colorcolumn=+1
 
@@ -172,7 +178,7 @@ set wildignore+=*.a,*.bak,*~,*.swp,*.o,*.info,*.out,*.exe,*.pyc,*.class
 set wildignore+=*.dvi,*.pdf,*.bbl,*.aux,*.bbl,*.blg
 set wildignore+=*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot
 
-" maps
+" various maps
 nnoremap ' `
 nnoremap ` '
 map <leader>cd :cd %:p:h<CR>
@@ -202,16 +208,8 @@ command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 
 command -range=% Vpaste :exec "<line1>,<line2>w !vpaste ft=".&ft
 
-"Surround additional characters
-let g:surround_171="« \r »"
-let g:surround_8249="‹ \r ›"
-"French typographic rules impose non-breakable space
-
 " filetype specific options
 autocmd FileType make set noexpandtab
-autocmd FileType ocaml_lwt set foldlevel=9
-"coq files (I don't use verilog anyway)
-autocmd BufRead,BufNewFile *.v   set filetype=coq
 "mlton files
 autocmd BufRead,BufNewFile *.fun   set filetype=sml
 autocmd BufRead,BufNewFile *.sig   set filetype=sml
@@ -224,7 +222,3 @@ command Sudow :w !sudo tee %
 
 "Status line with a little more information
 set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
-
-" setting ; as : (obsolete because of xmodmap and betterus map)
-
-
