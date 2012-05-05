@@ -1,0 +1,11 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+tmpfs		/tmp	tmpfs	nodev,nosuid	0	0
+/dev/sda1 /boot ext2 defaults 0 1
+/dev/sda2 / ext4 defaults 0 1
+/dev/mapper/VolGroup0-lvolhome /home ext4 defaults 0 1
+/dev/mapper/VolGroup0-lvolmusic /music ext4 defaults 0 1
+/dev/mapper/VolGroup0-lvoldevel /vms ext2 defaults 0 1
+debugfs /sys/kernel/debug debugfs defaults 0 0
