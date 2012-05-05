@@ -30,6 +30,7 @@
 Cmnd_Alias	ADMIN = /usr/bin/pacman, /usr/bin/pacman-color, /usr/sbin/rc.d
 Cmnd_Alias	POWER = /sbin/halt, /sbin/reboot, /sbin/shutdown
 Cmnd_Alias	META = /usr/sbin/visudo, /bin/su
+Cmnd_Alias	NETWORK = /usr/bin/netcfg, /sbin/ifconfig, /usr/sbin/iwlist,/usr/sbin/iwconfig, /sbin/dhcpcd, /usr/sbin/rfkill
 
 ##
 ## Defaults specification
@@ -77,6 +78,7 @@ root ALL=(ALL) ALL
 <insert_user_name_here> ALL=(ALL) NOPASSWD: META
 <insert_user_name_here> ALL=(ALL) NOPASSWD: ADMIN
 <insert_user_name_here> ALL=(ALL) NOPASSWD: POWER
+<insert_user_name_here> ALL=(ALL) NOPASSWD: NETWORK
 
 ## Uncomment to allow members of group wheel to execute any command
 # %wheel ALL=(ALL) ALL
