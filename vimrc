@@ -30,6 +30,7 @@ filetype plugin indent on
 syntax on
 
 "ShowMarks7 configuration
+let g:showmarks_enable=0
 let g:showmarks_textlower="'\t"
 let g:showmarks_textupper="'\t"
 let g:showmarks_textother="'\t"
