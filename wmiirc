@@ -207,6 +207,9 @@ Key $MODKEY-p      # Open program menu
 Key $MODKEY-Return # Launch a terminal
 	eval wmiir setsid $WMII_TERM &
 
+Key $MODKEY-g # Launch a terminal
+	eval wmiir setsid gvim &
+
 KeyGroup Other
 Key $MODKEY-Control-t # Toggle all other key bindings
 	case $(wmiir read /keys | wc -l | tr -d ' \t\n') in
