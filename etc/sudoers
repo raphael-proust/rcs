@@ -79,6 +79,7 @@ root ALL=(ALL) ALL
 <insert_user_name_here> ALL=(ALL) NOPASSWD: ADMIN
 <insert_user_name_here> ALL=(ALL) NOPASSWD: POWER
 <insert_user_name_here> ALL=(ALL) NOPASSWD: NETWORK
+<insert_user_name_here> ALL=(ALL) NOPASSWD: STORE
 
 ## Uncomment to allow members of group wheel to execute any command
 # %wheel ALL=(ALL) ALL
