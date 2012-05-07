@@ -78,6 +78,7 @@ m4
 make
 man-db
 man-pages
+mcabber
 mdadm
 mercurial
 mlocate
@@ -108,7 +109,7 @@ pkg-config
 pkgtools
 pm-utils
 ppp
-procps
+procps-ng
 profont
 psmisc
 reiserfsprogs
