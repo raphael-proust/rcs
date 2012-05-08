@@ -108,10 +108,12 @@ perl
 pkg-config
 pkgtools
 pm-utils
+powertop
 ppp
 procps-ng
 profont
 psmisc
+racket
 reiserfsprogs
 rfkill
 rlwrap
