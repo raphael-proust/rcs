@@ -1,0 +1,43 @@
+%Raphaël Proust
+%
+%
+
+##Status
+
+I am an intern at the [Gallium team](http://gallium.inria.fr/) at
+[INRIA](http://www.inria.fr). I am working on intermediate representations for
+compilers (especially functionnal ones such as CPS and ANF) under supervision by
+[Xavier Leroy](http://gallium.inria.fr/~xleroy/).
+
+I am a student at the [ÉNS Cachan](http://www.ens-cachan.fr/version-anglaise/)
+(more specifically at its [Brittany
+extension](http://www.ens-cachan.fr/version-anglaise/)) in Computer Science.
+
+--------------------------------------------------------------------------------
+
+##Past
+
+I have been an intern at the [Computer Laboratory](http://www.cl.cam.ac.uk/) of
+the [University of Cambridge](http://www.cam.ac.uk/). The internship featured
+different aspects of the [Mirage](http://openmirage.org) project (notably the
+use of linear types for efficiency and functionnal reactive programming for
+dynamic reconfiguration) and was supervised by [Anil
+Madhavapeddy](http://anil.recoil.org/) and hosted by [Jon
+Crowcroft](http://www.cl.cam.ac.uk/~jac22/)
+
+I have been a student at [Paris 7 Denis Diderot]() University in both Computer
+Science and Mathematics.
+
+
+--------------------------------------------------------------------------------
+
+##Misc
+
+Projects I have contributed to: [Ocsigen](http://ocsigen.org),
+[Mirage](http://openmirage.org).
+
+Software repository: [github](http://github.com/raphael-proust/).
+
+I can be sent emails to at raphlalou at gmail.
+
+<!-- :!pandoc --standalone -o %:r.html % -->
