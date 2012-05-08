@@ -63,6 +63,8 @@ let g:showmarks_textother="'\t"
 let g:showmarks_ignore_type="hqmp"
 
 
+Bundle 'wlangstroth/vim-racket.git'
+
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax on
