@@ -1,6 +1,12 @@
 [user]
-	name = Raphaël Proust
-	email = raphlalou@gmail.com
+  name = Raphaël Proust
+  email = raphlalou@gmail.com
+
+[diff]
+  tool = fugitive
+
+[difftool "fugitive"]
+  cmd = "vim -f $REMOTE -c 'Gdiff'"
 
 [merge]
   tool = threesome
