@@ -3,15 +3,15 @@
 case "$1" in
 
   ondemand)
-    cpufreq-set -r -g ondemand
+    sudo cpufreq-set -r -g ondemand
     ;;
 
   powersave)
-    cpufreq-set -r -g powersave
+    sudo cpufreq-set -r -g powersave
     ;;
 
   performance)
-    cpufreq-set -r -g performance
+    sudo cpufreq-set -r -g performance
     ;;
 
   *)
