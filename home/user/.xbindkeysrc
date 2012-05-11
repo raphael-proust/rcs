@@ -2,26 +2,47 @@
 "amixer set Master toggle"
     m:0x0 + c:121
     XF86AudioMute
+"amixer set Master toggle"
+    m:0x40 + c:67
+    Mod4 + F1
 "amixer set Master playback 3-"
     m:0x0 + c:122
     XF86AudioLowerVolume
+"amixer set Master playback 3-"
+    m:0x40 + c:68
+    Mod4 + F2
 "amixer set Master playback 3+"
     m:0x0 + c:123
     XF86AudioRaiseVolume
+"amixer set Master playback 3+"
+    m:0x40 + c:69
+    Mod4 + F3
 #Wifi switch
 "rfswitch"
     m:0x0 + c:246
     XF86WLAN
+"rfswitch"
+    m:0x40 + c:75
+    Mod4 + F9
 #Media keys
 "mpc prev"
     m:0x0 + c:173
     XF86AudioPrev
+"mpc prev"
+    m:0x40 + c:76
+    Mod4 + F10
 "mpc toggle"
     m:0x0 + c:172
     XF86AudioPlay
+"mpc toggle"
+    m:0x40 + c:95
+    Mod4 + F11
 "mpc next"
     m:0x0 + c:171
     XF86AudioNext
+"mpc next"
+    m:0x40 + c:96
+    Mod4 + F12
 #lock
 "slock"
     m:0x40 + c:9
@@ -30,11 +51,17 @@
 "firefox $(xsel)"
     m:0x40 + c:32
     Mod4 + o
-#VGA/LVDS toggling
-"togglevga.sh"
+#LVDS/HDMI/VGA switching
+"switch-monitor.sh"
     m:0x0 + c:235
     XF86Display
+"switch-monitor.sh"
+    m:0x40 + c:72
+    Mod4 + F6
 #Touchpad toggling
 "toggletouchpad.sh"
     m:0x0 + c:220
     XF86WebCam
+"toggletouchpad.sh"
+    m:0x40 + c:71
+    Mod4 + F5
