@@ -13,8 +13,9 @@ activeOutput=$(echo "$xStatus" | grep -e " connected [^(]" | sed "s/\([A-Z0-9]\+
 connected=$(echo $connectedOutputs | wc -w)
 
 # initialize variables
-execute="xrandr "
-default="xrandr "
+prefix="xrandr "
+execute=""
+default=""
 i=1
 switch=0
 
@@ -26,7 +27,7 @@ do
   then
     default=$default"--output $display --auto "
   else
-    default=$default"--output $display --off "
+    default="--output $display --off "$default
   fi
 
   # build "switching" configuration
@@ -35,7 +36,7 @@ do
     execute=$execute"--output $display --auto "
     switch=0
   else
-    execute=$execute"--output $display --off "
+    execute="--output $display --off "$execute
   fi
 
   # check whether the next output should be switched on
@@ -48,14 +49,19 @@ do
 
 done
 
+default=$prefix$default
+execute=$prefix$execute
+
 # check if the default setup needs to be executed then run it
 echo "Resulting Configuration:"
 if [ -z "$(echo $execute | grep "auto")" ]
 then
   echo "Command: $default"
   `$default`
+  set_bg.sh
 else
   echo "Command: $execute"
   `$execute`
+  set_bg.sh
 fi
 echo -e "\n$(xrandr)"
