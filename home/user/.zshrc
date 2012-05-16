@@ -93,4 +93,4 @@ fi
 export EDITOR=vim
 export SHELL=zsh
 
-export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
+export PATH=$HOME/bin:$HOME/.cabal/bin:/sbin:/usr/sbin:$PATH
