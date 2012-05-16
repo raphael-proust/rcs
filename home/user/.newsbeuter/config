@@ -14,3 +14,4 @@ bind-key f toggle-show-read-feeds
 bind-key C pb-purge
 confirm-exit yes
 max-items 1000
+reload-threads 10
