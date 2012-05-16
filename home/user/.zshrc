@@ -58,6 +58,7 @@ alias pacs='sudo pacman-color -Ss'
 alias paci='sudo pacman-color -S'
 alias pacr='sudo pacman-color -R'
 
+export RLWRAP_EDITOR='vim +%L +"sil! call cursor(0, %C)"'
 
 #functions
 f() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
