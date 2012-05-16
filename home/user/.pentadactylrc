@@ -55,6 +55,9 @@ map -builtin <C-w> <C-S-e>
 map -builtin <C-q> <Nop>
 map -builtin ZQ ZZ
 
+map -builtin <C-h> H
+map -builtin <C-l> L
+
 " activation
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
 
