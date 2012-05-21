@@ -94,3 +94,6 @@ export EDITOR=vim
 export SHELL=zsh
 
 export PATH=$HOME/bin:$HOME/.cabal/bin:/sbin:/usr/sbin:$PATH
+
+export PLAN9=/opt/plan9
+export PATH=$PATH:$PLAN9/bin
