@@ -1,6 +1,9 @@
 set nocompatible
 
 "Vundle initialisation
+if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
+  !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
 filetype off
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
