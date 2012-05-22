@@ -54,6 +54,7 @@ map -builtin <C-w> <C-S-e>
 " avoid accidents
 map -builtin <C-q> <Nop>
 map -builtin ZQ ZZ
+map -builtin <MiddleMouse> P
 
 map -builtin <C-h> H
 map -builtin <C-l> L
