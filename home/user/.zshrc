@@ -93,7 +93,10 @@ fi
 export EDITOR=vim
 export SHELL=zsh
 
-export PATH=$HOME/bin:$HOME/.cabal/bin:/sbin:/usr/sbin:$PATH
+export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
 
-export PLAN9=/opt/plan9
-export PATH=$PATH:$PLAN9/bin
+#gem install cheat
+export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
+
+#cabal install darcs
+export PATH=$PATH:$HOME/.cabal/bin
