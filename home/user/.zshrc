@@ -49,7 +49,8 @@ alias ...='cd ../..'
 alias ls='ls --color=auto'
 alias l='ls -alhF'
 alias ll='ls -lh'
-alias la='ls -lah'
+alias la='ls -a'
+alias lla='ls -lah'
 
 alias o='less'
 
