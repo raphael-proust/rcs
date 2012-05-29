@@ -1,0 +1,11 @@
+$include /etc/inputrc
+set editing-mode vi
+$if mode=vi
+set keymap vi-command
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+# these are for vi-insert mode
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+$endif
+

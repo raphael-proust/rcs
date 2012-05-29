@@ -1,3 +1,4 @@
+9base
 acpi
 acpid
 alsa-tools
@@ -113,6 +114,7 @@ ppp
 procps-ng
 profont
 psmisc
+pv
 racket
 reiserfsprogs
 rfkill
@@ -173,6 +175,7 @@ virtualbox
 vlc
 vlock
 w3m
+wesnoth
 wget
 which
 wireless_tools
