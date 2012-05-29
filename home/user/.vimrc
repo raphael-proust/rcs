@@ -216,6 +216,9 @@ autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile *.fun   set filetype=sml
 autocmd BufRead,BufNewFile *.sig   set filetype=sml
 
+"llvm bitcode files
+autocmd BufRead,BufNewFile *.ll    set filetype=llvm
+
 "for small screens (less than (2×80+1), greater than (80+1+1))
 "au BufEnter * vert res 80
 
