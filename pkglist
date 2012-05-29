@@ -15,8 +15,6 @@ bridge-utils
 bzip2
 ca-certificates
 chromium
-clang
-clang-analyzer
 consolekit
 coreutils
 cpufrequtils
@@ -73,8 +71,6 @@ libpng12
 libtool
 licenses
 linux
-llvm
-llvm-ocaml
 lm_sensors
 logrotate
 lsof
