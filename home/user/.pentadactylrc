@@ -46,8 +46,6 @@ map -builtin j 4j
 map -builtin k 4k
 map -builtin l 4l
 
-" making ; act as : (obsolete)
-
 " TabGroup thingy
 map -builtin <C-w> <C-S-e>
 
