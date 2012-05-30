@@ -69,6 +69,10 @@ laptop-mode-tools
 less
 lesspipe
 lftp
+lib32-glibc
+lib32-libgl
+lib32-libstdc++5
+lib32-sdl
 libpipeline
 libpng12
 libtool
