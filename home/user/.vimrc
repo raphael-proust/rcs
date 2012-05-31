@@ -152,7 +152,7 @@ set list
 set listchars=tab:▶┉,trail:◇,extends:▷,precedes:◁,nbsp:—
 set showbreak=››
 set fillchars-=vert:\|
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 set fillchars-=fold:-
 set fillchars+=fold:—
 set fillchars-=diff:-
@@ -201,20 +201,21 @@ vmap <leader>ar :right<CR>
 vmap <leader>ac :center<CR>
 
 " Text Sanitization
-function! StripWhitespace ()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :%s/\s\+$//e
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
+function! StripWhitespace () range
+  let l:cursor = getpos(".")
+  let l:query = getreg('/')
+  let regmode = getregtype('/')
+  execute a:firstline . ',' . a:lastline . 's/\s\+$//e'
+  call setpos('.', l:cursor)
+  call setreg('/', l:query, l:regmode)
 endfunction
-command Trailing :call StripWhitespace ()<CR>
-command SubsTabs2 :%s/\t/  /e
-command SubsTabs4 :%s/\t/    /e
-command SubsTabs8 :%s/\t/        /e
+command -range=% Trailing :<line1>,<line2>call StripWhitespace()<CR>
+command -range=% SubsTabs2 :<line1>,<line2>s/\t/  /e
+command -range=% SubsTabs4 :<line1>,<line2>s/\t/    /e
+command -range=% SubsTabs8 :<line1>,<line2>s/\t/        /e
 command -nargs=1 Tabs :set sts=<args> sw=<args> ts=<args>
-command Nbsp :%s/\%d160//e
-command Textsc :%s/\(\<\u\+\>\)/\\textsc{\L\1\E}/c
+command -range=% Nbsp :<line1>,<line2>s/\%d160//e
+command -range=% Textsc :<line1>,<line2>s/\(\<\u\+\>\)/\\textsc{\L\1\E}/ce
 
 " Spelling
 command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
