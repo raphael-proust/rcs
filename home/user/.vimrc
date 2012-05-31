@@ -41,11 +41,11 @@ nnoremap <F3> :GundoToggle<CR>
 
 Bundle 'tpope/vim-fugitive.git'
 
-Bundle 'sjl/threesome.vim.git'
-let g:threesome_initial_mode = "grid"
-let g:threesome_initial_layout_grid = 1
-let g:threesome_initial_diff_grid = 1
-let g:threesome_initial_scrollbind_grid = 1
+Bundle 'sjl/splice.vim.git'
+let g:splice_initial_mode = "grid"
+let g:splice_initial_layout_grid = 1
+let g:splice_initial_diff_grid = 1
+let g:splice_initial_scrollbind_grid = 1
 
 Bundle 'raphael-proust/molokai.git'
 colorscheme molokai
