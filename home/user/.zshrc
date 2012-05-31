@@ -93,6 +93,7 @@ fi
 #exports
 export EDITOR=vim
 export SHELL=zsh
+export LESS="-R"
 
 export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
 
