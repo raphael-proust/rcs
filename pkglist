@@ -9,7 +9,7 @@ autoconf
 automake
 bash
 bdf-unifont
-binutils
+binutils-multilib
 bison
 bridge-utils
 bzip2
@@ -43,8 +43,8 @@ flashplugin
 flex
 freetalk
 gawk
-gcc
-gcc-libs
+gcc-libs-multilib
+gcc-multilib
 gdb
 gettext
 ghostscript
@@ -69,13 +69,19 @@ laptop-mode-tools
 less
 lesspipe
 lftp
+lib32-alsa-lib
+lib32-freetype2
 lib32-glibc
 lib32-libgl
 lib32-libstdc++5
+lib32-libvorbis
+lib32-ncurses
+lib32-openal
 lib32-sdl
+lib32-zlib
 libpipeline
 libpng12
-libtool
+libtool-multilib
 licenses
 linux
 lm_sensors
@@ -134,6 +140,7 @@ sdl_image
 sdl_mixer
 sed
 shadow
+slang
 slock
 sshfs
 strace
@@ -142,6 +149,7 @@ sudo
 surf
 sysfsutils
 syslog-ng
+systemd-tools
 sysvinit
 tamsyn-font
 tar
@@ -168,7 +176,6 @@ ttf-hannom
 ttf-liberation
 ttf-linux-libertine
 ttf-sazanami
-udev
 uml_utilities
 unclutter
 unison
@@ -281,5 +288,6 @@ xorg-xwininfo
 xorg-xwud
 xsel
 yaourt
+zenity
 zip
 zsh
