@@ -3,14 +3,14 @@
 ############################
 
 # Set CDM theme and dialog options
-theme=cdm
+theme=default
 countfrom=1
 
 # List all WM binary names
 wmbinlist=(wmii)
 
 # List all WM display names
-wmdisplist=(WMII)
+wmdisplist=(wmii)
 
 # Allow console login?
 allowconsole=yes
