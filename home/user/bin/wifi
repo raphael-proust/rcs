@@ -1,4 +1,17 @@
 #!/bin/sh
 
-sudo rfkill unblock wifi
-sudo netcfg $*
+case "$1" in
+  off)
+    sudo rfkill block wifi
+    ;;
+
+  r)
+    sudo netcfg reconnect $(sudo netcfg current)
+    ;;
+
+  *)
+    sudo rfkill unblock wifi
+    sudo netcfg $*
+    ;;
+esac
+exit 0
