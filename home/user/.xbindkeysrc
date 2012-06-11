@@ -65,3 +65,6 @@
 "toggletouchpad.sh"
     m:0x40 + c:71
     Mod4 + F5
+"surf http://duckduckgo.com"
+    m:0x40 + c:42
+    Mod4 + g
