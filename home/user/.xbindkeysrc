@@ -51,6 +51,10 @@
 "surf $(xsel)"
     m:0x40 + c:32
     Mod4 + o
+#Start duckduckgo in surf
+"surf http://duckduckgo.com"
+    m:0x40 + c:42
+    Mod4 + g
 #LVDS/HDMI/VGA switching
 "switch-monitor.sh"
     m:0x0 + c:235
@@ -65,6 +69,3 @@
 "toggletouchpad.sh"
     m:0x40 + c:71
     Mod4 + F5
-"surf http://duckduckgo.com"
-    m:0x40 + c:42
-    Mod4 + g
