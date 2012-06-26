@@ -7,10 +7,10 @@ theme=default
 countfrom=1
 
 # List all WM binary names
-wmbinlist=(wmii dwm)
+wmbinlist=(dwm wmii)
 
 # List all WM display names
-wmdisplist=(wmii dwm)
+wmdisplist=(dwm wmii)
 
 # Allow console login?
 allowconsole=yes
