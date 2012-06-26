@@ -89,16 +89,3 @@ export PS1="$(print '%{\e[1;32m%}%n %{\e[1;34m%}%~ \$ %{\e[0m%}')"
 if [ "x$SSH_CONNECTION" != "x" ]; then
 	export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
 fi
-
-#exports
-export EDITOR=vim
-export SHELL=zsh
-export LESS="-R"
-
-export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
-
-#gem install cheat
-export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
-
-#cabal install darcs
-export PATH=$PATH:$HOME/.cabal/bin
