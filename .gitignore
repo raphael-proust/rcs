@@ -1,1 +1,4 @@
 home/user/public_html/index.html
+home/user/pkgs/*/src
+home/user/pkgs/*/pkg
+home/user/pkgs/*/*.tar.xz
