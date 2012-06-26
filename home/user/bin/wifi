@@ -1,7 +1,12 @@
 #!/bin/sh
 
 case "$1" in
+  d)
+    sudo netcfg down $(sudo netcfg current)
+    ;;
+
   off)
+    sudo netcfg down $(sudo netcfg current)
     sudo rfkill block wifi
     ;;
 
@@ -11,7 +16,7 @@ case "$1" in
 
   *)
     sudo rfkill unblock wifi
-    sudo netcfg $*
+    sudo netcfg up $*
     ;;
 esac
 exit 0
