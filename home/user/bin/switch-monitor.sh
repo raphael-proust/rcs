@@ -58,10 +58,8 @@ if [ -z "$(echo $execute | grep "auto")" ]
 then
   echo "Command: $default"
   `$default`
-  set_bg.sh
 else
   echo "Command: $execute"
   `$execute`
-  set_bg.sh
 fi
 echo -e "\n$(xrandr)"
