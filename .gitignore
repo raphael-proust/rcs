@@ -2,3 +2,4 @@ home/user/public_html/index.html
 pkgs/*/src
 pkgs/*/pkg
 pkgs/*/*.tar.xz
+pkgs/*/*.tar.gz
