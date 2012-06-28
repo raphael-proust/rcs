@@ -15,7 +15,7 @@ depends=('libx11' 'libxinerama')
 source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
   config.h)
 md5sums=('8bb00d4142259beb11e13473b81c0857'
-'72fe424f588c323adf7db73723bab7da')
+'bc858397b6ab7031b936c4c94ad71567')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
