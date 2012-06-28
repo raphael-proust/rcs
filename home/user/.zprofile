@@ -1,1 +1,1 @@
-eval $(ssh-agent)
+source $HOME/.profile
