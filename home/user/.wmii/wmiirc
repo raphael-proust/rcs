@@ -245,7 +245,6 @@ wmiir write /ctl <<!
 	border 1
 !
 #xsetroot -solid "$WMII_BACKGROUND" &
-$HOME/bin/set_bg.sh &
 
 #hide mouse when inactive
 #This makes things awkward
