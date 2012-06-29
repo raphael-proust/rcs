@@ -14,6 +14,12 @@ case "$1" in
     sudo netcfg reconnect $(sudo netcfg current)
     ;;
 
+  s|scan)
+    sudo rfkill unblock wifi
+    sudo ifconfig wlan0 up
+    sudo iwlist wlan0 scan
+    ;;
+
   *)
     if ls /etc/network.d/$1 >/dev/null 2>&1
     then
