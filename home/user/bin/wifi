@@ -1,16 +1,16 @@
 #!/bin/sh
 
 case "$1" in
-  d)
+  d|down|disconnect)
     sudo netcfg down $(sudo netcfg current)
     ;;
 
-  off)
+  o|off|block)
     sudo netcfg down $(sudo netcfg current)
     sudo rfkill block wifi
     ;;
 
-  r)
+  r|reco|reconnect)
     sudo netcfg reconnect $(sudo netcfg current)
     ;;
 
