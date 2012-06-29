@@ -4,7 +4,6 @@ acpid
 alsa-tools
 alsa-utils
 artwiz-fonts
-audacity
 autoconf
 automake
 bash
@@ -28,7 +27,6 @@ dhcpcd
 diffutils
 dmenu
 dnsutils
-dosbox
 dosfstools
 dtach
 dvtm
@@ -42,7 +40,6 @@ findutils
 firefox
 flashplugin
 flex
-freetalk
 gawk
 gcc
 gcc-libs
@@ -282,6 +279,5 @@ xorg-xwininfo
 xorg-xwud
 xsel
 yaourt
-zenity
 zip
 zsh
