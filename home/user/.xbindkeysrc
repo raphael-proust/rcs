@@ -56,16 +56,16 @@
     m:0x40 + c:42
     Mod4 + g
 #LVDS/HDMI/VGA switching
-"switch-monitor.sh"
+"switch-monitor"
     m:0x0 + c:235
     XF86Display
-"switch-monitor.sh"
+"switch-monitor"
     m:0x40 + c:72
     Mod4 + F6
 #Touchpad toggling
-"toggletouchpad.sh"
+"toggle-touchpad"
     m:0x0 + c:220
     XF86WebCam
-"toggletouchpad.sh"
+"toggle-touchpad"
     m:0x40 + c:71
     Mod4 + F5

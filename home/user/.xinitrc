@@ -20,6 +20,6 @@ case "$wm_bin" in
     ;;
 esac
 
-set_bg.sh &
+set_bg &
 
 exec ${wm_bin}
