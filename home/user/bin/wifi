@@ -15,8 +15,13 @@ case "$1" in
     ;;
 
   *)
-    sudo rfkill unblock wifi
-    sudo netcfg up $*
+    if ls /etc/network.d/$1 >/dev/null 2>&1
+    then
+      sudo rfkill unblock wifi
+      sudo netcfg up $*
+    else
+      cat $HOME/bin/wifi.usage
+    fi
     ;;
 esac
 exit 0
