@@ -58,6 +58,7 @@ alias pacu='sudo pacman-color -Syyu'
 alias pacs='sudo pacman-color -Ss'
 alias paci='sudo pacman-color -S'
 alias pacr='sudo pacman-color -R'
+alias pacq='sudo pacman-color -Qi'
 
 export RLWRAP_EDITOR='vim +%L +"sil! call cursor(0, %C)"'
 
