@@ -26,7 +26,7 @@ case "$1" in
       sudo rfkill unblock wifi
       sudo netcfg up $*
     else
-      cat $HOME/bin/wifi.usage
+      cat $HOME/bin/wifi-bnwr.usage
     fi
     ;;
 esac

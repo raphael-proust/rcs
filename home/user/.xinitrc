@@ -14,12 +14,12 @@ case "$wm_bin" in
     while true
     do
       sleep 1
-      xsetroot -name "$(status-line)"
+      xsetroot -name "$(status-line-bnwr)"
       sleep 29
     done &
     ;;
 esac
 
-set_bg &
+set-bg-bnwr &
 
 exec ${wm_bin}

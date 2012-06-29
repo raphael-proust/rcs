@@ -18,10 +18,10 @@
     m:0x40 + c:69
     Mod4 + F3
 #Wifi switch
-"rfswitch"
+"rfswitch-bnwr"
     m:0x0 + c:246
     XF86WLAN
-"rfswitch"
+"rfswitch-bnwr"
     m:0x40 + c:75
     Mod4 + F9
 #Media keys
@@ -56,16 +56,16 @@
     m:0x40 + c:42
     Mod4 + g
 #LVDS/HDMI/VGA switching
-"switch-monitor"
+"switch-monitor-bnwr"
     m:0x0 + c:235
     XF86Display
-"switch-monitor"
+"switch-monitor-bnwr"
     m:0x40 + c:72
     Mod4 + F6
 #Touchpad toggling
-"toggle-touchpad"
+"toggle-touchpad-bnwr"
     m:0x0 + c:220
     XF86WebCam
-"toggle-touchpad"
+"toggle-touchpad-bnwr"
     m:0x40 + c:71
     Mod4 + F5
