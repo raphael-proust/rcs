@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 #
 # This script toggles the extended monitor outputs if something is connected
 #

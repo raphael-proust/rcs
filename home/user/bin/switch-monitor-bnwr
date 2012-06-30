@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 #
 # Iterates through connected monitors in xrander and switched to the next one
 # each time it is run.
