@@ -13,9 +13,8 @@ case "$wm_bin" in
   dwm)
     while true
     do
-      sleep 1
       xsetroot -name "$(status-line-bnwr)"
-      sleep 29
+      sleep 30
     done &
     ;;
 esac
