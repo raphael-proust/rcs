@@ -55,7 +55,7 @@ wmiir write /tagrules <<!
 
 # Status Bar Info
  status() {
-     $HOME/bin/status-line
+     status-line-bnwr
 }
 
 local_events() { true;}
