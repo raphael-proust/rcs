@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if $(ls /bin/dash)
+if ! [ -x /bin/dash ]
 then
-  #okay
-else
   echo "WARNING: /bin/dash not found. Installed scripts won't work."
+  exit 1
+fi
 
 for i in $(ls *-bnwr*)
 do
