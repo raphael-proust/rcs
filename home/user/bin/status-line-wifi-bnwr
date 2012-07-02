@@ -1,8 +1,0 @@
-#!/bin/dash
-
-if rfkill list wifi | grep -q "Soft blocked: no"
-then
-  echo $(netcfg current)
-else
-  echo "off"
-fi
