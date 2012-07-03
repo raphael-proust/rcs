@@ -14,6 +14,7 @@
 [mergetool "splice"]
   cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
   trustExitCode = true
+
 [alias]
-	co = commit
-	st = status
+  co = commit
+  st = status -s
