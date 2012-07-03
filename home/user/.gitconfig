@@ -17,4 +17,4 @@
 
 [alias]
   co = commit
-  st = status -s
+  st = "!f() { echo $(git status | head -1) && echo $(git status | grep 'Your branch' | head -n 1) && git status -s; }; f"
