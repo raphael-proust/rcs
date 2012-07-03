@@ -26,10 +26,21 @@ case "$CPUGOV" in
   ;;
 esac
 
+GPUSTATE=$(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/\1/')
+case "$GPUSTATE" in
+  Pwr)
+    GPUSTATE="GPU on |"
+    ;;
+  Off)
+    GPUSTATE=""
+    ;;
+esac
+
 echo -n ' ' \
   'vol:' $ALSAVOL '|' \
   'wlan:' $WIFI '|' \
   $(acpi -a | sed 's/Adapter .: //; s/on-line/AC: /g; s/off-line/Bat :/g;') \
   $(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') '|' \
   $CPUGOV \
+  $GPUSTATE \
   $(date '+%Y-%m-%d %a  %H:%M')
