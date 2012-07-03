@@ -17,4 +17,5 @@ case "$1" in
   *)
     echo "usage: $0 {ondemand|powersave|performance}"
 esac
-exit 0
+
+set-status-line-bnwr

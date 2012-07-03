@@ -1,0 +1,13 @@
+#!/bin/dash
+
+case "$(wmname)" in
+  dwm)
+    xsetroot -name "$(status-line-bnwr)"
+    ;;
+
+  wmii)
+    status-line-bnwr | wmiir write /rbar/status
+    ;;
+esac
+
+#TODO: support dvtm (somehow)

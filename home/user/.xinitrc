@@ -9,15 +9,13 @@ source $HOME/.profile
 
 wm_bin="$1"
 
-case "$wm_bin" in
-  dwm)
-    while true
-    do
-      xsetroot -name "$(status-line-bnwr)"
-      sleep 30
-    done &
-    ;;
-esac
+wmname $(echo $wm_bin | sed -e "s/^\(\S\+\).*/\1/")
+
+while true
+do
+  set-status-line-bnwr
+  sleep 60
+done &
 
 set-bg-bnwr &
 

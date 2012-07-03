@@ -8,3 +8,5 @@ else
   echo "going off" >$HOME/.rfdebug
   sudo rfkill block wifi
 fi
+
+set-status-line-bnwr
