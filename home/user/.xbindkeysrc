@@ -55,13 +55,6 @@
 "surf http://duckduckgo.com"
     m:0x40 + c:42
     Mod4 + g
-#LVDS/HDMI/VGA switching
-"switch-monitor-bnwr"
-    m:0x0 + c:235
-    XF86Display
-"switch-monitor-bnwr"
-    m:0x40 + c:72
-    Mod4 + F6
 #Touchpad toggling
 "toggle-touchpad-bnwr"
     m:0x0 + c:220
