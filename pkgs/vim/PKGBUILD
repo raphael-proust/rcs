@@ -14,7 +14,7 @@ pkgrel=1
 arch=('i686' 'x86_64')
 license=('custom:vim')
 url="http://www.vim.org"
-makedepends=('gpm' 'python2' 'ruby' 'libxt' 'desktop-file-utils' 'gtk2' 'lua')
+makedepends=('gpm' 'python2' 'ruby' 'lua')
 source=("ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz"
         "ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz.sig"
         'pythoncomplete.vim::http://www.vim.org/scripts/download_script.php?src_id=10872'
