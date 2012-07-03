@@ -51,7 +51,6 @@ glibc
 gnu-netcat
 grep
 grub
-gvim
 gzip
 heirloom-mailx
 html2text
@@ -174,6 +173,7 @@ unzip
 usbutils
 util-linux
 vi
+vim
 vim-spell-en
 vim-spell-fr
 virtualbox
