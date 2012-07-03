@@ -14,7 +14,7 @@ pkgrel=1
 arch=('i686' 'x86_64')
 license=('custom:vim')
 url="http://www.vim.org"
-makedepends=('gpm' 'python2' 'ruby' 'lua')
+makedepends=('python2' 'ruby' 'lua')
 source=("ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz"
         "ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz.sig"
         'pythoncomplete.vim::http://www.vim.org/scripts/download_script.php?src_id=10872'
@@ -77,7 +77,7 @@ build() {
 
   ./configure --prefix=/usr --localstatedir=/var/lib/vim \
     --with-features=big --with-compiledby=ArchLinux \
-    --enable-gpm --enable-acl --with-x=no \
+    --disable-gpm --enable-acl --with-x=no \
     --disable-gui --enable-multibyte --enable-cscope \
     --disable-netbeans --enable-perlinterp --enable-pythoninterp \
     --disable-python3interp --enable-rubyinterp --enable-luainterp
@@ -97,7 +97,7 @@ check() {
 
 package_vim() {
   pkgdesc='Vi Improved, a highly configurable, improved version of the vi text editor'
-  depends=("vim-runtime=${pkgver}-${pkgrel}" 'gpm')
+  depends=("vim-runtime=${pkgver}-${pkgrel}")
   conflicts=('gvim')
 
   cd "${srcdir}"/vim-build
