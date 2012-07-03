@@ -3,3 +3,5 @@ pkgs/*/src
 pkgs/*/pkg
 pkgs/*/*.tar.xz
 pkgs/*/*.tar.gz
+pkgs/vim/pythoncomplete.vim
+pkgs/vim/vim-7.3.547.tar.xz.sig
