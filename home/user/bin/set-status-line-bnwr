@@ -1,13 +1,19 @@
 #!/bin/dash
 
+STATUSLINE="$(status-line-bnwr)"
+
 case "$(wmname)" in
   dwm)
-    xsetroot -name "$(status-line-bnwr)"
+    xsetroot -name "$STATUSLINE"
     ;;
 
   wmii)
-    status-line-bnwr | wmiir write /rbar/status
+    wmiir write /rbar/status "$STATUSLINE"
     ;;
 esac
 
-#TODO: support dvtm (somehow)
+for i in $(ls /tmp |grep "dvtm-status.[[:digit:]]\+")
+do
+  echo "$STATUSLINE" > /tmp/$i
+done
+
