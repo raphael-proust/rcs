@@ -1,4 +1,0 @@
-#!/bin/dash
-
-client="$HOME/.xinitrc wmii"
-exec nohup startx $client 2>&1 > .xlog & vlock
