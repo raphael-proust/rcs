@@ -101,4 +101,4 @@ set urlseparator=;
 command -nargs 0 -count -bang -description 'Duplicate current tab' du,dup,duplicate :<count>tabduplicate<bang>
 
 " if gvim is not installed
-set editor='st -e vim -f +<line> +"sil! call cursor(0, <column>)" <file>'
+set editor='urxvt -e vim -f +<line> +"sil! call cursor(0, <column>)" <file>'

@@ -123,6 +123,7 @@ rfkill
 rlwrap
 rsync
 rtorrent
+rxvt-unicode
 screen
 sdl_image
 sdl_mixer

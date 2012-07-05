@@ -7,6 +7,7 @@ xmodmap $HOME/.xmodmap
 
 source $HOME/.profile
 
+xrdb ~/.Xresources
 wm_bin="$1"
 
 wmname $(echo $wm_bin | sed -e "s/^\(\S\+\).*/\1/")
