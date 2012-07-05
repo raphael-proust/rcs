@@ -65,7 +65,6 @@ jfsutils
 laptop-mode-tools
 less
 lesspipe
-lftp
 libpipeline
 libpng12
 libreoffice-calc
@@ -168,7 +167,6 @@ ttf-sazanami
 uml_utilities
 unclutter
 unison
-units
 unzip
 usbutils
 util-linux
@@ -211,7 +209,7 @@ xf86-video-fbdev
 xf86-video-glint
 xf86-video-i128
 xf86-video-i740
-xf86-video-intel
+xf86-video-intel-uxa
 xf86-video-mach64
 xf86-video-mga
 xf86-video-neomagic
