@@ -1,15 +1,13 @@
 #ssh agent
 eval $(ssh-agent)
 
-#exports
+#programs
 export EDITOR=vim
 export SHELL=zsh
 export LESS="-R"
 
+#path
 export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
-
-#gem install cheat
-export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
 
 #cabal install darcs
 export PATH=$PATH:$HOME/.cabal/bin
