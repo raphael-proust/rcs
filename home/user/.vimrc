@@ -69,8 +69,6 @@ let g:showmarks_ignore_type="hqmp"
 Bundle 'wlangstroth/vim-racket.git'
 
 
-Bundle 'tomtom/quickfixsigns_vim'
-
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax on
