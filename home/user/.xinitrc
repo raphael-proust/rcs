@@ -6,9 +6,6 @@ setxkbmap -option compose:menu
 setxkbmap -option compose:prsc
 xmodmap $HOME/.xmodmap
 
-#setting environment
-source $HOME/.profile
-
 #setting X resources
 xrdb ~/.Xresources
 
