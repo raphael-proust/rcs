@@ -13,12 +13,15 @@ license=('MIT')
 options=(zipman)
 depends=('libx11' 'libxinerama')
 source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
-  config.h)
+  config.h
+  config.mk)
 md5sums=('8bb00d4142259beb11e13473b81c0857'
-'adb490c55f51cf0987f88ec036206ecf')
+'d87c23346c9f880b25432026bdb39582'
+'ef0d10ca834b5cfaa7c89f90d4b78e90')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
+  cp $srcdir/config.mk config.mk
   cp $srcdir/config.h config.h
 
   # for custom patches
@@ -36,7 +39,7 @@ build() {
   sed -i 's/^#CFLAGS = -std/CFLAGS += -std/g' config.mk
   sed -i 's/^LDFLAGS = -g/#LDFLAGS += -g/g' config.mk
   sed -i 's/^#LDFLAGS = -s/LDFLAGS += -s/g' config.mk
-  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+  make
 }
 
 package() {
