@@ -4,6 +4,8 @@ eval $(ssh-agent)
 #programs
 export EDITOR=vim
 export SHELL=zsh
+
+#keep colors in less
 export LESS="-R"
 
 #path
