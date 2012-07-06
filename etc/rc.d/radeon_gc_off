@@ -28,6 +28,7 @@ case "$1" in
    ;;
 
    *)
-cat /sys/kernel/debug/vgaswitcheroo/switch
+     cat /sys/kernel/debug/vgaswitcheroo/switch
      echo "usage: $0 {start|stop|restart}"
+   ;;
 esac
