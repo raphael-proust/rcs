@@ -17,7 +17,7 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
   config.mk)
 md5sums=('8bb00d4142259beb11e13473b81c0857'
 'd87c23346c9f880b25432026bdb39582'
-'ef0d10ca834b5cfaa7c89f90d4b78e90')
+'eab9c0052a884f8b2d08cddf83f1fe62')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
