@@ -47,6 +47,10 @@
 "slock"
     m:0x40 + c:9
     Mod4 + Escape
+#lock and suspend
+"slock & sleep 1 && sudo pm-suspend"
+    m:0x40 + c:24
+    Mod4 + q
 #open xsel-ed link in surf
 "surf $(xsel)"
     m:0x40 + c:32
