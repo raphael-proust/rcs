@@ -26,15 +26,20 @@ case "$CPUGOV" in
   ;;
 esac
 
-GPUSTATE=$(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/\1/')
-case "$GPUSTATE" in
-  Pwr)
-    GPUSTATE="GPU on |"
-    ;;
-  Off)
-    GPUSTATE=""
-    ;;
-esac
+if [ -e /sys/kernel/debug/vgaswitcheroo/switch ]
+then
+  GPUSTATE=$(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/\1/')
+  case "$GPUSTATE" in
+    Pwr)
+      GPUSTATE="GPU on |"
+      ;;
+    Off)
+      GPUSTATE=""
+      ;;
+  esac
+else
+  GPUSTATE=""
+fi
 
 echo -n ' ' \
   'vol:' $ALSAVOL '|' \
