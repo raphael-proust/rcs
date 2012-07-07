@@ -1,20 +1,20 @@
 #Volume: mute, up, down
-"amixer set Master toggle"
+"vol-bnwr toggle"
     m:0x0 + c:121
     XF86AudioMute
-"amixer set Master toggle"
+"vol-bnwr toggle"
     m:0x40 + c:67
     Mod4 + F1
-"amixer set Master playback 3-"
+"vol-bnwr down"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"amixer set Master playback 3-"
+"vol-bnwr down"
     m:0x40 + c:68
     Mod4 + F2
-"amixer set Master playback 3+"
+"vol-bnwr up"
     m:0x0 + c:123
     XF86AudioRaiseVolume
-"amixer set Master playback 3+"
+"vol-bnwr up"
     m:0x40 + c:69
     Mod4 + F3
 #Wifi switch
