@@ -2,6 +2,12 @@
   name = Raphaël Proust
   email = raphlalou@gmail.com
 
+[color]
+  ui = yes
+
+[core]
+  pager = cat
+
 [diff]
   tool = fugitive
 
