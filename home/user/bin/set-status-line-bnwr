@@ -2,15 +2,19 @@
 
 STATUSLINE="$(status-line-bnwr)"
 
-case "$(wmname)" in
-  dwm)
-    xsetroot -name "$STATUSLINE"
-    ;;
+WMNAME="$(wmname 2>/dev/null)"
+if [ "$?" -eq "0" ]
+then
+  case "$WMNAME" in
+    dwm)
+      xsetroot -name "$STATUSLINE"
+      ;;
 
-  wmii)
-    wmiir write /rbar/status "$STATUSLINE"
-    ;;
-esac
+    wmii)
+      wmiir write /rbar/status "$STATUSLINE"
+      ;;
+  esac
+fi
 
 for i in $(ls /tmp |grep "dvtm-status.[[:digit:]]\+")
 do
