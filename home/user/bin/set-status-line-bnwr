@@ -9,7 +9,6 @@ then
     dwm)
       xsetroot -name "$STATUSLINE"
       ;;
-
     wmii)
       wmiir write /rbar/status "$STATUSLINE"
       ;;

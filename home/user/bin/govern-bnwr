@@ -1,19 +1,15 @@
 #!/bin/dash
 
 case "$1" in
-
   ondemand)
     sudo cpufreq-set -r -g ondemand
     ;;
-
   powersave)
     sudo cpufreq-set -r -g powersave
     ;;
-
   performance)
     sudo cpufreq-set -r -g performance
     ;;
-
   *)
     echo "usage: $0 {ondemand|powersave|performance}"
 esac

@@ -5,7 +5,8 @@ FIFO="/tmp/dvtm-status.$$"
 [ -e "$FIFO" ] || mkfifo "$FIFO"
 chmod 600 $FIFO
 
-while true; do
+while true
+do
   status-line-bnwr
   sleep 60
 done > $FIFO &
