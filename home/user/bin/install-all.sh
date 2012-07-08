@@ -6,7 +6,7 @@ then
   exit 1
 fi
 
-for i in $(ls *-bnwr*) gvim vpaste dvtm-w-status
+for i in $(ls *-bnwr*) gvim vpaste dvtm
 do
   ln -f -s $PWD/$i $HOME/bin/
 done
