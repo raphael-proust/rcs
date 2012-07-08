@@ -54,8 +54,6 @@ alias la='ls -a'
 alias l1a='ls -a'
 alias lla='ls -lah'
 
-alias o='less'
-
 alias pacu='sudo pacman-color -Syu'
 alias pacs='sudo pacman-color -Ss'
 alias paci='sudo pacman-color -Syu && sudo pacman-color -S'
