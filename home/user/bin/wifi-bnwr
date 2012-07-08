@@ -5,25 +5,21 @@ case "$1" in
     sudo netcfg down $(sudo netcfg current)
     set-status-line-bnwr
     ;;
-
   o|off|block)
     sudo netcfg down $(sudo netcfg current)
     sudo rfkill block wifi
     set-status-line-bnwr
     ;;
-
   r|reco|reconnect)
     sudo netcfg reconnect $(sudo netcfg current)
     set-status-line-bnwr
     ;;
-
   s|scan)
     sudo rfkill unblock wifi
     sudo ifconfig wlan0 up
     sudo iwlist wlan0 scan
     set-status-line-bnwr
     ;;
-
   *)
     if ls /etc/network.d/$1 >/dev/null 2>&1
     then
@@ -31,7 +27,19 @@ case "$1" in
       sudo netcfg up $*
       set-status-line-bnwr
     else
-      cat $HOME/bin/wifi-bnwr.usage
+      cat <<EOF
+wifi script usage:
+	wifi command
+	wifi profile
+
+Available commands:
+	d down disconnect: disconnect wifi profile
+	o off block: disconnect wifi profile and shuts down wifi card
+	r reco reconnect: reconnects current wifi profile
+	s scan: scans wifi networks
+
+Profiles are thoose defined in /etc/network.d
+EOF
     fi
     ;;
 esac
