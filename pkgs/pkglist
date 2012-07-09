@@ -8,12 +8,11 @@ autoconf
 automake
 bash
 bdf-unifont
-binutils-multilib
+binutils
 bison
 bridge-utils
 bzip2
 ca-certificates
-chromium
 consolekit
 coreutils
 cpufrequtils
@@ -32,6 +31,7 @@ dtach
 dvtm
 dwm
 e2fsprogs
+exiv2
 fakeroot
 feh
 file
@@ -117,7 +117,6 @@ procps-ng
 profont
 psmisc
 pv
-racket
 reiserfsprogs
 rfkill
 rlwrap
@@ -126,10 +125,8 @@ rtorrent
 rxvt-unicode
 screen
 sdl_image
-sdl_mixer
 sed
 shadow
-slang
 slock
 sshfs
 strace
@@ -165,8 +162,6 @@ ttf-hannom
 ttf-liberation
 ttf-linux-libertine
 ttf-sazanami
-uml_utilities
-unclutter
 unison
 unzip
 usbutils
@@ -188,7 +183,6 @@ wmii
 wmname
 wpa_actiond
 wpa_supplicant
-wyrd
 xbindkeys
 xf86-input-acecad
 xf86-input-aiptek
