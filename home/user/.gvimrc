@@ -2,6 +2,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=L
 set guioptions-=r
+set guioptions+=o
 set guifont=Monospace\ 9
 set lines=999
 set columns=80
