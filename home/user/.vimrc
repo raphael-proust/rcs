@@ -48,7 +48,8 @@ let g:splice_initial_diff_grid = 1
 let g:splice_initial_scrollbind_grid = 1
 
 Bundle 'raphael-proust/molokai.git'
-colorscheme molokai
+Bundle 'raphael-proust/wombat.git'
+colorscheme wombat
 
 Bundle 'taglist'
 
