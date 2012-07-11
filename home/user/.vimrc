@@ -50,9 +50,6 @@ let g:splice_initial_scrollbind_grid = 1
 Bundle 'raphael-proust/molokai.git'
 colorscheme molokai
 
-Bundle 'coq-syntax'
-autocmd BufRead,BufNewFile *.v   set filetype=coq
-
 Bundle 'taglist'
 
 Bundle 'scrooloose/nerdtree'
