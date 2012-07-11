@@ -3,29 +3,39 @@
 case "$1" in
   d|down|disconnect)
     sudo netcfg down $(sudo netcfg current)
+    RC=$?
     set-status-line-bnwr
+    exit $RC
     ;;
   o|off|block)
     sudo netcfg down $(sudo netcfg current)
     sudo rfkill block wifi
+    RC=$?
     set-status-line-bnwr
+    exit $RC
     ;;
   r|reco|reconnect)
     sudo netcfg reconnect $(sudo netcfg current)
+    RC=$?
     set-status-line-bnwr
+    exit $RC
     ;;
   s|scan)
     sudo rfkill unblock wifi
     sudo ifconfig wlan0 up
     sudo iwlist wlan0 scan
+    RC=$?
     set-status-line-bnwr
+    exit $RC
     ;;
   *)
     if netcfg list | grep -q $1
     then
       sudo rfkill unblock wifi
       sudo netcfg up $*
+      RC=$?
       set-status-line-bnwr
+      exit $RC
     else
       cat <<EOF
 wifi script usage:
