@@ -51,8 +51,6 @@ Bundle 'raphael-proust/molokai.git'
 Bundle 'raphael-proust/wombat.git'
 colorscheme wombat
 
-Bundle 'taglist'
-
 Bundle 'scrooloose/nerdtree'
 nnoremap <F5> :NERDTreeToggle<CR>
 
@@ -62,10 +60,6 @@ let g:showmarks_textlower="'\t"
 let g:showmarks_textupper="'\t"
 let g:showmarks_textother="'\t"
 let g:showmarks_ignore_type="hqmp"
-
-
-Bundle 'wlangstroth/vim-racket.git'
-
 
 "Vundle post-initialisation phase
 filetype plugin indent on
