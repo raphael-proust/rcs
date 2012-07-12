@@ -1,4 +1,3 @@
-# The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' insert-unambiguous true
@@ -7,14 +6,12 @@ zstyle :compinstall filename '/home/raphael/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+HISTCONTROL=erasedups
 HISTFILE=~/.histfile
 HISTSIZE=3000
 SAVEHIST=5000
 unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
 
 #vi-like-ish Up and Down arrows
 history-beginning-search-forward-and-vicmd() {
