@@ -59,6 +59,10 @@
 "surf http://duckduckgo.com"
     m:0x40 + c:42
     Mod4 + g
+#Start or switch to firefox
+"xdt-activate-bnwr firefox"
+    m:0x40 + c:25
+    Mod4 + w
 #Touchpad toggling
 "toggle-touchpad-bnwr"
     m:0x0 + c:220
