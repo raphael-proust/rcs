@@ -23,7 +23,7 @@ export WMII_BACKGROUND='#111111'
 export WMII_FONT='-*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
-export WMII_TERM="st"
+export WMII_TERM="urxvt"
 
 if ! test -d "${WMII_CONFPATH%%:*}"; then
     mkdir "${WMII_CONFPATH%%:*}"
