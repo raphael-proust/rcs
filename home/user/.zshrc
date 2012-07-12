@@ -54,11 +54,18 @@ alias la='ls -a'
 alias l1a='ls -a'
 alias lla='ls -lah'
 
-alias pacu='sudo pacman-color -Syu'
-alias pacs='sudo pacman-color -Ss'
-alias paci='sudo pacman-color -Syu && sudo pacman-color -S'
-alias pacr='sudo pacman-color -R'
-alias pacq='sudo pacman-color -Qi'
+if [ -x /usr/bin/pacman-color ]
+then
+  PACMANBIN="pacman-color"
+else
+  PACMANBIN="pacman"
+fi
+
+alias pacu='sudo $PACMANBIN -Syu'
+alias pacs='sudo $PACMANBIN -Ss'
+alias paci='sudo $PACMANBIN -Syu && sudo pacman -S'
+alias pacr='sudo $PACMANBIN -R'
+alias pacq='sudo $PACMANBIN -Qi'
 
 export RLWRAP_EDITOR='vim +%L +"sil! call cursor(0, %C)"'
 
