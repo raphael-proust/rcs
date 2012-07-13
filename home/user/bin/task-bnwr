@@ -1,0 +1,23 @@
+#!/bin/dash
+
+TASKPIPESDIR="/tmp/task-dtach"
+if ! [ -d $TASKPIPESDIR ]
+then
+  mkdir $TASKPIPESDIR
+fi
+
+if [ $# -eq 0 ]
+then
+  TASKPIPES=$(ls -1 $TASKPIPESDIR)
+  if [ $(echo $TASKPIPES | wc -l) < "1" ]
+  then
+    echo "No dtached task found"
+  else
+    dtach -a $(ls $TASKPIPESDIR | slmenu | sed -e "s+.*+$TASKPIPESDIR/&+")
+  fi
+else
+  PIPENAME=$(echo -n "$1" $(shuf -i 0-99 -n 1) | sed -e "s/ /./")
+  dtach -c "$TASKPIPESDIR"/"$PIPENAME" $*
+  echo "$PIPENAME"
+fi
+
