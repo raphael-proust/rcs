@@ -21,3 +21,6 @@ else
   echo "$PIPENAME"
 fi
 
+#TODO: support dtach -n
+#TODO: prevent collision completely
+#TODO: support explicit naming for tasks
