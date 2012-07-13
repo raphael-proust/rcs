@@ -9,11 +9,11 @@ fi
 if [ $# -eq 0 ]
 then
   TASKPIPES=$(ls -1 $TASKPIPESDIR)
-  if [ $(echo $TASKPIPES | wc -l) < "1" ]
+  if [ $(echo $TASKPIPES | wc -l) = "0" ]
   then
     echo "No dtached task found"
   else
-    dtach -a $(ls $TASKPIPESDIR | slmenu | sed -e "s+.*+$TASKPIPESDIR/&+")
+    dtach -a $TASKPIPESDIR/$(echo $TASKPIPES | slmenu)
   fi
 else
   PIPENAME=$(echo -n "$1" $(shuf -i 0-99 -n 1) | sed -e "s/ /./")
