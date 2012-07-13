@@ -12,7 +12,6 @@ binutils
 bison
 bridge-utils
 bzip2
-ca-certificates
 consolekit
 coreutils
 cpufrequtils
