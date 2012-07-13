@@ -29,9 +29,13 @@ history-beginning-search-backward-and-vicmd() {
 zle -N history-beginning-search-backward-and-vicmd
 
 bindkey -M viins '\e[A' history-beginning-search-backward-and-vicmd
+bindkey -M viins '^K' history-beginning-search-backward-and-vicmd
 bindkey -M vicmd '\e[A' history-beginning-search-backward
+bindkey -M vicmd '^K' history-beginning-search-backward
 bindkey -M viins '\e[B' history-beginning-search-forward-and-vicmd
+bindkey -M viins '^J' history-beginning-search-forward-and-vicmd
 bindkey -M vicmd '\e[B' history-beginning-search-forward
+bindkey -M vicmd '^J' history-beginning-search-forward
 
 #Make 'rm *' safe
 setopt RM_STAR_WAIT
