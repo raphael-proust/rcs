@@ -15,6 +15,7 @@ cpufrequtils
 cronie
 cryptsetup
 ctags
+curl
 cyrus-sasl
 dash
 device-mapper
