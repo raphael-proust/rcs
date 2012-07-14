@@ -55,7 +55,6 @@ jfsutils
 laptop-mode-tools
 less
 lesspipe
-libpipeline
 libpng12
 licenses
 linux
@@ -82,12 +81,10 @@ networkmanager
 newsbeuter
 openal
 openssh
-openssl
 openvpn
 p7zip
 pacman
 pacman-color
-pacman-mirrorlist
 patch
 pciutils
 pcmciautils
