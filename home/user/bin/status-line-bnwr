@@ -23,7 +23,7 @@ then
   else
     WIFI="off"
   fi
-  WIFI=$(echo $WIF '|')
+  WIFI=$(echo $WIFI '|')
 fi
 
 CPUGOV=""
