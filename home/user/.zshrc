@@ -48,7 +48,7 @@ alias l='ls -alhF'
 alias ll='ls -lh'
 alias l1='ls -1'
 alias la='ls -a'
-alias l1a='ls -a'
+alias l1a='ls -1a'
 alias lla='ls -lah'
 
 if [ -x /usr/bin/pacman-color ]
