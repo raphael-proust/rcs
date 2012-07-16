@@ -1,11 +1,8 @@
-# $Id: PKGBUILD 60970 2011-12-19 21:33:58Z spupykin $
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Contributor: Dag Odenhall <dag.odenhall@gmail.com>
-# Contributor: Grigorios Bouzakis <grbzks@gmail.com>
+# Handcrafted from Archlinux's original package
 
 pkgname=dwm
 pkgver=6.0
-pkgrel=1
+pkgrel=100
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
@@ -16,15 +13,14 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
   config.h
   config.mk)
 md5sums=('8bb00d4142259beb11e13473b81c0857'
-'d87c23346c9f880b25432026bdb39582'
-'eab9c0052a884f8b2d08cddf83f1fe62')
+  'd87c23346c9f880b25432026bdb39582'
+  'eab9c0052a884f8b2d08cddf83f1fe62')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
   cp $srcdir/config.mk config.mk
   cp $srcdir/config.h config.h
 
-  # for custom patches
   if ls $startdir/patches | grep .*\.diff$
   then
     for i in $startdir/patches/*\.diff
@@ -34,11 +30,6 @@ build() {
     done
   fi
 
-  sed -i 's/CPPFLAGS =/CPPFLAGS +=/g' config.mk
-  sed -i 's/^CFLAGS = -g/#CFLAGS += -g/g' config.mk
-  sed -i 's/^#CFLAGS = -std/CFLAGS += -std/g' config.mk
-  sed -i 's/^LDFLAGS = -g/#LDFLAGS += -g/g' config.mk
-  sed -i 's/^#LDFLAGS = -s/LDFLAGS += -s/g' config.mk
   make
 }
 
