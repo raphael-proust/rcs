@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 "Loading the bundles
 
 Bundle 'tsaleh/vim-align.git'
-autocmd BufRead,BufNewFile * AlignCtrl rl:
 
 Bundle 'edsono/vim-matchit.git'
 
