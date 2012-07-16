@@ -47,6 +47,7 @@ vlc
 wmii
 wmname
 xbindkeys
+xdotool
 xf86-input-acecad
 xf86-input-aiptek
 xf86-input-evdev
