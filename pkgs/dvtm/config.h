@@ -38,7 +38,7 @@
 /* master width factor [0.1 .. 0.9] */
 #define MFACT 0.5
 /* scroll back buffer size in lines */
-#define SCROLL_HISTORY 500
+#define SCROLL_HISTORY 0
 
 #include "tile.c"
 #include "grid.c"
@@ -88,8 +88,6 @@ Key keys[] = {
 	{ MOD, 'r',       { redraw,         { NULL }                    } },
 	{ MOD, 'X',       { lock,           { NULL }                    } },
 	{ MOD, 'B',       { togglebell,     { NULL }                    } },
-	{ MOD, KEY_PPAGE, { scrollback,     { "-1" }                    } },
-	{ MOD, KEY_NPAGE, { scrollback,     { "1"  }                    } },
 	{ MOD, '?',       { create,         { "man dvtm", "dvtm help" } } },
 };
 
