@@ -15,8 +15,12 @@ then
   esac
 fi
 
-for i in $(ls /tmp |grep "dvtm-status.[[:digit:]]\+")
-do
-  echo "$STATUSLINE" > /tmp/$i
-done
+STATUSPIPESDIR="/tmp/dvtm-status-pipes"
+if [ -d $STATUSPIPESDIR ]
+then
+  for i in $(ls $STATUSPIPESDIR |grep "dvtm-status.[[:digit:]]\+")
+  do
+    echo "$STATUSLINE" > $STATUSPIPESDIR/$i
+  done
+fi
 
