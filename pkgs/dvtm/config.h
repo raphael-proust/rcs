@@ -22,7 +22,7 @@
 #define NORMAL_FG       -1
 #define NORMAL_BG       -1
 /* status bar (command line option -s) position */
-#define BAR_POS		BAR_TOP /* BAR_BOTTOM, BAR_OFF */
+#define BAR_POS         BAR_TOP /* BAR_BOTTOM, BAR_OFF */
 /* curses attributes for the status bar */
 #define BAR_ATTR        A_NORMAL
 #define BAR_FG          BLUE
@@ -30,15 +30,15 @@
 /* determines whether the statusbar text should be right or left aligned */
 #define BAR_ALIGN       ALIGN_RIGHT
 /* separator between window title and window number */
-#define SEPARATOR " | "
+#define SEPARATOR       " | "
 /* printf format string for the window title, first %s
  * is replaced by the title, second %s is replaced by
  * the SEPARATOR, %d stands for the window number */
-#define TITLE "[%s%s#%d]"
+#define TITLE           "[%s%s#%d]"
 /* master width factor [0.1 .. 0.9] */
-#define MFACT 0.5
+#define MFACT           0.5
 /* scroll back buffer size in lines */
-#define SCROLL_HISTORY 0
+#define SCROLL_HISTORY  0
 
 #include "tile.c"
 #include "grid.c"
@@ -143,7 +143,7 @@ Button buttons[] = {
 #endif /* CONFIG_MOUSE */
 
 Cmd commands[] = {
-	{ "create", { create,	{ NULL } } },
+	{ "create", { create, { NULL } } },
 };
 
 /* gets executed when dvtm is started */
