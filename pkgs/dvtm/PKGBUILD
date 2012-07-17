@@ -11,7 +11,8 @@ depends=('ncurses')
 source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         'config.h')
 md5sums=('d8ef63bad5b48324ad040630c51a1c26'
-         '50ae76c4b33864f0cf051417443cc422')
+         'b796a844eda2753f5bd147b52315a0f0'
+        )
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"

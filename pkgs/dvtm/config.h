@@ -72,7 +72,6 @@ Key keys[] = {
 	{ MOD, 'l',       { setmfact,       { "+0.05" }                 } },
 	{ MOD, '.',       { toggleminimize, { NULL }                    } },
 	{ MOD, 's',       { togglebar,      { NULL }                    } },
-	{ MOD, 'M',       { togglemouse,    { NULL }                    } },
 	{ MOD, '\n',      { zoom ,          { NULL }                    } },
 	{ MOD, '1',       { focusn,         { "1" }                     } },
 	{ MOD, '2',       { focusn,         { "2" }                     } },
@@ -134,7 +133,7 @@ static const ColorRule colorrules[] = {
 # define CONFIG_MOUSE /* compile in mouse support if we build against ncurses */
 #endif
 
-#define ENABLE_MOUSE true /* whether to enable mouse events by default */
+#define ENABLE_MOUSE false /* whether to enable mouse events by default */
 
 #ifdef CONFIG_MOUSE
 Button buttons[] = {
