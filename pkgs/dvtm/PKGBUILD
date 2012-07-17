@@ -1,0 +1,34 @@
+# $Id: PKGBUILD 64667 2012-02-17 15:34:11Z lfleischer $
+# Maintainer: Lukas Fleischer <archlinux at cryptocrack dot de>
+# Contributor: Giorgio Lando <patroclo7@gmail.com>
+# Contributor: bender02 at gmx dot com
+
+pkgname=dvtm
+pkgver=0.7
+pkgrel=2
+pkgdesc='Dynamic virtual terminal manager.'
+arch=('i686' 'x86_64')
+url='http://www.brain-dump.org/projects/dvtm/'
+license=('MIT')
+depends=('ncurses')
+source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+        'config.h')
+md5sums=('d8ef63bad5b48324ad040630c51a1c26'
+         '50ae76c4b33864f0cf051417443cc422')
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	cp "${srcdir}/config.h" .
+	sed -i 's/CFLAGS =/CFLAGS +=/' config.mk
+
+	make clean
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	make PREFIX=/usr DESTDIR="${pkgdir}" install
+	install -Dm0644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
