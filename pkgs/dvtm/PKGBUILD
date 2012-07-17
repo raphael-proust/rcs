@@ -1,11 +1,8 @@
-# $Id: PKGBUILD 64667 2012-02-17 15:34:11Z lfleischer $
-# Maintainer: Lukas Fleischer <archlinux at cryptocrack dot de>
-# Contributor: Giorgio Lando <patroclo7@gmail.com>
-# Contributor: bender02 at gmx dot com
+#Custom version based on Arch's package
 
 pkgname=dvtm
 pkgver=0.7
-pkgrel=2
+pkgrel=102
 pkgdesc='Dynamic virtual terminal manager.'
 arch=('i686' 'x86_64')
 url='http://www.brain-dump.org/projects/dvtm/'
