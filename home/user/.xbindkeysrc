@@ -2,47 +2,26 @@
 "vol-bnwr toggle"
     m:0x0 + c:121
     XF86AudioMute
-"vol-bnwr toggle"
-    m:0x40 + c:67
-    Mod4 + F1
 "vol-bnwr down"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"vol-bnwr down"
-    m:0x40 + c:68
-    Mod4 + F2
 "vol-bnwr up"
     m:0x0 + c:123
     XF86AudioRaiseVolume
-"vol-bnwr up"
-    m:0x40 + c:69
-    Mod4 + F3
 #Wifi switch
 "rfswitch-bnwr"
     m:0x0 + c:246
     XF86WLAN
-"rfswitch-bnwr"
-    m:0x40 + c:75
-    Mod4 + F9
 #Media keys
 "mpc prev"
     m:0x0 + c:173
     XF86AudioPrev
-"mpc prev"
-    m:0x40 + c:76
-    Mod4 + F10
 "mpc toggle"
     m:0x0 + c:172
     XF86AudioPlay
-"mpc toggle"
-    m:0x40 + c:95
-    Mod4 + F11
 "mpc next"
     m:0x0 + c:171
     XF86AudioNext
-"mpc next"
-    m:0x40 + c:96
-    Mod4 + F12
 #lock
 "slock"
     m:0x40 + c:9
@@ -67,6 +46,3 @@
 "toggle-touchpad-bnwr"
     m:0x0 + c:220
     XF86WebCam
-"toggle-touchpad-bnwr"
-    m:0x40 + c:71
-    Mod4 + F5
