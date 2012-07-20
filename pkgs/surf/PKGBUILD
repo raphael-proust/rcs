@@ -1,0 +1,38 @@
+#Custom build based on Arch's official pakage
+
+pkgname=surf
+pkgver=0.5
+pkgrel=100
+pkgdesc="A simple web browser based on WebKit/GTK+."
+arch=('i686' 'x86_64')
+url='http://surf.suckless.org/'
+license=('MIT')
+depends=('libwebkit' 'xorg-xprop')
+optdepends=('dmenu: URL-bar'
+            'ca-certificates: SSL verification'
+            'rxvt-unicode: default download handler'
+            'wget: default download handler')
+makedepends=('pkgconfig')
+source=("http://dl.suckless.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+        'config.h')
+md5sums=('dc735a380d01203861b987b5f4c3c59c'
+         '55b68ea0654ca6987256d4b2f23ad661')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  cp "${srcdir}/config.h" config.h
+
+  sed -i 's/CPPFLAGS =/CPPFLAGS +=/g' config.mk
+  sed -i 's/CFLAGS =/CFLAGS +=/g' config.mk
+  sed -i 's/LDFLAGS =/LDFLAGS +=/g' config.mk
+
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  make PREFIX=/usr DESTDIR="${pkgdir}" install
+  install -Dm0644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
