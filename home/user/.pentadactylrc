@@ -91,7 +91,8 @@ map -builtin -modes=main <C-S-v> <C-v><C-v>
 " Open everything in a new tab
 set newtab=all
 
-" Wildmode isn't satisfying, but it's better...
+" Completion
+set autocomplete=
 set wildmode=list:longest
 
 " Separate urls by ";"
