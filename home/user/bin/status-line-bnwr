@@ -11,7 +11,6 @@ then
     off)
       ;;
   esac
-  ALSAVOL=$(echo $ALSAVOL '|')
 fi
 
 WIFI=""
@@ -23,8 +22,11 @@ then
   else
     WIFI="off"
   fi
-  WIFI=$(echo $WIFI '|')
 fi
+
+POWERSRC=$(acpi -a | sed 's/Adapter .: //; s/on-line/AC:/g; s/off-line/Bat:/g;') \
+POWERLVL=$(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') \
+
 
 CPUGOV=""
 if which cpufreq-info >/dev/null
@@ -35,7 +37,7 @@ then
       CPUGOV=""
     ;;
     powersave|performance)
-      CPUGOV=$(echo $CPUGOV '|')
+      CPUGOV=$(printf "%s | " "$CPUGOV")
     ;;
   esac
 fi
@@ -45,7 +47,7 @@ then
   GPUSTATE=$(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/\1/')
   case "$GPUSTATE" in
     Pwr)
-      GPUSTATE="GPU on |"
+      GPUSTATE="GPU on | "
       ;;
     Off)
       GPUSTATE=""
@@ -55,11 +57,13 @@ else
   GPUSTATE=""
 fi
 
-echo -n ' ' \
-  'vol:' $ALSAVOL \
-  'wlan:' $WIFI \
-  $(acpi -a | sed 's/Adapter .: //; s/on-line/AC: /g; s/off-line/Bat :/g;') \
-  $(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') '|' \
-  $CPUGOV \
-  $GPUSTATE \
-  $(date '+%Y-%m-%d %a  %H:%M')
+DATE=$(date '+%Y-%m-%d %a  %H:%M')
+
+printf " vol: %s | wlan: %s | %s %s | %s%s%s" \
+  "$ALSAVOL"  \
+  "$WIFI" \
+  "$POWERSRC" "$POWERLVL" \
+  "$CPUGOV" \
+  "$GPUSTATE" \
+  "$DATE"
+

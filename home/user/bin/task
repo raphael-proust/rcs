@@ -9,17 +9,17 @@ fi
 if [ $# -eq 0 ]
 then
   TASKPIPES=$(ls $TASKPIPESDIR)
-  if [ $(echo $TASKPIPES | wc -w) = "0" ]
+  if [ $(printf %s "$TASKPIPES" | wc -w) = "0" ]
   then
     echo "No dtached task found"
   else
-    dtach -a $TASKPIPESDIR/$(echo $TASKPIPES | sed -e "s/\s\+/\n/g" | slmenu)
+    dtach -a $TASKPIPESDIR/$(printf %s "$TASKPIPES" | sed -e "s/\s\+/\n/g" | slmenu)
   fi
 else
   case "$#" in
     1|2)
       dtach -A $TASKPIPESDIR/$1 $*
-      echo $1
+      printf %s "$1"
       ;;
     *)
       case "$1" in
@@ -28,15 +28,15 @@ else
           PIPENAME=$2
           shift 2
           dtach $DASHARG "$TASKPIPESDIR/$PIPENAME" $*
-          echo "$PIPENAME"
+          printf %s "$PIPENAME"
           ;;
         "-a")
           dtach -a $TASKPIPESDIR/$2
-          echo $2
+          printf %s "$2"
           ;;
         *)
           dtach -A $TASKPIPESDIR/$1 $*
-          echo $1
+          printf %s "$1"
           ;;
       esac
       ;;

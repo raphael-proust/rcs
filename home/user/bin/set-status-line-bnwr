@@ -20,7 +20,7 @@ if [ -d $STATUSPIPESDIR ]
 then
   for i in $(ls $STATUSPIPESDIR |grep "dvtm-status.[[:digit:]]\+")
   do
-    echo "$STATUSLINE" > $STATUSPIPESDIR/$i
+    printf %s\\n "$STATUSLINE" > $STATUSPIPESDIR/$i
   done
 fi
 
