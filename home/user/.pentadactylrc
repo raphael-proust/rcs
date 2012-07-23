@@ -77,6 +77,8 @@ set novisualbell
 
 " command line history
 set history=100
+map -builtin -modes=Ex,Find <C-k> <Up>
+map -builtin -modes=Ex,Find <C-j> <Down>
 
 " Searching
 set hlfind
