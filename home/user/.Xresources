@@ -26,3 +26,7 @@ URxvt*color12: #5c5cff
 URxvt*color13: magenta
 URxvt*color14: cyan
 URxvt*color15: white
+
+dzen2.font:       xft:monospace-8
+dzen2.foreground: #bbbbbb
+dzen2.background: #222222

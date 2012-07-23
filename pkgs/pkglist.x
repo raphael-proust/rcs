@@ -4,6 +4,7 @@ bdf-unifont
 consolekit
 dmenu
 dwm
+dzen2
 feh
 firefox
 flashplugin
