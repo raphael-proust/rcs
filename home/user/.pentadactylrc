@@ -41,10 +41,10 @@ map sm tddg !m
 map so tddg !osm 
 
 " mapping h, j, k and l to scroll faster
-map -builtin h 4h
-map -builtin j 4j
-map -builtin k 4k
-map -builtin l 4l
+map -builtin h 6h
+map -builtin j 6j
+map -builtin k 6k
+map -builtin l 6l
 
 " TabGroup thingy
 map -builtin <C-w> <C-S-e>
