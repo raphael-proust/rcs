@@ -17,7 +17,6 @@ mplayer
 mupdf
 profont
 rxvt-unicode
-sdl_image
 slock
 surf
 tamsyn-font
@@ -43,7 +42,6 @@ ttf-liberation
 ttf-linux-libertine
 ttf-sazanami
 virtualbox
-vlc
 wmii
 wmname
 xbindkeys
@@ -68,7 +66,7 @@ xf86-video-fbdev
 xf86-video-glint
 xf86-video-i128
 xf86-video-i740
-xf86-video-intel-uxa
+xf86-video-intel
 xf86-video-mach64
 xf86-video-mga
 xf86-video-neomagic

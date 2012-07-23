@@ -41,7 +41,7 @@ git
 glibc
 gnu-netcat
 grep
-grub
+grub-bios
 gzip
 heirloom-mailx
 html2text
@@ -130,7 +130,6 @@ w3m
 wget
 which
 wireless_tools
-wireshark-cli
 wpa_actiond
 wpa_supplicant
 xfsprogs

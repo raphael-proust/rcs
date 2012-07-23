@@ -51,7 +51,7 @@ git
 glibc
 gnu-netcat
 grep
-grub
+grub-bios
 gzip
 heirloom-mailx
 html2text
@@ -119,7 +119,6 @@ rsync
 rtorrent
 rxvt-unicode
 screen
-sdl_image
 sed
 shadow
 slock
@@ -151,14 +150,12 @@ vim
 vim-spell-en
 vim-spell-fr
 virtualbox
-vlc
 vlock
 vorbis-tools
 w3m
 wget
 which
 wireless_tools
-wireshark-cli
 wmii
 wmname
 wpa_actiond
@@ -185,7 +182,7 @@ xf86-video-fbdev
 xf86-video-glint
 xf86-video-i128
 xf86-video-i740
-xf86-video-intel-uxa
+xf86-video-intel
 xf86-video-mach64
 xf86-video-mga
 xf86-video-neomagic
