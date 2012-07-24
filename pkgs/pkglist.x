@@ -2,6 +2,7 @@ alsa-tools
 artwiz-fonts
 bdf-unifont
 consolekit
+darktable
 dmenu
 dwm
 dzen2
