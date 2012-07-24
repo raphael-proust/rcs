@@ -119,7 +119,7 @@ set visualbell
 set shortmess+=filmnrxtI
 
 "Lines
-set textwidth=80
+set textwidth=78
 noremap Q gq
 set nojoinspaces
 set wrap
