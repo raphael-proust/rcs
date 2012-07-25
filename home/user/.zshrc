@@ -37,6 +37,8 @@ bindkey -M viins '^J' history-beginning-search-forward-and-vicmd
 bindkey -M vicmd '\e[B' history-beginning-search-forward
 bindkey -M vicmd '^J' history-beginning-search-forward
 
+bindkey '\e[z' expand-or-complete-prefix
+
 #Make 'rm *' safe
 setopt RM_STAR_WAIT
 
