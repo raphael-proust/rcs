@@ -6,10 +6,10 @@ WMNAME="$(wmname 2>/dev/null)"
 if [ "$?" -eq "0" ]
 then
   case "$WMNAME" in
-    dwm)
+    (dwm)
       xsetroot -name "$STATUSLINE"
       ;;
-    wmii)
+    (wmii)
       wmiir write /rbar/status "$STATUSLINE"
       ;;
   esac

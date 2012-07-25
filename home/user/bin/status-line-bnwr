@@ -5,10 +5,10 @@ if which amixer >/dev/null
 then
   ALSAVOL=$(amixer get Master | grep "Mono:" | sed -e "s/.*\[[0-9]*%\].*\[\(.*\)\]$/\1/")
   case "$ALSAVOL" in
-    on)
+    (on)
       ALSAVOL=$(amixer get Master | grep "Mono:" | sed -e "s/.*\[\([0-9]*%\)\].*\[.*\]$/\1/")
       ;;
-    off)
+    (off)
       ;;
   esac
 fi
@@ -33,10 +33,10 @@ if which cpufreq-info >/dev/null
 then
   CPUGOV=$(cpufreq-info -c 0 -p | awk '{print $3}')
   case "$CPUGOV" in
-    ondemand)
+    (ondemand)
       CPUGOV=""
     ;;
-    powersave|performance)
+    (powersave|performance)
       CPUGOV=$(printf "%s | " "$CPUGOV")
     ;;
   esac
@@ -46,10 +46,10 @@ if [ -e /sys/kernel/debug/vgaswitcheroo/switch ]
 then
   GPUSTATE=$(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/\1/')
   case "$GPUSTATE" in
-    Pwr)
+    (Pwr)
       GPUSTATE="GPU on | "
       ;;
-    Off)
+    (Off)
       GPUSTATE=""
       ;;
   esac

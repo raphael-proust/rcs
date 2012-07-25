@@ -17,24 +17,24 @@ then
   fi
 else
   case "$#" in
-    1|2)
+    (1|2)
       dtach -A $TASKPIPESDIR/$1 $*
       printf %s "$1"
       ;;
-    *)
+    (*)
       case "$1" in
-        "-c"|"-n"|"-A")
+        ("-c"|"-n"|"-A")
           DASHARG=$1
           PIPENAME=$2
           shift 2
           dtach $DASHARG "$TASKPIPESDIR/$PIPENAME" $*
           printf %s "$PIPENAME"
           ;;
-        "-a")
+        ("-a")
           dtach -a $TASKPIPESDIR/$2
           printf %s "$2"
           ;;
-        *)
+        (*)
           dtach -A $TASKPIPESDIR/$1 $*
           printf %s "$1"
           ;;
