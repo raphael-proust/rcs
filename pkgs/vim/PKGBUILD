@@ -6,7 +6,7 @@ _topver=7.3
 _patchlevel=600
 _versiondir="vim${_topver//./}"
 pkgver=${_topver}.${_patchlevel}
-pkgrel=100
+pkgrel=101
 arch=('i686' 'x86_64')
 license=('custom:vim')
 url="http://www.vim.org"
@@ -33,7 +33,7 @@ build() {
   sed -i 's|^.*\(#define VIMRC_FILE.*"\) .*$|\1|' \
     vim-build/src/feature.h
   # fix python name
-  sed -i -e 's|vi_cv_path_python, python|vi_cv_path_python, python2|' \
+  sed -i -e 's|(vi_cv_path_python, python)|(vi_cv_path_python, python2)|' \
     vim-build/src/configure.in
   (cd vim-build/src && autoconf)
 
@@ -52,7 +52,7 @@ build() {
 
 package_vim() {
   pkgdesc='Vi Improved, a highly configurable, improved version of the vi text editor'
-  depends=("vim-runtime=${pkgver}-${pkgrel}")
+  depends=("vim-runtime=${pkgver}-${pkgrel}" 'python' 'python2' 'ruby' 'lua')
   conflicts=('gvim')
 
   cd "${srcdir}"/vim-build
