@@ -15,27 +15,30 @@ case "$1" in
     exit $RC
     ;;
   (r|reco|reconnect)
+    ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }') && exit 0
+    sudo wpa_cli reassociate
+    ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }') && exit 0
     sudo netcfg reconnect $(sudo netcfg current)
-    RC=$?
     set-status-line-bnwr
-    exit $RC
+    ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }')
     ;;
   (s|scan)
     sudo rfkill unblock wifi
     sudo ifconfig wlan0 up
     sudo iwlist wlan0 scan
-    RC=$?
     set-status-line-bnwr
-    exit $RC
+    ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }')
+    ;;
+  (check)
+    ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }')
     ;;
   (*)
     if netcfg list | grep -q $1
     then
       sudo rfkill unblock wifi
       sudo netcfg up $*
-      RC=$?
       set-status-line-bnwr
-      exit $RC
+      ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }')
     else
       cat <<EOF
 wifi script usage:
