@@ -238,10 +238,8 @@ autocmd BufRead,BufNewFile *.ll    set filetype=llvm
 "for small screens (less than (2×80+1), greater than (80+1+1))
 "au BufEnter * vert res 80
 
-function! FixTitle ()
-  let &titleold=getcwd()
-endfunction
-autocmd VimLeave * silent call FixTitle()
+"unf.ck terminal title
+let &titleold=getcwd()
 
 "On the fly sudo
 command Sudow :w !sudo tee %
