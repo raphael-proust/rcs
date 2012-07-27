@@ -1,7 +1,7 @@
 
 pkgname=cols
 pkgver=1.0
-pkgrel=100
+pkgrel=101
 pkgdesc="Pretty Terminal Stuff"
 url="http://galos.no-ip.org/cols"
 arch=('i686' 'x86_64')
@@ -20,6 +20,6 @@ build() {
 
 package() {
   cd $srcdir/$pkgname
-  mkdir -p '/home/bnwr/rcs/pkgs/cols/pkg/usr/bin'
+  mkdir -p $pkgdir/usr/bin
   make DESTDIR=$pkgdir/usr/bin install
 }
