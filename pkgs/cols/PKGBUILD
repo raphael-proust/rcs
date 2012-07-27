@@ -1,7 +1,8 @@
+# Maintainer: Raphael Proust <raphlalou at gmail dotcom>
 
 pkgname=cols
 pkgver=1.0
-pkgrel=101
+pkgrel=1
 pkgdesc="Pretty Terminal Stuff"
 url="http://galos.no-ip.org/cols"
 arch=('i686' 'x86_64')
