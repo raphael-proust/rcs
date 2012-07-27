@@ -1,6 +1,6 @@
 #!/bin/dash
 
-TASKPIPESDIR="/tmp/task-dtach"
+TASKPIPESDIR="$HOME/.task-pipes"
 if ! [ -d $TASKPIPESDIR ]
 then
   mkdir $TASKPIPESDIR
@@ -12,33 +12,70 @@ then
   if [ $(printf %s "$TASKPIPES" | wc -w) = "0" ]
   then
     echo "No dtached task found"
+    exit 0
   else
-    dtach -a $TASKPIPESDIR/$(printf %s "$TASKPIPES" | sed -e "s/\s\+/\n/g" | slmenu)
+    TASKPIPE=$(printf %s "$TASKPIPES" | sed -e "s/\s\+/\n/g" | slmenu)
+    if [ -S $TASKPIPESDIR/$TASKPIPE ]
+    then
+      dtach -a $TASKPIPESDIR/$TASKPIPE
+      exit 0
+    else
+      echo "Invalid task selection"
+      exit 1
+    fi
   fi
 else
   case "$#" in
-    (1|2)
-      dtach -A $TASKPIPESDIR/$1 $*
-      printf %s "$1"
+    (1)
+      dtach -A $TASKPIPESDIR/$1 $SHELL
+      printf %s\\n "$1"
+      exit 0
+      ;;
+    (2)
+      case "$1" in
+        ("-a")
+          dtach -a $TASKPIPESDIR/$2
+          printf %s\\n "$2"
+          exit 0
+          ;;
+        (*)
+          dtach -A $TASKPIPESDIR/$1 $2
+          printf %s\\n "$1"
+          exit 0
+          ;;
+      esac
       ;;
     (*)
       case "$1" in
+        ("-a")
+          echo "Invalid usage of -a"
+          exit 1
+          ;;
         ("-c"|"-n"|"-A")
           DASHARG=$1
           PIPENAME=$2
           shift 2
           dtach $DASHARG "$TASKPIPESDIR/$PIPENAME" $*
-          printf %s "$PIPENAME"
-          ;;
-        ("-a")
-          dtach -a $TASKPIPESDIR/$2
-          printf %s "$2"
+          printf %s\\n "$PIPENAME"
+          exit 0
           ;;
         (*)
-          dtach -A $TASKPIPESDIR/$1 $*
-          printf %s "$1"
+          PIPENAME=$1
+          shift 1
+          dtach -A $TASKPIPESDIR/$PIPENAME $*
+          printf %s\\n "$PIPENAME"
+          exit 0
           ;;
       esac
       ;;
   esac
 fi
+
+#Usage:
+# task: prompt for task to attach to
+# task <name>: if the task <name> exists, attach to it
+#              otherwise, create a shell task named <name>
+# task <name> <cmd>: if the task <name> exists, attach to it
+#                    otherwise, create a <cmd> task named <name>
+# task <-n|-c|-A> <name> <cmd>: see dtach usage
+# task <-a> <name>: see dtach usage
