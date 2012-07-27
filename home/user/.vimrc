@@ -76,6 +76,12 @@ let mapleader=","
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor= "latex"
 
+"~ is an op
+set tildeop
+
+"save with confirmation
+set confirm
+
 "Better diffs (with switchable whitespace ignoring)
 set diffopt=filler,vertical,context:5
 nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
@@ -218,6 +224,13 @@ autocmd FileType make set noexpandtab
 "mlton files
 autocmd BufRead,BufNewFile *.fun   set filetype=sml
 autocmd BufRead,BufNewFile *.sig   set filetype=sml
+au BufEnter,BufNewFile,BufRead * call FileTypeDetect()
+fun! FileTypeDetect()
+  let l = getline(nextnonblank(1))
+  if l =~ '#!/bin/dash'
+    set filetype=sh
+  endif
+endfun
 
 "llvm bitcode files
 autocmd BufRead,BufNewFile *.ll    set filetype=llvm
