@@ -2,6 +2,7 @@
 acpi
 acpid
 alsa-utils
+aria2
 autoconf
 automake
 bash
@@ -15,6 +16,7 @@ cronie
 cryptsetup
 ctags
 curl
+cvs
 cyrus-sasl
 dash
 device-mapper
@@ -79,6 +81,7 @@ nethack
 net-tools
 networkmanager
 newsbeuter
+ocaml
 openal
 openssh
 openvpn
@@ -90,6 +93,7 @@ pciutils
 pcmciautils
 perl
 pkg-config
+pkgstats
 pkgtools
 pm-utils
 powertop

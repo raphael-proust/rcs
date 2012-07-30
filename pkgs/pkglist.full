@@ -3,6 +3,7 @@ acpi
 acpid
 alsa-tools
 alsa-utils
+aria2
 artwiz-fonts
 autoconf
 automake
@@ -19,6 +20,7 @@ cronie
 cryptsetup
 ctags
 curl
+cvs
 cyrus-sasl
 darktable
 dash
@@ -98,6 +100,7 @@ nethack
 net-tools
 networkmanager
 newsbeuter
+ocaml
 openal
 openssh
 openvpn
@@ -109,6 +112,7 @@ pciutils
 pcmciautils
 perl
 pkg-config
+pkgstats
 pkgtools
 pm-utils
 powertop
