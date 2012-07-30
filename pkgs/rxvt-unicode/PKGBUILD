@@ -2,7 +2,7 @@
 
 pkgname=rxvt-unicode
 pkgver=9.15
-pkgrel=103
+pkgrel=104
 pkgdesc='An unicode enabled rxvt-clone terminal emulator (urxvt)'
 arch=('i686' 'x86_64')
 url='http://software.schmorp.de/pkg/rxvt-unicode.html'
@@ -15,6 +15,7 @@ build() {
   cd $pkgname-$pkgver
   ./configure \
     --prefix=/usr \
+    --with-codesets=all \
     --with-terminfo=/usr/share/terminfo \
     --disable-fading \
     --disable-fallback \
@@ -23,6 +24,7 @@ build() {
     --disable-keepscrolling \
     --disable-mousewheel \
     --disable-next-scroll \
+    --disable-perl \
     --disable-pixbuf \
     --disable-pointer-blank \
     --disable-rxvt-scroll \
@@ -36,7 +38,6 @@ build() {
     --enable-combining \
     --enable-font-styles \
     --enable-lastlog \
-    --enable-perl \
     --enable-unicode3 \
     --enable-utmp \
     --enable-wtmp \
