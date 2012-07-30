@@ -14,6 +14,12 @@ case "$1" in
     set-status-line-bnwr
     exit $RC
     ;;
+  (on|unblock)
+    sudo rfkill unblock wifi
+    RC=$?
+    set-status-line-bnwr
+    exit $RC
+    ;;
   (r|reco|reconnect)
     ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }') && exit 0
     sudo wpa_cli reassociate
