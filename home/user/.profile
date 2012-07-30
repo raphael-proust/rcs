@@ -1,5 +1,7 @@
 #ssh agent
-eval $(ssh-agent)
+if [ "x$SSH_CONNECTION" = "x" ]; then
+  eval $(ssh-agent)
+fi
 
 #programs
 export EDITOR=vim
