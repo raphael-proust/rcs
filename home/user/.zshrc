@@ -2,14 +2,19 @@
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion::*:(rm|vi|vim):*' ignore-line true
 zstyle :compinstall filename '/home/raphael/.zshrc'
 
 autoload -Uz compinit
 compinit
-HISTCONTROL=erasedups
 HISTFILE=~/.histfile
 HISTSIZE=3000
 SAVEHIST=5000
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
 unsetopt beep
 bindkey -v
 
@@ -41,6 +46,12 @@ bindkey -M vicmd '\e[z' expand-or-complete-prefix
 
 #Make 'rm *' safe
 setopt RM_STAR_WAIT
+
+#Allow multiple output for commands
+setopt MULTIOS
+
+#Sort globbing numerically
+setopt NUMERIC_GLOB_SORT
 
 
 # aliases
