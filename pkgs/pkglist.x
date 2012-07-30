@@ -43,6 +43,7 @@ ttf-hannom
 ttf-liberation
 ttf-linux-libertine
 ttf-sazanami
+ttf-ubraille
 virtualbox
 wmii
 wmname
