@@ -135,6 +135,9 @@ set history=500
 set undolevels=500
 set undoreload=10000
 set undofile
+if !isdirectory(expand("~/.vim/undofiles"))
+  call mkdir(expand("~/.vim/undofiles"))
+endif
 set undodir=$HOME/.vim/undofiles
 
 "Window and term
