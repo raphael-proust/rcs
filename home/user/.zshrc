@@ -86,6 +86,16 @@ flag.io () {
 
 
 #automatic function to change title of terminal
+if [ "x$SSH_CONNECTION" != "x" ]
+then
+chpwd () {
+  [[ -t 1 ]] || return
+  case $TERM in
+    (st*|*xterm*|rxvt*) print -Pn "\e]2;@%M - %/\a"
+      ;;
+  esac
+}
+else
 chpwd () {
   [[ -t 1 ]] || return
   case $TERM in
@@ -93,6 +103,7 @@ chpwd () {
       ;;
   esac
 }
+fi
 chpwd
 
 
