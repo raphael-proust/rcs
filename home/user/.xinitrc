@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#bell off
+xset b off
+
 #fixing the keyboard
 xbindkeys -f $HOME/.xbindkeysrc
 setxkbmap -option compose:menu
