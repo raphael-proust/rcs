@@ -48,7 +48,11 @@ let g:splice_initial_scrollbind_grid = 1
 
 Bundle 'raphael-proust/molokai.git'
 Bundle 'raphael-proust/wombat.git'
-colorscheme wombat
+if &t_Co == '256'
+  colorscheme wombat
+else
+  colorscheme torte
+endif
 
 Bundle 'scrooloose/nerdtree'
 nnoremap <F5> :NERDTreeToggle<CR>
@@ -147,7 +151,7 @@ set encoding=utf-8
 
 "Beautiful additional chars
 set list
-set listchars=tab:▶┉,trail:◇,extends:▷,precedes:◁,nbsp:—
+set listchars=tab:▶▷,trail:◇,extends:⌟,precedes:⌜,nbsp:—
 set showbreak=››
 set fillchars-=vert:\|
 set fillchars+=vert:\ 
