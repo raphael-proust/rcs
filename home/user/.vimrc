@@ -180,6 +180,12 @@ map <C-l> <C-w>l
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
 
+"in command mode use <C-j/k> for history and <C-h/l> for moving
+cmap <C-h> <Left>
+cmap <C-j> <Down>
+cmap <C-k> <Up>
+cmap <C-l> <Right>
+
 " Highlights long lines
 set colorcolumn=+1
 
