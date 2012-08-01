@@ -63,7 +63,6 @@ htop
 ifplugd
 imagemagick
 inetutils
-initscripts
 iputils
 irssi
 jfsutils
@@ -138,8 +137,9 @@ sudo
 surf
 sysfsutils
 syslog-ng
+systemd
+systemd-sysvcompat
 systemd-tools
-sysvinit
 tamsyn-font
 tar
 terminus-font
