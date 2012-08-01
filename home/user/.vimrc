@@ -139,6 +139,7 @@ set history=500
 set undolevels=500
 set undoreload=10000
 set undofile
+autocmd BufRead,BufNewFile /tmp/* set noundofile
 if !isdirectory(expand("~/.vim/undofiles"))
   call mkdir(expand("~/.vim/undofiles"))
 endif
