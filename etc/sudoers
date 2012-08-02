@@ -28,9 +28,9 @@
 # Cmnd_Alias	PROCESSES = /usr/bin/nice, /bin/kill, /usr/bin/renice, \
 # 			    /usr/bin/pkill, /usr/bin/top
 Cmnd_Alias	ADMIN = /usr/bin/pacman, /usr/bin/pacman-color, /usr/bin/systemctl
-Cmnd_Alias	POWER = /sbin/halt, /sbin/reboot, /sbin/shutdown, /usr/bin/cpufreq-set, /usr/sbin/pm-suspend, /usr/sbin/powertop
+Cmnd_Alias	POWER = /sbin/poweroff, /sbin/reboot, /sbin/shutdown, /usr/bin/cpufreq-set, /usr/sbin/pm-suspend, /usr/sbin/powertop
 Cmnd_Alias	META = /usr/sbin/visudo, /bin/su
-Cmnd_Alias	NETWORK = /usr/bin/netcfg, /sbin/ifconfig, /usr/sbin/iwlist,/usr/sbin/iwconfig, /sbin/dhcpcd, /usr/sbin/rfkill, /usr/sbin/wpa_supplicant, /usr/sbin/wpa_cli
+Cmnd_Alias	NETWORK = /usr/bin/netcfg, /sbin/ifconfig, /usr/sbin/iwlist, /usr/sbin/iwconfig, /sbin/dhcpcd, /usr/sbin/rfkill, /usr/sbin/wpa_supplicant, /usr/sbin/wpa_cli
 Cmnd_Alias	STORE = /bin/mount, /bin/umount, /sbin/mkfs
 
 ##
