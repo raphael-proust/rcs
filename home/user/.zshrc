@@ -80,6 +80,8 @@ alias pacs='sudo $PACMANBIN -Ss'
 alias paci='sudo $PACMANBIN -Syu && sudo pacman -S'
 alias pacr='sudo $PACMANBIN -R'
 alias pacq='sudo $PACMANBIN -Qi'
+alias pacl='sudo $PACMANBIN -Ql'
+alias paco='sudo $PACMANBIN -Qo'
 
 export RLWRAP_EDITOR='vim +%L +"sil! call cursor(0, %C)"'
 
