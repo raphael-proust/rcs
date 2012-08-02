@@ -13,7 +13,6 @@ binutils
 bison
 bridge-utils
 bzip2
-consolekit
 coreutils
 cpufrequtils
 cronie
@@ -132,7 +131,6 @@ subversion
 sudo
 surf
 sysfsutils
-syslog-ng
 systemd
 systemd-sysvcompat
 systemd-tools

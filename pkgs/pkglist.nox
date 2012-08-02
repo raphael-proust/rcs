@@ -113,7 +113,6 @@ strace
 subversion
 sudo
 sysfsutils
-syslog-ng
 systemd
 systemd-sysvcompat
 systemd-tools
