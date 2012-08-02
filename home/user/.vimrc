@@ -80,9 +80,6 @@ let mapleader=","
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor= "latex"
 
-"~ is an op
-set tildeop
-
 "save with confirmation
 set confirm
 
