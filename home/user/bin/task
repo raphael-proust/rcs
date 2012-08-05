@@ -72,10 +72,10 @@ else
 fi
 
 #Usage:
-# task: prompt for task to attach to
+# task: prompt for a task to attach to using slmenu(1)
 # task <name>: if the task <name> exists, attach to it
-#              otherwise, create a shell task named <name>
+#              otherwise, create a shell ($SHELL) task named <name>
 # task <name> <cmd>: if the task <name> exists, attach to it
 #                    otherwise, create a <cmd> task named <name>
-# task <-n|-c|-A> <name> <cmd>: see dtach usage
-# task <-a> <name>: see dtach usage
+# task <-n|-c|-A> <name> <cmd>: see dtach(1) usage
+# task <-a> <name>: see dtach(1) usage
