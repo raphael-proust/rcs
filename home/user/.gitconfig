@@ -24,4 +24,5 @@
 [alias]
   co = commit
   st = "!f() { echo $(git status | head -1) && echo $(git status | grep 'Your branch' | head -n 1) && git status -s; }; f"
-  lg = "!f() { git log HEAD~$1..HEAD ; }; f $1"
+  lg = !zsh -c 'git log HEAD~"$1"..HEAD $*[2,-1]' -
+  dif = !sh -c 'unbuffer git diff $* | less' -
