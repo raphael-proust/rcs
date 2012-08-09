@@ -9,20 +9,13 @@ fi
 if [ $# -eq 0 ]
 then
   TASKPIPES=$(ls $TASKPIPESDIR)
-  if [ $(printf %s "$TASKPIPES" | wc -w) = "0" ]
+  TASKPIPE=$(printf %s "$TASKPIPES" | sed -e "s/\s\+/\n/g" | slmenu)
+  if [ "x$TASKPIPE" = "x" ]
   then
-    echo "No dtached task found"
     exit 0
   else
-    TASKPIPE=$(printf %s "$TASKPIPES" | sed -e "s/\s\+/\n/g" | slmenu)
-    if [ -S $TASKPIPESDIR/$TASKPIPE ]
-    then
-      dtach -a $TASKPIPESDIR/$TASKPIPE
-      exit 0
-    else
-      echo "Invalid task selection"
-      exit 1
-    fi
+    dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
+    exit 0
   fi
 else
   case "$#" in
