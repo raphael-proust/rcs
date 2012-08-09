@@ -68,8 +68,8 @@ set strictfocus='chrome:*':laissez-faire,*:despotic
 set followhints=1
 
 " GUI and all
-set guioptions=CMcs
-set showstatuslinks=command
+set guioptions=CMs
+"set showstatuslinks=command
 set showtabline=always
 set maxitems=7
 set noerrorbells
@@ -102,7 +102,7 @@ set wildmode=list:longest
 set urlseparator=;
 
 "duplication via :du
-command -nargs 0 -count -bang -description 'Duplicate current tab' du,dup,duplicate :<count>tabduplicate<bang>
+command -nargs 0 -count -bang -description 'Duplicate current tab' du,dup,duplicate :keepalt <count>tabduplicate<bang>
 
 " if gvim is not installed
 set editor='urxvt -e vim -f +<line> +"sil! call cursor(0, <column>)" <file>'
