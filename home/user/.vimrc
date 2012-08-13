@@ -258,4 +258,7 @@ let &titleold=getcwd()
 command Sudow :w !sudo tee %
 
 "Status line with a little more information
-set statusline=%<%f\ \ [%Y%M%R%W]%=%-11(%l,%c%V%)\ \ %P
+function SpellLang()
+    if &spell | return ',' . &spelllang | else | return '' | endif
+endfunction
+set statusline=%<%f%q\ \ [%Y%M%R%W%{SpellLang()}]%=%-11(%l,%c%V%)\ \ %P
