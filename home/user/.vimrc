@@ -11,6 +11,8 @@ Bundle 'gmarik/vundle'
 
 "Loading the bundles
 
+Bundle 'tpope/vim-repeat.git'
+
 Bundle 'tsaleh/vim-align.git'
 
 Bundle 'edsono/vim-matchit.git'
