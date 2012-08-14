@@ -60,12 +60,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias ls='ls --color=auto'
-alias l='ls -alhF'
+alias l='ls -AlhF'
 alias ll='ls -lh'
 alias l1='ls -1'
-alias la='ls -a'
-alias l1a='ls -1a'
-alias lla='ls -lah'
+alias la='ls -A'
+alias l1a='ls -1A'
+alias lla='ls -lAh'
 
 if [ -x /usr/bin/pacman-color ]
 then
