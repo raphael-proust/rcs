@@ -34,6 +34,7 @@ file
 filesystem
 findutils
 flex
+fuseiso
 gawk
 gcc
 gcc-libs
