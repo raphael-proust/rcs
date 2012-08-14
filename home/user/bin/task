@@ -14,8 +14,7 @@ then
   then
     exit 0
   else
-    dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
-    exit 0
+    exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
   fi
 else
   case "$#" in
@@ -25,23 +24,17 @@ else
           printf %s "$(ls $TASKPIPESDIR)"
           ;;
         (*)
-          dtach -A $TASKPIPESDIR/$1 $SHELL
-          printf %s\\n "$1"
-          exit 0
+          exec dtach -A $TASKPIPESDIR/$1 $SHELL
           ;;
       esac
       ;;
     (2)
       case "$1" in
         ("-a")
-          dtach -a $TASKPIPESDIR/$2
-          printf %s\\n "$2"
-          exit 0
+          exec dtach -a $TASKPIPESDIR/$2
           ;;
         (*)
-          dtach -A $TASKPIPESDIR/$1 $2
-          printf %s\\n "$1"
-          exit 0
+          exec dtach -A $TASKPIPESDIR/$1 $2
           ;;
       esac
       ;;
@@ -55,16 +48,12 @@ else
           DASHARG=$1
           PIPENAME=$2
           shift 2
-          dtach $DASHARG "$TASKPIPESDIR/$PIPENAME" $*
-          printf %s\\n "$PIPENAME"
-          exit 0
+          exec dtach $DASHARG "$TASKPIPESDIR/$PIPENAME" $*
           ;;
         (*)
           PIPENAME=$1
           shift 1
-          dtach -A $TASKPIPESDIR/$PIPENAME $*
-          printf %s\\n "$PIPENAME"
-          exit 0
+          exec dtach -A $TASKPIPESDIR/$PIPENAME $*
           ;;
       esac
       ;;
