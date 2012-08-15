@@ -1,0 +1,52 @@
+#!/bin/sh
+
+dispatch(){
+  case "$1" in
+    (o)
+      sudo rfkill unblock wifi
+      ;;
+    (k)
+      sudo rfkill block wifi
+      ;;
+    (d)
+      sudo pkill -9 -u root wpa_supplicant
+      sudo pkill -9 -u root dhcpcd
+      ;;
+    (c)
+      sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+      sudo dhcpcd wlan0
+      ;;
+    (s)
+      sudo ifconfig wlan0 up
+      sudo iwlist wlan0 scan
+      ;;
+    (r)
+      sudo wpa_cli reassociate
+      ;;
+    (p)
+      ping -c 1 -w 10 127.0.0.1 && \
+      ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }')
+      ;;
+    (*)
+      echo "$1"
+      cat <<EOF
+Connection script:
+  o: switch wifi on
+  k: switch wifi off (kill)
+  d: disconnect
+  c: connect
+  s: scan
+  r: reassociate
+  p: ping gateway
+  *: print this help
+
+Pass several options to execute there actions in order (e.g. 'conn o c')
+EOF
+    ;;
+  esac
+}
+
+for i in $*
+do
+  dispatch "$i"
+done
