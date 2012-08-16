@@ -14,13 +14,11 @@ then
 fi
 
 WIFI=""
-if which rfkill >/dev/null && which netcfg >/dev/null
+if which rfkill >/dev/null
 then
   if rfkill list wifi 2>/dev/null | grep -q "Soft blocked: no"
   then
-    WIFI=$(netcfg current)
-  else
-    WIFI="off"
+    WIFI="wlan: on"
   fi
 fi
 
@@ -59,7 +57,7 @@ fi
 
 DATE=$(date '+%Y-%m-%d %a  %H:%M')
 
-printf " vol: %s | wlan: %s | %s %s | %s%s%s" \
+printf " vol: %s | %s | %s %s | %s%s%s" \
   "$ALSAVOL"  \
   "$WIFI" \
   "$POWERSRC" "$POWERLVL" \

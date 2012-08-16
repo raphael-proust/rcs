@@ -71,12 +71,12 @@ man-pages
 mcabber
 mdadm
 mercurial
+mktorrent
 mlocate
 mpc
 mutt
 nano
 ncmpc
-netcfg
 nethack
 net-tools
 networkmanager
@@ -101,6 +101,7 @@ ppp
 procps-ng
 psmisc
 pv
+python2-eyed3
 reiserfsprogs
 rfkill
 rlwrap
