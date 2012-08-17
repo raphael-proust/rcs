@@ -2,22 +2,15 @@
 ### GLOBAL CONFIGURATION ###
 ############################
 
-# Set CDM theme and dialog options
-theme=default
-countfrom=1
-
 # List all WM binary names
-wmbinlist=(dwm wmii)
-
-# List all WM display names
-wmdisplist=(dwm wmii)
+wmlist=(dwm wmii)
 
 # Allow console login?
 allowconsole=yes
 
 # Allow shutdown?
 allowshutdown=yes
-shutdowncommand='sudo shutdown -h now'
+shutdowncommand='sudo shutdown -P now'
 rebootcommand='sudo shutdown -r now'
 
 # Allow suspend?
@@ -28,32 +21,29 @@ suspendcommand='sudo pm-suspend'
 allowhibernate=no
 hibernatecommand='sudo pm-hibernate'
 
-## Set configuration for specific users?
+# Set configuration for specific users?
 #userconfig=(courtney)
-#
-###########################
-#### USER CONFIGURATION ###
-###########################
-#
+
+##########################
+### USER CONFIGURATION ###
+##########################
+
 #courtney() {
-#	# Set CDM theme
-#	theme=lime
+#  # List user allowed WM binary names
+#  wmbinlist=(openbox-session)
 #
-#	# List user allowed WM binary names
-#	wmbinlist=(openbox-session)
+#  # List user allowed WM display names
+#  wmdisplist=(Openbox)
 #
-#	# List user allowed WM display names
-#	wmdisplist=(Openbox)
+#  # Allow console login?
+#  allowconsole=yes
 #
-#	# Allow console login?
-#	allowconsole=yes
+#  # Allow shutdown?
+#  allowshutdown=no
 #
-#	# Allow shutdown?
-#	allowshutdown=no
-#
-#	# Set specific display for user
-#	# (Not honored unless locktty=yes)
-#	# display=1
+#  # Set specific display for user
+#  # (Not honored unless locktty=yes)
+#  # display=1
 #}
 
 ############################
@@ -66,7 +56,7 @@ display=0
 # Where should first X tty be spawned?
 xtty=7
 
-# Restrict tty? (By default, cdm increments X tty, this setting
+# Restrict tty? (By default, sldm increments X tty, this setting
 # allows administrators to lock users into one specific tty by
 # setting the display=N option on a per-user basis.)
 locktty=no
@@ -79,23 +69,15 @@ locktty=no
 # /dev/null, so you won't see the complaints.
 loginshell=yes
 
-# The use of consolekit has recently become manditory with hal. However,
-# some users might prefer not using either one. If you don't want to
-# use consolekit, set the following variable to "no".
-consolekit=no
-
-# Timeout for waiting for X session to register with consoleKit
-consolekittime=30
-
 # Additional arguments to pass to X server
 # When usexinit=yes, we use ~/.xinitrc when it exists or /etc/X11/xinit/xinitrc
 # when it doesn't. These are passed the chosen window manager as $1; note that
 # the stock /etc/X11/xinit/xinitrc ignores this and always starts twm and three
 # xterms. Your custom xinitrc should start the window manager supplied as $1
-# instead. There is a sample xinitrc included at /usr/share/cdm/xinitrc.skel.
+# instead. There is a sample xinitrc included at /usr/share/sldm/xinitrc.skel.
 # If usexinit=no, then we instead call the chosen window manager directly.
 usexinit=yes
 
 # Additional arguments to pass to X server; it will be called as:
-#	exec /usr/bin/X :$display $serverargs vt$((xtty+display))
+#  exec /usr/bin/X :$display $serverargs vt$((xtty+display))
 serverargs="-nolisten tcp -dpi 96"
