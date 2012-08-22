@@ -18,7 +18,7 @@ if which rfkill >/dev/null
 then
   if rfkill list wifi 2>/dev/null | grep -q "Soft blocked: no"
   then
-    WIFI="wlan: on"
+    WIFI="| wlan"
   fi
 fi
 
@@ -57,7 +57,7 @@ fi
 
 DATE=$(date '+%Y-%m-%d %a  %H:%M')
 
-printf " vol: %s | %s | %s %s | %s%s%s" \
+printf " vol: %s %s | %s %s | %s%s%s" \
   "$ALSAVOL"  \
   "$WIFI" \
   "$POWERSRC" "$POWERLVL" \
