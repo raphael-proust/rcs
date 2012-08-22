@@ -28,7 +28,7 @@ set suggestengines=
 
 " custom searches (using bangs: https://duckduckgo.com/bang.html)
 map sd tddg 
-map s! tddg !
+map sb tddg !
 map st tddg !torrentz 
 map sw tddg !w 
 map sf tddg !wfr 
