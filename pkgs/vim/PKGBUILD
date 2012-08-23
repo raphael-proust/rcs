@@ -5,7 +5,7 @@ pkgname=('vim' 'vim-runtime')
 _topver=7.3
 _versiondir="vim${_topver//./}"
 pkgver=3754
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 license=('custom:vim')
 url="http://www.vim.org"
@@ -41,6 +41,7 @@ build() {
   ./configure --prefix=/usr --localstatedir=/var/lib/vim \
     --with-features=big --with-compiledby=ArchLinux \
     --disable-gpm --enable-acl --with-x=no \
+    --disable-mouse \
     --disable-gui --enable-multibyte --enable-cscope \
     --disable-netbeans --enable-perlinterp --enable-pythoninterp \
     --enable-python3interp --enable-rubyinterp --enable-luainterp
