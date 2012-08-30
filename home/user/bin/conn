@@ -4,9 +4,11 @@ dispatch(){
   case "$1" in
     (o)
       sudo rfkill unblock wifi
+      set-status-line-bnwr
       ;;
     (k)
       sudo rfkill block wifi
+      set-status-line-bnwr
       ;;
     (d)
       sudo pkill -9 -u root wpa_supplicant
