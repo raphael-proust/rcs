@@ -11,7 +11,6 @@ bison
 bridge-utils
 bzip2
 coreutils
-cpufrequtils
 cronie
 cryptsetup
 ctags
@@ -49,7 +48,6 @@ gzip
 heirloom-mailx
 html2text
 htop
-ifplugd
 inetutils
 iputils
 irssi
@@ -117,7 +115,6 @@ sudo
 sysfsutils
 systemd
 systemd-sysvcompat
-systemd-tools
 tar
 texinfo
 tor

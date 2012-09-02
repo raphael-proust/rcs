@@ -14,7 +14,6 @@ bison
 bridge-utils
 bzip2
 coreutils
-cpufrequtils
 cronie
 cryptsetup
 ctags
@@ -60,7 +59,6 @@ gzip
 heirloom-mailx
 html2text
 htop
-ifplugd
 imagemagick
 inetutils
 iputils
@@ -139,7 +137,6 @@ surf
 sysfsutils
 systemd
 systemd-sysvcompat
-systemd-tools
 tamsyn-font
 tar
 terminus-font
