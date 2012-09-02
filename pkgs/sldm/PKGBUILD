@@ -1,7 +1,7 @@
 # Maintainer: Raphael Proust <raphlalou at gmail dotcom>
 
 pkgname=sldm
-pkgver=20120820
+pkgver=20120902
 pkgrel=1
 pkgdesc="Single Line Display Manager"
 url="https://github.com/raphael-proust/sldm"
