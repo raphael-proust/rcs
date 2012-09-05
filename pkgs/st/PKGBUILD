@@ -3,7 +3,7 @@
 
 pkgname=st
 epoch=1
-pkgver=246
+pkgver=280
 pkgrel=100
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://hg.suckless.org/st'
