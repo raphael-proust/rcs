@@ -122,7 +122,6 @@ xorg-xkill
 xorg-xlsatoms
 xorg-xlsclients
 xorg-xmessage
-xorg-xmodmap
 xorg-xpr
 xorg-xprop
 xorg-xrandr

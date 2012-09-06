@@ -1,13 +1,11 @@
-#!/bin/sh
+!/bin/sh
 
 #bell off
 xset b off
 
 #fixing the keyboard
+xkbcomp .xkb $DISPLAY
 xbindkeys -f $HOME/.xbindkeysrc
-setxkbmap -option compose:menu
-setxkbmap -option compose:prsc
-xmodmap $HOME/.xmodmap
 
 #setting X resources
 xrdb ~/.Xresources
