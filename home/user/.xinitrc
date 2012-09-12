@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 #bell off
 xset b off
