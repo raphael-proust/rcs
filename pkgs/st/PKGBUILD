@@ -3,8 +3,8 @@
 
 pkgname=st
 epoch=1
-pkgver=280
-pkgrel=100
+pkgver=294
+pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://hg.suckless.org/st'
 arch=('i686' 'x86_64')
