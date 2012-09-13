@@ -1,0 +1,7 @@
+#!/bin/sh
+while true
+do
+  set-status-line-bnwr
+  sleep 60
+done &
+exec $1

@@ -10,13 +10,5 @@ FIFO="$STATUSPIPESDIR/dvtm-status.$$"
 [ -e "$FIFO" ] || mkfifo "$FIFO"
 chmod 600 $FIFO
 
-while true
-do
-  status-line-bnwr
-  sleep 60
-done > $FIFO &
-
-STATUS_PID=$!
 /usr/bin/dvtm -s $FIFO "$@" 2> /dev/null
-kill $STATUS_PID
 rm $FIFO
