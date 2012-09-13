@@ -2,12 +2,14 @@
 
 pkgname=sldm
 pkgver=20120913
-pkgrel=1
+pkgrel=2
 pkgdesc="Single Line Display Manager"
 url="https://github.com/raphael-proust/sldm"
 arch=('i686' 'x86_64')
 license=('GPL')
 options=()
+backup=('etc/sldmrc')
+install='sldm.install'
 depends=('slmenu-hg' 'xorg-utils')
 makedepends=('git')
 source=()
