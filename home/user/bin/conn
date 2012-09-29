@@ -16,7 +16,7 @@ dispatch(){
       ;;
     (c)
       sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-      sudo dhcpcd wlan0
+      sudo dhcpcd --timeout 60 wlan0
       ;;
     (s)
       sudo ifconfig wlan0 up
@@ -27,6 +27,9 @@ dispatch(){
       ;;
     (p)
       ping -c 1 -w 10 $(route -n | awk '/^0.0.0.0/ { print $2 }')
+      ;;
+    (e)
+      sudo dhcpcd --timeout 60 eth0
       ;;
     (*)
       echo "$1"
@@ -39,6 +42,7 @@ Connection script:
   s: scan
   r: reassociate
   p: ping gateway
+  e: ethernet connect
   *: print this help
 
 Pass several options to execute there actions in order (e.g. 'conn o c')
