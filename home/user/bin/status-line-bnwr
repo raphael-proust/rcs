@@ -27,9 +27,9 @@ POWERLVL=$(acpi -b | sed 's/Battery .:.* \([0-9]*%\).*$/\1/') \
 
 
 CPUGOV=""
-if which cpufreq-info >/dev/null
+if which cpupower >/dev/null
 then
-  CPUGOV=$(cpufreq-info -c 0 -p | awk '{print $3}')
+  CPUGOV=$(cpupower -c 0 frequency-info -p|tail -n 1|awk '{print $3}')
   case "$CPUGOV" in
     (ondemand)
       CPUGOV=""
