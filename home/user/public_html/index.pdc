@@ -4,24 +4,29 @@
 
 ##Status
 
-I am an intern at the [Gallium team](http://gallium.inria.fr/) at
-[INRIA](http://www.inria.fr). I am working on intermediate representations for
-compilers (especially functionnal ones such as CPS and ANF) under supervision by
-[Xavier Leroy](http://gallium.inria.fr/~xleroy/).
-
-I am a student at the [ÉNS Cachan](http://www.ens-cachan.fr/version-anglaise/)
-(more specifically at its [Brittany
-extension](http://www.ens-cachan.fr/version-anglaise/)) in Computer Science.
+I am a Ph.D. student at the [Computer Laboratory](http://www.cl.cam.ac.uk/)
+of the [University of Cambridge](http://www.cam.ac.uk/) under supervision of
+[Alan Mycroft](http://www.cl.cam.ac.uk/~am21/). I am working on linear
+types and their use for system programming.
 
 --------------------------------------------------------------------------------
 
 ##Past
 
-I have been an intern at the [Computer Laboratory](http://www.cl.cam.ac.uk/) of
-the [University of Cambridge](http://www.cam.ac.uk/). The internship featured
-different aspects of the [Mirage](http://openmirage.org) project (notably the
-use of linear types for efficiency and functionnal reactive programming for
-dynamic reconfiguration) and was supervised by [Anil
+I have been an intern at the [Gallium team](http://gallium.inria.fr/) at
+[INRIA](http://www.inria.fr), working on intermediate representations for
+compilers (especially functional ones such as CPS and ANF) under supervision
+by [Xavier Leroy](http://gallium.inria.fr/~xleroy/).
+
+I have been a student at the [ÉNS
+Cachan](http://www.ens-cachan.fr/version-anglaise/) (more specifically at its
+Brittany extension) in Computer Science.
+
+I have been an intern at the [Computer Laboratory](http://www.cl.cam.ac.uk/)
+of the [University of Cambridge](http://www.cam.ac.uk/). The internship
+featured different aspects of the [Mirage](http://openmirage.org) project
+(notably the use of linear types for efficiency and functional reactive
+programming for dynamic reconfiguration) and was supervised by [Anil
 Madhavapeddy](http://anil.recoil.org/) and hosted by [Jon
 Crowcroft](http://www.cl.cam.ac.uk/~jac22/)
 
@@ -38,6 +43,6 @@ Projects I have contributed to: [Ocsigen](http://ocsigen.org),
 
 Software repository: [github](http://github.com/raphael-proust/).
 
-I can be sent emails to through gmail, where I am known as raphlalou.
+I can be sent emails to at <rp452@cam.ac.uk>.
 
 <!-- :!pandoc --standalone -o %:r.html % -->
