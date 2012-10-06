@@ -18,7 +18,12 @@ if which rfkill >/dev/null
 then
   if rfkill list wifi 2>/dev/null | grep -q "Soft blocked: no"
   then
-    WIFI="| wlan"
+    if which wpa_cli >/dev/null
+    then
+      WIFI=$(printf "| %s" $(sudo wpa_cli status|grep "^ssid="|sed "s/^ssid=//"))
+    else
+      WIFI="| wlan"
+    fi
   fi
 fi
 
