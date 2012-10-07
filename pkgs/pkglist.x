@@ -1,6 +1,7 @@
 alsa-tools
 artwiz-fonts
 bdf-unifont
+chromium
 darktable
 dmenu
 dwm
