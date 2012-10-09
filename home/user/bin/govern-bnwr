@@ -2,13 +2,13 @@
 
 case "$1" in
   (ondemand)
-    sudo cpufreq-set -r -g ondemand
+    sudo cpupower frequency-set -r -g ondemand
     ;;
   (powersave)
-    sudo cpufreq-set -r -g powersave
+    sudo cpupower frequency-set -r -g powersave
     ;;
   (performance)
-    sudo cpufreq-set -r -g performance
+    sudo cpupower frequency-set -r -g performance
     ;;
   (*)
     echo "usage: $0 {ondemand|powersave|performance}"
