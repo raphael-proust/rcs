@@ -67,6 +67,8 @@ alias la='ls -A'
 alias l1a='ls -1A'
 alias lla='ls -lAh'
 
+alias day="date '+%Y-%m-%d'"
+
 if [ -x /usr/bin/pacman-color ]
 then
   PACMANBIN="pacman-color"
