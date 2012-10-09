@@ -16,7 +16,6 @@ dispatch(){
     (c)
       sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
       sudo dhcpcd --timeout 60 wlan0
-      set-status-line-bnwr
       ;;
     (s)
       sudo ifconfig wlan0 up
