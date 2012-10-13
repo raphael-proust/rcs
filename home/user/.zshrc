@@ -56,9 +56,6 @@ setopt NUMERIC_GLOB_SORT
 # aliases
 alias gps='ps -ly -C '
 
-alias ..='cd ..'
-alias ...='cd ../..'
-
 alias ls='ls --color=auto'
 alias l='ls -AlhF'
 alias ll='ls -lh'
@@ -69,22 +66,13 @@ alias lla='ls -lAh'
 
 alias day="date '+%Y-%m-%d'"
 
-if [ -x /usr/bin/pacman-color ]
-then
-  PACMANBIN="pacman-color"
-else
-  PACMANBIN="pacman"
-fi
-
-alias pacu='sudo $PACMANBIN -Syu'
-alias pacs='sudo $PACMANBIN -Ss'
-alias paci='sudo $PACMANBIN -Syu && sudo pacman -S'
-alias pacr='sudo $PACMANBIN -R'
-alias pacq='sudo $PACMANBIN -Qi'
-alias pacl='sudo $PACMANBIN -Ql'
-alias paco='sudo $PACMANBIN -Qo'
-
-export RLWRAP_EDITOR='vim +%L +"sil! call cursor(0, %C)"'
+alias pacu='sudo pacman -Syu'
+alias pacs='sudo pacman -Ss'
+alias paci='sudo pacman -Syu && sudo pacman -S'
+alias pacr='sudo pacman -R'
+alias pacq='sudo pacman -Qi'
+alias pacl='sudo pacman -Ql'
+alias paco='sudo pacman -Qo'
 
 #functions
 f() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
@@ -92,12 +80,6 @@ f() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
 md () { mkdir -p $1 && cd $1 }
 
 kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
-
-flag.io () {
-  [[ -n $1 ]] || return
-  curl -s -T $1 flag.io | grep -v "^#"
-}
-
 
 #automatic function to change title of terminal
 if [ "x$SSH_CONNECTION" != "x" ]
