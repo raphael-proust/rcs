@@ -1,70 +1,50 @@
-#!/bin/dash
+#!/opt/plan9/bin/rc
 
-TASKPIPESDIR="$HOME/.task-pipes"
-if ! [ -d $TASKPIPESDIR ]
-then
-  mkdir $TASKPIPESDIR
-fi
+TASKPIPESDIR=$home/.task-pipes
+if (! ls $TASKPIPESDIR >/dev/null >[2=1]) mkdir $TASKPIPESDIR
 
-if [ $# -eq 0 ]
-then
-  TASKPIPES=$(ls $TASKPIPESDIR)
-  TASKPIPE=$(printf %s "$TASKPIPES" | sed -e "s/\s\+/\n/g" | slmenu)
-  if [ "x$TASKPIPE" = "x" ]
-  then
-    exit 0
-  else
-    exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
-  fi
-else
-  case "$#" in
-    (1)
-      case "$1" in
-        ("-l")
-          printf %s "$(ls $TASKPIPESDIR)"
-          ;;
-        (*)
-          exec dtach -A $TASKPIPESDIR/$1 $SHELL
-          ;;
-      esac
-      ;;
-    (2)
-      case "$1" in
-        ("-a")
-          exec dtach -a $TASKPIPESDIR/$2
-          ;;
-        (*)
-          exec dtach -A $TASKPIPESDIR/$1 $2
-          ;;
-      esac
-      ;;
-    (*)
-      case "$1" in
-        ("-a")
-          echo "Invalid usage of -a"
-          exit 1
-          ;;
-        ("-c"|"-n"|"-A")
-          DASHARG=$1
-          PIPENAME=$2
-          shift 2
-          exec dtach $DASHARG "$TASKPIPESDIR/$PIPENAME" $*
-          ;;
-        (*)
-          PIPENAME=$1
-          shift 1
-          exec dtach -A $TASKPIPESDIR/$PIPENAME $*
-          ;;
-      esac
-      ;;
-  esac
-fi
+switch ($#*) {
+case 0
+	TASKPIPES=`{ls $TASKPIPESDIR}
+	echo $TASKPIPES
+	TASKPIPE=`{read}
+	switch($TASKPIPE) {
+	case ''
+		exit ''
+	case *
+		exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
+	}
+case 1
+	switch $*(1) {
+	case -l
+		echo `{ls $TASKPIPESDIR}
+	case *
+		exec dtach -A $TASKPIPESDIR/$*(1) $SHELL
+	}
+case 2
+	switch $*(1) {
+	case -a
+		exec dtach -a $TASKPIPESDIR/$2
+	case *
+		exec dtach -A $TASKPIPESDIR/$*(1) $*(2)
+	}
+case *
+	switch $*(1) {
+	case -a
+		exit "Too many arguments with -a"
+	case -[cnA]
+		DASHARG=$*(1)
+		PIPENAME=$*(2)
+		shift 2
+		echo $DASHARG
+		echo $PIPENAME
+		echo $*
+		exec dtach $DASHARG $TASKPIPESDIR/$PIPENAME $*
+	case *
+		PIPENAME=$1
+		shift 1
+		exec dtach -A $TASKPIPESDIR/$PIPENAME $*
+	}
+}
 
-#Usage:
-# task: prompt for a task to attach to using slmenu(1)
-# task <name>: if the task <name> exists, attach to it
-#              otherwise, create a shell ($SHELL) task named <name>
-# task <name> <cmd>: if the task <name> exists, attach to it
-#                    otherwise, create a <cmd> task named <name>
-# task <-n|-c|-A> <name> <cmd>: see dtach(1) usage
-# task <-a> <name>: see dtach(1) usage
+
