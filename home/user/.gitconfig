@@ -3,27 +3,13 @@
   email = raphlalou@gmail.com
 
 [color]
-  ui = yes
+  ui = no
 
 [core]
   pager = cat
 
-[diff]
-  tool = fugitive
-
-[difftool "fugitive"]
-  cmd = "vim -f $REMOTE -c 'Gdiff'"
-
-[merge]
-  tool = splice
-
-[mergetool "splice"]
-  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-  trustExitCode = true
-
 [alias]
   co = commit
-  st = "!f() { echo $(git status | head -1) && echo $(git status | grep 'Your branch' | head -n 1) && git status -s; }; f"
-  lg = !zsh -c 'git log HEAD~"$1"..HEAD $*[2,-1]' -
-  dif = !sh -c 'unbuffer git diff $* | less' -
+  st = status -bs
+  lg = !rc -c 'git log "HEAD~^$*(1)^..HEAD $*(2-)"'
   root = !pwd
