@@ -1,10 +1,9 @@
-9base
 acpi
 acpid
-alsa-tools
 alsa-utils
 aria2
 artwiz-fonts
+aspell-fr
 autoconf
 automake
 bash
@@ -15,6 +14,7 @@ bridge-utils
 bzip2
 chromium
 coreutils
+cpupower
 cronie
 cryptsetup
 ctags
@@ -71,6 +71,7 @@ lesspipe
 libpng12
 libreoffice-calc
 libreoffice-draw
+libreoffice-impress
 libreoffice-writer
 licenses
 linux
@@ -94,8 +95,8 @@ mupdf
 mutt
 nano
 ncmpc
-nethack
 net-tools
+nethack
 networkmanager
 newsbeuter
 ntfs-3g
@@ -105,7 +106,6 @@ openssh
 openvpn
 p7zip
 pacman
-pacman-color
 patch
 pciutils
 pcmciautils
@@ -113,6 +113,7 @@ perl
 pkg-config
 pkgstats
 pkgtools
+plan9port
 pm-utils
 powertop
 ppp
@@ -159,6 +160,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 tor
+traceroute
 ttf-freefont
 ttf-hannom
 ttf-liberation
@@ -229,10 +231,10 @@ xf86-video-voodoo
 xfsprogs
 xorg-bdftopcf
 xorg-docs
+xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
-xorg-font-util
 xorg-iceauth
 xorg-luit
 xorg-mkfontdir

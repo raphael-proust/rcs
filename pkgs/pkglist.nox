@@ -1,8 +1,8 @@
-9base
 acpi
 acpid
 alsa-utils
 aria2
+aspell-fr
 autoconf
 automake
 bash
@@ -11,6 +11,7 @@ bison
 bridge-utils
 bzip2
 coreutils
+cpupower
 cronie
 cryptsetup
 ctags
@@ -75,8 +76,8 @@ mpc
 mutt
 nano
 ncmpc
-nethack
 net-tools
+nethack
 networkmanager
 newsbeuter
 ntfs-3g
@@ -86,7 +87,6 @@ openssh
 openvpn
 p7zip
 pacman
-pacman-color
 patch
 pciutils
 pcmciautils
@@ -119,6 +119,7 @@ systemd-sysvcompat
 tar
 texinfo
 tor
+traceroute
 unison
 unzip
 usbutils
