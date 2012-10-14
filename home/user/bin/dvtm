@@ -1,14 +1,10 @@
-#!/bin/dash
+#!/opt/plan9/bin/rc
 
-STATUSPIPESDIR="/tmp/dvtm-status-pipes"
-if ! [ -d $STATUSPIPESDIR ]
-then
-  mkdir $STATUSPIPESDIR
-fi
-FIFO="$STATUSPIPESDIR/dvtm-status.$$"
-
-[ -e "$FIFO" ] || mkfifo "$FIFO"
+STATUSPIPESDIR=/tmp/dvtm-status-pipes
+if (! ls $STATUSPIPESDIR >/dev/null >[2=1]) mkdir $STATUSPIPESDIR
+FIFO=$STATUSPIPESDIR/dvtm-status.$pid
+mkfifo $FIFO
 chmod 600 $FIFO
 
-/usr/bin/dvtm -s $FIFO "$@" 2> /dev/null
+/usr/bin/dvtm -s $FIFO $* >[2] /dev/null
 rm $FIFO
