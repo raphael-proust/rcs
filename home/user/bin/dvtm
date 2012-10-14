@@ -1,7 +1,7 @@
 #!/opt/plan9/bin/rc
 
 STATUSPIPESDIR=/tmp/dvtm-status-pipes
-if (! ls $STATUSPIPESDIR >/dev/null >[2=1]) mkdir $STATUSPIPESDIR
+if (! test -d $STATUSPIPESDIR) mkdir $STATUSPIPESDIR
 FIFO=$STATUSPIPESDIR/dvtm-status.$pid
 mkfifo $FIFO
 chmod 600 $FIFO

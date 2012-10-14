@@ -1,7 +1,7 @@
 #!/opt/plan9/bin/rc
 
 TASKPIPESDIR=$home/.task-pipes
-if (! ls $TASKPIPESDIR >/dev/null >[2=1]) mkdir $TASKPIPESDIR
+if (! test -d $TASKPIPESDIR) mkdir $TASKPIPESDIR
 
 switch ($#*) {
 case 0
@@ -10,7 +10,7 @@ case 0
 	TASKPIPE=`{read}
 	switch($TASKPIPE) {
 	case ''
-		exit ''
+		exit ()
 	case *
 		exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
 	}
