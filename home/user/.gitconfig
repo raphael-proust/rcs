@@ -10,6 +10,6 @@
 
 [alias]
   co = commit
-  st = status -bs
+  st = status -b --porcelain
   lg = !rc -c 'git log "HEAD~^$*(1)^..HEAD $*(2-)"'
   root = !pwd
