@@ -13,4 +13,4 @@ do
   sleep 60
 done &
 
-exec ${1}
+exec $*
