@@ -11,7 +11,5 @@ export SHELL=zsh
 export LESS="-R"
 
 #path
-export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
+export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH:$HOME/.cabal/bin
 
-#cabal install darcs
-export PATH=$PATH:$HOME/.cabal/bin
