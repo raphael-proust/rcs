@@ -1,0 +1,3 @@
+#!/bin/sh
+
+SHELL=rc prompt="9 " exec rlwrap -c -C rc -D 2 -f $HOME/bin-list 9 rc
