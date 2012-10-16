@@ -13,22 +13,14 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-repeat.git'
 
-Bundle 'tsaleh/vim-align.git'
-
 Bundle 'edsono/vim-matchit.git'
 
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
-Bundle 'ocamlMultiAnnot'
 autocmd FileType ocaml_lwt set foldlevel=9
 
 Bundle 'raphael-proust/pdc.vim.git'
 
 Bundle 'vim-scripts/SuperTab.git'
-
-Bundle 'rson/vim-conque.git'
-let g:ConqueTerm_CWInsert = 1
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_Color = 0
 
 Bundle 'vim-scripts/surround.vim.git'
 "French typographic rules impose non-breakable space
@@ -56,19 +48,9 @@ else
   colorscheme torte
 endif
 
-Bundle 'scrooloose/nerdtree'
-nnoremap <F5> :NERDTreeToggle<CR>
-
-Bundle 'ShowMarks7'
-let g:showmarks_enable=0
-let g:showmarks_textlower="'\t"
-let g:showmarks_textupper="'\t"
-let g:showmarks_textother="'\t"
-let g:showmarks_ignore_type="hqmp"
-
 "Vundle post-initialisation phase
 filetype plugin indent on
-syntax on
+syntax off
 
 "updatetime influences CursorHold events
 set updatetime=2000
@@ -91,10 +73,10 @@ nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set dif
 
 "Tabs (the absence of), indent and the such
 set smarttab
-set expandtab
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
+set noexpandtab
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
 set copyindent
 set noshiftround
 
@@ -172,7 +154,7 @@ vmap <silent> <leader>d "_d
 
 "Buffers and window handling
 set switchbuf=usetab
-map <C-w>! :vertical resize 80<CR>
+map <C-w>! :vertical resize 78<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -226,11 +208,9 @@ command -range=% Nbsp :<line1>,<line2>s/\%d160//e
 command -range=% Textsc :<line1>,<line2>s/\(\<\u\+\>\)/\\textsc{\L\1\E}/ce
 
 " Spelling
-command Spellfr :setlocal spell | :setlocal spelllang=fr_fr
+command Spellfr :setlocal spell | :setlocal spelllang=fr
 command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
-
-command -range=% Vpaste :exec "<line1>,<line2>w !vpaste ft=".&ft
 
 " filetype specific options
 autocmd FileType make set noexpandtab
@@ -247,9 +227,6 @@ endfun
 
 "llvm bitcode files
 autocmd BufRead,BufNewFile *.ll    set filetype=llvm
-
-"for small screens (less than (2×80+1), greater than (80+1+1))
-"au BufEnter * vert res 80
 
 "unf.ck terminal title
 let &titleold=getcwd()
