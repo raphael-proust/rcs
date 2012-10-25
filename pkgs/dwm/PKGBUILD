@@ -2,7 +2,7 @@
 
 pkgname=dwm
 pkgver=6.0
-pkgrel=104
+pkgrel=106
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
   config.h
   config.mk)
 md5sums=('8bb00d4142259beb11e13473b81c0857'
-  '9882adf997e721bf4f02081b494953da'
+  '8239fa5aee67a1dacae5afe76a0e4eb8'
   'eab9c0052a884f8b2d08cddf83f1fe62')
 
 build() {

@@ -1,5 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
+static void reexec(const Arg *arg);
+
+void
+reexec(const Arg *arg) {
+  cleanup();
+  XCloseDisplay(dpy);
+  execvp(((char **)arg->v)[0], (char **)arg->v);
+}
+
 /* appearance */
 static const char font[]            = "monospace-8";
 static const char normbordercolor[] = "#444444";
@@ -9,7 +18,7 @@ static const char selbordercolor[]  = "#006666";
 static const char selbgcolor[]      = "#006666";
 static const char selfgcolor[]      = "#eeeeee";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 16;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
@@ -84,6 +93,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_q,      reexec,         {.v = (const char*[]){ "/usr/bin/dwm", NULL } } },
 };
 
 /* button definitions */
