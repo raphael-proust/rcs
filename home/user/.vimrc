@@ -94,7 +94,6 @@ set splitbelow
 "Search and substitute
 set hlsearch
 map <F1> :set hls!<CR>
-imap <F1> :set hls!<CR>
 set magic
 set gdefault
 
