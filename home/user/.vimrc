@@ -48,6 +48,8 @@ else
   colorscheme torte
 endif
 
+Bundle 'spolu/dwm.vim.git'
+
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax off
@@ -154,10 +156,6 @@ vmap <silent> <leader>d "_d
 "Buffers and window handling
 set switchbuf=usetab
 map <C-w>! :vertical resize 78<CR>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
 
