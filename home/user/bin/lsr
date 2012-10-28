@@ -1,0 +1,11 @@
+#!/opt/plan9/bin/rc
+
+fn lsr {
+	ifs='
+	' for (i in `{ls -Q $1}) {
+		echo $i
+		if (test -d $i) lsr $i
+	}
+}
+
+lsr $1
