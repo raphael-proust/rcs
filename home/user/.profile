@@ -7,9 +7,16 @@ fi
 export EDITOR=vim
 export SHELL=zsh
 
-#keep colors in less
-export LESS="-R"
+#usul: use $USUL/ls, $USUL/cat, etc.
+source .profile.usul
 
 #path
-export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH:$HOME/.cabal/bin
+export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
+export MANPATH=/usr/man:/usr/share/man:/usr/local/share/man
+
+#cabal
+source .profile.cabal
+
+#opam
+source .profile.opam
 
