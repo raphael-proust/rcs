@@ -3,7 +3,7 @@
 
 pkgname=st
 epoch=1
-pkgver=321
+pkgver=372
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://hg.suckless.org/st'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('libx11')
 makedepends=('mercurial' 'ncurses')
 source=(config.h)
-md5sums=('1fa5ad09a544a5a7fa513c7cfeff3f78')
+md5sums=('da92f9da59d6dd04d56d756e0ea23b75')
 
 provides=('st')
 conflicts=('st')
@@ -27,7 +27,6 @@ build() {
   hg clone "${_hgroot}${_hgrepo}"
 
   rm -fr build; cp -a "${_hgrepo}" build; cd build
-  hg checkout xft
   cp $startdir/config.h config.h
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }

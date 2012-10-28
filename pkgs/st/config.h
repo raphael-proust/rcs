@@ -1,6 +1,6 @@
 #define TAB 8
 #define TNAME "st-256color"
-#define XFT_FONT "monospace-8"
+#define FONT "monospace:antialias=true:autohint=true"
 #define BORDER 2
 #define SHELL "/bin/sh"
 
@@ -21,14 +21,19 @@ static const char *colorname[] = {
 	"#5c5cff",
 	"magenta",
 	"cyan",
-	"white"
+	"white",
+	[255] = 0,
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#333333",
 };
 
 /* Default colors (colorname index)
-   foreground, background, cursor   */
-#define DefaultFG 7
-#define DefaultBG 0
-#define DefaultCS 1
+   foreground, background, cursor, unfocused cursor */
+#define DefaultFG  7
+#define DefaultBG  0
+#define DefaultCS  256
+#define DefaultUCS 257
 
 /* Special keys (change & recompile st.info accordingly)
    Keep in mind that kpress() in st.c hardcodes some keys.
@@ -36,11 +41,11 @@ static const char *colorname[] = {
    Mask value:
    * Use XK_ANY_MOD to match the key no matter modifiers state
    * Use XK_NO_MOD to match the key alone (no modifiers)
-   
+
       key,        mask,  output */
 static Key key[] = {
 	{ XK_BackSpace, XK_NO_MOD, "\177" },
-   	{ XK_Insert,    XK_NO_MOD, "\033[2~" },
+	{ XK_Insert,    XK_NO_MOD, "\033[2~" },
 	{ XK_Delete,    XK_NO_MOD, "\033[3~" },
 	{ XK_Home,      XK_NO_MOD, "\033[1~" },
 	{ XK_End,       XK_NO_MOD, "\033[4~" },
@@ -60,12 +65,13 @@ static Key key[] = {
 	{ XK_F12,       XK_NO_MOD, "\033[24~" },
 };
 
-/* Line drawing characters (sometime specific to each font...) */
-static char gfx[] = {
-	['f'] = 'o',
-	['g'] = '+',
-	['i'] = '#',
-	[255] = 0,
+/* Internal shortcuts. */
+#define MODKEY Mod1Mask
+
+static Shortcut shortcuts[] = {
+	/* modifier		key		function	argument */
+	{ MODKEY|ShiftMask,	XK_Prior,	xzoom,		{.i = +1} },
+	{ MODKEY|ShiftMask,	XK_Next,	xzoom,		{.i = -1} },
 };
 
 /* double-click timeout (in milliseconds) between clicks for selection */
