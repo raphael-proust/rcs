@@ -21,7 +21,6 @@ ctags
 curl
 cvs
 cyrus-sasl
-darktable
 dash
 device-mapper
 dhcpcd
@@ -67,7 +66,6 @@ irssi
 jfsutils
 laptop-mode-tools
 less
-lesspipe
 libpng12
 libreoffice-calc
 libreoffice-draw
@@ -95,8 +93,8 @@ mupdf
 mutt
 nano
 ncmpc
-net-tools
 nethack
+net-tools
 networkmanager
 newsbeuter
 ntfs-3g
@@ -175,7 +173,6 @@ vi
 vim
 vim-spell-en
 vim-spell-fr
-virtualbox
 vlock
 vorbis-tools
 w3m
@@ -231,10 +228,10 @@ xf86-video-voodoo
 xfsprogs
 xorg-bdftopcf
 xorg-docs
-xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
+xorg-font-util
 xorg-iceauth
 xorg-luit
 xorg-mkfontdir

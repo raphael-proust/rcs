@@ -55,7 +55,6 @@ irssi
 jfsutils
 laptop-mode-tools
 less
-lesspipe
 libpng12
 licenses
 linux
@@ -76,8 +75,8 @@ mpc
 mutt
 nano
 ncmpc
-net-tools
 nethack
+net-tools
 networkmanager
 newsbeuter
 ntfs-3g
