@@ -46,6 +46,6 @@
 "toggle-touchpad-bnwr"
     m:0x0 + c:220
     XF86WebCam
-"urxvt -e 9rc"
+"st -e 9rc"
     m:0x40 + c:51
     Mod4 + backslash
