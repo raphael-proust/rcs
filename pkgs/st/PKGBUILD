@@ -12,7 +12,7 @@ license=('MIT')
 depends=('libx11')
 makedepends=('mercurial' 'ncurses')
 source=(config.h)
-md5sums=('da92f9da59d6dd04d56d756e0ea23b75')
+md5sums=('2bc0e09cd60be1d7b02d6d9ec526e8f3')
 
 provides=('st')
 conflicts=('st')

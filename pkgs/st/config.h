@@ -1,6 +1,6 @@
 #define TAB 8
 #define TNAME "st-256color"
-#define FONT "monospace:antialias=true:autohint=true"
+#define FONT "Lineration Mono:antialias=true:autohint=true"
 #define BORDER 2
 #define SHELL "/bin/sh"
 
