@@ -49,7 +49,7 @@ else
 endif
 
 Bundle 'spolu/dwm.vim.git'
-map <C-p> :e %:p:h/
+map <C-p> :e 
 map <C-m> :ZoomWin<CR>
 
 
