@@ -1,6 +1,6 @@
 #define TAB 8
 #define TNAME "st-256color"
-#define FONT "Lineration Mono:antialias=true:autohint=true"
+#define FONT "monospace:antialias=true:autohint=true"
 #define BORDER 2
 #define SHELL "/bin/sh"
 
@@ -24,16 +24,18 @@ static const char *colorname[] = {
 	"white",
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
+	"#f3f0f0",
+	"#000300",
+	"#aa4444",
 	"#333333",
 };
 
 /* Default colors (colorname index)
    foreground, background, cursor, unfocused cursor */
-#define DefaultFG  7
-#define DefaultBG  0
-#define DefaultCS  256
-#define DefaultUCS 257
+#define DefaultFG  256
+#define DefaultBG  257
+#define DefaultCS  258
+#define DefaultUCS 259
 
 /* Special keys (change & recompile st.info accordingly)
    Keep in mind that kpress() in st.c hardcodes some keys.
