@@ -49,6 +49,9 @@ else
 endif
 
 Bundle 'spolu/dwm.vim.git'
+map <C-p> :e %:p:h/
+map <C-m> :ZoomWin<CR>
+
 
 "Vundle post-initialisation phase
 filetype plugin indent on
