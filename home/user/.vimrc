@@ -139,7 +139,7 @@ set encoding=utf-8
 "Beautiful additional chars
 set list
 set listchars=tab:▶▷,trail:◇,extends:⌟,precedes:⌜,nbsp:—
-set showbreak=››
+set showbreak=›\ 
 set fillchars-=vert:\|
 set fillchars+=vert:\ 
 set fillchars-=fold:-
@@ -212,6 +212,7 @@ command -range=% Textsc :<line1>,<line2>s/\(\<\u\+\>\)/\\textsc{\L\1\E}/ce
 command Spellfr :setlocal spell | :setlocal spelllang=fr
 command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
+command Spellno :setlocal nospell
 
 " filetype specific options
 autocmd FileType make set noexpandtab
