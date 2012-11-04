@@ -1,6 +1,0 @@
-#!/bin/dash
-
-TEXT=$(lsw)
-LENGTH=$(printf %s\\n "$TEXT" |wc -l)
-
-printf lsw\\n%s\\n "$TEXT" | dzen2 -p 20 -l "$LENGTH" -xs 1 -w 400 -y 15 -x 966 -e "button2=exit:0;entertitle=uncollapse,grabmouse;leaveslave=collapse,ungrabmouse"

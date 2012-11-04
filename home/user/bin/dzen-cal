@@ -1,3 +1,0 @@
-#!/bin/dash
-
-cal | dzen2 -p 20 -l 7 -xs 1 -w 160 -y 15 -x 1206 -e "button2=exit:0;entertitle=uncollapse,grabmouse;leaveslave=collapse,ungrabmouse"

@@ -3,7 +3,6 @@ bdf-unifont
 chromium
 dmenu
 dwm
-dzen2
 feh
 firefox
 flashplugin
