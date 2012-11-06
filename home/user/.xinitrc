@@ -13,4 +13,6 @@ do
   sleep 60
 done &
 
+dmenu -v >/dev/null
+
 exec $*
