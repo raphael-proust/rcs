@@ -48,10 +48,6 @@ else
   colorscheme torte
 endif
 
-Bundle 'spolu/dwm.vim.git'
-map <C-p> :e 
-map <C-m> :ZoomWin<CR>
-
 
 "Vundle post-initialisation phase
 filetype plugin indent on
@@ -168,6 +164,10 @@ cmap <C-h> <Left>
 cmap <C-j> <Down>
 cmap <C-k> <Up>
 cmap <C-l> <Right>
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Highlights long lines
 set colorcolumn=+1
