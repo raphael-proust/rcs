@@ -1,0 +1,4 @@
+#!/bin/dash
+
+killall bgs
+bgs -x $HOME/images/bg/merock.jpg
