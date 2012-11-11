@@ -1,4 +1,4 @@
 #!/bin/dash
 
 killall bgs
-bgs -c -x $HOME/images/bg/merock.jpg
+bgs -x $HOME/images/bg/merock.jpg
