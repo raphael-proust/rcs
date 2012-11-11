@@ -53,7 +53,6 @@ inetutils
 iputils
 irssi
 jfsutils
-laptop-mode-tools
 less
 libpng12
 licenses
@@ -122,6 +121,7 @@ unison
 unzip
 usbutils
 util-linux
+valgrind
 vi
 vim
 vim-spell-en

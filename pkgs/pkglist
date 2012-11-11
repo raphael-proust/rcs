@@ -12,7 +12,6 @@ binutils
 bison
 bridge-utils
 bzip2
-chromium
 coreutils
 cpupower
 cronie
@@ -63,7 +62,6 @@ inetutils
 iputils
 irssi
 jfsutils
-laptop-mode-tools
 less
 libpng12
 licenses
@@ -148,6 +146,7 @@ unison
 unzip
 usbutils
 util-linux
+valgrind
 vi
 vim
 vim-spell-en

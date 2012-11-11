@@ -1,6 +1,5 @@
 artwiz-fonts
 bdf-unifont
-chromium
 dmenu
 dwm
 feh
