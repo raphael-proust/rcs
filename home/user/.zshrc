@@ -56,6 +56,7 @@ setopt NUMERIC_GLOB_SORT
 # aliases
 alias gps='ps -ly -C '
 
+alias ls='ls -p'
 alias l='ls -AlhF'
 alias ll='ls -lh'
 alias l1='ls -1'
