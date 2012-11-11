@@ -220,6 +220,7 @@ autocmd FileType make set noexpandtab
 "mlton files
 autocmd BufRead,BufNewFile *.fun   set filetype=sml
 autocmd BufRead,BufNewFile *.sig   set filetype=sml
+autocmd BufRead,BufNewFile *mutt-* set filetype=mail
 au BufEnter,BufNewFile,BufRead * call FileTypeDetect()
 fun! FileTypeDetect()
   let l = getline(nextnonblank(1))
