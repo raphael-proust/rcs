@@ -56,7 +56,6 @@ setopt NUMERIC_GLOB_SORT
 # aliases
 alias gps='ps -ly -C '
 
-alias ls='ls --color=auto'
 alias l='ls -AlhF'
 alias ll='ls -lh'
 alias l1='ls -1'
@@ -104,7 +103,7 @@ chpwd
 
 
 #PS
-export PS1="$(print '%{\e[1;32m%}%n %{\e[1;34m%}%~ \$ %{\e[0m%}')"
+export PS1="$ "
 if [ "x$SSH_CONNECTION" != "x" ]; then
-  export PS1="$(print '%{\e[1;31m%}%n@%M %{\e[1;32m%}%~ \$ %{\e[0m%}')"
+  export PS1="$(print '%n@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
 fi
