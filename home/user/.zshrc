@@ -105,6 +105,19 @@ chpwd
 
 #PS
 export PS1="$ "
-if [ "x$SSH_CONNECTION" != "x" ]; then
-  export PS1="$(print '%n@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
+if [ "x$SSH_CONNECTION" != "x" ]
+then
+	if [ "x$USER" != "xbnwr" ]
+	then
+		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
+	else
+		export PS1="$(print '%n@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
+	fi
+else
+	if [ "x$USER" != "xbnwr" ]
+	then
+		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%M \$ ')"
+	else
+		export PS1="$ "
+	fi
 fi
