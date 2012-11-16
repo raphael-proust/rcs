@@ -17,6 +17,9 @@ fn dispatch{
 		sudo ifconfig wlan0 up
 		sudo iwlist wlan0 scan
 	case r
+		sudo pkill -9 -u root dhcpcd
+		sudo dhcpcd --timeout 60 wlan0
+	case R
 		sudo wpa_cli reassociate
 	case p
 		ping -c 1 -w 10 `{route -n | grep '^0.0.0.0' | tr -s ' ' '	' | cut -f 2}
