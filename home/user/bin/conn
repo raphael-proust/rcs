@@ -14,7 +14,7 @@ fn dispatch{
 		sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 		sudo dhcpcd --timeout 60 wlan0
 	case s
-		sudo ifconfig wlan0 up
+		sudo ip link set wlan0 up
 		sudo iwlist wlan0 scan
 	case r
 		sudo pkill -9 -u root dhcpcd
