@@ -3,7 +3,7 @@
 
 pkgname=st
 epoch=1
-pkgver=395
+pkgver=425
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://hg.suckless.org/st'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('libx11')
 makedepends=('mercurial' 'ncurses')
 source=(config.h)
-md5sums=(4c8b4aebe53df69d983ef98cc0284005)
+md5sums=(d44e72f0ede691d5a83d1d271b3e8928)
 
 provides=('st')
 conflicts=('st')
