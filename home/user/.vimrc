@@ -75,9 +75,9 @@ nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set dif
 "Tabs (the absence of), indent and the such
 set smarttab
 set noexpandtab
-set softtabstop=8
-set shiftwidth=8
-set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
 set copyindent
 set noshiftround
 
