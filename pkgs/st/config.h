@@ -1,6 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
-/* appearance */
+/*
+ * appearance
+ *
+ * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+ */
 static char font[] = "monospace:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
@@ -64,6 +68,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ShiftMask,	XK_Prior,	xzoom,		{.i = +1} },
 	{ MODKEY|ShiftMask,	XK_Next,	xzoom,		{.i = -1} },
 	{ ShiftMask,		XK_Insert,	selpaste,	{.i =  0} },
+	{ MODKEY,		XK_Num_Lock,	numlock,	{.i =  0} },
 };
 
 /*
@@ -75,6 +80,7 @@ static Shortcut shortcuts[] = {
  * keypad value:
  * * 0: no value
  * * > 0: keypad application mode enabled
+ * *   = 2: term.numlock = 1
  * * < 0: keypad application mode disabled
  * cursor value:
  * * 0: no value
@@ -117,32 +123,43 @@ static Key key[] = {
 	{ XK_KP_Prior,      ShiftMask,      "\033[5;2~",     0,    0,    0},
 	{ XK_KP_Prior,      XK_ANY_MOD,     "\033[5~",	     0,    0,    0},
 	{ XK_KP_Begin,      XK_ANY_MOD,     "\033[E",        0,    0,    0},
-	{ XK_KP_End,        ShiftMask,      "\033[1;2F",     0,    0,    0},
+	{ XK_KP_End,        ControlMask,    "\033[J",       -1,    0,    0},
+	{ XK_KP_End,        ControlMask,    "\033[1;5F",    +1,    0,    0},
+	{ XK_KP_End,        ShiftMask,      "\033[K",       -1,    0,    0},
+	{ XK_KP_End,        ShiftMask,      "\033[1;2F",    +1,    0,    0},
 	{ XK_KP_End,        XK_ANY_MOD,     "\033[4~",       0,    0,    0},
 	{ XK_KP_Next,       ShiftMask,      "\033[6;2~",     0,    0,    0},
 	{ XK_KP_Next,       XK_ANY_MOD,     "\033[6~",       0,    0,    0},
-	{ XK_KP_Insert,     ShiftMask,      "\033[2;2~",     0,    0,    0},
-	{ XK_KP_Insert,     XK_ANY_MOD,     "\033[2~",       0,    0,    0},
-	{ XK_KP_Delete,     ShiftMask,      "\033[3;2~",     0,    0,    0},
-	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",       0,    0,    0},
-	{ XK_KP_Multiply,   XK_ANY_MOD,     "\033Oj",       +1,    0,    0},
-	{ XK_KP_Add,        XK_ANY_MOD,     "\033Ok",       +1,    0,    0},
-	{ XK_KP_Enter,      XK_ANY_MOD,     "\033OM",       +1,    0,    0},
+	{ XK_KP_Insert,     ShiftMask,      "\033[2;2~",    +1,    0,    0},
+	{ XK_KP_Insert,     ShiftMask,      "\033[4l",      -1,    0,    0},
+	{ XK_KP_Insert,     ControlMask,    "\033[L",       -1,    0,    0},
+	{ XK_KP_Insert,     ControlMask,    "\033[2;5~",    +1,    0,    0},
+	{ XK_KP_Insert,     XK_ANY_MOD,     "\033[4h",      -1,    0,    0},
+	{ XK_KP_Insert,     XK_ANY_MOD,     "\033[2~",      +1,    0,    0},
+	{ XK_KP_Delete,     ControlMask,    "\033[2J",      -1,    0,    0},
+	{ XK_KP_Delete,     ControlMask,    "\033[3;5~",    +1,    0,    0},
+	{ XK_KP_Delete,     ShiftMask,      "\033[2K",      +1,    0,    0},
+	{ XK_KP_Delete,     ShiftMask,      "\033[3;2~",    -1,    0,    0},
+	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[P",       -1,    0,    0},
+	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",      +1,    0,    0},
+	{ XK_KP_Multiply,   XK_ANY_MOD,     "\033Oj",       +2,    0,    0},
+	{ XK_KP_Add,        XK_ANY_MOD,     "\033Ok",       +2,    0,    0},
+	{ XK_KP_Enter,      XK_ANY_MOD,     "\033OM",       +2,    0,    0},
 	{ XK_KP_Enter,      XK_ANY_MOD,     "\r",           -1,    0,   -1},
 	{ XK_KP_Enter,      XK_ANY_MOD,     "\r\n",         -1,    0,   +1},
-	{ XK_KP_Subtract,   XK_ANY_MOD,     "\033Om",       +1,    0,    0},
-	{ XK_KP_Decimal,    XK_ANY_MOD,     "\033On",       +1,    0,    0},
-	{ XK_KP_Divide,     XK_ANY_MOD,     "\033Oo",       +1,    0,    0},
-	{ XK_KP_0,          XK_ANY_MOD,     "\033Op",       +1,    0,    0},
-	{ XK_KP_1,          XK_ANY_MOD,     "\033Oq",       +1,    0,    0},
-	{ XK_KP_2,          XK_ANY_MOD,     "\033Or",       +1,    0,    0},
-	{ XK_KP_3,          XK_ANY_MOD,     "\033Os",       +1,    0,    0},
-	{ XK_KP_4,          XK_ANY_MOD,     "\033Ot",       +1,    0,    0},
-	{ XK_KP_5,          XK_ANY_MOD,     "\033Ou",       +1,    0,    0},
-	{ XK_KP_6,          XK_ANY_MOD,     "\033Ov",       +1,    0,    0},
-	{ XK_KP_7,          XK_ANY_MOD,     "\033Ow",       +1,    0,    0},
-	{ XK_KP_8,          XK_ANY_MOD,     "\033Ox",       +1,    0,    0},
-	{ XK_KP_9,          XK_ANY_MOD,     "\033Oy",       +1,    0,    0},
+	{ XK_KP_Subtract,   XK_ANY_MOD,     "\033Om",       +2,    0,    0},
+	{ XK_KP_Decimal,    XK_ANY_MOD,     "\033On",       +2,    0,    0},
+	{ XK_KP_Divide,     XK_ANY_MOD,     "\033Oo",       +2,    0,    0},
+	{ XK_KP_0,          XK_ANY_MOD,     "\033Op",       +2,    0,    0},
+	{ XK_KP_1,          XK_ANY_MOD,     "\033Oq",       +2,    0,    0},
+	{ XK_KP_2,          XK_ANY_MOD,     "\033Or",       +2,    0,    0},
+	{ XK_KP_3,          XK_ANY_MOD,     "\033Os",       +2,    0,    0},
+	{ XK_KP_4,          XK_ANY_MOD,     "\033Ot",       +2,    0,    0},
+	{ XK_KP_5,          XK_ANY_MOD,     "\033Ou",       +2,    0,    0},
+	{ XK_KP_6,          XK_ANY_MOD,     "\033Ov",       +2,    0,    0},
+	{ XK_KP_7,          XK_ANY_MOD,     "\033Ow",       +2,    0,    0},
+	{ XK_KP_8,          XK_ANY_MOD,     "\033Ox",       +2,    0,    0},
+	{ XK_KP_9,          XK_ANY_MOD,     "\033Oy",       +2,    0,    0},
 	{ XK_BackSpace,     XK_NO_MOD,      "\177",          0,    0,    0},
 	{ XK_Up,            ShiftMask,      "\033[1;2A",     0,    0,    0},
 	{ XK_Up,            ControlMask,    "\033[1;5A",     0,    0,    0},
@@ -169,14 +186,25 @@ static Key key[] = {
 	{ XK_Return,        Mod1Mask,       "\033\r\n",      0,    0,   +1},
 	{ XK_Return,        XK_ANY_MOD,     "\r",            0,    0,   -1},
 	{ XK_Return,        XK_ANY_MOD,     "\r\n",          0,    0,   +1},
-	{ XK_Insert,        ShiftMask,      "\033[2;2~",     0,    0,    0},
-	{ XK_Insert,        XK_ANY_MOD,     "\033[2~",       0,    0,    0},
-	{ XK_Delete,        ShiftMask,      "\033[3;2~",     0,    0,    0},
-	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",       0,    0,    0},
+	{ XK_Insert,        ShiftMask,      "\033[4l",      -1,    0,    0},
+	{ XK_Insert,        ShiftMask,      "\033[2;2~",    +1,    0,    0},
+	{ XK_Insert,        ControlMask,    "\033[L",       -1,    0,    0},
+	{ XK_Insert,        ControlMask,    "\033[2;5~",    +1,    0,    0},
+	{ XK_Insert,        XK_ANY_MOD,     "\033[4h",      -1,    0,    0},
+	{ XK_Insert,        XK_ANY_MOD,     "\033[2~",      +1,    0,    0},
+	{ XK_Delete,        ControlMask,    "\033[2J",      -1,    0,    0},
+	{ XK_Delete,        ControlMask,    "\033[3;5~",    +1,    0,    0},
+	{ XK_Delete,        ShiftMask,      "\033[2K",      +1,    0,    0},
+	{ XK_Delete,        ShiftMask,      "\033[3;2~",    -1,    0,    0},
+	{ XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0,    0},
+	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",      +1,    0,    0},
 	{ XK_Home,          ShiftMask,      "\033[1;2H",     0,    0,    0},
 	{ XK_Home,          XK_ANY_MOD,     "\033[H",        0,   -1,    0},
 	{ XK_Home,          XK_ANY_MOD,     "\033[1~",       0,   +1,    0},
-	{ XK_End,           ShiftMask,      "\033[1;2F",     0,    0,    0},
+	{ XK_End,           ControlMask,    "\033[J",       -1,    0,    0},
+	{ XK_End,           ControlMask,    "\033[1;5F",    +1,    0,    0},
+	{ XK_End,           ShiftMask,      "\033[K",       -1,    0,    0},
+	{ XK_End,           ShiftMask,      "\033[1;2F",    +1,    0,    0},
 	{ XK_End,           XK_ANY_MOD,     "\033[4~",       0,    0,    0},
 	{ XK_Prior,         XK_NO_MOD,      "\033[5~",       0,    0,    0},
 	{ XK_Next,          ShiftMask,      "\033[6;2~",     0,    0,    0},

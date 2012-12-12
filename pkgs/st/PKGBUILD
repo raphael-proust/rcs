@@ -6,27 +6,27 @@ epoch=1
 pkgver=425
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
-url='http://hg.suckless.org/st'
+url='http://git.suckless.org/st'
 arch=('i686' 'x86_64')
 license=('MIT')
 depends=('libx11')
-makedepends=('mercurial' 'ncurses')
+makedepends=('git' 'ncurses')
 source=(config.h)
-md5sums=(d44e72f0ede691d5a83d1d271b3e8928)
+md5sums=(2c04f0dd511127f5d18e85f54da61e94)
 
 provides=('st')
 conflicts=('st')
 
-_hgroot='http://hg.suckless.org/'
-_hgrepo='st'
+_gitroot='http://git.suckless.org/'
+_gitrepo='st'
 
 build() {
   cd "${srcdir}"
 
-  cd "${_hgrepo}" && hg pull -u && cd .. ||
-  hg clone "${_hgroot}${_hgrepo}"
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}"
 
-  rm -fr build; cp -a "${_hgrepo}" build; cd build
+  rm -fr build; cp -a "${_gitrepo}" build; cd build
   cp $startdir/config.h config.h
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
