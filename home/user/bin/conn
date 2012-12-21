@@ -12,19 +12,19 @@ fn dispatch{
 		sudo pkill -9 -u root dhcpcd
 	case c
 		sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-		sudo dhcpcd --timeout 60 wlan0
+		sudo dhcpcd -C resolv.conf --timeout 60 wlan0
 	case s
 		sudo ip link set wlan0 up
 		sudo iwlist wlan0 scan
 	case r
 		sudo pkill -9 -u root dhcpcd
-		sudo dhcpcd --timeout 60 wlan0
+		sudo dhcpcd -C resolv.conf --timeout 60 wlan0
 	case R
 		sudo wpa_cli reassociate
 	case p
 		ping -c 1 -w 10 `{route -n | grep '^0.0.0.0' | tr -s ' ' '	' | cut -f 2}
 	case e
-		sudo dhcpcd --timeout 60 eth0
+		sudo dhcpcd -C resolv.conf --timeout 60 eth0
 	case *
 		exit 'usage: conn [okdcsrpe] [..]'
 	}
