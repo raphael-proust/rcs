@@ -1,0 +1,3 @@
+#!/bin/sh
+
+SHELL=rc 9 acme -f /opt/plan9/font/lucsans/unicode.8.font
