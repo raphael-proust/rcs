@@ -7,8 +7,7 @@ if (! test -d $TASKPIPESDIR) mkdir $TASKPIPESDIR
 
 switch ($#*) {
 case 0
-	TASKPIPES=`{ls -p $TASKPIPESDIR}
-	echo $TASKPIPES
+	ls -p $TASKPIPESDIR
 	TASKPIPE=`{read}
 	switch($TASKPIPE) {
 	case ''

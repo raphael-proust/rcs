@@ -4,12 +4,13 @@ pkgbase=vim
 pkgname=('vim' 'vim-runtime')
 _topver=7.3
 _versiondir="vim${_topver//./}"
-pkgver=3913
+pkgver=4000
 pkgrel=1
 arch=('i686' 'x86_64' 'arm')
 license=('custom:vim')
 url="http://www.vim.org"
 depends=('python' 'python2' 'ruby' 'lua')
+makedepends=('mercurial')
 
 _hgroot='http://vim.googlecode.com/hg/'
 _hgrepo='vim'
