@@ -3,7 +3,7 @@ if [ "x$SSH_CONNECTION" = "x" ]; then
   eval $(ssh-agent)
 fi
 
-#programs
+#env
 export EDITOR=vim
 export SHELL=zsh
 
@@ -19,4 +19,3 @@ source .profile.cabal
 
 #opam
 source .profile.opam
-

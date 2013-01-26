@@ -1,3 +1,9 @@
-#!/opt/plan9/bin/rc
+#!/bin/sh
 
-SHELL=rc prompt="9 " exec 9 acme -f /opt/plan9/font/lucsans/unicode.8.font -F /opt/plan9/font/lucm/unicode.9.font $*
+PATH=$PATH:$HOME/bin/acme-bin
+EDITOR=E
+SHELL=rc
+prompt="9 "
+plumber
+cat $HOME/plumbing | 9p write plumb/rules
+9 acme -f /opt/plan9/font/lucsans/unicode.8.font -F /opt/plan9/font/lucm/unicode.9.font
