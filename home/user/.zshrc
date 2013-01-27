@@ -75,7 +75,8 @@ alias pacl='sudo pacman -Ql'
 alias paco='sudo pacman -Qo'
 
 #functions
-f() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
+fcolor() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
+f() { find . -iname "*$1*" }
 
 md () { mkdir -p $1 && cd $1 }
 
