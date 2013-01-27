@@ -24,6 +24,8 @@ case 1
 	}
 case 2
 	switch $*(1) {
+	case -e
+		test -e $TASKPIPESDIR/$2
 	case -a
 		exec dtach -a $TASKPIPESDIR/$2
 	case *
