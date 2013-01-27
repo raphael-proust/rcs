@@ -2,8 +2,7 @@
 # Contributor: Scytrin dai Kinthra <scytrin@gmail.com>
 
 pkgname=st
-epoch=1
-pkgver=425
+pkgver="$(date +%Y%m%d)"
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://git.suckless.org/st'
@@ -19,6 +18,12 @@ conflicts=('st')
 
 _gitroot='http://git.suckless.org/'
 _gitrepo='st'
+
+pkgver () {
+  cd "$srcdir/$_gitname"
+  echo $(git describe --always | sed 's/-/./g')
+}
+
 
 build() {
   cd "${srcdir}"
