@@ -4,27 +4,41 @@ fn dispatch{
 	switch ($1) {
 	case o
 		sudo rfkill unblock wifi
+		sudo ip link set wlan0 up
 	case k
 		sudo rfkill block wifi
+		sudo ip link set wlan0 down
 		set-status-line-bnwr
 	case d
 		sudo pkill -9 -u root wpa_supplicant
 		sudo pkill -9 -u root dhcpcd
+		sudo ip link set wlan0 down
 	case c
 		sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-		sudo dhcpcd -C resolv.conf --timeout 60 wlan0
+		sudo dhcpcd --timeout 60 wlan0
+		set-status-line-bnwr
+	case a
+		sudo wpa_supplicant -B -Dwext -iwlan0 -c$HOME/bin/adhocnet.wpa_conf
 	case s
 		sudo ip link set wlan0 up
 		sudo iwlist wlan0 scan
 	case r
 		sudo pkill -9 -u root dhcpcd
-		sudo dhcpcd -C resolv.conf --timeout 60 wlan0
+		sudo dhcpcd --timeout 60 wlan0
 	case R
 		sudo wpa_cli reassociate
 	case p
 		ping -c 1 -w 10 `{route -n | grep '^0.0.0.0' | tr -s ' ' '	' | cut -f 2}
+	case P
+		ping -c 1 -w 10 free.fr &
+		ping -c 1 -w 10 google.com &
+		ping -c 1 -w 10 ovh.com &
+		wait
 	case e
-		sudo dhcpcd -C resolv.conf --timeout 60 eth0
+		sudo dhcpcd  --timeout 60 eth0
+	case t
+		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
+		dtach -n $home/.task-pipes/sock ssh -ND 4711 -v lum
 	case *
 		exit 'usage: conn [okdcsrpe] [..]'
 	}

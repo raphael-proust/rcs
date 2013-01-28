@@ -1,0 +1,54 @@
+# to update: cat $HOME/lib/plumbing | 9p write plumb/rules
+
+editor = acme
+
+# Ocaml error messages
+type is text
+data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+)'
+arg isfile      $1
+data set        $file
+attr add        addr=$2
+plumb to edit
+plumb client $editor
+
+type is text
+data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+), characters ([0-9]+)-([0-9]+):'
+arg isfile      $1
+data set        $file
+attr add        addr=$2-#0+#$3,$2-#0+#$4
+plumb to edit
+plumb client $editor
+
+# postscript/pdf/dvi go to page but not over the a plumb port
+# the port is here for reference but is unused
+type is text
+data matches '[a-zA-Z¡-￿0-9_\-./]+'
+data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(ps|PS|eps|EPS|pdf|PDF|dvi|DVI)'
+arg isfile	$0
+plumb to postscript
+plumb start 9 llpp $file
+
+# relative files as file: urls get made into absolute paths
+type is text
+data matches 'file:([.a-zA-Z¡-￿0-9_\-]([.a-zA-Z¡-￿0-9_/\-]*[a-zA-Z¡-￿0-9_/\-]))?'
+arg isfile	$1
+data set	file://$file
+plumb to web
+plumb start surf $data
+
+# urls go to web browser
+type is text
+data matches '(https?|ftp|file|gopher|mailto|news|nntp|telnet|wais|prospero)://[a-zA-Z0-9_@\-]+([.:][a-zA-Z0-9_@\-]+)*/?[a-zA-Z0-9_?,%#~&/\-+=]+([:.][a-zA-Z0-9_?,%#~&/\-+=]+)*'
+plumb to web
+plumb start surf $0
+
+# image files go to page
+type is text
+data matches '[a-zA-Z¡-￿0-9_\-./]+'
+data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
+arg isfile	$0
+plumb to image
+plumb start 9 feh $file
+
+
+include basic
