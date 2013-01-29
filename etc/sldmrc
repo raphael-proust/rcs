@@ -1,4 +1,4 @@
-wmlist=(dwm wmii)
+wmlist=(dwm)
 tmlist=(dvtm)
 allowconsole=yes
 allowshutdown=yes
