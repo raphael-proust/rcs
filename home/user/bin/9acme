@@ -5,5 +5,5 @@ NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
 plumber
 plumber=`{pgrep -n plumber} # racey
 cat $HOME/plumbing | 9p write plumb/rules
-SHELL=rc prompt='9 ' path=($path $home/bin/acme-bin) acme -f /opt/plan9/font/lucsans/unicode.8.font -F /opt/plan9/font/lucm/unicode.9.font -a $*
+SHELL=rc prompt='9 ' PATH=$PATH:$HOME/bin/acme-bin EDITOR=E 9 acme -f /opt/plan9/font/lucsans/unicode.8.font -F /opt/plan9/font/lucm/unicode.9.font -a $*
 kill $plumber

@@ -1,0 +1,3 @@
+#!/usr/bin/env rc
+9 fold -w 78 -s
+

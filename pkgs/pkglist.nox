@@ -20,6 +20,7 @@ cvs
 cyrus-sasl
 dash
 device-mapper
+dhcp
 dhcpcd
 diffutils
 dnsutils
@@ -71,20 +72,21 @@ mercurial
 mktorrent
 mlocate
 mpc
-mutt
 nano
 ncmpc
-nethack
 net-tools
+nethack
 networkmanager
 newsbeuter
 ntfs-3g
+ntp
 ocaml
 openal
 openssh
 openvpn
 p7zip
 pacman
+parted
 patch
 pciutils
 pcmciautils
@@ -92,7 +94,6 @@ perl
 pkg-config
 pkgstats
 pkgtools
-pm-utils
 powertop
 ppp
 procps-ng
@@ -126,7 +127,6 @@ vi
 vim
 vim-spell-en
 vim-spell-fr
-vlock
 vorbis-tools
 w3m
 wget
