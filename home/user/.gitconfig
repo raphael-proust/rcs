@@ -13,6 +13,8 @@
   st = status -b --porcelain
   lg = !rc -c 'git log "HEAD~^$*(1)^..HEAD $*(2-)"'
   root = !pwd
-  psh = push -q --porcelain
+  psh = push --quiet
+  pll = pull --quiet
+  cln = clone --quiet
 [push]
 	default = simple
