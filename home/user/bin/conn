@@ -10,6 +10,7 @@ fn dispatch{
 		sudo ip link set wlan0 down
 		set-status-line-bnwr
 	case d
+		task -k sock
 		sudo pkill -9 -u root wpa_supplicant
 		sudo pkill -9 -u root dhcpcd
 		sudo ip link set wlan0 down
@@ -38,7 +39,7 @@ fn dispatch{
 		sudo dhcpcd  --timeout 60 eth0
 	case t
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		dtach -n $home/.task-pipes/sock ssh -ND 4711 -v lum
+		task -n sock ssh -ND 4711 -v lum
 	case *
 		exit 'usage: conn [okdcsrpe] [..]'
 	}
