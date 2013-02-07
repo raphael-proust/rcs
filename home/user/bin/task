@@ -11,7 +11,7 @@ case 0
 	TASKPIPE=`{read}
 	switch($TASKPIPE) {
 	case ''
-		exit ()
+		exit 1
 	case *
 		exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
 	}
@@ -28,13 +28,20 @@ case 2
 		test -e $TASKPIPESDIR/$2
 	case -a
 		exec dtach -a $TASKPIPESDIR/$2
+	case -k
+		if (test -e $TASKPIPESDIR/$2) {
+			TASKPID=`{lsof $TASKPIPESDIR^/^$2 | tail -n 1 | awk '{print $2}'}
+			kill -s KILL $TASKPID
+			rm $TASKPIPESDIR/$2
+		}
+		if not exit 2
 	case *
 		exec dtach -A $TASKPIPESDIR/$*(1) $*(2)
 	}
 case *
 	switch $*(1) {
 	case -a
-		exit "Too many arguments with -a"
+		exit 1
 	case -[cnA]
 		DASHARG=$*(1)
 		PIPENAME=$*(2)
