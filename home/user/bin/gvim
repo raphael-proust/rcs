@@ -1,3 +1,2 @@
-#!/bin/dash
-
-st -e vim $*
+#!/bin/sh
+exec st -e vim $*
