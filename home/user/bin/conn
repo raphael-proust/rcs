@@ -14,6 +14,7 @@ fn dispatch{
 		sudo pkill -9 -u root wpa_supplicant
 		sudo pkill -9 -u root dhcpcd
 		sudo ip link set wlan0 down
+		sudo ip link set eth0 down
 	case c
 		sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 		sudo dhcpcd --timeout 60 wlan0
@@ -36,6 +37,7 @@ fn dispatch{
 		ping -c 1 -w 10 ovh.com &
 		wait
 	case e
+		sudo ip link set eth0 up
 		sudo dhcpcd  --timeout 60 eth0
 	case t
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
