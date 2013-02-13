@@ -3,6 +3,8 @@ if [ "x$SSH_CONNECTION" = "x" ]; then
   eval $(ssh-agent)
 fi
 
+sudo ip link set eth0 down
+
 #env
 export EDITOR=vim
 export SHELL=zsh

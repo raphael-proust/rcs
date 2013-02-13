@@ -17,6 +17,7 @@ Bundle 'edsono/vim-matchit.git'
 
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
 autocmd FileType ocaml_lwt set foldlevel=9
+autocmd FileType ocaml_lwt set equalprg=ocp-indent
 
 Bundle 'raphael-proust/pdc.vim.git'
 
