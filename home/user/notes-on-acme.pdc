@@ -1,0 +1,164 @@
+%Notes about acme(1)
+
+This is a personal collections of tips and tricks I need to remember. Because silicon memory is faster, cheaper, and more reliable (for some notion of speed, price, and reliability) I put them in this note. Public domain blah blah.
+
+#Setup
+
+On Archlinux:
+
+~~~~~~~
+$ pacman -S plan9port
+~~~~~~~
+
+
+##plumbing
+
+Uses `llpp(1)` for pdf, `surf(1)` for webs, and `feh(1)` for images.
+
+~~~~~~~
+$ cat plumbing
+editor = acme
+
+type is text
+data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+), characters ([0-9]+)-([0-9]+):'
+arg isfile $1
+data set $file
+attr add addr=$2-#0+#$3,$2-#0+#$4
+plumb to edit
+plumb client $editor
+
+type is text
+data matches '[a-zA-Z¡-￿0-9_\-./]+'
+data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(ps|PS|eps|EPS|pdf|PDF|dvi|DVI)'
+arg isfile $0
+plumb to postscript
+plumb start 9 llpp $file
+
+type is text
+data matches 'file:([.a-zA-Z¡-￿0-9_\-]([.a-zA-Z¡-￿0-9_/\-]*[a-zA-Z¡-￿0-9_/\-]))?'
+arg isfile $1
+data set file://$file
+plumb to web
+plumb start surf $data
+
+type is text
+data matches '(https?|ftp|file|gopher|mailto|news|nntp|telnet|wais|prospero)://[a-zA-Z0-9_@\-]+([.:][a-zA-Z0-9_@\-]+)*/?[a-zA-Z0-9_?,%#~&/\-+=]+([:.][a-zA-Z0-9_?,%#~&/\-+=]+)*'
+plumb to web
+plumb start surf $0
+
+type is text
+data matches '[a-zA-Z¡-￿0-9_\-./]+'
+data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
+arg isfile $0
+plumb to image
+plumb start 9 feh $file
+
+include basic
+~~~~~~~
+
+
+
+## 9acme
+
+~~~~~~~
+$ cat bin/9acme
+#!/usr/bin/env rc
+
+main=$NAMESPACE
+NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
+plumber
+plumber=`{pgrep -n plumber} # racey
+cat $HOME/plumbing | 9p write plumb/rules
+PAGER=cat MANPAGER=cat SHELL=rc prompt='9 ' PATH=$PATH:$HOME/bin/acme-bin EDITOR=E 9 acme -f /opt/plan9/font/lucsans/unicode.8.font -F /opt/plan9/font/lucm/unicode.9.font -a $*
+kill $plumber
+$ 9acme
+~~~~~~~
+
+My wrapper for acme is inspirred from Jacek Masiulaniec's as shown in the conversation in Russ Cox's [A Tour of Acme](http://research.swtch.com/acme). The `NAMESPACE` and `plumber` set up allows several concurrent instances of acme to run.
+
+The `PAGER` and `MANPAGER` variables are here to avoid tools automatically starting a pager (which is annoying).
+
+The `SHELL` and `PROMPT` are self-explanatory.
+
+The `PATH` is extended to include a few custom scripts.
+
+The `EDITOR` I am not sure is useful.
+
+The `9` is the plan9port wrapper. Not sure it's useful when the namespace and all are initialized.
+
+The `-f` and `-F` are settings for font.
+
+The `-a` sets auto-indentation mode on.
+
+##Helper scripts
+
+My additional scripts go in `$home/bin/acme-bin`. They all are meant to accept input on stdin and spit it out in stdout.
+
+To use `foobar`, type one of the following in the title bar (or anywhere really, the title bar is a good place though), select the text you want to use for the script (or position the cursor where you want it) and middle-click on `foobar`.
+
+- `|foobar' (pipe selection through `foobar`),
+- `>foobar` (send selection into `foobar`, the output will be printed in the `Errors` window), or
+- `<foobar` (replaces selection with the output of `foobar`, particularly usefull if the selection is empty as it simply inserts text).
+
+
+#OCaml
+
+##Top-level
+
+Use a `win` window and send `ocaml`.
+
+##Plumbing
+
+The plumbing rule for OCaml's error messages is:
+
+~~~~~~~
+type is text
+data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+), characters ([0-9]+)-([0-9]+):'
+arg isfile      $1
+data set        $file
+attr add        addr=$2-#0+#$3,$2-#0+#$4
+plumb to edit
+plumb client $editor
+~~~~~~~
+
+
+#Edit
+
+
+##Surround selection with parentheses (change parens characters if necessary)
+
+~~~~~~~
+Edit .{
+i/(
+a/)
+}
+~~~~~~~
+
+##Collapse several lines in one, eliminating indentation
+
+~~~~~~~
+Edit .x/\n[	 ]*/c/ 
+~~~~~~~
+
+(Note, the bracket contain a space and a tab.)
+
+##git trick
+
+~~~~~~~
+Edit .x/^ +M/c/git add
+Edit .x/^ +D/c/git rm --cached
+Edit .x/^\?\?/c/git add
+~~~~~~~
+
+##Compose correction
+
+To fix some of the compose weirdness.
+
+~~~~~~~
+Edit ,{
+x/·/c/…
+x/ł|Ł/c/£
+}
+~~~~~~~
+
+
