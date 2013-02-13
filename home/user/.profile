@@ -9,15 +9,12 @@ sudo ip link set eth0 down
 export EDITOR=vim
 export SHELL=zsh
 
-#usul: use $USUL/ls, $USUL/cat, etc.
-source .profile.usul
 
 #path
 export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
 export MANPATH=/usr/man:/usr/share/man:/usr/local/share/man
 
-#cabal
+source .profile.usul
 source .profile.cabal
-
-#opam
 source .profile.opam
+source .profile.mosml
