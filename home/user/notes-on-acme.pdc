@@ -105,7 +105,7 @@ To use `foobar`, type one of the following in the title bar (or anywhere really,
 
 ##Top-level
 
-Use a `win` window and send `ocaml`.
+Use a `win` window and send `ocaml`. Shorthand for that is to execute `win ocaml`.
 
 ##Plumbing
 
