@@ -150,7 +150,7 @@ Edit .x/^ +D/c/git rm --cached
 Edit .x/^\?\?/c/git add
 ~~~~~~~
 
-##Compose correction
+##Text normalisation
 
 To fix some of the compose weirdness.
 
@@ -161,4 +161,10 @@ x/ł|Ł/c/£
 }
 ~~~~~~~
 
+To fix some anoyances.
 
+~~~~~~~
+Edit ,{
+x//c/\n
+}
+~~~~~~~
