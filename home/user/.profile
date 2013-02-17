@@ -3,12 +3,11 @@ if [ "x$SSH_CONNECTION" = "x" ]; then
   eval $(ssh-agent)
 fi
 
-sudo ip link set eth0 down
+export LANG=en_US.UTF-8
 
 #env
 export EDITOR=vim
 export SHELL=zsh
-
 
 #path
 export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
