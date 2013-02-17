@@ -1,4 +1,3 @@
-
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -52,10 +51,8 @@ setopt MULTIOS
 #Sort globbing numerically
 setopt NUMERIC_GLOB_SORT
 
-
-# aliases
+# aliases and functions
 alias gps='ps -ly -C '
-
 alias ls='ls -p'
 alias l='ls -AlhF'
 alias ll='ls -lh'
@@ -63,9 +60,7 @@ alias l1='ls -1'
 alias la='ls -A'
 alias l1a='ls -1A'
 alias lla='ls -lAh'
-
 alias day="date '+%Y-%m-%d'"
-
 alias pacu='sudo pacman -Syu'
 alias pacs='sudo pacman -Ss'
 alias paci='sudo pacman -Syu && sudo pacman -S'
@@ -73,18 +68,15 @@ alias pacr='sudo pacman -R'
 alias pacq='sudo pacman -Qi'
 alias pacl='sudo pacman -Ql'
 alias paco='sudo pacman -Qo'
-
-#functions
 fcolor() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
 f() { find . -iname "*$1*" }
-
 md () { mkdir -p $1 && cd $1 }
-
 kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 
 #automatic function to change title of terminal
 if [ "x$SSH_CONNECTION" != "x" ]
 then
+print -Pn "\e]2;@%M - %/\a"
 chpwd () {
   [[ -t 1 ]] || return
   case $TERM in
@@ -93,6 +85,7 @@ chpwd () {
   esac
 }
 else
+print -Pn "\e]2;%/\a"
 chpwd () {
   [[ -t 1 ]] || return
   case $TERM in
@@ -101,8 +94,6 @@ chpwd () {
   esac
 }
 fi
-chpwd
-
 
 #PS
 export PS1="$ "
