@@ -1,4 +1,4 @@
-#!/opt/plan9/bin/rc
+#!/usr/bin/env rc
 
 STATUSPIPESDIR=/tmp/dvtm-status-pipes
 if (! test -d $STATUSPIPESDIR) mkdir $STATUSPIPESDIR

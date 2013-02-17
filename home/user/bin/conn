@@ -1,4 +1,4 @@
-#!/opt/plan9/bin/rc
+#!/usr/bin/env rc
 
 fn dispatch{
 	switch ($1) {

@@ -1,4 +1,4 @@
-#!/opt/plan9/bin/rc
+#!/usr/bin/env rc
 
 ifs='
 ' for (i in `{ls $path}) if (test -x $i) ls -p $i

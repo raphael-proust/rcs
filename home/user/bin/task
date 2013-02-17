@@ -1,4 +1,4 @@
-#!/opt/plan9/bin/rc
+#!/usr/bin/env rc
 
 path=(/opt/plan9/bin $path)
 
