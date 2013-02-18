@@ -12,8 +12,9 @@ Bundle 'gmarik/vundle'
 "Loading the bundles
 
 Bundle 'tpope/vim-repeat.git'
-
 Bundle 'edsono/vim-matchit.git'
+
+Bundle 'rc.vim'
 
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
 autocmd FileType ocaml_lwt set foldlevel=9
@@ -28,27 +29,12 @@ Bundle 'vim-scripts/surround.vim.git'
 let g:surround_171="« \r »"
 let g:surround_8249="‹ \r ›"
 
-Bundle 'vim-scripts/ZoomWin.git'
-
 Bundle 'sjl/gundo.vim.git'
 nnoremap <F3> :GundoToggle<CR>
 
 Bundle 'tpope/vim-fugitive.git'
 
-Bundle 'sjl/splice.vim.git'
-let g:splice_initial_mode = "grid"
-let g:splice_initial_layout_grid = 1
-let g:splice_initial_diff_grid = 1
-let g:splice_initial_scrollbind_grid = 1
-
-Bundle 'raphael-proust/molokai.git'
-Bundle 'raphael-proust/wombat.git'
-if &t_Co == '256'
-  colorscheme wombat
-else
-  colorscheme torte
-endif
-
+colorscheme default
 
 "Vundle post-initialisation phase
 filetype plugin indent on
@@ -74,7 +60,7 @@ set diffopt=filler,vertical,context:5
 nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
 
 "Tabs (the absence of), indent and the such
-set smarttab
+set nosmarttab
 set noexpandtab
 set softtabstop=4
 set shiftwidth=4
@@ -152,8 +138,6 @@ nmap <leader>Y "+yy
 nmap <leader>p "+p
 nmap <leader>P "+P
 nmap Y y$
-nmap <silent> <leader>d "_d
-vmap <silent> <leader>d "_d
 
 "Buffers and window handling
 set switchbuf=usetab
@@ -185,14 +169,6 @@ nnoremap ` '
 map <leader>cd :cd %:p:h<CR>
 map K :.-,.join<CR>
 
-" Alignment
-nmap <leader>al :left<CR>
-nmap <leader>ar :right<CR>
-nmap <leader>ac :center<CR>
-vmap <leader>al :left<CR>
-vmap <leader>ar :right<CR>
-vmap <leader>ac :center<CR>
-
 " Text Sanitization
 function! StripWhitespace () range
   let l:cursor = getpos(".")
@@ -202,7 +178,7 @@ function! StripWhitespace () range
   call setpos('.', l:cursor)
   call setreg('/', l:query, l:regmode)
 endfunction
-command -range=% Trailing :<line1>,<line2>call StripWhitespace()<CR>
+command -range=% Trailing :<line1>,<line2>call StripWhitespace()
 command -range=% SubsTabs2 :<line1>,<line2>s/\t/  /e
 command -range=% SubsTabs4 :<line1>,<line2>s/\t/    /e
 command -range=% SubsTabs8 :<line1>,<line2>s/\t/        /e
@@ -218,10 +194,6 @@ command Spellno :setlocal nospell
 
 " filetype specific options
 autocmd FileType make set noexpandtab
-"mlton files
-autocmd BufRead,BufNewFile *.fun   set filetype=sml
-autocmd BufRead,BufNewFile *.sig   set filetype=sml
-autocmd BufRead,BufNewFile *mutt-* set filetype=mail
 au BufEnter,BufNewFile,BufRead * call FileTypeDetect()
 fun! FileTypeDetect()
   let l = getline(nextnonblank(1))
@@ -229,9 +201,6 @@ fun! FileTypeDetect()
     set filetype=sh
   endif
 endfun
-
-"llvm bitcode files
-autocmd BufRead,BufNewFile *.ll    set filetype=llvm
 
 "unf.ck terminal title
 let &titleold=getcwd()
