@@ -1,7 +1,7 @@
 #Custom build based on Arch's official pakage
 
 pkgname=surf
-pkgver=0.5
+pkgver=0.6
 pkgrel=100
 pkgdesc="A simple web browser based on WebKit/GTK+."
 arch=('i686' 'x86_64')
@@ -10,13 +10,13 @@ license=('MIT')
 depends=('libwebkit' 'xorg-xprop')
 optdepends=('dmenu: URL-bar'
             'ca-certificates: SSL verification'
-            'rxvt-unicode: default download handler'
-            'wget: default download handler')
+            'st: default download handler'
+            'curl: default download handler')
 makedepends=('pkgconfig')
 source=("http://dl.suckless.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         'config.h')
-md5sums=('dc735a380d01203861b987b5f4c3c59c'
-         '55b68ea0654ca6987256d4b2f23ad661')
+md5sums=('aeeed723b562a30cc6a2b3ea18f6d99a'
+         'd0fb809836e765fdf43c194f7a4ae3cf')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
