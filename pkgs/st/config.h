@@ -9,9 +9,13 @@ static char font[] = "monospace:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 
-/* double-click timeout (in milliseconds) between clicks for selection */
+/* timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
+
+/* frames per second st should at maximum draw to the screen */
+static unsigned int xfps = 60;
+static unsigned int actionfps = 30;
 
 /* TERM value */
 static char termname[] = "st-256color";
@@ -101,6 +105,12 @@ static Shortcut shortcuts[] = {
  * mapped below, add them to this array.
  */
 static KeySym mappedkeys[] = { -1 };
+
+/*
+ * Which bits of the state should be ignored. By default the state bit for the
+ * keyboard layout (XK_SWITCH_MOD) is ignored.
+ */
+uint ignoremod = XK_SWITCH_MOD;
 
 /* key, mask, output, keypad, cursor, crlf */
 static Key key[] = {
