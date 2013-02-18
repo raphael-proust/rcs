@@ -32,9 +32,11 @@ fn dispatch{
 	case p
 		ping -c 1 -w 10 `{route -n | grep '^0.0.0.0' | tr -s ' ' '	' | cut -f 2}
 	case P
-		ping -c 1 -w 10 free.fr &
-		ping -c 1 -w 10 google.com &
-		ping -c 1 -w 10 ovh.com &
+		ping -c 1 -w 5 free.fr &
+		ping -c 1 -w 5 google.com &
+		ping -c 1 -w 5 ovh.com &
+		ping -c 1 -w 5 github.com &
+		ping -c 1 -w 5 twitter.com &
 		wait
 	case e
 		sudo ip link set eth0 up
