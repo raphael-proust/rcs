@@ -89,10 +89,10 @@ xf86-video-vmware
 xf86-video-voodoo
 xorg-bdftopcf
 xorg-docs
-xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
+xorg-font-util
 xorg-iceauth
 xorg-luit
 xorg-mkfontdir
