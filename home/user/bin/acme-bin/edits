@@ -1,7 +1,11 @@
-.{
-i/(
-a/)
+Edit .{i/(*
+a/*)
 }
 
-.x/^ M/c/git add
-.x/^ D/c/git rm --cached
+Edit .x/^ M/c/git add
+Edit .x/^ D/c/git rm --cached
+Edit .x/ of .*$/c/ _ -> failwith "TODO"
+Edit .x/$/i/ ->
+
+Edit .=#
+Edit .=
