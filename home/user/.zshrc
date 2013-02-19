@@ -76,7 +76,6 @@ kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 #automatic function to change title of terminal
 if [ "x$SSH_CONNECTION" != "x" ]
 then
-print -Pn "\e]2;@%M - %/\a"
 chpwd () {
   [[ -t 1 ]] || return
   case $TERM in
@@ -85,7 +84,6 @@ chpwd () {
   esac
 }
 else
-print -Pn "\e]2;%/\a"
 chpwd () {
   [[ -t 1 ]] || return
   case $TERM in
