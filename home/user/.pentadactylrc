@@ -76,7 +76,7 @@ set noerrorbells
 set novisualbell
 
 " command line history
-set history=100
+set history=500
 map -builtin -modes=Ex,Find <C-k> <Up>
 map -builtin -modes=Ex,Find <C-j> <Down>
 map -builtin -modes=Ex,Find <C-c> <Esc>
