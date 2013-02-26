@@ -1,4 +1,5 @@
 #Volume: mute, up, down
+#Also support mpd volume setting
 "amixer set Master toggle ; set-status-line-bnwr"
     m:0x0 + c:121
     XF86AudioMute
@@ -8,6 +9,15 @@
 "amixer set Master playback 3+ ; set-status-line-bnwr"
     m:0x0 + c:123
     XF86AudioRaiseVolume
+"mpc volume -3"
+    m:0x4 + c:122
+    Control + XF86AudioLowerVolume
+"mpc volume +3"
+    m:0x4 + c:123
+    Control + XF86AudioRaiseVolume
+"mpc volume 0"
+    m:0x4 + c:121
+    Control + XF86AudioMute
 #Wifi switch
 "rfswitch-bnwr ; set-status-line-bnwr"
     m:0x0 + c:246
@@ -38,8 +48,8 @@
 "surf http://duckduckgo.com"
     m:0x40 + c:42
     Mod4 + g
-#Start or switch to firefox
-"xdt-activate-bnwr firefox"
+#Start firefox
+"firefox -P socked"
     m:0x40 + c:25
     Mod4 + w
 #Touchpad toggling
