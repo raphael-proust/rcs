@@ -10,7 +10,6 @@ fn dispatch{
 		sudo ip link set wlan0 down
 		set-status-line-bnwr
 	case d
-		task -k sock
 		sudo pkill -9 -u root wpa_supplicant
 		sudo pkill -9 -u root dhcpcd
 		sudo ip link set wlan0 down
