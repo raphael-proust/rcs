@@ -7,7 +7,7 @@ wmname $(printf %s ${1} | sed -e "s/^\(\S\+\).*/\1/")
 
 while true
 do
-  mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-'):outdir=$HOME/.login-pic -frames 1 tv:// &
+  mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-'):outdir=$HOME/.login-pic -frames 1 tv://
   sleep 3600
 done &
 set-bg-bnwr &
