@@ -10,7 +10,7 @@ do
   mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-'):outdir=$HOME/.login-pic -frames 1 tv://
   sleep 3600
 done &
-set-bg-bnwr &
+bgs -x $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
 while true
 do
   set-status-line-bnwr
