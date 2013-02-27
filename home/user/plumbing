@@ -51,13 +51,13 @@ data matches '(https?|ftp|file|gopher|mailto|news|nntp|telnet|wais|prospero)://[
 plumb to web
 plumb start surf $0
 
-# image files go to page
+# image files go to sxiv
 type is text
 data matches '[a-zA-Z¡-￿0-9_\-./]+'
 data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
 arg isfile	$0
 plumb to image
-plumb start 9 feh $file
+plumb start 9 sxiv $file
 
 
 include basic

@@ -3,7 +3,6 @@ bdf-unifont
 chromium
 dmenu
 dwm
-feh
 firefox
 flashplugin
 ghostscript
@@ -20,6 +19,7 @@ profont
 rxvt-unicode
 slock
 surf
+sxiv
 tamsyn-font
 terminus-font
 texlive-bibtexextra

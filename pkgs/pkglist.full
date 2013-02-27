@@ -36,7 +36,6 @@ e2fsprogs
 exiv2
 expect
 fakeroot
-feh
 file
 filesystem
 findutils
@@ -133,6 +132,7 @@ strace
 subversion
 sudo
 surf
+sxiv
 sysfsutils
 systemd
 systemd-sysvcompat
