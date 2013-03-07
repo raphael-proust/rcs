@@ -34,11 +34,11 @@ nnoremap <F3> :GundoToggle<CR>
 
 Bundle 'tpope/vim-fugitive.git'
 
-colorscheme default
-
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax off
+Bundle 'raphael-proust/molokai.git'
+colorscheme molokai
 
 "updatetime influences CursorHold events
 set updatetime=2000
@@ -122,7 +122,7 @@ set encoding=utf-8
 
 "Beautiful additional chars
 set list
-set listchars=tab:▶▷,trail:◇,extends:⌟,precedes:⌜,nbsp:—
+set listchars=tab:▷\ ,trail:◇,extends:⌟,precedes:⌜,nbsp:—
 set showbreak=›\ 
 set fillchars-=vert:\|
 set fillchars+=vert:\ 
@@ -140,7 +140,7 @@ nmap <leader>P "+P
 nmap Y y$
 
 "Buffers and window handling
-set switchbuf=usetab
+set switchbuf=usetab,newtab
 map <C-w>! :vertical resize 78<CR>
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
