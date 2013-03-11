@@ -59,6 +59,9 @@
 "st -e 9rc"
     m:0x40 + c:51
     Mod4 + backslash
+"st"
+    m:0x40 + c:36
+    Mod4 + Return
 "9acme"
     m:0x40 + c:26
     Mod4 + e
