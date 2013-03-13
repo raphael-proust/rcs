@@ -1,16 +1,6 @@
 
 set runtimepath=~/.pentadactyl
 
-" vim: set ft=pentadactyl:
-
-" TODO:
-" use https://github.com/maksimr/octopus
-" use https://github.com/maksimr/spliter-penta
-" use http://dactyl.sourceforge.net/pentadactyl/plugins#fix-focus-plugin
-" use http://dactyl.sourceforge.net/pentadactyl/plugins#flashblock-plugin
-" use http://dactyl.sourceforge.net/pentadactyl/plugins#tab-options-plugin
-
-
 " use g' for previously selected tab
 map g\' <C-^>
 nmap g\' <C-^>
@@ -26,7 +16,7 @@ map ! :tabopen!
 set defsearch=ddg
 set suggestengines=
 
-" custom searches (using bangs: https://duckduckgo.com/bang.html)
+"custom searches (using bangs: https://duckduckgo.com/bang.html)
 map sd tddg 
 map sb tddg !
 map st tddg !torrentz 
@@ -40,34 +30,27 @@ map sy tddg !v
 map sm tddg !m 
 map so tddg !osm 
 
-" mapping h, j, k and l to scroll faster
-map -builtin h 6h
-map -builtin j 6j
-map -builtin k 6k
-map -builtin l 6l
+"Some useful mappings
+map -builtin h 7h
+map -builtin j 7j
+map -builtin k 7k
+map -builtin l 7l
+map -builtin <C-h> H
+map -builtin <C-l> L
 
-" TabGroup thingy
+"TabGroup thingy
 map -builtin <C-w> <C-S-e>
 
-" avoid accidents
+"avoid accidents
 map -builtin <C-q> <Nop>
 map -builtin ZQ ZZ
 map -builtin <MiddleMouse> P
 
-map -builtin <C-h> H
-map -builtin <C-l> L
-
-" activation
+"some ui options
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
-
-
-" Stop changing focus
+set newtab=all
 set strictfocus='chrome:*':laissez-faire,*:despotic
-
-" The best followhint
 set followhints=1
-
-" GUI and all
 set guioptions=CMs
 "set showstatuslinks=command
 set showtabline=always
@@ -75,34 +58,22 @@ set maxitems=7
 set noerrorbells
 set novisualbell
 
-" command line history
+"command line things
 set history=500
 map -builtin -modes=Ex,Find <C-k> <Up>
 map -builtin -modes=Ex,Find <C-j> <Down>
 map -builtin -modes=Ex,Find <C-c> <Esc>
+set autocomplete=
+set wildmode=list:longest
+set urlseparator=;
 
-" Searching
+"Searching
 set hlfind
 set incfind
 map <F1> :set hlf!<CR>
 set findcase=ignore
 
-" Copypasta
-map -builtin -modes=main <C-S-c> <C-v><C-c>
-map -builtin -modes=main <C-S-v> <C-v><C-v>
-
-" Open everything in a new tab
-set newtab=all
-
-" Completion
-set autocomplete=
-set wildmode=list:longest
-
-" Separate urls by ";"
-set urlseparator=;
-
 "duplication via :du
 command -nargs 0 -count -bang -description 'Duplicate current tab' du,dup,duplicate :keepalt <count>tabduplicate<bang>
 
-" if gvim is not installed
 set editor='9acme -c 1 <file>'
