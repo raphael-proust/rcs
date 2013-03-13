@@ -58,6 +58,8 @@ set confirm
 "Better diffs (with switchable whitespace ignoring)
 set diffopt=filler,vertical,context:5
 nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
+command Diffall windo diffthis
+command Diffnone windo diffoff
 
 "Tabs (the absence of), indent and the such
 set nosmarttab
