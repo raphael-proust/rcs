@@ -18,7 +18,6 @@ Bundle 'rc.vim'
 
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
 autocmd FileType ocaml_lwt set foldlevel=9
-autocmd FileType ocaml_lwt set equalprg=ocp-indent
 
 Bundle 'raphael-proust/pdc.vim.git'
 
@@ -146,16 +145,16 @@ set switchbuf=usetab,newtab
 map <C-w>! :vertical resize 78<CR>
 map g0 :tabfirst<CR>
 map g$ :tablast<CR>
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 "in command mode use <C-j/k> for history and <C-h/l> for moving
 cmap <C-h> <Left>
 cmap <C-j> <Down>
 cmap <C-k> <Up>
 cmap <C-l> <Right>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 " Highlights long lines
 set colorcolumn=+1
