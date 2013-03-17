@@ -1,0 +1,58 @@
+%Projects
+
+This is a list of projects I am considering putting some effort into. (When I
+have more free time.)
+
+
+##Sam filter/pipe
+
+Loving both `acme(1)` and `vim(1)` I find myself missing one's feature when
+using the other, especially `sam(1)`'s command language when using `vim(1)`.
+
+Hopefully, `vim(1)` supports filters and allows one to `:{range}!{filter}` to
+pipe the text in `range` through `filter`. Thus creating a `sap(1)` (`sap`
+stands for `sam pipe`) command is all that is needed to make `sam(1)` commands
+available in `vim(1)`.
+
+The command would
+
+- read from `stdin`,
+- write to `stdout` and,
+- execute the `sam(1)` command given as argument.
+
+Additional options would include:
+
+- `-c <file>` execute command from `file`,
+- `-i <file>` modify `file` inplace (i.e. use it as input and output),
+- `-o <file>` output to `file` instead of `stdout`,
+- `<file>` read file instead of `stdin`,
+
+
+##Suckless git front-end
+
+Although `git(1)`'s back-end is very good, the front-end is
+
+- difficult to use,
+- an amalgame of scripts, perl code, and other things,
+- very chatty, and
+- awh-no-what-happened-to-my-repository-again?
+
+Thus the project.
+
+
+##A new back-end for Mirage: self-hosted web-apps
+
+[Self-hosted
+web-apps](http://drwho.virtadpt.net/archive/2013/03/14/a-new-way-to-write-web-applications)
+would fit nicely as a Mirage back-end. Moreover, it is a nice use for a
+Javascript back-end in Mirage.
+
+
+##Signpost
+
+How nice would it be if one could just refer to all its electronics via
+`<hostname>.<tld>` (e.g. `billie.raphael.signpost.io` (`billie` is my laptop's
+name), `avalanche.raphael.signpost.io` (my Raspberry Pi), &c.).
+
+The signpost projects aims at making this addressing Just Work™ using tricks
+such as effectful DNS requests, NAT punching, VPN, &c.
