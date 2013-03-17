@@ -3,6 +3,7 @@
 This is a list of projects I am considering putting some effort into. (When I
 have more free time.)
 
+------------------------------------------------------------------------------
 
 ##Sam filter/pipe
 
@@ -27,6 +28,7 @@ Additional options would include:
 - `-o <file>` output to `file` instead of `stdout`,
 - `<file>` read file instead of `stdin`,
 
+------------------------------------------------------------------------------
 
 ##Suckless git front-end
 
@@ -39,6 +41,7 @@ Although `git(1)`'s back-end is very good, the front-end is
 
 Thus the project.
 
+------------------------------------------------------------------------------
 
 ##A new back-end for Mirage: self-hosted web-apps
 
@@ -47,6 +50,7 @@ web-apps](http://drwho.virtadpt.net/archive/2013/03/14/a-new-way-to-write-web-ap
 would fit nicely as a Mirage back-end. Moreover, it is a nice use for a
 Javascript back-end in Mirage.
 
+------------------------------------------------------------------------------
 
 ##Signpost
 

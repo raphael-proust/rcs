@@ -9,7 +9,7 @@ of the [University of Cambridge](http://www.cam.ac.uk/) under supervision of
 [Alan Mycroft](http://www.cl.cam.ac.uk/~am21/). I am working on linear
 types and their use for system programming.
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
 ##Past
 
@@ -34,17 +34,23 @@ I have been a student at [Paris 7 Denis Diderot]() University in both Computer
 Science and Mathematics.
 
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
 ##Misc
 
 Projects I have contributed to: [Ocsigen](http://ocsigen.org),
 [Mirage](http://openmirage.org).
 
-List of [projects I might start](./projects.html).
+List of [projects I am considering contributing to](./projects.html).
 
 Software repository: [github](http://github.com/raphael-proust/).
 
-I can be sent emails to at <rp452@cam.ac.uk>.
+I use
+[Archlinux](https://www.archlinux.org),
+[suckless tools](http://suckless.org),
+[vim](http://vim.org),
+[acme](http://acme.cat-v.org),
+[pentadactyl](http://5digits.org), and
+other things.
 
-<!-- :!pandoc --standalone -o %:r.html % -->
+I can be sent emails to at <rp452@cam.ac.uk>.
