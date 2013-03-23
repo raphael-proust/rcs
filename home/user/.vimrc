@@ -60,7 +60,7 @@ nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set dif
 command Diffall windo diffthis
 command Diffnone windo diffoff
 
-"Tabs (the absence of), indent and the such
+"Tabs, indent and the such
 set nosmarttab
 set noexpandtab
 set softtabstop=4
@@ -134,11 +134,11 @@ set fillchars+=diff:—
 
 "Copy-Pasta
 set pastetoggle=<F2>
-nmap <leader>y "+y
-nmap <leader>Y "+yy
-nmap <leader>p "+p
-nmap <leader>P "+P
-nmap Y y$
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+y$
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+nnoremap Y y$
 
 "Buffers and window handling
 set switchbuf=usetab,newtab
