@@ -15,10 +15,8 @@ Bundle 'tpope/vim-repeat.git'
 Bundle 'edsono/vim-matchit.git'
 
 Bundle 'rc.vim'
-
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
 autocmd FileType ocaml_lwt set foldlevel=9
-
 Bundle 'raphael-proust/pdc.vim.git'
 
 Bundle 'vim-scripts/SuperTab.git'
@@ -118,6 +116,7 @@ set undodir=$HOME/.vim/undofiles
 
 "Window and term
 set title
+let &titleold=getcwd()
 set termencoding=utf-8
 set encoding=utf-8
 
@@ -172,12 +171,12 @@ map K :.-,.join<CR>
 
 " Text Sanitization
 function! StripWhitespace () range
-  let l:cursor = getpos(".")
-  let l:query = getreg('/')
-  let regmode = getregtype('/')
-  execute a:firstline . ',' . a:lastline . 's/\s\+$//e'
-  call setpos('.', l:cursor)
-  call setreg('/', l:query, l:regmode)
+	let l:cursor = getpos(".")
+	let l:query = getreg('/')
+	let regmode = getregtype('/')
+	execute a:firstline . ',' . a:lastline . 's/\s\+$//e'
+	call setpos('.', l:cursor)
+	call setreg('/', l:query, l:regmode)
 endfunction
 command -range=% Trailing :<line1>,<line2>call StripWhitespace()
 command -range=% SubsTabs2 :<line1>,<line2>s/\t/  /e
@@ -197,20 +196,17 @@ command Spellno :setlocal nospell
 autocmd FileType make set noexpandtab
 au BufEnter,BufNewFile,BufRead * call FileTypeDetect()
 fun! FileTypeDetect()
-  let l = getline(nextnonblank(1))
-  if l =~ '#!/bin/dash'
-    set filetype=sh
-  endif
+	let l = getline(nextnonblank(1))
+	if l =~ '#!/bin/dash'
+		set filetype=sh
+	endif
 endfun
-
-"unf.ck terminal title
-let &titleold=getcwd()
 
 "On the fly sudo
 command Sudow :w !sudo tee %
 
 "Status line with a little more information
 function SpellLang()
-    if &spell | return ',' . &spelllang | else | return '' | endif
+	if &spell | return ',' . &spelllang | else | return '' | endif
 endfunction
 set statusline=%<%f%q\ \ [%Y%M%R%W%{SpellLang()}]%=%-11(%l,%c%V%)\ \ %P

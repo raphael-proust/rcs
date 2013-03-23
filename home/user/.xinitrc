@@ -8,6 +8,7 @@ bgs -x $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
 while true
 do
 	set-status-line-bnwr
+	dmenu -v >/dev/null
 	sleep 60
 done &
 mplayer -vo png:outdir=/tmp -frames 1 tv:// &
@@ -17,7 +18,5 @@ do
 	mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-cam'):outdir=$HOME/.login-pic -frames 1 tv://
 	sleep 598
 done &
-
-dmenu -v >/dev/null
 
 exec $*

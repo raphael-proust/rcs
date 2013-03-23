@@ -42,13 +42,9 @@ bindkey -M vicmd '^J' history-beginning-search-forward
 
 bindkey -M vicmd '\e[z' expand-or-complete-prefix
 
-#Make 'rm *' safe
 setopt RM_STAR_WAIT
 
-#Allow multiple output for commands
 setopt MULTIOS
-
-#Sort globbing numerically
 setopt NUMERIC_GLOB_SORT
 
 # aliases and functions
@@ -77,19 +73,19 @@ kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 if [ "x$SSH_CONNECTION" != "x" ]
 then
 chpwd () {
-  [[ -t 1 ]] || return
-  case $TERM in
-    (st*|*xterm*|rxvt*) print -Pn "\e]2;@%M - %/\a"
-      ;;
-  esac
+	[[ -t 1 ]] || return
+	case $TERM in
+		(st*|*xterm*|rxvt*) print -Pn "\e]2;@%M - %/\a"
+		;;
+	esac
 }
 else
 chpwd () {
-  [[ -t 1 ]] || return
-  case $TERM in
-    (st*|*xterm*|rxvt*) print -Pn "\e]2;%/\a"
-      ;;
-  esac
+	[[ -t 1 ]] || return
+	case $TERM in
+		(st*|*xterm*|rxvt*) print -Pn "\e]2;%/\a"
+		;;
+	esac
 }
 fi
 

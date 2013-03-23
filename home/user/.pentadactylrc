@@ -1,4 +1,3 @@
-
 set runtimepath=~/.pentadactyl
 
 " use g' for previously selected tab
@@ -11,12 +10,8 @@ map ! :tabopen!
 
 "Searching: use DuckDuckGo
 "bmark -title='DuckDuckGo' https://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=%s -keyword=ddg
-
-"ddg is the default
 set defsearch=ddg
 set suggestengines=
-
-"custom searches (using bangs: https://duckduckgo.com/bang.html)
 map sd tddg 
 map sb tddg !
 map st tddg !torrentz 
@@ -37,8 +32,6 @@ map -builtin k 7k
 map -builtin l 7l
 map -builtin <C-h> H
 map -builtin <C-l> L
-
-"TabGroup thingy
 map -builtin <C-w> <C-S-e>
 
 "avoid accidents
@@ -52,7 +45,6 @@ set newtab=all
 set strictfocus='chrome:*':laissez-faire,*:despotic
 set followhints=1
 set guioptions=CMs
-"set showstatuslinks=command
 set showtabline=always
 set maxitems=7
 set noerrorbells

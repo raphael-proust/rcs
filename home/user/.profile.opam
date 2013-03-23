@@ -1,4 +1,3 @@
-
 export PATH=$HOME/.opam/bin:$HOME/.opam/currentswitch/bin:$PATH
 export MANPATH=$HOME/.opam/currentswitch/man:$MANPATH
 export OCAML_TOPLEVEL_PATH=$HOME/.opam/currentswitch/lib/toplevel
