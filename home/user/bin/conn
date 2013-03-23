@@ -56,14 +56,23 @@ fn network{
 	case t
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
 		task -n sock ssh -ND 4711 -v lum
+	case T
+		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
+		task sock ssh -ND 4711 -v lum
 	}
 }
 
-switch($*(1)){
-	case w
-		for (i in $*(2-)) wlan0 $i
-	case e
-		for (i in $*(2-)) eth0 $i
-	case n
-		for (i in $*(2-)) network $i
+mode=wlan0
+
+for (i) {
+	switch($i){
+		case w
+			mode=wlan0
+		case e
+			mode=eth0
+		case n
+			mode=network
+		case *
+			$mode $i
+	}
 }
