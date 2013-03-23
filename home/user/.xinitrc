@@ -10,12 +10,12 @@ do
 	set-status-line-bnwr
 	sleep 60
 done &
+mplayer -vo png:outdir=/tmp -frames 1 tv:// &
 while true
 do
-	sleep 1
+	sleep 2
 	mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-cam'):outdir=$HOME/.login-pic -frames 1 tv://
-	import -window root $HOME/.login-pic/$(date '+%Y-%m-%d-%H-%M-screen').png
-	sleep 599
+	sleep 598
 done &
 
 dmenu -v >/dev/null
