@@ -60,3 +60,21 @@ name), `avalanche.raphael.signpost.io` (my Raspberry Pi), &c.).
 
 The signpost projects aims at making this addressing Just Work™ using tricks
 such as effectful DNS requests, NAT punching, VPN, &c.
+
+------------------------------------------------------------------------------
+
+##Dtach
+
+The [`dtach(1)`](http://dtach.sourceforge.net/) utility allows one's program
+to persist through log-outs. Although `screen(1)` and `tmux(1)` are more
+commonly used, `dtach(1)` deserves love because it does only one thing (and
+does it very well).
+
+(To get the other features of `screen(1)` or `tmux(1)` one can combine
+`dtach(1)` with `dvtm(1)` the [dynamic virtual terminal
+manager](http://www.brain-dump.org/projects/dvtm/).)
+
+A feature I would like to add (or to see added) to `dtach(1)` is process
+killing. Thus additional `-k` option: `dtach -k <socket> [<signal>]` would
+send `<signal>` (default `SIGKILL`) to the process the session associated with
+`<socket>`.
