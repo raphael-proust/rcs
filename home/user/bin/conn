@@ -1,5 +1,10 @@
 #!/usr/bin/env rc
 
+fn sigint{
+	set-status-line-bnwr
+	exit
+}
+
 fn eth0{
 	switch ($1) {
 	case d
@@ -13,6 +18,8 @@ fn eth0{
 	case r
 		sudo dhcpcd --release eth0
 		sudo dhcpcd --timeout 60 eth0
+	case *
+		network $1
 	}
 }
 fn wlan0{
@@ -23,15 +30,12 @@ fn wlan0{
 	case k
 		sudo rfkill block wifi
 		sudo ip link set wlan0 down
-		set-status-line-bnwr
 	case o
 		sudo rfkill unblock wifi
 		sudo ip link set wlan0 up
-		set-status-line-bnwr
 	case c
 		sudo wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 		sudo dhcpcd --timeout 60 wlan0
-		set-status-line-bnwr
 	case s
 		sudo ip link set wlan0 up
 		sudo iwlist wlan0 scan
@@ -40,6 +44,8 @@ fn wlan0{
 		sudo dhcpcd --timeout 60 wlan0
 	case R
 		sudo wpa_cli reassociate
+	case *
+		network $1
 	}
 }
 fn network{
@@ -76,3 +82,4 @@ for (i) {
 			$mode $i
 	}
 }
+set-status-line-bnwr
