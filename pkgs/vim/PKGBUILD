@@ -4,12 +4,12 @@ pkgbase=vim
 pkgname=('vim' 'vim-runtime')
 _topver=7.3
 _versiondir="vim${_topver//./}"
-pkgver=4183
+pkgver=4249
 pkgrel=1
 arch=('i686' 'x86_64' 'arm')
 license=('custom:vim')
 url="http://www.vim.org"
-depends=('python' 'python2' 'ruby' 'lua')
+depends=()
 makedepends=('mercurial')
 
 _hgroot='http://vim.googlecode.com/hg/'
@@ -40,12 +40,12 @@ build() {
   cd "${srcdir}"/vim-build
 
   ./configure --prefix=/usr --localstatedir=/var/lib/vim \
-    --with-features=big --with-compiledby=ArchLinux \
+    --with-features=big --with-compiledby=bnwr \
     --disable-gpm --enable-acl --with-x=no \
     --disable-mouse \
     --disable-gui --enable-multibyte --enable-cscope \
-    --disable-netbeans --enable-perlinterp --enable-pythoninterp \
-    --enable-python3interp --enable-rubyinterp --enable-luainterp
+    --disable-netbeans --enable-perlinterp --disable-pythoninterp \
+    --disable-python3interp --disable-rubyinterp --disable-luainterp
 
   make -j 4
 
@@ -53,7 +53,7 @@ build() {
 
 package_vim() {
   pkgdesc='Vi Improved, a highly configurable, improved version of the vi text editor'
-  depends=("vim-runtime=${pkgver}-${pkgrel}" 'python' 'python2' 'ruby' 'lua')
+  depends=("vim-runtime=${pkgver}-${pkgrel}")
   conflicts=('gvim')
 
   cd "${srcdir}"/vim-build
