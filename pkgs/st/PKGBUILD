@@ -11,7 +11,7 @@ license=('MIT')
 depends=('libx11')
 makedepends=('git' 'ncurses')
 source=(config.h)
-md5sums=(f727e57ff599224a7b835a6fc0153f0c)
+md5sums=(93a44a69013b1ebb43bd39dd03b55f41)
 
 provides=('st')
 conflicts=('st')
