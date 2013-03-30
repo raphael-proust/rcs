@@ -19,4 +19,11 @@ do
 	sleep 598
 done &
 
+NAMESPACE=$(mktemp -d /tmp/plmb.XXXXXX)
+plumber
+plumber=$(pgrep -n plumber)
+cat $HOME/plumbing | 9p write plumb/rules
+
 exec $*
+
+kill $plumber

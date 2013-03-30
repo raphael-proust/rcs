@@ -38,8 +38,8 @@
 "slock & sleep 1 && sudo pm-suspend"
     m:0x41 + c:9
     Shift+Mod4 + Escape
-#open xsel-ed link in surf
-"surf $(xsel)"
+#plumb xsel-ed text
+"plumb $(xsel)"
     m:0x40 + c:32
     Mod4 + o
 #Start duckduckgo in surf
