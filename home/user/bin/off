@@ -1,0 +1,7 @@
+#!/usr/bin/env rc
+path=(/opt/plan9/bin $path)
+echo 'Machine name: '
+TARGET=`{read}
+NAME=`{uname -n}
+if (~ $TARGET $NAME) sudo systemctl poweroff
+if not echo 'Incorrect machine name'
