@@ -2,7 +2,7 @@
 
 pkgname=dwm
 pkgver=6.0
-pkgrel=110
+pkgrel=111
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
@@ -21,7 +21,7 @@ build() {
   cp $srcdir/config.mk config.mk
   cp $srcdir/config.h config.h
 
-  if ls $startdir/patches | grep .*\.diff$
+  if ls $startdir/patches | grep -q '.*\.diff$'
   then
     for i in $startdir/patches/*\.diff
     do

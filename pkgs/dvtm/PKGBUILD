@@ -1,7 +1,7 @@
 #Custom version based on Arch's package
 
 pkgname=dvtm
-pkgver=0.8
+pkgver=0.9
 pkgrel=100
 pkgdesc='Dynamic virtual terminal manager.'
 arch=('i686' 'x86_64' 'arm')
@@ -10,8 +10,8 @@ license=('MIT')
 depends=('ncurses')
 source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         'config.h')
-md5sums=('c565067557c9be4cdc63aecd0932452e'
-         '356beb78e1586be7d9db7a528dacb507'
+md5sums=('7de1103abb0ca410f7250cf89f019a38'
+         '1fab03a01e22da3709b35f6b27ee4b60'
         )
 
 build() {
