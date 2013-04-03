@@ -113,8 +113,8 @@ subversion
 sudo
 sysfsutils
 systemd
-systemd-sysvcompat
 tar
+tcpdump
 texinfo
 tor
 traceroute
