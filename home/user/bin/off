@@ -1,7 +1,15 @@
 #!/usr/bin/env rc
 path=(/opt/plan9/bin $path)
-echo 'Machine name: '
+echo -n 'Machine name: '
 TARGET=`{read}
 NAME=`{uname -n}
-if (~ $TARGET $NAME) sudo systemctl poweroff
+if (~ $TARGET $NAME) {
+	switch ($#*) {
+		case 0
+			sudo systemctl poweroff
+		case 1
+			if (~ $*(1) poweroff halt reboot kexec suspend hibernate hybrid-sleep) sudo systemctl $*(1)
+			if not echo 'Unknown command'
+	}
+}
 if not echo 'Incorrect machine name'
