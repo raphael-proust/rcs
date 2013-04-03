@@ -14,9 +14,9 @@ done &
 mplayer -vo png:outdir=/tmp -frames 1 tv:// &
 while true
 do
-	sleep 2
+	sleep 300
 	mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-cam'):outdir=$HOME/.login-pic -frames 1 tv://
-	sleep 598
+	sleep 300
 done &
 
 NAMESPACE=$(mktemp -d /tmp/plmb.XXXXXX)
