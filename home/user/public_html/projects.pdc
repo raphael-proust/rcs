@@ -78,3 +78,9 @@ A feature I would like to add (or to see added) to `dtach(1)` is process
 killing. Thus additional `-k` option: `dtach -k <socket> [<signal>]` would
 send `<signal>` (default `SIGKILL`) to the process the session associated with
 `<socket>`.
+
+Alternatively, (possibly better,) is the ability to print the `pid` of a
+`dtach(1)`ed process. The killing of such process is then really easy.
+
+<!-- Another feature (this one suggested by morphles) that could be useful is
+the ability to send some text to the standard input of a dtached process -->
