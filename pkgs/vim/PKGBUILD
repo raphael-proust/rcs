@@ -4,12 +4,12 @@ pkgbase=vim
 pkgname=('vim' 'vim-runtime')
 _topver=7.3
 _versiondir="vim${_topver//./}"
-pkgver=4249
-pkgrel=1
+pkgver=4253
+pkgrel=2
 arch=('i686' 'x86_64' 'arm')
 license=('custom:vim')
 url="http://www.vim.org"
-depends=()
+depends=('python2')
 makedepends=('mercurial')
 
 _hgroot='http://vim.googlecode.com/hg/'
@@ -44,7 +44,7 @@ build() {
     --disable-gpm --enable-acl --with-x=no \
     --disable-mouse \
     --disable-gui --enable-multibyte --enable-cscope \
-    --disable-netbeans --enable-perlinterp --disable-pythoninterp \
+    --disable-netbeans --enable-perlinterp --enable-pythoninterp \
     --disable-python3interp --disable-rubyinterp --disable-luainterp
 
   make -j 4
@@ -80,7 +80,7 @@ package_vim() {
 
 package_vim-runtime() {
   pkgdesc='Runtime for vim'
-  depends=('perl' 'gawk')
+  depends=('python2' 'perl' 'gawk')
 
   # Install the runtime split from vim
   install -dm755 "${pkgdir}"/usr/share
