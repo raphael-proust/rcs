@@ -61,6 +61,9 @@
 "st"
     m:0x40 + c:36
     Mod4 + Return
+"st -e dvtm"
+    m:0x40 + c:21
+    Mod4 + equal
 "9acme"
     m:0x40 + c:26
     Mod4 + e
