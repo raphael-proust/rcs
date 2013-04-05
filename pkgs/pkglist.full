@@ -81,6 +81,7 @@ man-db
 man-pages
 mcabber
 mdadm
+mencoder
 mercurial
 mktorrent
 mlocate
@@ -135,9 +136,9 @@ surf
 sxiv
 sysfsutils
 systemd
-systemd-sysvcompat
 tamsyn-font
 tar
+tcpdump
 terminus-font
 texinfo
 texlive-bibtexextra

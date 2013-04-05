@@ -11,6 +11,7 @@ libreoffice-calc
 libreoffice-draw
 libreoffice-impress
 libreoffice-writer
+mencoder
 mpd
 mplayer
 mupdf
