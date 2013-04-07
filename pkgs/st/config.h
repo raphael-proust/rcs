@@ -5,13 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "monospace:pixelsize=12:antialias=true:autohint=true";
+static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 
 /* timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
+
+/* alt screens */
+static bool allowaltscreen = true;
 
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 60;

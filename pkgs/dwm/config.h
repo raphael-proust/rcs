@@ -10,7 +10,7 @@ reexec(const Arg *arg) {
 }
 
 /* appearance */
-static const char font[]            = "monospace-8";
+static const char font[]            = "Liberation-8";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";

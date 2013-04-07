@@ -11,18 +11,15 @@ license=('MIT')
 depends=('libx11')
 makedepends=('git' 'ncurses')
 source=(config.h)
-md5sums=(93a44a69013b1ebb43bd39dd03b55f41)
+md5sums=(
+760320b4ca76e40fa64a5e73c09abc92
+)
 
 provides=('st')
 conflicts=('st')
 
 _gitroot='http://git.suckless.org/'
 _gitrepo='st'
-
-pkgver () {
-  cd "$srcdir/$_gitname"
-  echo $(git describe --always | sed 's/-/./g')
-}
 
 
 build() {
