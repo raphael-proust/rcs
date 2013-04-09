@@ -80,8 +80,8 @@ set splitbelow
 
 "Search and substitute
 set hlsearch
-map <F1> :set hls!<CR>
-imap <F1> <Nop>
+nnoremap <F1> :set hls!<CR>
+inoremap <F1> <Nop>
 set magic
 set gdefault
 
@@ -99,7 +99,7 @@ set shortmess+=filmnrxtI
 
 "Lines
 set textwidth=78
-noremap Q gq
+nnoremap Q gq
 set nojoinspaces
 set wrap
 
@@ -141,19 +141,17 @@ nnoremap Y y$
 
 "Buffers and window handling
 set switchbuf=usetab,newtab
-map <C-w>! :vertical resize 78<CR>
-map g0 :tabfirst<CR>
-map g$ :tablast<CR>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-w>! :vertical resize 78<CR>
+nnoremap g0 :tabfirst<CR>
+nnoremap g$ :tablast<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "in command mode use <C-j/k> for history and <C-h/l> for moving
-cmap <C-h> <Left>
-cmap <C-j> <Down>
-cmap <C-k> <Up>
-cmap <C-l> <Right>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
 
 " Highlights long lines
 set colorcolumn=+1
@@ -166,8 +164,8 @@ set wildignore+=*.cmi,*.cmo,*.cma,*.cmx,*.cmxa,*.omc,*.annot
 " various maps
 nnoremap ' `
 nnoremap ` '
-map <leader>cd :cd %:p:h<CR>
-map K :.-,.join<CR>
+nnoremap <leader>cd :cd %:p:h<CR>
+nnoremap K :.-,.join<CR>
 
 " Text Sanitization
 function! StripWhitespace () range
@@ -193,7 +191,6 @@ command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 command Spellno :setlocal nospell
 
 " filetype specific options
-autocmd FileType make set noexpandtab
 au BufEnter,BufNewFile,BufRead * call FileTypeDetect()
 fun! FileTypeDetect()
 	let l = getline(nextnonblank(1))
