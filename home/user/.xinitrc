@@ -1,6 +1,6 @@
 #!/bin/sh
 xset b off
-xkbcomp .xkb $DISPLAY
+xkbcomp .xkb.hjkl $DISPLAY
 xbindkeys -f $HOME/.xbindkeysrc
 xrdb ~/.Xresources
 wmname $(printf %s ${1} | sed -e "s/^\(\S\+\).*/\1/")
