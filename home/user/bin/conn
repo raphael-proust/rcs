@@ -18,6 +18,8 @@ fn eth0{
 	case r
 		sudo dhcpcd --release eth0
 		sudo dhcpcd --timeout 60 eth0
+	case a
+		ip addr show eth0
 	case *
 		network $1
 	}
@@ -44,6 +46,8 @@ fn wlan0{
 		sudo dhcpcd --timeout 60 wlan0
 	case R
 		sudo wpa_cli reassociate
+	case a
+		ip addr show wlan0
 	case *
 		network $1
 	}
@@ -65,6 +69,8 @@ fn network{
 	case T
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
 		task sock ssh -ND 4711 -v lum
+	case a
+		ip addr show
 	}
 }
 
