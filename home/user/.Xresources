@@ -3,30 +3,3 @@ Xft.antialias: true
 Xft.rgba:      rgb
 Xft.hinting:   true
 Xft.hintstyle: hintslight
-
-URxvt*font: xft:monospace-8
-URxvt*saveLines: 0
-URxvt*scrollBar: false
-URxvt*cursorColor: red
-URxvt*foreground:  gray90
-URxvt*background:  black
-URxvt*color0:  black
-URxvt*color1:  red3
-URxvt*color2:  green3
-URxvt*color3:  yellow3
-URxvt*color4:  blue2
-URxvt*color5:  magenta3
-URxvt*color6:  cyan3
-URxvt*color7:  gray90
-URxvt*color8:  gray50
-URxvt*color9:  red
-URxvt*color10: green
-URxvt*color11: yellow
-URxvt*color12: #5c5cff
-URxvt*color13: magenta
-URxvt*color14: cyan
-URxvt*color15: white
-
-dzen2.font:       xft:monospace-8
-dzen2.foreground: #bbbbbb
-dzen2.background: #222222
