@@ -2,8 +2,8 @@ wmlist=(dwm)
 tmlist=(dvtm)
 allowconsole=yes
 allowshutdown=yes
-shutdowncommand='sudo shutdown -P now'
-rebootcommand='sudo shutdown -r now'
+shutdowncommand='sudo systemctl poweroff --force'
+rebootcommand='sudo systemctl reboot --force'
 
 display=0
 xtty=7
