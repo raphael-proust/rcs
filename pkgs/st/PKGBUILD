@@ -12,7 +12,7 @@ depends=('libx11')
 makedepends=('git' 'ncurses')
 source=(config.h)
 md5sums=(
-760320b4ca76e40fa64a5e73c09abc92
+7abb48f46acd41f12c773ddb89a636a1
 )
 
 provides=('st')
