@@ -35,7 +35,7 @@
 "slock"
     m:0x40 + c:9
     Mod4 + Escape
-"slock & sleep 1 && sudo pm-suspend"
+"slock & sleep 1 && sudo systemctl suspend"
     m:0x41 + c:9
     Shift+Mod4 + Escape
 #plumb xsel-ed text
