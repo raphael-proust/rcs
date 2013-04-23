@@ -13,7 +13,7 @@ $ pacman -S plan9port
 
 ##plumbing
 
-Uses `llpp(1)` for pdf, `surf(1)` for webs, and `feh(1)` for images.
+Uses `llpp(1)` for pdf, `surf(1)` for webs, and `sxiv(1)` for images.
 
 ~~~~~~~
 $ cat plumbing
@@ -51,7 +51,7 @@ data matches '[a-zA-Z¡-￿0-9_\-./]+'
 data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
 arg isfile $0
 plumb to image
-plumb start 9 feh $file
+plumb start 9 sxiv $file
 
 include basic
 ~~~~~~~
