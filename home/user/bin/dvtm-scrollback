@@ -1,0 +1,2 @@
+#!/usr/bin/env rc
+/usr/bin/dvtm -h 2000

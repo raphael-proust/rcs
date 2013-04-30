@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# powerdown - powersave script
+# please use this with xset dpms, hdparm
+
+if [[ $EUID != 0 ]]; then
+  echo "[powerdown] must be run as root"
+  exit 1
+fi
+
+source /usr/lib/powerdown-functions
+
+lock
+
+# bus
+for i in /sys/bus/*/devices/*/power/control; do opt $i auto; done
+
+# usb autosuspend
+for i in /sys/bus/usb/devices/*/power/autosuspend; do opt $i 10; done
+
+# nmi_watchdog
+opt /proc/sys/kernel/nmi_watchdog 0
+
+# cpu
+for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do opt $i powersave; done
+# for i in /sys/devices/system/cpu/cpu*/online; do opt $i 0; done
+
+# kernel write mode
+opt /proc/sys/vm/laptop_mode 5
+opt /proc/sys/vm/dirty_ratio 90
+opt /proc/sys/vm/dirty_background_ratio 1
+opt /proc/sys/vm/dirty_expire_centisecs 60000
+opt /proc/sys/vm/dirty_writeback_centisecs 60000
+
+# Disk powersave
+for dev in $(awk '/^\/dev\/sd/ {print $1}' /etc/mtab); do run mount -o remount,noatime $dev; done
+for dev in $(awk '/^\/dev\/sd/ {print $1}' /etc/mtab); do run blockdev --setra 4096 $dev; done
+for i in /sys/class/scsi_host/host*/link_power_management_policy; do opt $i min_power; done
+for dev in $(awk '/^\/dev\/sd/ {print $1}' /etc/mtab); do run hdparm -B 1 -S 12 $dev; done
+
+# Sound card powersave
+opt /sys/module/snd_hda_intel/parameters/power_save 1
+opt /sys/module/snd_hda_intel/parameters/power_save_controller Y
+opt /sys/module/snd_ac97_codec/parameters/power_save 1
+
+# wlan0/eth0 powersave
+run iw dev wlan0 set power_save on
+
+# Screen powersave
+for i in /sys/class/backlight/acpi_video*/brightness; do opt $i 0; done
+
+# Disable bluetooth
+unload_mod btusb
+unload_mod bluetooth
