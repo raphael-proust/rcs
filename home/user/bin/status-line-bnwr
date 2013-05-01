@@ -20,9 +20,9 @@ then
   then
     if which wpa_cli >/dev/null
     then
-      WIFI=$(printf "| %s" $(sudo wpa_cli status|grep "^ssid="|sed "s/^ssid=//"))
+      WIFI=$(sudo wpa_cli status|grep "^ssid="|sed "s/^ssid=//")
     else
-      WIFI="| wlan"
+      WIFI="wlan"
     fi
   fi
 fi
@@ -39,9 +39,6 @@ then
     (ondemand)
       CPUGOV=""
     ;;
-    (powersave|performance)
-      CPUGOV=$(printf "%s | " "$CPUGOV")
-    ;;
   esac
 fi
 
@@ -50,7 +47,7 @@ then
   GPUSTATE=$(cat /sys/kernel/debug/vgaswitcheroo/switch |grep DIS| sed 's/.:DIS:.:\([^:]*\):.*/\1/')
   case "$GPUSTATE" in
     (Pwr)
-      GPUSTATE="GPU on | "
+      GPUSTATE="GPU"
       ;;
     (Off)
       GPUSTATE=""
@@ -60,18 +57,14 @@ else
   GPUSTATE=""
 fi
 
-TUNNEL=""
-if [ -e $HOME/.task-pipes/sock ]
-then
-	TUNNEL="tunnel | "
-fi
+TASKS=$(task -l)
 
 DATE=$(date '+%Y-%m-%d %a  %H:%M')
 
-printf " vol: %s %s | %s%s %s | %s%s%s" \
-  "$ALSAVOL"  \
+printf " %s | %s | vol: %s | %s %s | %s | %s | %s" \
+  "$TASKS" \
   "$WIFI" \
-  "$TUNNEL" \
+  "$ALSAVOL"  \
   "$POWERSRC" "$POWERLVL" \
   "$CPUGOV" \
   "$GPUSTATE" \
