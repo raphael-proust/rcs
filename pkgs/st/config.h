@@ -9,7 +9,14 @@ static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true"
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 
-/* timeouts (in milliseconds) */
+/*
+ * word delimiter string
+ *
+ * More advanced example: " `'\"()[]{}"
+ */
+static char worddelimiters[] = " `'\"";
+
+/* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
@@ -20,7 +27,10 @@ static bool allowaltscreen = true;
 static unsigned int xfps = 60;
 static unsigned int actionfps = 30;
 
-/* blinking timeout (set to 0 to disable blinking) */
+/*
+ * blinking timeout (set to 0 to disable blinking) for the terminal blinking
+ * attribute.
+ */
 static unsigned int blinktimeout = 800;
 
 /* TERM value */
@@ -77,7 +87,15 @@ static unsigned int defaultcs = 258;
 static unsigned int defaultitalic = 11;
 static unsigned int defaultunderline = 7;
 
-/* Internal shortcuts. */
+/* Internal mouse shortcuts. */
+/* Beware that overloading Button1 will disable the selection. */
+static Mousekey mshortcuts[] = {
+	/* keysym		mask		string */
+	{ Button4,		XK_ANY_MOD,	"\031"},
+	{ Button5,		XK_ANY_MOD,	"\005"},
+};
+
+/* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 
 static Shortcut shortcuts[] = {
