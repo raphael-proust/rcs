@@ -18,9 +18,9 @@
     m:0x4 + c:121
     Control + XF86AudioMute
 #Wifi switch
-"rfswitch-bnwr ; set-status-line-bnwr"
-    m:0x0 + c:246
-    XF86WLAN
+#"rfswitch-bnwr ; set-status-line-bnwr"
+#    m:0x0 + c:246
+#    XF86WLAN
 #Media keys
 "mpc prev"
     m:0x0 + c:173
