@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#TODO: factor code with set-status-line-bnwr
+
+STATUSLINE=$(mpc -f "%artist% - %album% - %track%: %title%" | head -1)
+
+WMNAME="$(wmname 2>/dev/null)"
+if [ "$?" -eq "0" ]
+then
+  case "$WMNAME" in
+    (dwm)
+      xsetroot -name "$STATUSLINE"
+      ;;
+    (wmii)
+      wmiir write /rbar/status "$STATUSLINE"
+      ;;
+  esac
+fi
+
+STATUSPIPESDIR="/tmp/dvtm-status-pipes"
+if [ -d $STATUSPIPESDIR ]
+then
+  for i in $(ls $STATUSPIPESDIR |grep "dvtm-status.[[:digit:]]\+")
+  do
+    printf %s\\n "$STATUSLINE" > $STATUSPIPESDIR/$i
+  done
+fi
+
+sleep 5
+
+set-status-line-bnwr
