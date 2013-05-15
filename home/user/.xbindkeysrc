@@ -17,10 +17,9 @@
 "mpc volume 0"
     m:0x4 + c:121
     Control + XF86AudioMute
-#Wifi switch
-#"rfswitch-bnwr ; set-status-line-bnwr"
-#    m:0x0 + c:246
-#    XF86WLAN
+"show-mpc"
+    m:0x0 + c:246
+    XF86WLAN
 #Media keys
 "mpc prev"
     m:0x0 + c:173
@@ -67,6 +66,6 @@
 "9acme"
     m:0x40 + c:26
     Mod4 + e
-"st -g '1300x200+33+0' -e task yakuake dvtm-scrollback"
+"st -g '1300x200+33+0' -e task yakuake -r winch dvtm-scrollback"
     m:0x0 + c:96
     F12
