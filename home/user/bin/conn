@@ -65,10 +65,10 @@ fn network{
 		wait
 	case t
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		task -n sock ssh -ND 4711 -v lum
+		task -n sock ssh -ND 4711 lum
 	case T
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		task sock ssh -ND 4711 -v lum
+		task sock ssh -ND 4711 lum
 	case a
 		ip addr show
 	}
