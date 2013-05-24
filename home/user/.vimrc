@@ -18,6 +18,7 @@ Bundle 'rc.vim'
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
 autocmd FileType ocaml_lwt set foldlevel=9
 Bundle 'raphael-proust/pdc.vim.git'
+Bundle 'derekwyatt/vim-scala'
 
 Bundle 'vim-scripts/SuperTab.git'
 
