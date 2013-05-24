@@ -14,4 +14,4 @@ case "$1" in
     echo "usage: $0 {ondemand|powersave|performance}"
 esac
 
-set-status-line-bnwr
+set-status-line-bnwr "$(status-line-bnwr)"

@@ -7,4 +7,4 @@ else
   sudo rfkill block wifi
 fi
 
-set-status-line-bnwr
+set-status-line-bnwr "$(status-line-bnwr)"

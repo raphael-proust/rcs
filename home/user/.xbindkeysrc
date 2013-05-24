@@ -1,11 +1,11 @@
 #Volume: mute, up, down
-"amixer set Master toggle ; set-status-line-bnwr"
+"amixer set Master toggle ; set-status-line-bnwr `status-line-bnwr`"
     m:0x0 + c:121
     XF86AudioMute
-"amixer set Master playback 3- ; set-status-line-bnwr"
+"amixer set Master playback 3- ; set-status-line-bnwr `status-line-bnwr`"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"amixer set Master playback 3+ ; set-status-line-bnwr"
+"amixer set Master playback 3+ ; set-status-line-bnwr `status-line-bnwr`"
     m:0x0 + c:123
     XF86AudioRaiseVolume
 "mpc volume -3"

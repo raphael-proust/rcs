@@ -7,7 +7,7 @@ wmname $(printf %s ${1} | sed -e "s/^\(\S\+\).*/\1/")
 bgs -x $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
 while true
 do
-	set-status-line-bnwr
+	set-status-line-bnwr "$(status-line-bnwr)"
 	dmenu -v >/dev/null
 	sleep 60
 done &
