@@ -1,4 +1,5 @@
 artwiz-fonts
+audacity
 bdf-unifont
 chromium
 dmenu
@@ -15,9 +16,12 @@ mencoder
 mpd
 mplayer
 mupdf
+pinta
 plan9port
 profont
 rxvt-unicode
+scala
+scala-docs
 slock
 surf
 sxiv

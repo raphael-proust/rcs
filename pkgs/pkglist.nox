@@ -47,6 +47,7 @@ gnu-netcat
 grep
 grub-bios
 gzip
+haskell-pandoc
 heirloom-mailx
 html2text
 htop
@@ -55,9 +56,11 @@ iputils
 irssi
 jfsutils
 less
+libmariadbclient
 libpng12
 licenses
 linux
+linux-headers
 lm_sensors
 logrotate
 lsof
@@ -105,6 +108,7 @@ rfkill
 rlwrap
 rsync
 rtorrent
+ruby
 sed
 shadow
 sshfs
@@ -115,6 +119,7 @@ sysfsutils
 systemd
 tar
 tcpdump
+texi2html
 texinfo
 tor
 traceroute
@@ -135,6 +140,5 @@ wireless_tools
 wpa_actiond
 wpa_supplicant
 xfsprogs
-yaourt
 zip
 zsh

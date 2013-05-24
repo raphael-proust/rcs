@@ -5,7 +5,6 @@ llpp-git
 lsw
 mosml
 opam
-pandoc
 pdftk-bin
 powerdown
 sldm
@@ -14,3 +13,4 @@ st
 ttf-arabeyes-fonts
 ttf-babelstone-han
 ttf-pingwi-typography
+yap

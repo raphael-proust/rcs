@@ -4,6 +4,7 @@ alsa-utils
 aria2
 artwiz-fonts
 aspell-fr
+audacity
 autoconf
 automake
 bash
@@ -55,6 +56,7 @@ gnu-netcat
 grep
 grub-bios
 gzip
+haskell-pandoc
 heirloom-mailx
 html2text
 htop
@@ -64,9 +66,11 @@ iputils
 irssi
 jfsutils
 less
+libmariadbclient
 libpng12
 licenses
 linux
+linux-headers
 lm_sensors
 logrotate
 lsof
@@ -104,6 +108,7 @@ patch
 pciutils
 pcmciautils
 perl
+pinta
 pkg-config
 pkgstats
 pkgtools
@@ -120,7 +125,10 @@ rfkill
 rlwrap
 rsync
 rtorrent
+ruby
 rxvt-unicode
+scala
+scala-docs
 sed
 shadow
 slock
@@ -136,6 +144,7 @@ tamsyn-font
 tar
 tcpdump
 terminus-font
+texi2html
 texinfo
 tor
 traceroute
@@ -252,6 +261,5 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xsel
-yaourt
 zip
 zsh
