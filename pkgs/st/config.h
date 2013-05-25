@@ -14,7 +14,7 @@ static char shell[] = "/bin/sh";
  *
  * More advanced example: " `'\"()[]{}"
  */
-static char worddelimiters[] = " `'\"|()[]{}";
+static char worddelimiters[] = " `'\"|()[]{}├─┬└";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
