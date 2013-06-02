@@ -18,18 +18,18 @@ Bundle 'rc.vim'
 Bundle 'raphael-proust/ocaml_lwt.vim.git'
 autocmd FileType ocaml_lwt set foldlevel=9
 Bundle 'raphael-proust/pdc.vim.git'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'def-lkb/vimbufsync.git'
-Bundle 'trefis/coquille.git'
-autocmd FileType coq call CoquilleMappings()
-function! CoquilleMappings()
-	map <buffer> <silent> <F9> :CoqUndo<CR>
-	map <buffer> <silent> <F10> :CoqNext<CR>
-	map <buffer> <silent> <F11> :CoqToCursor<CR>
-	imap <buffer> <silent> <F9> <C-o>:CoqUndo<CR>
-	imap <buffer> <silent> <F10> <C-o>:CoqNext<CR>
-	imap <buffer> <silent> <F11> <C-o>:CoqToCursor<CR>
-endfunction
+"Bundle 'derekwyatt/vim-scala'
+"Bundle 'def-lkb/vimbufsync.git'
+"Bundle 'trefis/coquille.git'
+"autocmd FileType coq call CoquilleMappings()
+"function! CoquilleMappings()
+"	map <buffer> <silent> <F9> :CoqUndo<CR>
+"	map <buffer> <silent> <F10> :CoqNext<CR>
+"	map <buffer> <silent> <F11> :CoqToCursor<CR>
+"	imap <buffer> <silent> <F9> <C-o>:CoqUndo<CR>
+"	imap <buffer> <silent> <F10> <C-o>:CoqNext<CR>
+"	imap <buffer> <silent> <F11> <C-o>:CoqToCursor<CR>
+"endfunction
 
 Bundle 'vim-scripts/SuperTab.git'
 
