@@ -1,7 +1,7 @@
 #!/usr/bin/env rc
 
 fn sigint{
-	set-status-line-bnwr
+	set-status-line-bnwr `{status-line-bnwr}
 	exit
 }
 
@@ -65,10 +65,10 @@ fn network{
 		wait
 	case t
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		task -n sock ssh -ND 4711 lum
+		task -n sock ssh -v -ND 4711 lum
 	case T
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		task sock ssh -ND 4711 lum
+		task sock ssh -v -ND 4711 lum
 	case a
 		ip addr show
 	}
@@ -88,4 +88,4 @@ for (i) {
 			$mode $i
 	}
 }
-set-status-line-bnwr
+set-status-line-bnwr `{status-line-bnwr}
