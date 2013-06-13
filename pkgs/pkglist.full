@@ -14,6 +14,7 @@ bison
 bridge-utils
 bzip2
 chromium
+claws-mail
 coreutils
 cpupower
 cronie
@@ -165,6 +166,7 @@ texlive-plainextra
 texlive-pstricks
 texlive-publishers
 texlive-science
+tk
 tor
 traceroute
 ttf-freefont

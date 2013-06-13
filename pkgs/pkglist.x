@@ -2,6 +2,7 @@ artwiz-fonts
 audacity
 bdf-unifont
 chromium
+claws-mail
 dmenu
 dwm
 firefox
@@ -42,6 +43,7 @@ texlive-plainextra
 texlive-pstricks
 texlive-publishers
 texlive-science
+tk
 ttf-freefont
 ttf-hannom
 ttf-liberation

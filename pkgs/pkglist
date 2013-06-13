@@ -14,6 +14,7 @@ bison
 bridge-utils
 bzip2
 chromium
+claws-mail
 coreutils
 cpupower
 cronie
@@ -146,6 +147,7 @@ tcpdump
 terminus-font
 texi2html
 texinfo
+tk
 tor
 traceroute
 ttf-freefont
