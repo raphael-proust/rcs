@@ -10,7 +10,7 @@ export EDITOR=vim
 export SHELL=zsh
 
 #path
-export PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
+export PATH=$HOME/bin:$PATH
 export MANPATH=/usr/man:/usr/share/man:/usr/local/share/man
 
 source .profile.usul
