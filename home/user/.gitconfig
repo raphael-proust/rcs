@@ -10,7 +10,7 @@
 
 [alias]
   co = commit
-  st = status -b --porcelain
+  st = status -b --short
   lg = !rc -c 'git log "HEAD~^$*(1)^..HEAD $*(2-)"'
   root = !pwd
   psh = push --quiet
