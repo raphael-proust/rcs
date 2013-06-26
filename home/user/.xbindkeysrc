@@ -17,7 +17,7 @@
 "mpc volume 0"
     m:0x4 + c:121
     Control + XF86AudioMute
-"show-mpc"
+"mpdmenu :: -i"
     m:0x0 + c:246
     XF86WLAN
 #Media keys
@@ -42,7 +42,7 @@
     m:0x40 + c:32
     Mod4 + o
 #Start duckduckgo in surf
-"surf http://duckduckgo.com"
+"tabbedsurf http://duckduckgo.com"
     m:0x40 + c:42
     Mod4 + g
 #Start firefox

@@ -4,12 +4,12 @@ if [ "x$SSH_CONNECTION" = "x" ]; then
 fi
 
 export LANG=en_US.UTF-8
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
 
-#env
 export EDITOR=vim
 export SHELL=zsh
 
-#path
 export PATH=$HOME/bin:$PATH
 export MANPATH=/usr/man:/usr/share/man:/usr/local/share/man
 

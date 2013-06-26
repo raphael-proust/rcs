@@ -1,0 +1,2 @@
+#!/bin/sh
+tabbed -d -r 2 surf -e '' $*
