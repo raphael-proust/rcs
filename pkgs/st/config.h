@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
+static char font[] = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 
