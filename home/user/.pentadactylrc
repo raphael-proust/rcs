@@ -14,7 +14,7 @@ set defsearch=ddg
 set suggestengines=
 map sd tddg 
 map sb tddg !
-map st tddg !torrentz 
+map st tddg !wt 
 map sw tddg !w 
 map sf tddg !wfr 
 map sg tddg !github 
