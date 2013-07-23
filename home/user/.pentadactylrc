@@ -10,7 +10,7 @@ map ! :tabopen!
 
 "Searching: use DuckDuckGo
 "bmark -title='DuckDuckGo' https://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=%s -keyword=ddg
-set defsearch=ddg
+set defsearch=duckduckgo
 set suggestengines=
 map sd thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=
 map sb thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!+
