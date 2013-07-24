@@ -47,7 +47,8 @@ Bundle 'tpope/vim-fugitive.git'
 filetype plugin indent on
 syntax off
 Bundle 'raphael-proust/molokai.git'
-colorscheme molokai
+Bundle 'Solarized'
+colorscheme solarized
 
 "updatetime influences CursorHold events
 set updatetime=2000

@@ -11,12 +11,12 @@ reexec(const Arg *arg) {
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#444444";
-static const char normbgcolor[]     = "#222222";
-static const char normfgcolor[]     = "#bbbbbb";
-static const char selbordercolor[]  = "#006666";
-static const char selbgcolor[]      = "#006666";
-static const char selfgcolor[]      = "#eeeeee";
+static const char normbordercolor[] = "#eee8d5";
+static const char normbgcolor[]     = "#eee8d5";
+static const char normfgcolor[]     = "#268bd2";
+static const char selbordercolor[]  = "#fdf6e3";
+static const char selbgcolor[]      = "#fdf6e3";
+static const char selfgcolor[]      = "#657b83";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
