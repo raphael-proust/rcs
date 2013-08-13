@@ -1,4 +1,4 @@
-export PATH=$HOME/.opam/bin:$HOME/.opam/currentswitch/bin:$PATH
-export MANPATH=$HOME/.opam/currentswitch/man:$MANPATH
-export OCAML_TOPLEVEL_PATH=$HOME/.opam/currentswitch/lib/toplevel
-export CAML_LD_LIBRARY_PATH=$HOME/.opam/currentswitch/lib/stublibs:/usr/lib/ocaml/stublibs
+export PATH=$HOME/.opam/bin:$HOME/.opam/system/bin:$PATH
+export MANPATH=$HOME/.opam/system/man:$MANPATH
+export OCAML_TOPLEVEL_PATH=$HOME/.opam/system/lib/toplevel
+export CAML_LD_LIBRARY_PATH=$HOME/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs
