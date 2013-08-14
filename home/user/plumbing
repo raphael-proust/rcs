@@ -37,27 +37,41 @@ arg isfile	$0
 plumb to postscript
 plumb start 9 llpp $file
 
-# relative files as file: urls get made into absolute paths
-type is text
-data matches 'file:([.a-zA-Z¡-￿0-9_\-]([.a-zA-Z¡-￿0-9_/\-]*[a-zA-Z¡-￿0-9_/\-]))?'
-arg isfile	$1
-data set	file://$file
-plumb to web
-plumb start tabbedsurf $data
-
 # urls go to web browser
 type is text
 data matches '(https?|ftp|file|gopher|mailto|news|nntp|telnet|wais|prospero)://[a-zA-Z0-9_@\-]+([.:][a-zA-Z0-9_@\-]+)*/?[a-zA-Z0-9_?,%#~&/\-+=]+([:.][a-zA-Z0-9_?,%#~&/\-+=\(\)]+)*'
 plumb to web
 plumb start tabbedsurf $0
 
+# html/htm files go to web browser
+type is text
+data matches '[.a-zA-Z¡-￿0-9_\-]([.a-zA-Z¡-￿0-9_/\-]*[a-zA-Z¡-￿0-9_/\-])\.html?'
+arg isfile	$0
+data set	file://$file
+plumb to web
+plumb start tabbedsurf $data
+
 # image files go to sxiv
 type is text
-data matches '[a-zA-Z¡-￿0-9_\-./]+'
 data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
 arg isfile	$0
 plumb to image
 plumb start 9 sxiv $file
 
+#various text files go to editor
+type is text
+data matches 'Makefile|mkfile|README|INSTALL|PKGBUILD|LICENSE|\.gitignore|\..*rc'
+arg isfile      $0
+data set        $file
+plumb to edit
+plumb client $editor
+
+#various files (by extension) go to editor
+type is text
+data matches '([a-zA-Z0-9_\-./]+)\.(txt|diff|patch|ml|mli|mly|mll|c|h|pdc|tex)'
+arg isfile      $0
+data set        $file
+plumb to edit
+plumb client $editor
 
 include basic
