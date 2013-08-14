@@ -42,7 +42,7 @@ map -builtin <MiddleMouse> P
 "some ui options
 set activate=addons,bookmarks,downloads,extoptions,help,tabopen
 set newtab=all
-set strictfocus='chrome:*':laissez-faire,*:despotic
+set strictfocus='chrome:*':laissez-faire,*:moderate
 set followhints=1
 set guioptions=CMs
 set showtabline=always
