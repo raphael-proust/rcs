@@ -4,8 +4,8 @@
 static const char font[]        = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*";
 static const char normbgcolor[] = "#eee8d5";
 static const char normfgcolor[] = "#268bd2";
-static const char selbgcolor[]  = "#fdf6e3";
-static const char selfgcolor[]  = "#657b83";
+static const char selbgcolor[]  = "#657b83";
+static const char selfgcolor[]  = "#fdf6e3";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const int  tabwidth      = 200;

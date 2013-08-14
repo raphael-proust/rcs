@@ -11,7 +11,7 @@ depends=("libx11")
 makedepends=("git")
 source=(config.h)
 md5sums=(
-c0227af6c1cbb67ce5cf4aa3807e5dff
+6781555cd800e6683a9529b9dc752063
 )
 conflicts=("tabbed")
 provides=("tabbed")
