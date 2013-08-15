@@ -9,6 +9,5 @@ fn sigint{
 	exit
 }
 chmod 600 $FIFO
-
 /usr/bin/dvtm -s $FIFO $* >[2] /dev/null
 rm $FIFO

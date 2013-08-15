@@ -15,7 +15,7 @@ if [ -d $STATUSPIPESDIR ]
 then
   for i in $(ls $STATUSPIPESDIR |grep "dvtm-status.[[:digit:]]\+")
   do
-    printf %s\\n "$*" > $STATUSPIPESDIR/$i
+    printf %s\\n "$*" > $STATUSPIPESDIR/$i &
   done
 fi
 

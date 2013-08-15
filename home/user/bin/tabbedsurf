@@ -1,2 +1,2 @@
 #!/bin/sh
-tabbed -d -r 2 surf -e '' $*
+tsocks surf -e $(cat .tabbed-surf-xid) $*
