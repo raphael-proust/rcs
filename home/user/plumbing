@@ -51,6 +51,12 @@ data set	file://$file
 plumb to web
 plumb start tabbedsurf $data
 
+# websites with common, known TLDs go to web browser
+type is text
+data matches '[.a-zA-Z0-9\-]+.(org|com|net|fr|co.uk|org.uk)(/[.a-zA-Z0-9/\-]*)?'
+plumb to web
+plumb start tabbedsurf $0
+
 # image files go to sxiv
 type is text
 data matches '([a-zA-Z¡-￿0-9_\-./]+)\.(jpe?g|JPE?G|gif|GIF|tiff?|TIFF?|ppm|bit|png|PNG)'
