@@ -19,8 +19,6 @@ do
 	sleep 300
 done &
 
-tabbed -r 3 -f -n 'SurfTabs' -d tsocks surf -e '' http://duckduckgo.com 2> /dev/null > .tabbed-surf-xid &
-
 NAMESPACE=$(mktemp -d /tmp/plmb.XXXXXX)
 plumber
 plumber=$(pgrep -n plumber)

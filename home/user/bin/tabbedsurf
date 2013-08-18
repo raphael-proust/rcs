@@ -1,2 +1,10 @@
 #!/bin/sh
-tsocks surf -e $(cat .tabbed-surf-xid) $*
+TABBEDSESSIONFILE=$HOME/.tabbed-surf-xid
+TABBEDSESSION=$(cat $TABBEDSESSIONFILE)
+
+if lsw -l | grep -q $TABBEDSESSION
+then
+	tsocks surf -e $TABBEDSESSION $*
+else
+	tabbed -r 3 -c -n 'SurfTabs' -d tsocks surf -e '' $* > $TABBEDSESSIONFILE
+fi
