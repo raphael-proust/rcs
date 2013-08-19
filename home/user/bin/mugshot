@@ -1,0 +1,3 @@
+#!/bin/sh
+DIR=${1:-"/tmp"}
+mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-mug'):outdir="$DIR" -frames 1 tv://
