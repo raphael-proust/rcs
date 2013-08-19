@@ -19,7 +19,6 @@ Bundle 'vim-scripts/SuperTab.git'
 Bundle 'rc.vim'
 Bundle 'def-lkb/merlin', {'rtp': 'vim/merlin/'}
 Bundle 'def-lkb/vimbufsync'
-au FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 Bundle 'raphael-proust/pdc.vim.git'
 
 Bundle 'vim-scripts/surround.vim.git'
