@@ -1,0 +1,2 @@
+#!/bin/sh
+pandoc -f html -t markdown $*
