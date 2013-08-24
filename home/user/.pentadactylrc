@@ -12,18 +12,18 @@ map ! :tabopen!
 "bmark -title='DuckDuckGo' https://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=%s -keyword=ddg
 set defsearch=duckduckgo
 set suggestengines=
-map sd thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=
-map sb thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!+
-map st thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!wt+
-map sw thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!w+
-map sf thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!wfr+
-map sg thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!github+
-map su thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!urban+
-map sa thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!archwiki+
-map si thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!i+
-map sy thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!v+
-map sm thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!m+
-map so thttp://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=!osm+
+map sd t
+map sb t!
+map st t!wt 
+map sw t!w 
+map sf t!wfr 
+map sg t!github 
+map su t!urban 
+map sa t!archwiki 
+map si t!image 
+map sy t!youtube 
+map sm t!map 
+map so t!osm 
 
 "Some useful mappings
 map -builtin h 7h
