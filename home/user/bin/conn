@@ -16,8 +16,7 @@ fn eth0{
 	case c
 		sudo dhcpcd  --timeout 60 eth0
 	case r
-		sudo dhcpcd --release eth0
-		sudo dhcpcd --timeout 60 eth0
+		sudo dhcpcd --rebind eth0
 	case a
 		ip addr show eth0
 	case *
@@ -42,8 +41,7 @@ fn wlan0{
 		sudo ip link set wlan0 up
 		sudo iwlist wlan0 scan
 	case r
-		sudo dhcpcd --release wlan0
-		sudo dhcpcd --timeout 60 wlan0
+		sudo dhcpcd --rebind wlan0
 	case R
 		sudo wpa_cli reassociate
 	case a
