@@ -24,6 +24,7 @@ map si t!image
 map sy t!youtube 
 map sm t!map 
 map so t!osm 
+map s8 t!unicode 
 
 "Some useful mappings
 map -builtin h 7h
