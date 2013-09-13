@@ -156,6 +156,7 @@ include "%L"
 <Multi_key> <A> <d>	: "𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫" #double-struck
 <Multi_key> <A> <B>	: "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅" #bold-fraktur cap
 <Multi_key> <A> <b>	: "𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟" #bold-fraktur
+<Multi_key> <A> <k>	: "ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘ-ʀꜱᴛᴜᴠᴡ-ʏᴢ" #small capitals
 
 
 <Multi_key> <a> <s> <A>	: "𝓐"
@@ -418,6 +419,32 @@ include "%L"
 <Multi_key> <a> <b> <x>	: "𝖝"
 <Multi_key> <a> <b> <y>	: "𝖞"
 <Multi_key> <a> <b> <z>	: "𝖟"
+<Multi_key> <a> <k>	<a>	: "ᴀ"
+<Multi_key> <a> <k>	<b>	: "ʙ"
+<Multi_key> <a> <k>	<c>	: "ᴄ"
+<Multi_key> <a> <k>	<d>	: "ᴅ"
+<Multi_key> <a> <k>	<e>	: "ᴇ"
+<Multi_key> <a> <k>	<f>	: "ꜰ"
+<Multi_key> <a> <k>	<g>	: "ɢ"
+<Multi_key> <a> <k>	<h>	: "ʜ"
+<Multi_key> <a> <k>	<i>	: "ɪ"
+<Multi_key> <a> <k>	<j>	: "ᴊ"
+<Multi_key> <a> <k>	<k>	: "ᴋ"
+<Multi_key> <a> <k>	<l>	: "ʟ"
+<Multi_key> <a> <k>	<m>	: "ᴍ"
+<Multi_key> <a> <k>	<n>	: "ɴ"
+<Multi_key> <a> <k>	<o>	: "ᴏ"
+<Multi_key> <a> <k>	<p>	: "ᴘ"
+<Multi_key> <a> <k>	<r>	: "ʀ"
+<Multi_key> <a> <k>	<s>	: "ꜱ"
+<Multi_key> <a> <k>	<t>	: "ᴛ"
+<Multi_key> <a> <k>	<u>	: "ᴜ"
+<Multi_key> <a> <k>	<v>	: "ᴠ"
+<Multi_key> <a> <k>	<w>	: "ᴡ"
+<Multi_key> <a> <k>	<y>	: "ʏ"
+<Multi_key> <a> <k>	<z>	: "ᴢ"
+#<Multi_key> <a> <k>	<o> <e>	: "ɶ"
+#<Multi_key> <a> <k>	<a> <e>	: "ᴁ"
 
 #ASCII-art
 <Multi_key> <a> <a> <minus> <minus>	: "─"
