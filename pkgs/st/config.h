@@ -37,6 +37,12 @@ static unsigned int actionfps = 30;
  */
 static unsigned int blinktimeout = 800;
 
+/*
+ * bell volume. It must be a value between -100 and 100. Use 0 for disabling
+ * it
+ */
+static int bellvolume = 0;
+
 /* TERM value */
 static char termname[] = "st-256color";
 
@@ -129,13 +135,13 @@ static Shortcut shortcuts[] = {
  * * < 0: crlf mode is disabled
  *
  * Be careful with the order of the definitons because st searchs in
- * this table sequencially, so any XK_ANY_MOD must be in the last
+ * this table sequentially, so any XK_ANY_MOD must be in the last
  * position for a key.
  */
 
 /*
- * If you want something else but the function keys of X11 (0xFF00 - 0xFFFF)
- * mapped below, add them to this array.
+ * If you want keys other than the X11 function keys (0xFD00 - 0xFFFF)
+ * to be mapped below, add them to this array.
  */
 static KeySym mappedkeys[] = { -1 };
 
