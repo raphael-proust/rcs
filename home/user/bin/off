@@ -1,5 +1,4 @@
-#!/usr/bin/env rc
-path=(/opt/plan9/bin $path)
+#!/usr/bin/env 9 rc
 echo -n 'Machine name: '
 TARGET=`{read}
 NAME=`{uname -n}
