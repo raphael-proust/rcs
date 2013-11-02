@@ -45,10 +45,8 @@ git
 glibc
 gnu-netcat
 grep
-grub-bios
+grub
 gzip
-haskell-pandoc
-heirloom-mailx
 html2text
 htop
 inetutils
@@ -96,7 +94,6 @@ pcmciautils
 perl
 pkg-config
 pkgstats
-pkgtools
 powertop
 ppp
 procps-ng
@@ -111,6 +108,7 @@ rtorrent
 ruby
 sed
 shadow
+s-nail
 sshfs
 strace
 subversion
@@ -123,6 +121,7 @@ texi2html
 texinfo
 tor
 traceroute
+tree
 unison
 unzip
 usbutils
@@ -140,5 +139,6 @@ wireless_tools
 wpa_actiond
 wpa_supplicant
 xfsprogs
+yaourt
 zip
 zsh
