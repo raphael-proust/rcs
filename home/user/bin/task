@@ -1,6 +1,4 @@
-#!/usr/bin/env rc
-
-path=(/opt/plan9/bin $path)
+#!/usr/bin/env 9 rc
 
 TASKPIPESDIR=$home/.task-pipes
 if (! test -d $TASKPIPESDIR) mkdir $TASKPIPESDIR
@@ -28,11 +26,20 @@ case 2
 		test -e $TASKPIPESDIR/$2
 	case -a
 		exec dtach -a $TASKPIPESDIR/$2
+#	The following doesn't work because plan9's ps is different from posix's
+#	case -p
+#		if (test -e $TASKPIPESDIR/$2) {
+#			DTACHPID=`{lsof -F 'p' $TASKPIPESDIR/$2 | cut -b '2-'}
+#			TASKPID=`{ps -o pid= --ppid $DTACHPID}
+#			echo $TASKPID
+#		}
+#		if not exit 2
 #	case -k
 #		if (test -e $TASKPIPESDIR/$2) {
-#			TASKPID=`{lsof $TASKPIPESDIR^/^$2 | tail -n 1 | awk '{print $2}'}
-#			kill -s KILL $TASKPID
-#			rm $TASKPIPESDIR/$2
+#			DTACHPID=`{lsof -F 'p' $TASKPIPESDIR/$2 | cut -b '2-'}
+#			TASKPID=`{ps -o pid= --ppid $DTACHPID}
+#			slay $TASKPID | rc
+#			rm -f $TASKPIPESDIR/$2
 #		}
 #		if not exit 2
 	case *
