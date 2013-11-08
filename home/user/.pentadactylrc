@@ -35,6 +35,9 @@ map -builtin <C-h> H
 map -builtin <C-l> L
 map -builtin <C-w> <C-S-e>
 
+"open home in new tab
+map -modes=normal -builtin ~ :tabopen ~<CR>
+
 "avoid accidents
 map -builtin <C-q> <Nop>
 map -builtin ZQ ZZ
