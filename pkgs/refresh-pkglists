@@ -1,4 +1,4 @@
-#!/opt/plan9/bin/rc
+#!/usr/bin/env rc
 
 #raw lists
 pacman -Qeq | sort > /tmp/pacman-Qeq-list

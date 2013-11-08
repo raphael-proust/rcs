@@ -8,6 +8,7 @@ dwm
 firefox
 flashplugin
 ghostscript
+graphviz
 imagemagick
 libreoffice-calc
 libreoffice-draw
@@ -21,11 +22,11 @@ pinta
 plan9port
 profont
 rxvt-unicode
-scala
-scala-docs
 slock
+sublime-text
 surf
 sxiv
+tabbed
 tamsyn-font
 terminus-font
 texlive-bibtexextra
