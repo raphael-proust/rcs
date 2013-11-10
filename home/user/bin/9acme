@@ -1,4 +1,4 @@
-#!/usr/bin/env rc
+#!/usr/local/plan9/bin/9 /usr/local/plan9/bin/rc
 
 NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
 plumber

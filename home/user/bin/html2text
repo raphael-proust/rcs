@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/bin/bash
 pandoc -f html -t plain $*
