@@ -6,10 +6,12 @@ aspell-fr
 autoconf
 automake
 bash
+bc
 binutils
 bison
 bridge-utils
 bzip2
+cabal-install
 coreutils
 cpupower
 cronie
@@ -69,6 +71,7 @@ man-db
 man-pages
 mcabber
 mdadm
+mencoder
 mercurial
 mktorrent
 mlocate
@@ -122,6 +125,7 @@ texinfo
 tor
 traceroute
 tree
+tsocks
 unison
 unzip
 usbutils
