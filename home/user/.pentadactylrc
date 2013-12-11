@@ -26,6 +26,19 @@ map sm t!map
 map so t!osm 
 map s8 t!unicode 
 
+"Paste into bangs
+map -builtin ;Pw t!w <C-v><C-v>
+map -builtin ;Pt t!wt <C-v><C-v>
+map -builtin ;Pf t!wfr <C-v><C-v>
+map -builtin ;Pg t!github <C-v><C-v>
+map -builtin ;Pu t!urban <C-v><C-v>
+map -builtin ;Pa t!archwiki <C-v><C-v>
+map -builtin ;Pi t!image <C-v><C-v>
+map -builtin ;Py t!youtube <C-v><C-v>
+map -builtin ;Pm t!map <C-v><C-v>
+map -builtin ;Po t!osm <C-v><C-v>
+map -builtin ;P8 t!unicode <C-v><C-v>
+
 "Some useful mappings
 map -builtin h 7h
 map -builtin j 7j
