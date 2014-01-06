@@ -1,4 +1,4 @@
-#!/usr/local/plan9port/bin/9 /usr/local/plan9port/bin/rc
+#!/usr/local/plan9/bin/9 /usr/local/plan9/bin/rc
 
 fn sigint{
 	set-status-line-bnwr `{status-line-bnwr}
@@ -63,10 +63,10 @@ fn network{
 		wait
 	case t
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		task -n sock ssh -v -ND 4711 lum
+		task -n sock ssh -v -ND 4711 bnwrnet
 	case T
 		if (~ `{ssh-add -L} 'The agent has no identities.') ssh-add
-		task sock ssh -v -ND 4711 lum
+		task sock ssh -v -ND 4711 bnwrnet
 	case a
 		ip addr show
 	}
