@@ -1,13 +1,13 @@
-#!/usr/bin/env rc
+#!/usr/local/plan9/bin/9 /usr/local/plan9/bin/rc
 
 STATUSPIPESDIR=/tmp/dvtm-status-pipes
 if (! test -d $STATUSPIPESDIR) mkdir $STATUSPIPESDIR
 FIFO=$STATUSPIPESDIR/dvtm-status.$pid
-mkfifo $FIFO
 fn sigint{
-	rm $FIFO
+	rm -f $FIFO
 	exit
 }
+mkfifo $FIFO
 chmod 600 $FIFO
 /usr/bin/dvtm -s $FIFO $* >[2] /dev/null
 rm $FIFO

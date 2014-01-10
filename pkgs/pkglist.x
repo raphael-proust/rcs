@@ -2,7 +2,6 @@ artwiz-fonts
 audacity
 bdf-unifont
 chromium
-claws-mail
 dmenu
 dwm
 firefox
@@ -14,7 +13,6 @@ libreoffice-calc
 libreoffice-draw
 libreoffice-impress
 libreoffice-writer
-mencoder
 mpd
 mplayer
 mupdf

@@ -1,9 +1,9 @@
-#!/usr/bin/env rc
+#!/usr/local/plan9/bin/9 /usr/local/plan9/bin/rc
 
 NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
 plumber
 plumber=`{pgrep -n plumber} # racey
 cat $HOME/plumbing | 9p write plumb/rules
-PAGER=cat MANPAGER=cat SHELL=rc prompt='9 ' PATH=$PATH:$HOME/bin/acme-bin EDITOR=E 9 acme -f $PLAN9/font/luc/unicode.7.font -F $PLAN9/font/fixed/unicode.7x13.font -a $*
+PAGER=cat MANPAGER=cat SHELL=rc prompt='9 ' PATH=$PATH:$HOME/bin/acme-bin EDITOR=E 9 acme -f /usr/local/plan9/font/luc/unicode.7.font -F /usr/local/plan9/font/fixed/unicode.7x13.font -a $*
 kill $plumber
 rm -rf $NAMESPACE

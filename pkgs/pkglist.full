@@ -8,13 +8,14 @@ audacity
 autoconf
 automake
 bash
+bc
 bdf-unifont
 binutils
 bison
 bridge-utils
 bzip2
+cabal-install
 chromium
-claws-mail
 coreutils
 cpupower
 cronie
@@ -169,6 +170,7 @@ tk
 tor
 traceroute
 tree
+tsocks
 ttf-freefont
 ttf-hannom
 ttf-liberation

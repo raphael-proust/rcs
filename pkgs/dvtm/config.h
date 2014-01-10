@@ -65,6 +65,7 @@ static Key keys[] = {
 	{ MOD, 'l',       { setmfact,       { "+0.05" }                 } },
 	{ MOD, '.',       { toggleminimize, { NULL }                    } },
 	{ MOD, 's',       { togglebar,      { NULL }                    } },
+	{ MOD, 'M',       { togglemouse,    { NULL }                    } },
 	{ MOD, '\n',      { zoom ,          { NULL }                    } },
 	{ MOD, '1',       { focusn,         { "1" }                     } },
 	{ MOD, '2',       { focusn,         { "2" }                     } },
@@ -76,7 +77,6 @@ static Key keys[] = {
 	{ MOD, '8',       { focusn,         { "8" }                     } },
 	{ MOD, '9',       { focusn,         { "9" }                     } },
 	{ MOD, 'q',       { quit,           { NULL }                    } },
-	{ MOD, 'G',       { escapekey,      { NULL }                    } },
 	{ MOD, 'a',       { togglerunall,   { NULL }                    } },
 	{ MOD, 'r',       { redraw,         { NULL }                    } },
 	{ MOD, 'X',       { lock,           { NULL }                    } },
@@ -88,6 +88,7 @@ static Key keys[] = {
 	{ MOD, KEY_PPAGE, { scrollback,     { "-1" }                    } },
 	{ MOD, KEY_NPAGE, { scrollback,     { "1"  }                    } },
 	{ MOD, KEY_F(1),  { create,         { "man dvtm", "dvtm help" } } },
+	{ MOD, MOD,       { send,           { (const char []){MOD, 0} } } },
 };
 
 static const ColorRule colorrules[] = {
@@ -131,7 +132,7 @@ static const ColorRule colorrules[] = {
 # define CONFIG_MOUSE /* compile in mouse support if we build against ncurses */
 #endif
 
-#define ENABLE_MOUSE false /* whether to enable mouse events by default */
+#define ENABLE_MOUSE true /* whether to enable mouse events by default */
 
 #ifdef CONFIG_MOUSE
 static Button buttons[] = {

@@ -1,2 +1,2 @@
-#!/usr/bin/env rc
+#!/bin/dash
 /usr/bin/dvtm -h 2000

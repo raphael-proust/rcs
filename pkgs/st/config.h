@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*";
+static char font[] = "-*-terminus-medium-r-*-*-10-*-*-*-*-*-*-*";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 
@@ -18,7 +18,7 @@ float chscale = 1.0;
  *
  * More advanced example: " `'\"()[]{}"
  */
-static char worddelimiters[] = " `'\"|()[]{}├─┬└";
+static char worddelimiters[] = " `'\"\\/|()[]{}├─┬└&><;";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
