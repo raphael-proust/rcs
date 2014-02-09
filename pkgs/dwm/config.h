@@ -11,12 +11,12 @@ reexec(const Arg *arg) {
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#eee8d5";
-static const char normbgcolor[]     = "#eee8d5";
-static const char normfgcolor[]     = "#268bd2";
-static const char selbordercolor[]  = "#fdf6e3";
-static const char selbgcolor[]      = "#fdf6e3";
-static const char selfgcolor[]      = "#657b83";
+static const char normbordercolor[] = "#586e75";
+static const char normbgcolor[]     = "#002b36";
+static const char normfgcolor[]     = "#586e75";
+static const char selbordercolor[]  = "#839496";
+static const char selbgcolor[]      = "#073642";
+static const char selfgcolor[]      = "#839496";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
@@ -35,10 +35,14 @@ static const float mfact      = 0.60;  /* factor of master area size [0.05..0.95
 static const int nmaster      = 1;     /* number of clients in master area */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
+#include "bstack.c"
+#include "bstackhoriz.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
+	{ "TTT",      bstack },
+	{ "===",      bstackhoriz },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
@@ -73,7 +77,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      toggleview,     {.ui = ~0 } },

@@ -9,7 +9,7 @@ vmap g\' <C-^>
 map ! :tabopen! 
 
 "Searching: use DuckDuckGo
-"bmark -title='DuckDuckGo' https://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&q=%s -keyword=ddg
+"bmark -title='DuckDuckGo' https://duckduckgo.com/?kf=b&kk=-1&kl=wt-wt&kp=-1&kv=1&kw=m&kp=-1&kj=#073642&k7=#002B36&ky=#073642&k9=#657B83&kab=#839496&k8=#93A1A1&q=%s -keyword=ddg
 set defsearch=duckduckgo
 set suggestengines=
 map sd t
@@ -85,4 +85,5 @@ set findcase=ignore
 "duplication via :du
 command -nargs 0 -count -bang -description 'Duplicate current tab' du,dup,duplicate :keepalt <count>tabduplicate<bang>
 
+colorscheme solarized-dark
 set editor='9acme -c 1 <file>'

@@ -23,7 +23,6 @@ execute "set rtp+=".s:ocamlmerlin."/vim"
 execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
 Bundle 'def-lkb/merlin', {'rtp': 'vim/merlin/'}
 Bundle 'def-lkb/vimbufsync'
-autocmd FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 Bundle 'raphael-proust/pdc.vim.git'
 
 Bundle 'vim-scripts/surround.vim.git'
@@ -38,9 +37,10 @@ Bundle 'tpope/vim-fugitive.git'
 
 "Vundle post-initialisation phase
 filetype plugin indent on
-syntax off
+syntax on
 Bundle 'raphael-proust/molokai.git'
 Bundle 'Solarized'
+set background=dark
 colorscheme solarized
 
 "updatetime influences CursorHold events
