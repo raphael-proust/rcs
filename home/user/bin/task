@@ -1,6 +1,6 @@
 #!/usr/local/plan9port/bin/9 /usr/local/plan9port/bin/rc
 
-TASKPIPESDIR=$home/.task-pipes
+TASKPIPESDIR=$home/dtach-pipes
 if (! test -d $TASKPIPESDIR) mkdir $TASKPIPESDIR
 
 switch ($#*) {
