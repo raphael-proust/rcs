@@ -107,8 +107,8 @@ static Mousekey mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* modifier		key		function	argument */
-	{ MODKEY|ShiftMask,	XK_Prior,	xzoom,		{.i = +1} },
-	{ MODKEY|ShiftMask,	XK_Next,	xzoom,		{.i = -1} },
+	{ MODKEY|ShiftMask,	XK_Prior,	xzoom,		{.i = +2} },
+	{ MODKEY|ShiftMask,	XK_Next,	xzoom,		{.i = -2} },
 	{ ShiftMask,		XK_Insert,	selpaste,	{.i =  0} },
 	{ MODKEY|ShiftMask,	XK_Insert,	clippaste,	{.i =  0} },
 	{ MODKEY,		XK_Num_Lock,	numlock,	{.i =  0} },
