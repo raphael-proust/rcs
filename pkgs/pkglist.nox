@@ -2,11 +2,13 @@ acpi
 acpid
 alsa-utils
 aria2
+aspell-en
 aspell-fr
 autoconf
 automake
 bash
 bc
+beep
 binutils
 bison
 bridge-utils
@@ -46,6 +48,7 @@ gettext
 git
 glibc
 gnu-netcat
+gprolog
 grep
 grub
 gzip
@@ -76,12 +79,14 @@ mercurial
 mktorrent
 mlocate
 mpc
+mutt
 nano
 ncmpc
 nethack
 net-tools
 networkmanager
 newsbeuter
+nmap
 ntfs-3g
 ntp
 ocaml

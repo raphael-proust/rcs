@@ -3,6 +3,7 @@ acpid
 alsa-utils
 aria2
 artwiz-fonts
+aspell-en
 aspell-fr
 audacity
 autoconf
@@ -10,6 +11,7 @@ automake
 bash
 bc
 bdf-unifont
+beep
 binutils
 bison
 bridge-utils
@@ -55,6 +57,7 @@ ghostscript
 git
 glibc
 gnu-netcat
+gprolog
 graphviz
 grep
 grub
@@ -94,12 +97,14 @@ mpc
 mpd
 mplayer
 mupdf
+mutt
 nano
 ncmpc
 nethack
 net-tools
 networkmanager
 newsbeuter
+nmap
 ntfs-3g
 ntp
 ocaml
