@@ -1,6 +1,11 @@
-# to update: cat $HOME/lib/plumbing | 9p write plumb/rules
+# to update: cat $HOME/plumbing | 9p write plumb/rules
 
 editor = acme
+
+#git commit messages
+type is text
+data matches 'commit ([0-9a-f]+)'
+plumb start rc -c 'cd '$wdir'; git show '$1' >[2=1] | plumb -i -d edit -a ''action=showdata filename=/'$1''''
 
 # Ocaml error messages
 type is text

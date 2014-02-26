@@ -593,8 +593,8 @@ include "%L"
 <Multi_key> <x> <o>	: "¤" currency # CURRENCY SIGN
 <Multi_key> <N> <o>	: "№" numerosign # NUMERO SIGN
 
-<Multi_key> <question> <exclam>	: "⸘" U2E18 # INVERTED INTERROBANG
-<Multi_key> <exclam> <question>	: "‽" U203D # INTERROBANG
+<Multi_key> <question> <exclam>	: "‽" U2E18 # INTERROBANG
+<Multi_key> <exclam> <question>	: "⸘" U203D # INVERTED INTERROBANG
 
 <Multi_key> <C> <C> <C> <P>	: "☭" U262D # HAMMER AND SICKLE
 <Multi_key> <less> <3>	: "♥" U2665 # BLACK HEART SUIT
