@@ -42,7 +42,7 @@
     m:0x40 + c:32
     Mod4 + o
 #Start duckduckgo in surf
-"tabbedsurf http://duckduckgo.com"
+"sockedsurf http://duckduckgo.com"
     m:0x40 + c:42
     Mod4 + g
 #Start firefox

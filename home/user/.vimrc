@@ -40,7 +40,7 @@ filetype plugin indent on
 syntax on
 Bundle 'raphael-proust/molokai.git'
 Bundle 'Solarized'
-set background=dark
+set background=light
 colorscheme solarized
 
 "updatetime influences CursorHold events
