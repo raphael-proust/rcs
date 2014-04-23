@@ -1,0 +1,56 @@
+" use g' for previously selected tab
+map g\' <C-^>
+nmap g\' <C-^>
+vmap g\' <C-^>
+map ! :tabopen! 
+
+bmark -title='DuckDuckGo' -keyword=ddg https://duckduckgo.com/?q=%s
+set defsearch=duckduckgo
+noremap sd t
+noremap sb t!
+noremap st t!wt 
+noremap sw t!w 
+noremap sf t!wfr 
+noremap sg t!github 
+noremap su t!urban 
+noremap sa t!archwiki 
+noremap si t!image 
+noremap sy t!youtube 
+noremap sm t!map 
+noremap so t!osm 
+noremap s8 t!unicode 
+
+noremap h 7h
+noremap j 7j
+noremap k 7k
+noremap l 7l
+noremap <C-h> H
+noremap <C-l> L
+noremap <C-w> <C-S-e>
+
+noremap ~ :tabopen ~<CR>
+
+noremap <C-q> <Nop>
+noremap ZQ ZZ
+noremap <MiddleMouse> P
+
+set activate=all
+set newtab=all
+set followhints=1
+set maxitems=7
+set noerrorbells
+set novisualbell
+set focuscontent
+
+set history=500
+cnoremap <C-k> <Up>
+cnoremap <C-j> <Down>
+cnoremap <C-c> <Esc>
+set wildmode=list:longest
+set urlseparator=;
+
+noremap <F1> :set hlf!<CR>
+
+command -description 'Duplicate current tab' duplicate :keepalt tabduplicate<bang>
+
+set editor='9acme -c 1'
