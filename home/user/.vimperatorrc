@@ -19,6 +19,7 @@ noremap sy t!youtube
 noremap sm t!map 
 noremap so t!osm 
 noremap s8 t!unicode 
+noremap sp t!bp 
 noremap se twebster 
 
 noremap h 7h
