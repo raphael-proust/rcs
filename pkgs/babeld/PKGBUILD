@@ -1,0 +1,32 @@
+pkgname=babeld
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc="A loop-avoiding distance-vector routing protocol"
+arch=('i686' 'x86_64')
+url="http://www.pps.univ-paris-diderot.fr/~jch/software/babel/"
+license=('MIT')
+makedepends=('git')
+depends=('glibc')
+optdepends=('ahcpd: for autoconfiguration of addresses and other informations')
+backup=('etc/babeld.conf')
+source=('babeld.conf')
+md5sums=(
+e51d49295075e6137679f6c70ed45f97
+)
+
+_gitroot='git://git.wifi.pps.univ-paris-diderot.fr/'
+_gitrepo='babeld'
+
+build() {
+  cd "${srcdir}"
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}"
+  rm -fr build; cp -a "${_gitrepo}" build; cd build
+  make PREFIX="/usr"
+}
+
+package() {
+  cd "${srcdir}/build"
+  make PREFIX="/usr" TARGET="${pkgdir}" install
+  install -Dm644 ../babeld.conf "${pkgdir}"/etc/babeld.conf
+}
