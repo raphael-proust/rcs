@@ -1,3 +1,23 @@
 #!/bin/sh
-DIR=${1:-"/tmp"}
-mplayer -vo png:prefix=$(date '+%Y-%m-%d-%H-%M-mug'):outdir="$DIR" -frames 1 tv://
+PREFIX=$(date '+%Y-%m-%d-%H-%M-mug')
+case "$#" in
+	(0)
+		mplayer -vo png:prefix="$PREFIX":outdir=/tmp -frames 1 tv://
+	;;
+	(1)
+		mplayer -vo png:prefix="$PREFIX":outdir=$1 -frames 1 tv://
+	;;
+	(2)
+		while true
+		do
+			{
+			mplayer -vo png:prefix="$PREFIX":outdir=$1 -frames 1 tv://
+			sleep $2
+			}
+		done
+	;;
+	(*)
+		exit 2
+	;;
+esac
+		

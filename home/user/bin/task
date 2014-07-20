@@ -3,29 +3,31 @@
 TASKPIPESDIR=$home/dtach-pipes
 if (! test -d $TASKPIPESDIR) mkdir $TASKPIPESDIR
 
+SANEPATH=()
+SANEPATH=`{echo $"path | tr ' ' '
+' | grep -v plan9 | tr '
+' ':'}
+
 switch ($#*) {
 case 0
-	ls -p $TASKPIPESDIR
-	TASKPIPE=`{read}
-	switch($TASKPIPE) {
-	case ''
-		exit 1
-	case *
-		exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
+	TASKPIPE=`{ls -p $TASKPIPESDIR | slmenu}
+	if (test -e $TASKPIPESDIR/$TASKPIPE) {
+		PATH=$SANEPATH exec dtach -A $TASKPIPESDIR/$TASKPIPE $SHELL
 	}
+	if not exit 1
 case 1
 	switch $*(1) {
 	case -l
 		echo `{ls -p $TASKPIPESDIR}
 	case *
-		exec dtach -A $TASKPIPESDIR/$*(1) $SHELL
+		PATH=$SANEPATH exec dtach -A $TASKPIPESDIR/$*(1) $SHELL
 	}
 case 2
 	switch $*(1) {
 	case -e
 		test -e $TASKPIPESDIR/$2
 	case -a
-		exec dtach -a $TASKPIPESDIR/$2
+		PATH=$SANEPATH exec dtach -a $TASKPIPESDIR/$2
 #	The following doesn't work because plan9's ps is different from posix's
 #	case -p
 #		if (test -e $TASKPIPESDIR/$2) {
@@ -43,7 +45,7 @@ case 2
 #		}
 #		if not exit 2
 	case *
-		exec dtach -A $TASKPIPESDIR/$*(1) $*(2)
+		PATH=$SANEPATH exec dtach -A $TASKPIPESDIR/$*(1) $*(2)
 	}
 case *
 	switch $*(1) {
@@ -53,11 +55,11 @@ case *
 		DASHARG=$*(1)
 		PIPENAME=$*(2)
 		shift 2
-		exec dtach $DASHARG $TASKPIPESDIR/$PIPENAME $*
+		PATH=$SANEPATH exec dtach $DASHARG $TASKPIPESDIR/$PIPENAME $*
 	case *
 		PIPENAME=$1
 		shift 1
-		exec dtach -A $TASKPIPESDIR/$PIPENAME $*
+		PATH=$SANEPATH exec dtach -A $TASKPIPESDIR/$PIPENAME $*
 	}
 }
 

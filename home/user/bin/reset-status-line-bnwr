@@ -1,0 +1,6 @@
+#!/bin/sh
+while true
+do
+	set-status-line-bnwr "$(status-line-bnwr)"
+	sleep $1
+done
