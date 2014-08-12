@@ -154,6 +154,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <silent> <Right> :bnext<CR>
+nnoremap <silent> <Left> :bprev<CR>
 
 "in command mode use <C-j/k> for history and <C-h/l> for moving
 cnoremap <C-j> <Down>
