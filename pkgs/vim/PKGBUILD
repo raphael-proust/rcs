@@ -2,7 +2,7 @@
 
 pkgbase=vim
 pkgname=('vim' 'vim-runtime')
-_topver=7.3
+_topver=7.4
 _versiondir="vim${_topver//./}"
 pkgver="$(date +%Y%m%d)"
 pkgrel=1
@@ -11,14 +11,13 @@ license=('custom:vim')
 url="http://www.vim.org"
 depends=('python2')
 makedepends=('mercurial')
+source=('ocamlindentfix.patch')
+md5sums=(b7f4ae22b592e12838395335e846403e)
 
 _hgroot='http://vim.googlecode.com/hg/'
 _hgrepo='vim'
 
 build() {
-  # remove -O2 because there is a crash with python because of it
-  # fedora br: https://bugzilla.redhat.com/show_bug.cgi?id=817196
-  export CFLAGS="${CFLAGS/-O2 /}"
 
   cd "${srcdir}"
   cd "${_hgrepo}" && hg pull -u && cd .. ||
@@ -32,12 +31,10 @@ build() {
     vim-build/src/feature.h
   sed -i 's|^.*\(#define VIMRC_FILE.*"\) .*$|\1|' \
     vim-build/src/feature.h
-  # fix python name
-  sed -i -e 's|(vi_cv_path_python, python)|(vi_cv_path_python, python2)|' \
-    vim-build/src/configure.in
-  (cd vim-build/src && autoconf)
 
   cd "${srcdir}"/vim-build
+
+  patch "${srcdir}"/vim-build/runtime/indent/ocaml.vim "${srcdir}"/ocamlindentfix.patch
 
   ./configure --prefix=/usr --localstatedir=/var/lib/vim \
     --with-features=big --with-compiledby=bnwr \
@@ -47,7 +44,7 @@ build() {
     --disable-netbeans --enable-perlinterp --enable-pythoninterp \
     --disable-python3interp --disable-rubyinterp --disable-luainterp
 
-  make -j 4
+  make
 
 }
 
