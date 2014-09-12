@@ -18,11 +18,8 @@ Bundle 'vim-scripts/SuperTab.git'
 
 "languages
 Bundle 'rc.vim'
-let s:ocamlmerlin=substitute(system('opam config var share'),'\n$','','''') .  "/ocamlmerlin"
-execute "set rtp+=".s:ocamlmerlin."/vim"
-execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
-Bundle 'def-lkb/merlin', {'rtp': 'vim/merlin/'}
-Bundle 'def-lkb/vimbufsync'
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
 Bundle 'raphael-proust/pdc.vim.git'
 
 Bundle 'vim-scripts/surround.vim.git'
@@ -34,6 +31,8 @@ Bundle 'sjl/gundo.vim.git'
 nnoremap <F3> :GundoToggle<CR>
 
 Bundle 'tpope/vim-fugitive.git'
+
+Bundle 'YankRing.vim'
 
 "Vundle post-initialisation phase
 filetype plugin indent on
@@ -154,6 +153,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <silent> <Right> :bnext<CR>
+nnoremap <silent> <Left> :bprev<CR>
 
 "in command mode use <C-j/k> for history and <C-h/l> for moving
 cnoremap <C-j> <Down>
