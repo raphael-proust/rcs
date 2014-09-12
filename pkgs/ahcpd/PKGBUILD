@@ -1,0 +1,32 @@
+pkgname=ahcpd
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc="The Ad-Hoc Configuration Protocol daemon"
+arch=('i686' 'x86_64')
+url="http://www.pps.univ-paris-diderot.fr/~jch/software/ahcp/"
+license=('MIT')
+makedepends=('git')
+depends=()
+optdepends=()
+backup=('etc/ahcpd.conf')
+source=('ahcpd.conf')
+md5sums=(
+a18e5f236d3100a0d94b4c73bef5c193
+)
+_gitroot='git://git.wifi.pps.univ-paris-diderot.fr/'
+_gitrepo='ahcpd'
+
+build() {
+  cd "${srcdir}"
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}"
+  rm -fr build; cp -a "${_gitrepo}" build; cd build
+  make PREFIX="/usr"
+}
+
+package() {
+  cd "${srcdir}/build"
+  make PREFIX="/usr" TARGET="${pkgdir}" install
+  install -Dm644 ../ahcpd.conf "${pkgdir}"/etc/ahcpd.conf
+  install -dm755 "${pkgdir}"/var/lib/ahcpd-leases/
+}

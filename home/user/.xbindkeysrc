@@ -66,6 +66,3 @@
 "9acme"
     m:0x40 + c:26
     Mod4 + e
-"st -g '1300x200+33+0' -e task yakuake -r winch dvtm-scrollback"
-    m:0x0 + c:96
-    F12
