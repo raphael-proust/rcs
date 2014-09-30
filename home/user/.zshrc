@@ -47,6 +47,16 @@ setopt RM_STAR_WAIT
 setopt MULTIOS
 setopt NUMERIC_GLOB_SORT
 
+#st
+case $TERM in
+	(st)
+		function zle-line-init () { echoti smkx }
+		function zle-line-finish () { echoti rmkx }
+		zle -N zle-line-init
+		zle -N zle-line-finish
+		;;
+esac
+
 # aliases and functions
 alias gps='ps -ly -C '
 alias ls='ls -p'
