@@ -1,0 +1,37 @@
+pkgname=calluna
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc='Calluna - a versatile text typeface with display qualities'
+url='http://www.myfonts.com/fonts/exljbris/calluna/'
+arch=('i686' 'x86_64')
+license=('custom')
+depends=()
+makedepends=('unzip')
+source=('Calluna Complete.zip')
+md5sums=(
+14396b33c233e6e236b08a4b382289d4
+)
+
+provides=('calluna')
+
+build() {
+  cd "${srcdir}"
+
+  rm -fr 'Calluna Complete'
+  unzip 'Calluna Complete.zip'
+  mv 'Calluna Complete' build
+}
+
+package() {
+  cd "${srcdir}/build"
+  install -Dm644 'exljbris - Calluna-Black.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-Black.otf"
+  install -Dm644 'exljbris - Calluna-BoldIt.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-BoldIt.otf"
+  install -Dm644 'exljbris - Calluna-Bold.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-Bold.otf"
+  install -Dm644 'exljbris - Calluna-It.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-It.otf"
+  install -Dm644 'exljbris - Calluna-Light.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-Light.otf"
+  install -Dm644 'exljbris - Calluna-Regular.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-Regular.otf"
+  install -Dm644 'exljbris - Calluna-SemiboldIt.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-SemiboldIt.otf"
+  install -Dm644 'exljbris - Calluna-Semibold.otf' "${pkgdir}/usr/share/fonts/OTF/Calluna-Semibold.otf"
+  install -Dm644 'Licenses/exljbris Standard License Agreement.html' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.html"
+}
+
