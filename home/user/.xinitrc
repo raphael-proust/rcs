@@ -1,7 +1,6 @@
 #!/bin/sh
 xset b off
 xkbcomp .xkb.hjkl $DISPLAY
-xcape -e 'Control_L=Multi_key'
 xbindkeys -f $HOME/.xbindkeysrc
 xrdb ~/.Xresources
 wmname $(printf %s ${1} | sed -e "s/^\(\S\+\).*/\1/")
