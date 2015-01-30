@@ -1,0 +1,37 @@
+pkgname=sfeed
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc='Suckless rss feed reader'
+url='http://git.codemadness.nl/sfeed/'
+arch=('x86_64')
+license=('MIT')
+depends=()
+makedepends=('make' 'curl')
+source=(config.mk)
+md5sums=(
+b1cb6d1bc905475ec3f8b53e88a729cf
+)
+
+provides=('sfeed')
+conflicts=('sfeed')
+
+_gitroot='git://git.codemadness.nl/'
+_gitrepo='sfeed'
+
+
+build() {
+  cd "${srcdir}"
+
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}"
+
+  rm -fr build; cp -a "${_gitrepo}" build; cd build
+  cp $startdir/config.mk config.mk
+  make
+}
+
+package() {
+  cd "${srcdir}/build"
+  make PREFIX=/usr DESTDIR="${pkgdir}" install
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
