@@ -32,8 +32,6 @@ nnoremap <F3> :GundoToggle<CR>
 
 Bundle 'tpope/vim-fugitive.git'
 
-Bundle 'YankRing.vim'
-
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax on
