@@ -69,6 +69,8 @@ fn network{
 		task sock ssh -v -ND 4711 bnwrnet
 	case a
 		ip addr show
+	case S
+		sudo wpa_cli status | grep '^(wpa_state|ssid)'
 	}
 }
 

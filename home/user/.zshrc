@@ -74,6 +74,7 @@ alias pacr='sudo pacman -R'
 alias pacq='sudo pacman -Qi'
 alias pacl='sudo pacman -Ql'
 alias paco='sudo pacman -Qo'
+alias mp='mplayer -fs -af volume=4:1'
 fcolor() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
 f() { find . -iname "*$1*" }
 md () { mkdir -p $1 && cd $1 }
