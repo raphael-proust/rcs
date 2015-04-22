@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#From cls, postd on the suckless mailing list
+
+dir=${1%/*}
+bin=${1##*/}
+shift
+
+unset flag
+set -f
+IFS=:
+
+for d in $PATH; do
+	if [ "$d" = "$dir" ]; then
+		flag=1
+	elif [ -n "$flag" ] && [ -x "$d/$bin" ]; then
+		exec "$d/$bin" "$@"
+	fi
+done
+
+printf "%s: no '%s' found beyond '%s' in \$PATH\n" "${0##*/}" "$bin" "$dir" >&2
+exit 127
