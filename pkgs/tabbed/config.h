@@ -1,11 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*";
-static const char* normbgcolor  = "#002b36";
-static const char* normfgcolor  = "#586e75";
-static const char* selbgcolor   = "#073642";
-static const char* selfgcolor   = "#839496";
+static const char font[]            = "Source Code Pro:pixelsize=10:antialias=true:autohint=true";
+static const char* normbgcolor  = "#eee8d5";
+static const char* normfgcolor  = "#268bd2";
+static const char* selbgcolor   = "#fdf6e3";
+static const char* selfgcolor   = "#657b83";
+static const char* urgbgcolor   = "#073642";
+static const char* urgfgcolor   = "#dc322f";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const int  tabwidth      = 200;

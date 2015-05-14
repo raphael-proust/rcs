@@ -10,7 +10,7 @@ reexec(const Arg *arg) {
 }
 
 /* appearance */
-static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
+static const char font[]            = "Source Code Pro:pixelsize=10:antialias=true:autohint=true";
 static const char normbordercolor[] = "#eee8d5";
 static const char normbgcolor[]     = "#eee8d5";
 static const char normfgcolor[]     = "#268bd2";

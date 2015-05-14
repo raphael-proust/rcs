@@ -11,12 +11,12 @@ depends=("libx11")
 makedepends=("git")
 source=(config.h)
 md5sums=(
-b4e634060c51ed28847bd2c2599f8ca7
+425af5dd40f09f76af8a9f398f5635d1
 )
 conflicts=("tabbed")
 provides=("tabbed")
 
-_gitroot="http://git.suckless.org"
+_gitroot="http://git.suckless.org/"
 _gitrepo="tabbed"
 
 build() {
