@@ -66,9 +66,9 @@ command Diffnone windo diffoff
 "Tabs, indent and the such
 set nosmarttab
 set noexpandtab
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+set softtabstop=3
+set shiftwidth=3
+set tabstop=3
 set copyindent
 set noshiftround
 
