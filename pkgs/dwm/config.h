@@ -10,7 +10,10 @@ reexec(const Arg *arg) {
 }
 
 /* appearance */
-static const char font[]            = "Source Code Pro:pixelsize=10:antialias=true:autohint=true";
+static const char *fonts[] = {
+	"Source Code Pro:pixelsize=10:antialias=true:autohint=true",
+};
+static const char dmenufont[] = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#eee8d5";
 static const char normbgcolor[]     = "#eee8d5";
 static const char normfgcolor[]     = "#268bd2";
@@ -18,7 +21,7 @@ static const char selbordercolor[]  = "#657b83";
 static const char selbgcolor[]      = "#fdf6e3";
 static const char selfgcolor[]      = "#657b83";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 16;       /* snap pixel */
+static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
@@ -31,7 +34,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.60;  /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.65;  /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;     /* number of clients in master area */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
@@ -54,7 +57,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {

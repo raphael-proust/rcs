@@ -1,29 +1,37 @@
 # Handcrafted from Archlinux's original package
 
 pkgname=dwm
-pkgver=6.0
-pkgrel=133
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
 license=('MIT')
 options=(zipman)
-depends=('libx11' 'libxinerama')
-source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
+depends=('libxft' 'libx11' 'libxinerama')
+source=(
   config.h
   config.mk)
 md5sums=(
-8bb00d4142259beb11e13473b81c0857
-3919ebe339bf53ea55f1049107bc37f7
+2671cf9eea9912b3b33837c941958aa2
 eab9c0052a884f8b2d08cddf83f1fe62
 )
 
-build() {
-  cd $srcdir/$pkgname-$pkgver
-  cp $srcdir/config.mk config.mk
-  cp $srcdir/config.h config.h
+provides=('dwm')
+conflicts=('dwm')
 
-  if ls $startdir/patches | grep -q '.*\.diff$'
+_gitroot='http://git.suckless.org/'
+_gitrepo='dwm'
+
+build() {
+  cd "${srcdir}"
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}"
+
+  rm -fr build; cp -a "${_gitrepo}" build; cd build
+  cp "${startdir}"/config.h config.h
+
+  if ls "${startdir}"/patches | grep -q '.*\.diff$'
   then
     for i in $startdir/patches/*\.diff
     do
@@ -36,8 +44,8 @@ build() {
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
-  make PREFIX=/usr DESTDIR=$pkgdir install
-  install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
-  install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
+  cd "${srcdir}"/build
+  make PREFIX=/usr DESTDIR="${pkgdir}" install
+  install -m644 -D LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+  install -m644 -D README "${pkgdir}"/usr/share/doc/"${pkgname}"/README
 }

@@ -1,6 +1,8 @@
---- dwm.c.orig	2013-03-23 15:13:21.709978427 +0100
-+++ dwm.c	2013-03-23 15:13:13.366645236 +0100
-@@ -842,6 +842,8 @@
+diff --git a/dwm.c b/dwm.c
+index 169adcb..34b93be 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -778,6 +778,8 @@ expose(XEvent *e) {
  
  void
  focus(Client *c) {
@@ -9,10 +11,10 @@
  	if(!c || !ISVISIBLE(c))
  		for(c = selmon->stack; c && !ISVISIBLE(c); c = c->snext);
  	/* was if(selmon->sel) */
-@@ -856,6 +858,11 @@
+@@ -792,6 +794,11 @@ focus(Client *c) {
  		attachstack(c);
  		grabbuttons(c, True);
- 		XSetWindowBorder(dpy, c->win, dc.sel[ColBorder]);
+ 		XSetWindowBorder(dpy, c->win, scheme[SchemeSel].border->pix);
 +		if(!c->isfloating) {
 +			wc.sibling = selmon->barwin;
 +			wc.stack_mode = Below;
@@ -20,8 +22,8 @@
 +		}
  		setfocus(c);
  	}
- 	else
-@@ -1200,7 +1207,7 @@
+ 	else {
+@@ -1097,7 +1104,7 @@ monocle(Monitor *m) {
  	if(n > 0) /* override layout symbol */
  		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
  	for(c = nexttiled(m->clients); c; c = nexttiled(c->next))
@@ -30,7 +32,7 @@
  }
  
  void
-@@ -1717,13 +1724,16 @@
+@@ -1624,13 +1631,16 @@ tile(Monitor *m) {
  	for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
  		if(i < m->nmaster) {
  			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
