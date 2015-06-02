@@ -2,31 +2,42 @@
 static char *useragent      = "Mozilla/5.0 (X11; U; Unix; en-US) "
 	"AppleWebKit/537.15 (KHTML, like Gecko) Chrome/24.0.1295.0 "
 	"Safari/537.15 Surf/"VERSION;
-static char *progress       = "#0000FF";
-static char *progress_untrust = "#FF0000";
-static char *progress_trust = "#00FF00";
-static char *progress_proxy = "#FFFF00";
-static char *progress_proxy_trust = "#66FF00";
-static char *progress_proxy_untrust = "#FF6600";
-static char *stylefile      = "~/.surf/style.css";
 static char *scriptfile     = "~/.surf/script.js";
+static char *styledir       = "~/.surf/styles/";
+static char *cachefolder    = "~/.surf/cache/";
+
+static Bool kioskmode       = FALSE; /* Ignore shortcuts */
+static Bool showindicators  = TRUE;  /* Show indicators in window title */
+static Bool zoomto96dpi     = TRUE;  /* Zoom pages to always emulate 96dpi */
+static Bool runinfullscreen = FALSE; /* Run in fullscreen mode by default */
+
+static guint defaultfontsize = 12;   /* Default font size */
+static gfloat zoomlevel = 1.0;       /* Default zoom level */
+
+/* Soup default features */
 static char *cookiefile     = "~/.surf/cookies.txt";
-static time_t sessiontime   = 3600;
+static char *cookiepolicies = "Aa@"; /* A: accept all; a: accept nothing,
+                                        @: accept no third party */
 static char *cafile         = "/etc/ssl/certs/ca-certificates.crt";
-static char *strictssl      = FALSE; /* Refuse untrusted SSL connections */
-static int   indicator_thickness = 2;
+static char *strictssl      = TRUE; /* Refuse untrusted SSL connections */
+static time_t sessiontime   = 3600;
 
 /* Webkit default features */
+static Bool enablescrollbars      = TRUE;
 static Bool enablespatialbrowsing = TRUE;
-static Bool enableplugins = TRUE;
-static Bool enablescripts = TRUE;
-static Bool enableinspector = TRUE;
-static Bool loadimages = TRUE;
-static Bool hidebackground  = FALSE;
+static Bool enablediskcache       = TRUE;
+static int diskcachebytes         = 5 * 1024 * 1024;
+static Bool enableplugins         = TRUE;
+static Bool enablescripts         = TRUE;
+static Bool enableinspector       = TRUE;
+static Bool enablestyles          = TRUE;
+static Bool loadimages            = TRUE;
+static Bool hidebackground        = FALSE;
+static Bool allowgeolocation      = FALSE;
 
 #define SETPROP(p, q) { \
 	.v = (char *[]){ "/bin/sh", "-c", \
-		"prop=\"`xprop -id $2 $0 | cut -d '\"' -f 2 | dmenu`\" &&" \
+		"prop=\"`xprop -id $2 $0 | cut -d '\"' -f 2 | xargs -0 printf %b | dmenu`\" &&" \
 		"xprop -id $2 -f $1 8s -set $1 \"$prop\"", \
 		p, q, winid, NULL \
 	} \
@@ -35,13 +46,32 @@ static Bool hidebackground  = FALSE;
 /* DOWNLOAD(URI, referer) */
 #define DOWNLOAD(d, r) { \
 	.v = (char *[]){ "/bin/sh", "-c", \
-		"st -e /bin/sh -c \"curl -J -O --user-agent '$1'" \
-		" --referer '$2'" \
-		" -b ~/.surf/cookies.txt -c ~/.surf/cookies.txt '$0';" \
+		"st -e /bin/sh -c \"curl -L -J -O --user-agent '$1'" \
+		" --referer '$2' -b $3 -c $3 '$0';" \
 		" sleep 5;\"", \
-		d, useragent, r, NULL \
+		d, useragent, r, cookiefile, NULL \
 	} \
 }
+
+/* PLUMB(URI) */
+/* This called when some URI which does not begin with "about:",
+ * "http://" or "https://" should be opened.
+ */
+#define PLUMB(u) {\
+	.v = (char *[]){ "/bin/sh", "-c", \
+		"xdg-open \"$0\"", u, NULL \
+	} \
+}
+
+/* styles */
+/*
+ * The iteration will stop at the first match, beginning at the beginning of
+ * the list.
+ */
+static SiteStyle styles[] = {
+	/* regexp		file in $styledir */
+	{ ".*",			"default.css" },
+};
 
 #define MODKEY GDK_CONTROL_MASK
 
@@ -68,12 +98,12 @@ static Key keys[] = {
     { MODKEY,               GDK_l,      navigate,   { .i = +1 } },
     { MODKEY,               GDK_h,      navigate,   { .i = -1 } },
 
-    { MODKEY,               GDK_j,           scroll_v,   { .i = +1 } },
-    { MODKEY,               GDK_k,           scroll_v,   { .i = -1 } },
-    { MODKEY,               GDK_b,           scroll_v,   { .i = -10000 } },
-    { MODKEY,               GDK_space,       scroll_v,   { .i = +10000 } },
-    { MODKEY,               GDK_i,           scroll_h,   { .i = +1 } },
-    { MODKEY,               GDK_u,           scroll_h,   { .i = -1 } },
+    { MODKEY,               GDK_j,      scroll_v,   { .i = +1 } },
+    { MODKEY,               GDK_k,      scroll_v,   { .i = -1 } },
+    { MODKEY,               GDK_b,      scroll_v,   { .i = -10000 } },
+    { MODKEY,               GDK_space,  scroll_v,   { .i = +10000 } },
+    { MODKEY,               GDK_i,      scroll_h,   { .i = +1 } },
+    { MODKEY,               GDK_u,      scroll_h,   { .i = -1 } },
 
     { 0,                    GDK_F11,    fullscreen, { 0 } },
     { 0,                    GDK_Escape, stop,       { 0 } },
@@ -91,4 +121,19 @@ static Key keys[] = {
     { MODKEY|GDK_SHIFT_MASK,GDK_i,      toggle,     { .v = "auto-load-images" } },
     { MODKEY|GDK_SHIFT_MASK,GDK_s,      toggle,     { .v = "enable-scripts" } },
     { MODKEY|GDK_SHIFT_MASK,GDK_v,      toggle,     { .v = "enable-plugins" } },
+    { MODKEY|GDK_SHIFT_MASK,GDK_a,      togglecookiepolicy, { 0 } },
+    { MODKEY|GDK_SHIFT_MASK,GDK_m,      togglestyle, { 0 } },
+    { MODKEY|GDK_SHIFT_MASK,GDK_b,      togglescrollbars, { 0 } },
+    { MODKEY|GDK_SHIFT_MASK,GDK_g,      togglegeolocation, { 0 } },
+};
+
+/* button definitions */
+/* click can be ClkDoc, ClkLink, ClkImg, ClkMedia, ClkSel, ClkEdit, ClkAny */
+static Button buttons[] = {
+    /* click                event mask  button  function        argument */
+    { ClkLink,              0,          2,      linkopenembed,  { 0 } },
+    { ClkLink,              MODKEY,     2,      linkopen,       { 0 } },
+    { ClkLink,              MODKEY,     1,      linkopen,       { 0 } },
+    { ClkAny,               0,          8,      navigate,       { .i = -1 } },
+    { ClkAny,               0,          9,      navigate,       { .i = +1 } },
 };
