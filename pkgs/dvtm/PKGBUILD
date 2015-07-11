@@ -1,25 +1,39 @@
 #Custom version based on Arch's package
 
 pkgname=dvtm
-pkgver=0.12
+pkgver=0.14
 pkgrel=100
 pkgdesc='Dynamic virtual terminal manager.'
 arch=('i686' 'x86_64' 'arm')
 url='http://www.brain-dump.org/projects/dvtm/'
 license=('MIT')
 depends=('ncurses')
-source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz"
-        'config.h')
+source=(
+"http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+'config.h'
+'config.mk'
+)
 sha1sums=(
-1b433db25d9751e820fc8213874eb57fd15e5552
-77c82692b7bb4462ee546c9e39f97da94facdca4
+205a2165e70455309f7ed6a6f11b3072fb9b13c3
+6c6825e469aea4b4e0f2e113de50de65ad965399
+15b84b2498a438a459a93491d47ddace0f32b502
 )
 
 build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}"
+	cd "${pkgname}-${pkgver}"
 
 	cp "${srcdir}/config.h" .
-	sed -i 's/CFLAGS =/CFLAGS +=/' config.mk
+	cp "${srcdir}/config.mk" .
+
+	if ls "${startdir}"/patches | grep -q '.*\.diff$'
+	then
+		for i in "${startdir}"/patches/*\.diff
+		do
+			msg "patching with $i"
+			patch -i $i
+		done
+	fi
 
 	make clean
 	make

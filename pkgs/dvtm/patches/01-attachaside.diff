@@ -1,0 +1,53 @@
+From 47fd3ca9eec2c758453294988d3b304f259528b2 Mon Sep 17 00:00:00 2001
+From: Greg Reagle <greg.reagle@umbc.edu>
+Date: Tue, 26 May 2015 11:43:59 -0400
+Subject: [PATCH] Created and un-minimized clients go to top of stack instead
+ of master window.
+
+This provides stability for the master window: it stays as it is
+unless it is explictly moved (for example by a zoom).
+---
+ dvtm.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/dvtm.c b/dvtm.c
+index 464a223..c8b210a 100644
+--- a/dvtm.c
++++ b/dvtm.c
+@@ -520,6 +520,15 @@ attachafter(Client *c, Client *a) { /* attach c after a */
+ 	}
+ }
+ 
++/* attach c as the second client, i.e. the top of the stack*/
++static void
++attachtopstack(Client *c) { 
++	if (clients) 
++		attachafter(c,clients);
++	else
++		attach(c);
++}
++
+ static void
+ attachstack(Client *c) {
+ 	c->snext = stack;
+@@ -1029,7 +1038,7 @@ create(const char *args[]) {
+ 	c->x = wax;
+ 	c->y = way;
+ 	debug("client with pid %d forked\n", c->pid);
+-	attach(c);
++	attachtopstack(c);
+ 	focus(c);
+ 	arrange();
+ }
+@@ -1353,7 +1362,7 @@ toggleminimize(const char *args[]) {
+ 	} else { /* window is no longer minimized, move it to the master area */
+ 		vt_dirty(m->term);
+ 		detach(m);
+-		attach(m);
++		attachtopstack(m);
+ 	}
+ 	arrange();
+ }
+-- 
+1.9.1
+
