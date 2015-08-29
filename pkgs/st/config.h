@@ -6,7 +6,16 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char font[] = "Source Code Pro:pixelsize=10:antialias=true:autohint=true";
-static int borderpx = 2;
+static int borderpx = 1;
+
+/*
+ * What program is execed by st depends of these precedence rules:
+ * 1: program passed with -e
+ * 2: utmp option
+ * 3: SHELL environment variable
+ * 4: value of shell in /etc/passwd
+ * 5: value of shell in config.h
+ */
 static char shell[] = "/bin/sh";
 static char *utmp = NULL;
 static char stty_args[] = "stty raw -echo -iexten echonl";
@@ -96,13 +105,21 @@ static unsigned int defaultfg = 12;
 static unsigned int defaultbg = 8;
 static unsigned int defaultcs = 256;
 
+
+/*
+ * Default colour and shape of the mouse cursor
+ */
+static unsigned int mouseshape = XC_xterm;
+static unsigned int mousefg = 12;
+static unsigned int mousebg = 8;
+
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
  * will reverse too. Another logic would only make the simple feature too
  * complex.
  */
 static unsigned int defaultitalic = 11;
-static unsigned int defaultunderline = 7;
+static unsigned int defaultunderline = 12;
 
 /* Internal mouse shortcuts. */
 /* Beware that overloading Button1 will disable the selection. */
