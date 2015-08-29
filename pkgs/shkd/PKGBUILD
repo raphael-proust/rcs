@@ -1,0 +1,31 @@
+pkgname=shkd
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc='A simple hotkey daemon'
+arch=('i686' 'x86_64')
+url='https://github.com/baskerville/shkd'
+license=('custom:BSD')
+depends=()
+makedepends=()
+provides=('shkd')
+conflicts=('shkd')
+source=()
+md5sums=()
+
+_gitroot='https://github.com/baskerville/'
+_gitrepo='shkd'
+
+build() {
+	cd "${srcdir}"
+	cd "${_gitrepo}" && git pull && cd .. ||
+	git clone "${_gitroot}${_gitrepo}"
+	rm -fr build; cp -a "${_gitrepo}" build; cd build
+	make
+}
+
+package() {
+	cd "${srcdir}"/build
+	make PREFIX=/usr DESTDIR="${pkgdir}" install
+	install -m644 -D LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+	install -m644 -D README.md "${pkgdir}"/usr/share/doc/"${pkgname}"/README
+}

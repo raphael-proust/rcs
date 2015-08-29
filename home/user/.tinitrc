@@ -1,4 +1,6 @@
 #!/bin/sh
+
+shkd -c $HOME/.shkdrc /dev/input/by-path/platform-i8042-serio-0-event-kbd >/tmp/shkd.log &
 while true
 do
 	set-status-line-bnwr "$(status-line-bnwr)"
