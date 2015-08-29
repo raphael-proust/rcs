@@ -20,8 +20,9 @@ Bundle 'vim-scripts/SuperTab.git'
 Bundle 'rc.vim'
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
-autocmd FileType ocaml nnoremap <LocalLeader>d :Destruct<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
 Bundle 'raphael-proust/pdc.vim.git'
 
 Bundle 'vim-scripts/surround.vim.git'
