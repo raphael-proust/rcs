@@ -2,13 +2,16 @@ mod4 + Escape
 	slock
 
 mod4 + shift + Escape
-	slock & sleep1 && sudo systemctl suspend
+	{slock & sleep 1 && sudo systemctl suspend}
 
 mod4 + e
 	9acme
 
+mod4 + r
+	gvim
+
 mod4 + equal
-	st -e dvtm-wrap ; set-status-line-bnwr `status-line-bnwr`
+	st -e dvtm
 
 mod4 + Return
 	st

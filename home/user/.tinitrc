@@ -6,4 +6,4 @@ do
 	set-status-line-bnwr "$(status-line-bnwr)"
 	sleep 60
 done &
-exec $1
+exec $*
