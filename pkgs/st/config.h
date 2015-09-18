@@ -18,7 +18,7 @@ static int borderpx = 1;
  */
 static char shell[] = "/bin/sh";
 static char *utmp = NULL;
-static char stty_args[] = "stty raw -echo -iexten echonl";
+static char stty_args[] = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
 static char vtiden[] = "\033[?6c";
@@ -105,6 +105,15 @@ static unsigned int defaultfg = 12;
 static unsigned int defaultbg = 8;
 static unsigned int defaultcs = 256;
 
+/*
+ * Default shape of cursor
+ * 2: Block
+ * 4: Underline
+ * 6: IBeam
+ */
+
+static unsigned int cursorshape = 4;
+
 
 /*
  * Default colour and shape of the mouse cursor
@@ -134,6 +143,7 @@ static Mousekey mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
+	{ XK_NO_MOD,            XK_Pause,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
