@@ -55,5 +55,6 @@ noremap <F1> :set hlf!<CR>
 
 command -description 'Duplicate current tab' duplicate :keepalt tabduplicate<bang>
 set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set status=input,ssl,bookmark,location,position
 
 set editor='9acme -c 1'
