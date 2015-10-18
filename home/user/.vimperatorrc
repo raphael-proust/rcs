@@ -57,4 +57,6 @@ command -description 'Duplicate current tab' duplicate :keepalt tabduplicate<ban
 set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
 set status=input,ssl,bookmark,location,position
 
+command -description 'Switch to reader mode' reader :javascript openUILink("about:reader?url=" + gBrowser.currentURI.specIgnoringRef, {target:gBrowser.selectedTab});
+
 set editor='9acme -c 1'
