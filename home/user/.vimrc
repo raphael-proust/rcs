@@ -24,6 +24,7 @@ autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
 Bundle 'raphael-proust/pdc.vim.git'
+Bundle 'derekwyatt/vim-scala'
 
 Bundle 'vim-scripts/surround.vim.git'
 "French typographic rules impose non-breakable space
