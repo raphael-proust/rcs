@@ -62,7 +62,7 @@ static unsigned int cursorthickness = 2;
  */
 static int bellvolume = 0;
 
-/* TERM value */
+/* default TERM value */
 static char termname[] = "st-256color";
 
 static unsigned int tabspaces = 8;
@@ -99,7 +99,7 @@ static const char *colorname[] = {
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor
+ * foreground, background, cursor, reverse cursor
  */
 static unsigned int defaultfg = 12;
 static unsigned int defaultbg = 8;
@@ -134,7 +134,7 @@ static unsigned int defaultunderline = 12;
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
  */
-static Mousekey mshortcuts[] = {
+static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
 	{ Button4,              XK_ANY_MOD,     "\031" },
 	{ Button5,              XK_ANY_MOD,     "\005" },
