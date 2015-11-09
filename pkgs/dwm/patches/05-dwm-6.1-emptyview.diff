@@ -1,10 +1,10 @@
 diff --git a/dwm.c b/dwm.c
-index 1d78655..a526e57 100644
+index c9ea808..f1174b1 100644
 --- a/dwm.c
 +++ b/dwm.c
-@@ -322,7 +322,9 @@ applyrules(Client *c) {
+@@ -311,7 +311,9 @@ applyrules(Client *c)
  		XFree(ch.res_class);
- 	if(ch.res_name)
+ 	if (ch.res_name)
  		XFree(ch.res_name);
 -	c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];
 +	if(c->tags & TAGMASK)                    c->tags = c->tags & TAGMASK;
@@ -12,41 +12,37 @@ index 1d78655..a526e57 100644
 +	else                                     c->tags = 1;
  }
  
- Bool
-@@ -1479,7 +1481,7 @@ sendmon(Client *c, Monitor *m) {
+ int
+@@ -1456,7 +1458,7 @@ sendmon(Client *c, Monitor *m)
  	detach(c);
  	detachstack(c);
  	c->mon = m;
 -	c->tags = m->tagset[m->seltags]; /* assign tags of target monitor */
 +	c->tags = (m->tagset[m->seltags] ? m->tagset[m->seltags] : 1);
- 	attach(c);
+ 	attachaside(c);
  	attachstack(c);
  	focus(NULL);
-@@ -1763,12 +1765,9 @@ toggletag(const Arg *arg) {
- void
- toggleview(const Arg *arg) {
- 	unsigned int newtagset = selmon->tagset[selmon->seltags] ^ (arg->ui & TAGMASK);
--
--	if(newtagset) {
--		selmon->tagset[selmon->seltags] = newtagset;
+@@ -1743,11 +1745,9 @@ toggletag(const Arg *arg)
+ 	if (!selmon->sel)
+ 		return;
+ 	newtags = selmon->sel->tags ^ (arg->ui & TAGMASK);
+-	if (newtags) {
+-		selmon->sel->tags = newtags;
 -		focus(NULL);
 -		arrange(selmon);
 -	}
-+	selmon->tagset[selmon->seltags] = newtagset;
++	selmon->sel->tags = newtags;
 +	focus(NULL);
 +	arrange(selmon);
  }
  
  void
-@@ -2043,7 +2042,7 @@ updatewmhints(Client *c) {
- 
+@@ -2056,7 +2056,7 @@ updatewmhints(Client *c)
  void
- view(const Arg *arg) {
--	if((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
+ view(const Arg *arg)
+ {
+-	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 +	if(arg->ui && (arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
  		return;
  	selmon->seltags ^= 1; /* toggle sel tagset */
- 	if(arg->ui & TAGMASK)
--- 
-1.8.2
-
+ 	if (arg->ui & TAGMASK)

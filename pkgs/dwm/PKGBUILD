@@ -14,8 +14,8 @@ config.h
 config.mk
 )
 md5sums=(
-2671cf9eea9912b3b33837c941958aa2
-eab9c0052a884f8b2d08cddf83f1fe62
+d140d1f37da342aa55a1cff8e3509497
+c65ae0cbc399d8bb532cf783c8dd0bed
 )
 
 provides=('dwm')
