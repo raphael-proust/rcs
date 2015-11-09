@@ -15,7 +15,7 @@ optdepends=('dmenu: URL-bar'
 makedepends=('pkgconfig' 'git')
 source=('config.h')
 md5sums=(
-7ed22db991db61f3b1c16c0b44409aee
+276230cd60211a24601d72630e475e8b
 )
 
 provides=('surf')
