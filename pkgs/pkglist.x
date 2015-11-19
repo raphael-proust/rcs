@@ -6,6 +6,10 @@ dwm
 firefox
 ghostscript
 imagemagick
+jdk8-openjdk
+lib32-glu
+lib32-mesa
+lib32-mesa-libgl
 libreoffice-still
 mpd
 mplayer
@@ -15,12 +19,14 @@ pinta
 plan9port
 profont
 rxvt-unicode
+scala
 sdl2
 sfml
 slock
 sublime-text
 surf
 sxiv
+tabbed
 tamsyn-font
 terminus-font
 texlive-bibtexextra
@@ -47,6 +53,7 @@ ttf-sazanami
 ttf-symbola
 ttf-ubraille
 vbam-sdl
+wine
 wmname
 xbindkeys
 xdotool
@@ -133,3 +140,7 @@ xorg-xwininfo
 xorg-xwud
 xsel
 xterm
+zathura
+zathura-djvu
+zathura-pdf-mupdf
+zathura-ps
