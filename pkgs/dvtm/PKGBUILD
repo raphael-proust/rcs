@@ -2,7 +2,7 @@
 
 pkgname=dvtm
 pkgver=0.14
-pkgrel=100
+pkgrel=101
 pkgdesc='Dynamic virtual terminal manager.'
 arch=('i686' 'x86_64' 'arm')
 url='http://www.brain-dump.org/projects/dvtm/'
@@ -15,7 +15,7 @@ source=(
 )
 sha1sums=(
 205a2165e70455309f7ed6a6f11b3072fb9b13c3
-2bf2b8790532a01e7442cf05c986b0b8d025e02f
+2f195398df7228df7070ce8f2c2d6c45d63e0a24
 15b84b2498a438a459a93491d47ddace0f32b502
 )
 
