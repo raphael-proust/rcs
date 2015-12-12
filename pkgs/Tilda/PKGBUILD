@@ -1,0 +1,33 @@
+pkgname=tilda
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc='Tilda - A script typeface with size-specific styles'
+url='http://tilda.fontbureau.com/'
+arch=('i686' 'x86_64')
+license=('custom')
+depends=()
+makedepends=()
+source=(
+'Tilda-Grande.otf'
+'Tilda-Petite.otf'
+'SingleUserLicense.pdf'
+)
+md5sums=(
+c83ab2799a12133fa1dcfe31f904c7b2
+42684d477a6f4a88ceeeb3802f75e603
+b134323cecc11d571467439f4e0d4323
+)
+
+provides=('tilda')
+
+build() {
+	true
+}
+
+package() {
+  cd "${srcdir}"
+  install -Dm644 'Tilda-Grande.otf' "${pkgdir}/usr/share/fonts/OTF/Tilda-Grande.otf"
+  install -Dm644 'Tilda-Petite.otf' "${pkgdir}/usr/share/fonts/OTF/Tilda-Petite.otf"
+  install -Dm644 'SingleUserLicense.pdf' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.pdf"
+}
+
