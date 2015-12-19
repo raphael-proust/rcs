@@ -3,7 +3,7 @@ if [ "x$SSH_CONNECTION" = "x" ]; then
   eval $(ssh-agent)
 fi
 
-export LANG=en_US.UTF-8
+export LANG=en_GB.UTF-8
 export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
