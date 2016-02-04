@@ -19,6 +19,8 @@ Bundle 'vim-scripts/SuperTab.git'
 "languages
 Bundle 'rc.vim'
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+au! Bufread,BufNewFile *.eliom   set filetype=ocaml
+au! Bufread,BufNewFile *.eliomi   set filetype=ocaml
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
