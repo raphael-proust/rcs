@@ -21,3 +21,5 @@
 
 [status]
 	showUntrackedFiles = no
+[transfer]
+	fsckObjects = true
