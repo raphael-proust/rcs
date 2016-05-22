@@ -14,7 +14,7 @@ export PATH=$HOME/bin:$PATH
 export MANPATH=/usr/man:/usr/share/man:/usr/local/share/man
 
 source .profile.usul
-source .profile.sbase
+#source .profile.sbase
 source .profile.cabal
 source .profile.opam
 source .profile.mosml
