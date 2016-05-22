@@ -19,8 +19,8 @@ noremap sy t!youtube
 noremap sm t!map 
 noremap so t!osm 
 noremap s8 t!unicode 
-noremap sp t!bp 
-noremap se twebster 
+noremap sp t!bulbapedia 
+noremap se t!webster 
 
 noremap h 7h
 noremap j 7j
