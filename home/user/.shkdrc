@@ -6,12 +6,3 @@ volumeup
 
 mute
 	amixer set Master toggle
-
-playpause
-	mpc toggle
-
-previoussong
-	mpc prev
-
-nextsong
-	mpc next
