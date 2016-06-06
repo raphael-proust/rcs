@@ -8,7 +8,7 @@ bmark -title='DuckDuckGo' -keyword=ddg https://duckduckgo.com/?q=%s
 set defsearch=duckduckgo
 noremap sd t
 noremap sb t!
-noremap st t!wt 
+noremap st t!wten 
 noremap sw t!w 
 noremap sf t!wfr 
 noremap sg t!github 
