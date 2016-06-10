@@ -49,10 +49,13 @@ colorscheme solarized
 "updatetime influences CursorHold events
 set updatetime=2000
 
-" Change leader to , (comma)
-"TODO: different leaders
-let maplocalleader=","
-let mapleader=","
+" Change leader to \ (backslash)
+let maplocalleader="\\"
+let mapleader="\\"
+
+" Swap , and ; (, is easier)
+noremap , ;
+noremap ; ,
 
 "latex suite (prefer pandoc)
 set grepprg=grep\ -nH\ $*
@@ -108,7 +111,7 @@ set shortmess+=filmnrxtI
 
 "Lines
 set textwidth=78
-nnoremap Q gq
+noremap Q gq
 set nojoinspaces
 set wrap
 
