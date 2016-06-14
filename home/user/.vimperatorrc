@@ -21,6 +21,7 @@ noremap so t!osm
 noremap s8 t!unicode 
 noremap sp t!bulbapedia 
 noremap se t!webster 
+noremap sj t!mdn 
 
 noremap h 7h
 noremap j 7j
