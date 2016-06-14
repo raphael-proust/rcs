@@ -5,15 +5,21 @@ dmenu
 dwm
 firefox
 ghostscript
+gifsicle
+gimp
+gst-libav
+gst-plugins-good
 imagemagick
 jdk8-openjdk
+lib32-cairo
 lib32-glu
 lib32-mesa
 lib32-mesa-libgl
 libreoffice-still
-mpd
+lsw
+mencoder
 mplayer
-mupdf
+mtpaint
 pass
 pinta
 plan9port
@@ -23,6 +29,7 @@ scala
 sdl2
 sfml
 slock
+st
 sublime-text
 surf
 sxiv
@@ -36,6 +43,7 @@ texlive-formatsextra
 texlive-games
 texlive-genericextra
 texlive-humanities
+texlive-langgreek
 texlive-latexextra
 texlive-music
 texlive-pictures
@@ -48,7 +56,6 @@ ttf-freefont
 ttf-hannom
 ttf-liberation
 ttf-linux-libertine
-ttf-open_dyslexic
 ttf-sazanami
 ttf-symbola
 ttf-ubraille
@@ -58,7 +65,6 @@ wmname
 xbindkeys
 xdotool
 xf86-input-acecad
-xf86-input-aiptek
 xf86-input-evdev
 xf86-input-joystick
 xf86-input-keyboard
@@ -95,10 +101,10 @@ xf86-video-vmware
 xf86-video-voodoo
 xorg-bdftopcf
 xorg-docs
+xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
-xorg-font-util
 xorg-iceauth
 xorg-luit
 xorg-mkfontdir
@@ -141,6 +147,7 @@ xorg-xwud
 xsel
 xterm
 zathura
+zathura-cb
 zathura-djvu
 zathura-pdf-mupdf
 zathura-ps
