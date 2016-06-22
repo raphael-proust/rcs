@@ -1,8 +1,8 @@
 #!/bin/sh
 xset b off
-xkbcomp .xkb.hjkl $DISPLAY
+xkbcomp $HOME/.xkb.hjkl $DISPLAY
 sxhkd -r /tmp/sxhkd.log -c $HOME/.sxhkdrc &
-xrdb ~/.Xresources
+xrdb $HOME/.Xresources
 wmname $(printf %s ${1} | sed -e "s/^\(\S\+\).*/\1/")
 bgs -x $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
 mplayer -vo png:outdir=/tmp -frames 1 tv:// &
