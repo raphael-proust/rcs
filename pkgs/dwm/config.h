@@ -33,8 +33,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "DUMMYWINDOWCLASS",  NULL,       NULL,       0,            True,       -1       },
+	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
+	{ "DUMMYWINDOWCLASS",  NULL,       NULL,       0,            True,       0,         0,        -1 },
+	{ "st-",               NULL,       NULL,       0,            0,          1,         0,        -1 },
 };
 
 /* layout(s) */
