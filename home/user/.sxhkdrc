@@ -29,10 +29,10 @@ mod4 + g
 	sockedsurf http://duckduckgo.com
 
 XF86Audio{Prev,Next}
-	cmus-remote {--prev,--next}
+	mocp {--prev,--next}
 
 XF86AudioPlay
-	cmus-remote --pause
+	mocp --toggle-pause
 
 XF86AudioMute
 	amixer set Master toggle ; set-status-line-bnwr `status-line-bnwr`
