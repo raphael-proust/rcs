@@ -9,7 +9,7 @@ set defsearch=duckduckgo
 noremap sd t
 noremap sb t!
 noremap st t!wten 
-noremap sw t!w 
+noremap sw t!wen 
 noremap sf t!wfr 
 noremap sg t!github 
 noremap su t!urban 
