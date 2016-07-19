@@ -22,4 +22,4 @@ done &
 st &
 st &
 
-exec $*
+exec $* 2> /tmp/xinitrc-exec.log
