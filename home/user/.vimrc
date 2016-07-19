@@ -32,6 +32,8 @@ Bundle 'vim-scripts/surround.vim.git'
 "French typographic rules impose non-breakable space
 let g:surround_171="« \r »"
 let g:surround_8249="‹ \r ›"
+let g:surround_8220="“\r”"
+let g:surround_8216="‘\r’"
 
 Bundle 'sjl/gundo.vim.git'
 nnoremap <F3> :GundoToggle<CR>
