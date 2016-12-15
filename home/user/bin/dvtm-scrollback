@@ -1,2 +1,2 @@
 #!/bin/dash
-/usr/bin/dvtm -h 2000
+/usr/bin/dvtm -h 2000 $*

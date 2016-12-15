@@ -1,0 +1,39 @@
+# $Id: PKGBUILD 106204 2014-02-25 11:21:42Z bpiotrowski $
+# Maintainer:  Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
+# Contributor: Thayer Williams <thayer@archlinux.org>
+# Contributor: Jeff 'codemac' Mickey <jeff@archlinux.org>
+
+pkgname=dmenu
+pkgver=4.6
+pkgrel=1
+pkgdesc="A generic menu for X"
+url="http://tools.suckless.org/dmenu/"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('libxft' 'sh' 'libxinerama')
+makedepends=()
+source=(
+http://dl.suckless.org/tools/dmenu-4.6.tar.gz
+config.h
+config.mk
+)
+sha1sums=(
+'16297db470b370a16d532fba3cfd9743758ada80'
+'63796172ae600c40ef30f4a63f6d9c93569f7290'
+'50858fa8061e855a30a5a2937a2d550c68cf8aab'
+)
+
+build(){
+	cd $pkgname-$pkgver
+	cp "${startdir}"/config.h config.h
+	cp "${startdir}"/config.mk config.mk
+	make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

@@ -10,20 +10,19 @@ arch=('i686' 'x86_64' 'arm')
 license=('custom:vim')
 url="http://www.vim.org"
 depends=('python2')
-makedepends=('mercurial')
+makedepends=('git')
 source=('ocamlindentfix.patch')
 md5sums=(b7f4ae22b592e12838395335e846403e)
 
-_hgroot='http://vim.googlecode.com/hg/'
-_hgrepo='vim'
+_gitroot='https://github.com/vim/'
+_gitrepo='vim'
 
 build() {
 
   cd "${srcdir}"
-  cd "${_hgrepo}" && hg pull -u && cd .. ||
-  hg clone "${_hgroot}${_hgrepo}"
+  cd "${_gitrepo}" && git pull && cd .. || git clone "${_gitroot}${_gitrepo}"
 
-  cp -a ${_hgrepo} vim-build
+  cp -a ${_gitrepo} vim-build
   rm -rf "${srcdir}/runtime-install"
 
   # define the place for the global (g)vimrc file (set to /etc/vimrc)

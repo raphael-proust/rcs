@@ -1,43 +1,52 @@
 # Handcrafted from Archlinux's original package
 
 pkgname=dwm
-pkgver=6.0
-pkgrel=131
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
 license=('MIT')
 options=(zipman)
-depends=('libx11' 'libxinerama')
-source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
-  config.h
-  config.mk)
+depends=('libxft' 'libx11' 'libxinerama')
+source=(
+config.h
+config.mk
+)
 md5sums=(
-8bb00d4142259beb11e13473b81c0857
-0814a017fe3fc6170e0b1107d04c7240
-eab9c0052a884f8b2d08cddf83f1fe62
+5e031bb8c5e2238fcac4925f8eaed58a
+c65ae0cbc399d8bb532cf783c8dd0bed
 )
 
+provides=('dwm')
+conflicts=('dwm')
+
+_gitroot='http://git.suckless.org/'
+_gitrepo='dwm'
+
 build() {
-  cd $srcdir/$pkgname-$pkgver
-  cp $srcdir/config.mk config.mk
-  cp $srcdir/config.h config.h
+	cd "${srcdir}"
+	cd "${_gitrepo}" && git pull && cd .. ||
+	git clone "${_gitroot}${_gitrepo}"
 
-  if ls $startdir/patches | grep -q '.*\.diff$'
-  then
-    for i in $startdir/patches/*\.diff
-    do
-      msg "patching with $i"
-      patch -i $i
-    done
-  fi
+	rm -fr build; cp -a "${_gitrepo}" build; cd build
+	cp "${startdir}"/config.h config.h
 
-  make
+	if ls "${startdir}"/patches | grep -q '.*\.diff$'
+	then
+		for i in "${startdir}"/patches/*\.diff
+		do
+			msg "patching with $i"
+			patch -i $i
+		done
+	fi
+
+	make
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
-  make PREFIX=/usr DESTDIR=$pkgdir install
-  install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
-  install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
+	cd "${srcdir}"/build
+	make PREFIX=/usr DESTDIR="${pkgdir}" install
+	install -m644 -D LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+	install -m644 -D README "${pkgdir}"/usr/share/doc/"${pkgname}"/README
 }

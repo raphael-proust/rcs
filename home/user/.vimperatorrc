@@ -8,7 +8,7 @@ bmark -title='DuckDuckGo' -keyword=ddg https://duckduckgo.com/?q=%s
 set defsearch=duckduckgo
 noremap sd t
 noremap sb t!
-noremap st t!wt 
+noremap st t!wten 
 noremap sw t!wen 
 noremap sf t!wfr 
 noremap sg t!github 
@@ -20,7 +20,7 @@ noremap sm t!map
 noremap so t!osm 
 noremap s8 t!unicode 
 noremap sp t!bulbapedia 
-noremap se twebster 
+noremap sj t!mdn 
 
 noremap h 7h
 noremap j 7j
@@ -55,5 +55,8 @@ noremap <F1> :set hlf!<CR>
 
 command -description 'Duplicate current tab' duplicate :keepalt tabduplicate<bang>
 set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set status=input,ssl,bookmark,location,position
+
+command -description 'Switch to reader mode' reader :javascript openUILink("about:reader?url=" + gBrowser.currentURI.specIgnoringRef, {target:gBrowser.selectedTab});
 
 set editor='gvim -f'

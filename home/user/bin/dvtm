@@ -1,0 +1,9 @@
+#!/bin/dash
+
+STATUSPIPESDIR=/tmp/dvtm-status-pipes
+mkdir -p $STATUSPIPESDIR
+FIFO=$STATUSPIPESDIR/dvtm-status.$$
+mkfifo $FIFO
+chmod 600 $FIFO
+next $0 -s $FIFO $*
+rm $FIFO

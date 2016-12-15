@@ -1,0 +1,41 @@
+mod4 + Escape
+	slock
+
+mod4 + shift + Escape
+	{slock & sleep 1 && sudo systemctl suspend}
+
+mod4 + e
+	9acme
+
+mod4 + r
+	gvim
+
+mod4 + equal
+	st -e dvtm
+
+mod4 + Return
+	st
+
+mod4 + backslash
+	st -e 9rc
+
+XF86WebCam
+	toggle-touchpad-bnwr
+
+mod4 + w
+	firefox -P socked
+
+mod4 + g
+	sockedsurf http://duckduckgo.com
+
+XF86Audio{Prev,Next}
+	mocp {--prev,--next}
+
+XF86AudioPlay
+	mocp --toggle-pause
+
+XF86AudioMute
+	amixer set Master toggle ; set-status-line-bnwr `status-line-bnwr`
+
+XF86Audio{Lower,Raise}Volume
+	amixer set Master playback 3{-,+} ; set-status-line-bnwr `status-line-bnwr`

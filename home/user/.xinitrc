@@ -1,8 +1,8 @@
 #!/bin/sh
 xset b off
 xkbcomp $HOME/.xkb.hjkl $DISPLAY
-xbindkeys -f $HOME/.xbindkeysrc
-xrdb ~/.Xresources
+sxhkd -r /tmp/sxhkd.log -c $HOME/.sxhkdrc &
+xrdb $HOME/.Xresources
 wmname $(printf %s ${1} | sed -e "s/^\(\S\+\).*/\1/")
 bgs -x $HOME/images/bg/$(shuf -n1 $HOME/images/bg/bgs.txt) &
 mplayer -vo png:outdir=/tmp -frames 1 tv:// &
@@ -19,15 +19,7 @@ do
 	}
 done &
 
-NAMESPACE=$(mktemp -d /tmp/plmb.XXXXXX)
-plumber
-plumber=$(pgrep -n plumber)
-cat $HOME/plumbing | 9p write plumb/rules
-
 st &
 st &
 
-
-exec $*
-
-kill $plumber
+exec $* 2> /tmp/xinitrc-exec.log

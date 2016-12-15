@@ -1,0 +1,8 @@
+volumedown
+	amixer set Master playback 3-
+
+volumeup
+	amixer set Master playback 3+
+
+mute
+	amixer set Master toggle

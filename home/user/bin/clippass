@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+password=$(ls -1 $HOME/.password-store/ | sed -e 's/.gpg$//' | dmenu "$@")
+[[ -n $password ]] || exit
+pass show -c "$password" 2>/dev/null

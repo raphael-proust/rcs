@@ -5,5 +5,6 @@ plumber
 plumber=`{pgrep -n plumber} # racey
 cat $HOME/plumbing | 9p write plumb/rules
 PAGER=cat MANPAGER=cat SHELL=rc prompt='9 ' PATH=$PATH:$HOME/bin/acme-bin EDITOR=E 9 acme -f $PLAN9/font/luc/unicode.7.font -F $PLAN9/font/fixed/unicode.7x13.font -a $*
+sleep 1
 kill $plumber
 rm -rf $NAMESPACE

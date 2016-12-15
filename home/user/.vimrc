@@ -24,8 +24,13 @@ let g:dwm_make_commands = 1
 
 "languages
 Bundle 'rc.vim'
-autocmd FileType ocaml nnoremap <LocalLeader>d :Destruct<CR>
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+au! Bufread,BufNewFile *.eliom   set filetype=ocaml
+au! Bufread,BufNewFile *.eliomi   set filetype=ocaml
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
 Bundle 'raphael-proust/pdc.vim.git'
 Bundle 'derekwyatt/vim-scala'
 
@@ -36,7 +41,7 @@ let g:surround_187="« \r »"
 let g:surround_8249="‹ \r ›"
 let g:surround_8216="‘\r’"
 let g:surround_8217="‘\r’"
-let g:surround_8221="“\r”"
+let g:surround_8220="“\r”"
 let g:surround_8221="“\r”"
 
 Bundle 'sjl/gundo.vim.git'
@@ -55,10 +60,13 @@ set background=light
 "updatetime influences CursorHold events
 set updatetime=2000
 
-" Change leader to , (comma)
-"TODO: different leaders
-let maplocalleader=","
-let mapleader=","
+" Change leader to \ (backslash)
+let maplocalleader="\\"
+let mapleader="\\"
+
+" Swap , and ; (, is easier)
+noremap , ;
+noremap ; ,
 
 "latex suite (prefer pandoc)
 set grepprg=grep\ -nH\ $*
@@ -76,9 +84,9 @@ command Diffnone windo diffoff
 "Tabs, indent and the such
 set nosmarttab
 set noexpandtab
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+set softtabstop=3
+set shiftwidth=3
+set tabstop=3
 set copyindent
 set noshiftround
 
@@ -114,7 +122,7 @@ set shortmess+=filmnrxtI
 
 "Lines
 set textwidth=78
-nnoremap Q gq
+noremap Q gq
 set nojoinspaces
 set wrap
 
