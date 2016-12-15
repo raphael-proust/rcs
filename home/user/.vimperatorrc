@@ -9,7 +9,7 @@ set defsearch=duckduckgo
 noremap sd t
 noremap sb t!
 noremap st t!wt 
-noremap sw t!w 
+noremap sw t!wen 
 noremap sf t!wfr 
 noremap sg t!github 
 noremap su t!urban 
@@ -19,7 +19,7 @@ noremap sy t!youtube
 noremap sm t!map 
 noremap so t!osm 
 noremap s8 t!unicode 
-noremap sp t!bp 
+noremap sp t!bulbapedia 
 noremap se twebster 
 
 noremap h 7h
@@ -56,4 +56,4 @@ noremap <F1> :set hlf!<CR>
 command -description 'Duplicate current tab' duplicate :keepalt tabduplicate<bang>
 set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
-set editor='9acme -c 1'
+set editor='gvim -f'
