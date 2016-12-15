@@ -12,22 +12,32 @@ Bundle 'gmarik/vundle'
 "Loading the bundles
 
 Bundle 'tpope/vim-repeat.git'
-Bundle 'edsono/vim-matchit.git'
+Bundle 'vim-scripts/matchit.zip'
 
 Bundle 'vim-scripts/SuperTab.git'
+Bundle 'spolu/dwm.vim'
+nmap <C-C> <Plug>DWMClose
+let g:dwm_map_keys = 1
+let g:dwm_make_commands = 1
+
+
 
 "languages
 Bundle 'rc.vim'
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
 autocmd FileType ocaml nnoremap <LocalLeader>d :Destruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
 Bundle 'raphael-proust/pdc.vim.git'
+Bundle 'derekwyatt/vim-scala'
 
 Bundle 'vim-scripts/surround.vim.git'
 "French typographic rules impose non-breakable space
 let g:surround_171="« \r »"
+let g:surround_187="« \r »"
 let g:surround_8249="‹ \r ›"
+let g:surround_8216="‘\r’"
+let g:surround_8217="‘\r’"
+let g:surround_8221="“\r”"
+let g:surround_8221="“\r”"
 
 Bundle 'sjl/gundo.vim.git'
 nnoremap <F3> :GundoToggle<CR>
@@ -38,9 +48,9 @@ Bundle 'tpope/vim-fugitive.git'
 filetype plugin indent on
 syntax on
 Bundle 'raphael-proust/molokai.git'
-Bundle 'Solarized'
+"Bundle 'Solarized'
 set background=light
-colorscheme solarized
+"colorscheme solarized
 
 "updatetime influences CursorHold events
 set updatetime=2000
@@ -149,10 +159,6 @@ set switchbuf=usetab,newtab
 nnoremap <C-w>! :vertical resize 78<CR>
 nnoremap g0 :tabfirst<CR>
 nnoremap g$ :tablast<CR>
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 nnoremap <silent> <Right> :bnext<CR>
 nnoremap <silent> <Left> :bprev<CR>
 
@@ -228,3 +234,39 @@ if &term =~ "st.*"
     cmap <Esc>[200~ <nop>
     cmap <Esc>[201~ <nop>
 endif
+
+
+autocmd FileType scala set textwidth=100
+
+" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
+let s:opam_share_dir = system("opam config var share")
+let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
+
+let s:opam_configuration = {}
+
+function! OpamConfOcpIndent()
+  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
+endfunction
+let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
+
+function! OpamConfOcpIndex()
+  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
+endfunction
+let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
+
+function! OpamConfMerlin()
+  let l:dir = s:opam_share_dir . "/merlin/vim"
+  execute "set rtp+=" . l:dir
+endfunction
+let s:opam_configuration['merlin'] = function('OpamConfMerlin')
+
+let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
+let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
+let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
+for tool in s:opam_packages
+  " Respect package order (merlin should be after ocp-index)
+  if count(s:opam_available_tools, tool) > 0
+    call s:opam_configuration[tool]()
+  endif
+endfor
+" ## end of OPAM user-setup addition for vim / base ## keep this line
