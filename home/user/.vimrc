@@ -15,7 +15,7 @@ Bundle 'tpope/vim-repeat.git'
 Bundle 'vim-scripts/matchit.zip'
 
 Bundle 'vim-scripts/SuperTab.git'
-Bundle 'spolu/dwm.vim'
+Bundle 'raphael-proust/dwm.vim'
 nmap <C-C> <Plug>DWMClose
 let g:dwm_map_keys = 1
 let g:dwm_make_commands = 1
