@@ -8,14 +8,14 @@ url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
 license=('MIT')
 options=(zipman)
-depends=('libxft' 'libx11' 'libxinerama')
+depends=('libxft' 'libx11' 'libxinerama' 'libxcb')
 source=(
 config.h
 config.mk
 )
 md5sums=(
-5e031bb8c5e2238fcac4925f8eaed58a
-c65ae0cbc399d8bb532cf783c8dd0bed
+86f141cf80178311a116fe912ab1143d
+1b363bf27dcd5f7416067b1179e00e5a
 )
 
 provides=('dwm')

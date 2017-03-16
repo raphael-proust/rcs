@@ -1,0 +1,39 @@
+pkgname=wjt
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc="A slider widget for X"
+url="https://github.com/ianremmler/wjt"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('libxft' 'libxinerama')
+makedepends=()
+source=(
+config.h
+)
+sha1sums=(
+'3b61858fd461d9a5d745f408c46bb052e4e51785'
+)
+provides=('wjt')
+conflicts=('wjt')
+
+_gitroot='https://github.com/ianremmler/'
+_gitrepo='wjt'
+
+
+build(){
+  cd "${srcdir}"
+
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}.git"
+
+  rm -fr build; cp -a "${_gitrepo}" build; cd build
+  cp $startdir/config.h config.h
+  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+}
+
+package() {
+  cd "${srcdir}/build"
+  make PREFIX=/usr DESTDIR="${pkgdir}" TERMINFO="${pkgdir}/usr/share/terminfo" install
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm644 wjt.1 "${pkgdir}/usr/share/man/man1/wjt.1"
+}

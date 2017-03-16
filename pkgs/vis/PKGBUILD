@@ -1,0 +1,42 @@
+pkgname=vis
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc="modern, legacy free, simple yet efficient vim-like editor"
+url="https://github.com/martanne/vis"
+arch=('i686' 'x86_64')
+license=('ISC')
+options=(zipman)
+depends=('ncurses' 'libtermkey' 'lua' 'libxcb')
+optdepends=(
+	'lua-lpeg: syntax highlighting'
+	'tre: more memory efficient regex'
+)
+source=(
+)
+md5sums=(
+)
+
+provides=('vis')
+conflicts=('vis')
+
+_gitroot='https://github.com/martanne/'
+_gitrepo='vis'
+_gitsuffix='.git'
+
+build() {
+	cd "${srcdir}"
+	cd "${_gitrepo}" && git pull && cd .. ||
+	git clone "${_gitroot}${_gitrepo}${_gitsuffix}"
+
+	rm -fr build; cp -a "${_gitrepo}" build; cd build
+#	cp "${startdir}"/config.h config.h
+	./configure
+	make
+}
+
+package() {
+	cd "${srcdir}"/build
+	make PREFIX=/usr DESTDIR="${pkgdir}" install
+	install -m644 -D LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+	install -m644 -D README.md "${pkgdir}"/usr/share/doc/"${pkgname}"/README
+}
