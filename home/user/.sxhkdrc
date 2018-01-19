@@ -16,6 +16,9 @@ mod4 + equal
 mod4 + Return
 	st
 
+mod4 + bracketleft
+	typepass
+
 mod4 + backslash
 	st -e 9rc
 
@@ -24,6 +27,9 @@ XF86WebCam
 
 mod4 + w
 	firefox -P socked
+
+mod4 + z
+	zathura
 
 mod4 + g
 	sockedsurf http://duckduckgo.com
