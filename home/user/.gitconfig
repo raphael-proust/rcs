@@ -11,7 +11,7 @@
 [alias]
   co = commit
   st = status -b --short
-  lg = !rc -c 'git log "HEAD~^$*(1)^..HEAD $*(2-)"'
+  lg = !sh -c 'git log "HEAD~$0..HEAD"'
   root = !pwd
   psh = push --quiet
   pll = pull --quiet
