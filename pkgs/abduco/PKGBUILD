@@ -1,11 +1,11 @@
 #Custom version based on Arch's package
 
-pkgname=dvtm
-pkgver=0.15
+pkgname=abduco
+pkgver=0.6
 pkgrel=101
-pkgdesc='Dynamic virtual terminal manager.'
+pkgdesc='session attach and detach support'
 arch=('i686' 'x86_64' 'arm')
-url='http://www.brain-dump.org/projects/dvtm/'
+url='http://www.brain-dump.org/projects/abduco/'
 license=('MIT')
 depends=('ncurses')
 source=(
@@ -14,9 +14,9 @@ source=(
 'config.mk'
 )
 sha1sums=(
-9bcec7af79b2adfead88c5513fa19b53dad6e134
-60166073bb7cdbc4c00f5a3381e11c49d5977ad4
-c123e232f7a7c6ffb1825a8a50e445affbe82d1a
+5dc3eaaa8d6ea54e22378468652dc9b4bb759641
+52748cdf51cf5812f6bf2f351a689c82c836d78b
+ce95ff80714d1148b7c66555bf8de77c7c0a0777
 )
 
 build() {
