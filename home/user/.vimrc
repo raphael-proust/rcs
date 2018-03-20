@@ -1,41 +1,19 @@
-set nocompatible
-
-"Vundle initialisation
-if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
-  !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+"Vundle bootstrap
+if !isdirectory(expand("~/.config/nvim/bundle/Vundle.vim/.git"))
+  !git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 endif
+
+"Vundle init
+set nocompatible
 filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set runtimepath+=~/.config/nvim/bundle/Vundle.vim/
+call vundle#begin('~/.config/nvim/bundle/')
+Plugin 'VundleVim/Vundle.vim'
 
-"Loading the bundles
-
-Bundle 'tpope/vim-repeat.git'
-Bundle 'vim-scripts/matchit.zip'
-
-Bundle 'vim-scripts/SuperTab.git'
-Bundle 'raphael-proust/dwm.vim'
-nmap <C-C> <Plug>DWMClose
-let g:dwm_map_keys = 1
-let g:dwm_make_commands = 1
-
-
-
-"languages
-Bundle 'rc.vim'
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-au! Bufread,BufNewFile *.eliom   set filetype=ocaml
-au! Bufread,BufNewFile *.eliomi   set filetype=ocaml
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
-autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
-autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
-Bundle 'raphael-proust/pdc.vim.git'
-Bundle 'derekwyatt/vim-scala'
-
-Bundle 'vim-scripts/surround.vim.git'
-"French typographic rules impose non-breakable space
+"Loading the bundles and setting options
+Plugin 'tpope/vim-repeat'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-surround'
 let g:surround_171="« \r »"
 let g:surround_187="« \r »"
 let g:surround_8249="‹ \r ›"
@@ -43,50 +21,43 @@ let g:surround_8216="‘\r’"
 let g:surround_8217="‘\r’"
 let g:surround_8220="“\r”"
 let g:surround_8221="“\r”"
-
-Bundle 'sjl/gundo.vim.git'
+Plugin 'sjl/gundo.vim'
 nnoremap <F3> :GundoToggle<CR>
+Plugin 'tpope/vim-fugitive.git'
+call vundle#end()
+filetype plugin indent on
 
-Bundle 'tpope/vim-fugitive.git'
 
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax on
-Bundle 'raphael-proust/molokai.git'
-"Bundle 'Solarized'
+
 set background=light
-"colorscheme solarized
 
 "updatetime influences CursorHold events
 set updatetime=2000
 
-" Change leader to \ (backslash)
-let maplocalleader="\\"
+let maplocalleader="_"
 let mapleader="\\"
 
 " Swap , and ; (, is easier)
 noremap , ;
 noremap ; ,
 
-"latex suite (prefer pandoc)
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor= "latex"
-
 "save with confirmation
 set confirm
 
 "Better diffs (with switchable whitespace ignoring)
 set diffopt=filler,vertical,context:5
-nnoremap <F4> :if &diffopt =~ "iwhite" \| set diffopt-=iwhite \| else \| set diffopt+=iwhite \| endif<CR>
 command Diffall windo diffthis
 command Diffnone windo diffoff
 
 "Tabs, indent and the such
 set nosmarttab
 set noexpandtab
-set softtabstop=3
-set shiftwidth=3
-set tabstop=3
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
 set copyindent
 set noshiftround
 
@@ -121,8 +92,7 @@ set noerrorbells
 set shortmess+=filmnrxtI
 
 "Lines
-set textwidth=78
-noremap Q gq
+set textwidth=80
 set nojoinspaces
 set wrap
 
@@ -132,10 +102,7 @@ set undolevels=500
 set undoreload=10000
 set undofile
 autocmd BufRead,BufNewFile /tmp/* set noundofile
-if !isdirectory(expand("~/.vim/undofiles"))
-  call mkdir(expand("~/.vim/undofiles"))
-endif
-set undodir=$HOME/.vim/undofiles
+set undodir=$HOME/.config/nvim/undofiles
 
 "Window and term
 set title
@@ -155,16 +122,11 @@ set fillchars-=diff:-
 set fillchars+=diff:—
 
 "Copy-Pasta
-set pastetoggle=<F2>
-nnoremap <leader>y "+y
-nnoremap <leader>Y "+y$
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
 nnoremap Y y$
 
 "Buffers and window handling
 set switchbuf=usetab,newtab
-nnoremap <C-w>! :vertical resize 78<CR>
+nnoremap <C-w>! :vertical resize 80<CR>
 nnoremap g0 :tabfirst<CR>
 nnoremap g$ :tablast<CR>
 nnoremap <silent> <Right> :bnext<CR>
@@ -202,23 +164,12 @@ command -range=% SubsTabs2 :<line1>,<line2>s/\t/  /e
 command -range=% SubsTabs4 :<line1>,<line2>s/\t/    /e
 command -range=% SubsTabs8 :<line1>,<line2>s/\t/        /e
 command -nargs=1 Tabs :set sts=<args> sw=<args> ts=<args>
-command -range=% Nbsp :<line1>,<line2>s/\%d160//e
-command -range=% Textsc :<line1>,<line2>s/\(\<\u\+\>\)/\\textsc{\L\1\E}/ce
 
 " Spelling
 command Spellfr :setlocal spell | :setlocal spelllang=fr
 command Spellus :setlocal spell | :setlocal spelllang=en_us
 command Spellgb :setlocal spell | :setlocal spelllang=en_gb
 command Spellno :setlocal nospell
-
-" filetype specific options
-au BufEnter,BufNewFile,BufRead * call FileTypeDetect()
-fun! FileTypeDetect()
-	let l = getline(nextnonblank(1))
-	if l =~ '#!/bin/dash'
-		set filetype=sh
-	endif
-endfun
 
 "On the fly sudo
 command Sudow :w !sudo tee %
@@ -242,9 +193,6 @@ if &term =~ "st.*"
     cmap <Esc>[200~ <nop>
     cmap <Esc>[201~ <nop>
 endif
-
-
-autocmd FileType scala set textwidth=100
 
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
 let s:opam_share_dir = system("opam config var share")
@@ -278,3 +226,10 @@ for tool in s:opam_packages
   endif
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
+
+" Additional ocaml setup
+autocmd Bufread,BufNewFile *.eliom set filetype=ocaml
+autocmd Bufread,BufNewFile *.eliomi set filetype=ocaml
+autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
