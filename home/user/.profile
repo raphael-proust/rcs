@@ -7,7 +7,7 @@ export LANG=en_GB.UTF-8
 export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
-export EDITOR=vim
+export EDITOR=nvim
 export SHELL=zsh
 
 export PATH=$HOME/bin:$PATH
