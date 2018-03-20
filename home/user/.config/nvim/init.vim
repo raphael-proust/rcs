@@ -22,6 +22,7 @@ let g:surround_8217="‘\r’"
 let g:surround_8220="“\r”"
 let g:surround_8221="“\r”"
 Plugin 'sjl/gundo.vim'
+let g:gundo_prefer_python3 = 1
 nnoremap <F3> :GundoToggle<CR>
 Plugin 'tpope/vim-fugitive.git'
 call vundle#end()
