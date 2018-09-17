@@ -36,7 +36,7 @@ static Color colors[] = {
 /* status bar (command line option -s) position */
 #define BAR_POS         BAR_TOP /* BAR_BOTTOM, BAR_OFF */
 /* whether status bar should be hidden if only one client exists */
-#define BAR_AUTOHIDE    false
+#define BAR_AUTOHIDE    true
 /* master width factor [0.1 .. 0.9] */
 #define MFACT 0.5
 /* number of clients in master area */
@@ -176,7 +176,7 @@ static const ColorRule colorrules[] = {
 # define CONFIG_MOUSE /* compile in mouse support if we build against ncurses */
 #endif
 
-#define ENABLE_MOUSE false /* whether to enable mouse events by default */
+#define ENABLE_MOUSE true /* whether to enable mouse events by default */
 
 #ifdef CONFIG_MOUSE
 static Button buttons[] = {
@@ -212,7 +212,6 @@ static Editor editors[] = {
 	{ .name = "sandy",       .argv = { "sandy", "-d", "-", NULL  }, .filter = true,  .color = false },
 	{ .name = "dvtm-editor", .argv = { "dvtm-editor", "-", NULL  }, .filter = true,  .color = false },
 	{ .name = "vim",         .argv = { "vim", "+%d", "-", NULL   }, .filter = false, .color = false },
-	{ .name = "vi",          .argv = { "vi", "+%d", "-", NULL   }, .filter = false, .color = false },
 	{ .name = "less",        .argv = { "less", "-R", "+%d", NULL }, .filter = false, .color = true  },
 	{ .name = "more",        .argv = { "more", "+%d", NULL       }, .filter = false, .color = false },
 };
