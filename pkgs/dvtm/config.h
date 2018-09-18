@@ -64,8 +64,6 @@ const char tags[][8] = { "1", "2", "3", "4", "5" };
 /* by default the first layout entry is used */
 static Layout layouts[] = {
 	{ "[]=", tile },
-	{ "+++", grid },
-	{ "TTT", bstack },
 	{ "[ ]", fullscreen },
 };
 
@@ -86,8 +84,6 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'K',          }, { focusprevnm,    { NULL }                    } },
 	{ { MOD, 'k',          }, { focusprev,      { NULL }                    } },
 	{ { MOD, 'f',          }, { setlayout,      { "[]=" }                   } },
-	{ { MOD, 'g',          }, { setlayout,      { "+++" }                   } },
-	{ { MOD, 'b',          }, { setlayout,      { "TTT" }                   } },
 	{ { MOD, 'm',          }, { setlayout,      { "[ ]" }                   } },
 	{ { MOD, ' ',          }, { setlayout,      { NULL }                    } },
 	{ { MOD, 'i',          }, { incnmaster,     { "+1" }                    } },
@@ -176,7 +172,7 @@ static const ColorRule colorrules[] = {
 # define CONFIG_MOUSE /* compile in mouse support if we build against ncurses */
 #endif
 
-#define ENABLE_MOUSE true /* whether to enable mouse events by default */
+#define ENABLE_MOUSE false /* whether to enable mouse events by default */
 
 #ifdef CONFIG_MOUSE
 static Button buttons[] = {
