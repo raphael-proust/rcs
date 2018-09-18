@@ -143,6 +143,9 @@ include "%L"
 <Multi_key> <g> <w>	: "ω" # omega
 <Multi_key> <g> <W>	: "Ω"
 
+# Tz
+<Multi_key> <t> <z>	: "ꜩ"
+<Multi_key> <T> <Z>	: "Ꜩ"
 
 # Alphabets scripts
 #TODO: complete some and put '-' for missing chars
