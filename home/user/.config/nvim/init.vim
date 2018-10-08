@@ -28,17 +28,19 @@ Plugin 'tpope/vim-fugitive.git'
 call vundle#end()
 filetype plugin indent on
 
+"Plugin 'soft-aesthetic/soft-era-vim'
+
 
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax on
+syntax off
 
-set background=light
 
 "updatetime influences CursorHold events
 set updatetime=2000
 
-let maplocalleader="_"
+let maplocalleader=" "
 let mapleader="\\"
 
 " Swap , and ; (, is easier)
@@ -96,6 +98,7 @@ set shortmess+=filmnrxtI
 set textwidth=80
 set nojoinspaces
 set wrap
+noremap Q gq
 
 "More history
 set history=500
@@ -234,3 +237,4 @@ autocmd Bufread,BufNewFile *.eliomi set filetype=ocaml
 autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>l :MerlinLocate<CR>
