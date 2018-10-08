@@ -12,8 +12,10 @@ optdepends=(
 	'tre: more memory efficient regex'
 )
 source=(
+config.h
 )
 md5sums=(
+3c4eacafdf4d498f793f3acd3232dcce
 )
 
 provides=('vis')
@@ -29,7 +31,7 @@ build() {
 	git clone "${_gitroot}${_gitrepo}${_gitsuffix}"
 
 	rm -fr build; cp -a "${_gitrepo}" build; cd build
-#	cp "${startdir}"/config.h config.h
+	cp "${startdir}"/config.h config.h
 	./configure
 	make
 }
