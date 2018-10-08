@@ -14,7 +14,7 @@ config.h
 config.mk
 )
 md5sums=(
-bfc218abc66a151c783081900d0e6713
+66b9d79e40e15519e305ee26b4409697
 0b3eb043556d672a6be45069e017c5bd
 )
 
@@ -39,5 +39,4 @@ package() {
 	cd "${srcdir}"/build
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
 	install -m644 -D LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
-	install -m644 -D README "${pkgdir}"/usr/share/doc/"${pkgname}"/README
 }
