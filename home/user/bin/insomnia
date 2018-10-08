@@ -1,6 +1,0 @@
-#!/bin/dash
-while true
-do
-xset s reset
-sleep 300
-done

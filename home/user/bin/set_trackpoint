@@ -1,4 +1,0 @@
-#!/bin/sh
-
-echo -n 150 >/sys/devices/platform/i8042/serio4/serio5/speed
-echo -n 240 >/sys/devices/platform/i8042/serio4/serio5/sensitivity

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-password=$(ls -1 $HOME/.password-store/ | sed -e 's/.gpg$//' | dmenu "$@")
-[[ -n $password ]] || exit
-xdotool - <<<"type --clearmodifiers -- $(pass show "$password" | head -n 1)"
