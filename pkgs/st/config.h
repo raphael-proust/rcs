@@ -32,7 +32,7 @@ static float chscale = 1.0;
  *
  * More advanced example: " `'\"()[]{}"
  */
-char *worddelimiters = " `'\"\\/|()[]{}&><;:";
+char *worddelimiters = " `'\"\\/|()[]{}&><;:.";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -85,24 +85,31 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#eee8d5",
-	"#dc322f",
-	"#859900",
-	"#b58900",
-	"#268bd2",
-	"#d33682",
-	"#2aa198",
-	"#073642",
+	"#b85c57",
+	"#57864e",
+	"#8f7634",
+	"#2a8dc5",
+	"#8888c7",
+	"#6aa7a8",
+	"#999957",
+	"#eeeea7",
 
 	/* 8 bright colors */
-	"#fdf6e3",
-	"#cb4b16",
-	"#93a1a1",
-	"#839496",
-	"#657b83",
-	"#6c71c4",
-	"#586e75",
-	"#002b36",
+	"#f2acaa",
+	"#98ce8f",
+	"#b7b19c",
+	"#a6dcf8",
+	"#d0d0f7",
+	"#b0eced",
+	"#ffffec",
+	"#f8e7e7",
+
+	[185] = "#eaebdb",
+	[192] = "#effeec",
+	[193] = "#e2f1f8",
+	[194] = "#eefeff",
+	[195] = "#030093",
+	[237] = "#424242",
 
 	[255] = 0,
 
@@ -116,10 +123,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 12;
-unsigned int defaultbg = 8;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 237;
+unsigned int defaultbg = 14;
+static unsigned int defaultcs = 3;
+static unsigned int defaultrcs = 14;
 
 /*
  * Default shape of cursor

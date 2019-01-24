@@ -1,29 +1,23 @@
 /* See LICENSE file for copyright and license details. */
 
-static void reexec(const Arg *arg);
-
-void
-reexec(const Arg *arg) {
-  cleanup();
-  XCloseDisplay(dpy);
-  execvp(((char **)arg->v)[0], (char **)arg->v);
-}
-
 /* appearance */
-static const char *fonts[] = {
-	"Source Code Pro:pixelsize=10:antialias=true:autohint=true",
-};
-static const char dmenufont[] = "Source Code Pro:pixelsize=10:antialias=true:autohint=true";
-static const char normbordercolor[] = "#eee8d5";
-static const char normbgcolor[]     = "#eee8d5";
-static const char normfgcolor[]     = "#268bd2";
-static const char selbordercolor[]  = "#657b83";
-static const char selbgcolor[]      = "#fdf6e3";
-static const char selfgcolor[]      = "#657b83";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const char *fonts[]          = { "Source Code Pro:pixelsize=10:antialias=true:autohint=true", };
+static const char dmenufont[]       = "Source Code Pro:pixelsize=10:antialias=true:autohint=true";
+static const char normbordercolor[] = "#a6dcf8";
+static const char normbgcolor[]     = "#a6dcf8";
+static const char normfgcolor[]     = "#424242";
+static const char selbordercolor[]  = "#424242";
+static const char selbgcolor[]      = "#2a8dc5";
+static const char selfgcolor[]      = "#424242";
+static const char *colors[][3]      = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]  = { selfgcolor, selbgcolor,  selbordercolor  },
+};
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -33,8 +27,8 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
-	{ "st-",      NULL,       NULL,       0,            0,           1,         1,        -1 },
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "st-",      NULL,       NULL,       0,            0,           1 },
 };
 
 /* layout(s) */
@@ -100,7 +94,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask|ControlMask, XK_q,      reexec,         {.v = (const char*[]){ "/usr/bin/dwm", NULL } } },
 };
 
 /* button definitions */

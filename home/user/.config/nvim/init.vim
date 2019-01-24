@@ -29,12 +29,13 @@ call vundle#end()
 filetype plugin indent on
 
 "Plugin 'soft-aesthetic/soft-era-vim'
+Plugin 'raphael-proust/vacme'
+colorscheme vacme
 
 
 "Vundle post-initialisation phase
 filetype plugin indent on
 syntax on
-syntax off
 
 
 "updatetime influences CursorHold events
@@ -238,3 +239,4 @@ autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>l :MerlinLocate<CR>
+autocmd FileType ocaml set comments=sr:(*,mb:\ ,ex:*)
