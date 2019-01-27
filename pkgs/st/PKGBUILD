@@ -9,10 +9,10 @@ url='http://git.suckless.org/st'
 arch=('i686' 'x86_64')
 license=('MIT')
 depends=('libx11')
-makedepends=('git' 'ncurses')
+makedepends=('git' 'patch' 'ncurses' 'make' 'gcc')
 source=(config.h)
 md5sums=(
-0cc9f2e9b00d3344236cb53f0807e0fd
+0c30f95307d13fdc4585d674eadebaea
 )
 
 provides=('st')
@@ -30,6 +30,16 @@ build() {
 
   rm -fr build; cp -a "${_gitrepo}" build; cd build
   cp $startdir/config.h config.h
+
+  if ls "${startdir}"/patches | grep -q '.*\.diff$'
+  then
+  for i in "${startdir}"/patches/*\.diff
+    do
+      msg "patching with $i"
+      patch -i $i
+    done
+  fi
+
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 

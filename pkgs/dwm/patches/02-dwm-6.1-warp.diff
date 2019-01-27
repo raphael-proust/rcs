@@ -1,24 +1,33 @@
+From c2f06b491913c6f1e5a1cb5fc5b4466c1e2a6898 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Rapha=C3=ABl=20Proust?= <code@bnwr.net>
+Date: Fri, 25 Jan 2019 11:47:35 +0800
+Subject: [PATCH] 04-dwm-6.1-warp.diff
+
+---
+ dwm.c | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
 diff --git a/dwm.c b/dwm.c
-index 57caedb..1f2476f 100644
+index c95b608..981b3d8 100644
 --- a/dwm.c
 +++ b/dwm.c
-@@ -230,6 +230,7 @@ static void updatewindowtype(Client *c);
- static void updatetitle(Client *c);
+@@ -230,6 +230,7 @@ static void updatetitle(Client *c);
+ static void updatewindowtype(Client *c);
  static void updatewmhints(Client *c);
  static void view(const Arg *arg);
 +static void warp(const Client *c);
  static Client *wintoclient(Window w);
  static Monitor *wintomon(Window w);
  static int xerror(Display *dpy, XErrorEvent *ee);
-@@ -851,6 +852,7 @@ focusmon(const Arg *arg)
- 					in gedit and anjuta */
+@@ -841,6 +842,7 @@ focusmon(const Arg *arg)
+ 	unfocus(selmon->sel, 0);
  	selmon = m;
  	focus(NULL);
 +	warp(selmon->sel);
  }
  
  void
-@@ -1405,6 +1407,8 @@ restack(Monitor *m)
+@@ -1391,6 +1393,8 @@ restack(Monitor *m)
  	}
  	XSync(dpy, False);
  	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
@@ -27,7 +36,7 @@ index 57caedb..1f2476f 100644
  }
  
  void
-@@ -2063,6 +2067,26 @@ view(const Arg *arg)
+@@ -2068,6 +2072,26 @@ view(const Arg *arg)
  	arrange(selmon);
  }
  
@@ -54,3 +63,6 @@ index 57caedb..1f2476f 100644
  Client *
  wintoclient(Window w)
  {
+-- 
+2.20.1
+
