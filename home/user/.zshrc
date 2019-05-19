@@ -1,7 +1,4 @@
-zstyle ':completion:*' completer _complete _ignored _approximate
-zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion::*:(rm|vi|vim):*' ignore-line true
+zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/raphael/.zshrc'
 
 autoload -Uz compinit
@@ -41,6 +38,8 @@ bindkey -M vicmd '\e[B' history-beginning-search-forward
 bindkey -M vicmd '^J' history-beginning-search-forward
 
 bindkey -M vicmd '\e[z' expand-or-complete-prefix
+
+zle_highlight=(default:bg=11)
 
 setopt RM_STAR_WAIT
 
@@ -115,7 +114,7 @@ else
 	then
 		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%M \$ ')"
 	else
-		export PS1="$ "
+		export PS1="$(print '%{\e[0;48;5;11m%}$ %{\e[0m%}')"
 	fi
 fi
 
