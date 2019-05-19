@@ -19,6 +19,9 @@ mod4 + w
 mod4 + z
 	zathura
 
+XF86MonBrightness{Down,Up}
+	sudo bakelite {-,+}10
+
 XF86Audio{Prev,Next}
 	mocp {--prev,--next}
 
