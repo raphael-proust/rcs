@@ -9,20 +9,23 @@ pkgdesc='Dynamic virtual terminal manager.'
 arch=('x86_64')
 url='http://www.brain-dump.org/projects/dvtm/'
 license=('MIT')
-depends=('ncurses')
+depends=('ncurses' 'laptop-status')
 source=(
 "http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz"
 'config.h'
+'dvtm-status'
 )
 md5sums=(
 887e162a3abe2ad8e86caefab20cdd63
 bebc4fd10765b0cc9c9e705943b5feeb
+4baa7c5554d750932e5dad8bffdd3184
 )
 
 prepare() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
 
 	cp "${srcdir}/config.h" .
+	cp "${srcdir}/dvtm-status" .
 	sed -i 's/CFLAGS =/CFLAGS +=/' config.mk
 
 	if ls "${startdir}"/patches | grep -q '.*\.diff$'
