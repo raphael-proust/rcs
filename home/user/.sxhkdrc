@@ -13,6 +13,9 @@ mod4 + backslash
 mod4 + bracketleft
 	typepass
 
+mod4 + bracketright
+	copypass
+
 mod4 + w
 	firefox -P socked
 
