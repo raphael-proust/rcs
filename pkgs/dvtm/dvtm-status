@@ -1,11 +1,12 @@
 #!/bin/sh
 
 FIFO="/tmp/dvtm-status.$$"
+LOG="/tmp/dvtm-status.$$.log"
 
 [ -p "$FIFO" ] || mkfifo -m 600 "$FIFO" || exit 1
 
 while true; do
-	laptop-status
+	laptop-status 2>> "$LOG"
 	sleep 60
 done > "$FIFO" &
 

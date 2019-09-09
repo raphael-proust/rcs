@@ -4,7 +4,7 @@
 
 pkgname=dvtm
 pkgver=0.15
-pkgrel=4
+pkgrel=5
 pkgdesc='Dynamic virtual terminal manager.'
 arch=('x86_64')
 url='http://www.brain-dump.org/projects/dvtm/'
@@ -18,7 +18,7 @@ source=(
 md5sums=(
 887e162a3abe2ad8e86caefab20cdd63
 bebc4fd10765b0cc9c9e705943b5feeb
-4baa7c5554d750932e5dad8bffdd3184
+fb64a7f4ba15cd49e33d5d47c8f34c63
 )
 
 prepare() {
