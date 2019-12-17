@@ -50,7 +50,7 @@ include "%L"
 
 <Multi_key> <l> <o>	: "∨"
 <Multi_key> <l> <a>	: "∧"
-<Multi_key> <l> <f>	: "∀"
+<Multi_key> <l> <f> <a>	: "∀"
 <Multi_key> <l> <e>	: "∃"
 <Multi_key> <b> <o> <t>	: "⊥"
 <Multi_key> <t> <o> <p>	: "⊤"
