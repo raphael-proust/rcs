@@ -16,7 +16,7 @@
   psh = push --quiet
   pll = pull --quiet
   cln = clone --quiet
-  review = !sh -c 'nvim -c \"tabdo Gdiff $0\" -p $(git diff --name-only $0)'
+  review = !sh -c 'nvim -c \"tabdo Gdiff $1\" -p $(git diff --name-only $1)' _
 [push]
   default = simple
 
