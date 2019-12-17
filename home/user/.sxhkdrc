@@ -8,7 +8,7 @@ mod4 + Return
 	st -e zsh
 
 mod4 + backslash
-	st -e dvtm
+	st -e dvtm-status
 
 mod4 + bracketleft
 	typepass
