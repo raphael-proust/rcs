@@ -28,7 +28,8 @@ Plugin 'tpope/vim-fugitive.git'
 call vundle#end()
 filetype plugin indent on
 
-"Plugin 'soft-aesthetic/soft-era-vim'
+Plugin 'will133/vim-dirdiff'
+
 Plugin 'raphael-proust/vacme'
 colorscheme vacme
 
@@ -243,4 +244,10 @@ autocmd FileType ocaml nnoremap <LocalLeader>d :MerlinDestruct<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>e :MerlinErrorCheck<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>t :MerlinTypeOf<CR>
 autocmd FileType ocaml nnoremap <LocalLeader>l :MerlinLocate<CR>
+autocmd FileType ocaml nnoremap <LocalLeader>co o(**)<Esc>hi
+autocmd FileType ocaml nnoremap <LocalLeader>cO O(**)<Esc>hi
+autocmd FileType ocaml nnoremap <LocalLeader>ci i(**)<Esc>hi
+autocmd FileType ocaml nnoremap <LocalLeader>cI I(**)<Esc>hi
+autocmd FileType ocaml nnoremap <LocalLeader>ca a(**)<Esc>hi
+autocmd FileType ocaml nnoremap <LocalLeader>cA A(**)<Esc>hi
 autocmd FileType ocaml set comments=sr:(*,mb:\ ,ex:*)
