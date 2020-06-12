@@ -11,6 +11,8 @@
 [alias]
   co = commit
   st = status -b --short
+  ck = checkout
+  br = branch
   lg = !sh -c 'git log "HEAD~$0..HEAD"'
   root = !pwd
   psh = push --quiet
@@ -26,3 +28,10 @@
   fsckObjects = true
 [gpg]
   program = gpg2
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
