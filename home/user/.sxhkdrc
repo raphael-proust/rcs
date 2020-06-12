@@ -35,4 +35,4 @@ XF86AudioMute
 	amixer set Master toggle ; xsetroot -name "$(laptop-status)"
 
 XF86Audio{Lower,Raise}Volume
-	amixer set Master playback 3{-,+} ; xsetroot -name "$(laptop-status)"
+	amixer set Master playback 3%{-,+} ; xsetroot -name "$(laptop-status)"
