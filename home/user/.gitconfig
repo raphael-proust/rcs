@@ -1,6 +1,7 @@
 [user]
   name = Raphaël Proust
   email = code@bnwr.net
+  signingkey = 93049A946E0CC388F07E67AD9AE726FD6147E6EA
 
 [color]
   ui = no
@@ -18,7 +19,7 @@
   psh = push --quiet
   pll = pull --quiet
   cln = clone --quiet
-  review = !sh -c 'nvim -c \"tabdo Gdiff $1\" -p $(git diff --name-only $1)' _
+  review = !sh -c 'nvim -c \"tabdo Gdiffsplit $1\" -p $(git diff --name-only $1)' _
 [push]
   default = simple
 
@@ -35,3 +36,5 @@
   prompt = false
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[pull]
+	ff = only
