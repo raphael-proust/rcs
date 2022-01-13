@@ -7,19 +7,34 @@
   ui = no
 
 [core]
-  pager = cat
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  syntax-theme = none
+  minus-style = 0 9
+  minus-emph-style = 0 1
+  plus-style = 0 10
+  plus-emph-style = 0 2
+  file-style = 0 6
+  file-decoration-style = none
+  hunk-header-style = 0 14
+  hunk-header-decoration-style = none
+  features = line-numbers side-by-side
+  line-numbers-minus-style = 0
+  line-numbers-plus-style = 0
+
+[diff]
+  colorMoved = default
 
 [alias]
   co = commit
   st = status -b --short
-  ck = checkout
-  br = branch
   lg = !sh -c 'git log "HEAD~$0..HEAD"'
-  root = !pwd
-  psh = push --quiet
-  pll = pull --quiet
-  cln = clone --quiet
-  review = !sh -c 'nvim -c \"tabdo Gdiffsplit $1\" -p $(git diff --name-only $1)' _
+  review = !sh -c 'nvim -c \"tabdo Gdiffsplit! $1\" -p $(git diff --name-only $*)' _
 [push]
   default = simple
 
@@ -32,6 +47,7 @@
 
 [merge]
   tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]

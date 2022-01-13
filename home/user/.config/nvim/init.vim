@@ -21,16 +21,13 @@ let g:surround_8216="‘\r’"
 let g:surround_8217="‘\r’"
 let g:surround_8220="“\r”"
 let g:surround_8221="“\r”"
-Plugin 'sjl/gundo.vim'
-let g:gundo_prefer_python3 = 1
-nnoremap <F3> :GundoToggle<CR>
 Plugin 'tpope/vim-fugitive.git'
+Plugin 'tommcdo/vim-fugitive-blame-ext.git'
+Plugin 'will133/vim-dirdiff'
+Plugin 'raphael-proust/vacme'
 call vundle#end()
 filetype plugin indent on
 
-Plugin 'will133/vim-dirdiff'
-
-Plugin 'raphael-proust/vacme'
 colorscheme vacme
 
 
