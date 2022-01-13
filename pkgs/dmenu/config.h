@@ -6,12 +6,18 @@ static int topbar = 1;                      /* -b  option; if 0, dmenu appears a
 static const char *fonts[] = {
 	"Source Code Pro:pixelsize=10:antialias=true:autohint=true",
 };
-static const char *prompt      = NULL;      /* -p  option; prompt to the elft of input field */
-static const char *normbgcolor = "#eee8d5"; /* -nb option; normal background                 */
-static const char *normfgcolor = "#268bd2"; /* -nf option; normal foreground                 */
-static const char *selbgcolor  = "#fdf6e3"; /* -sb option; selected background               */
-static const char *selfgcolor  = "#657b83"; /* -sf option; selected foreground               */
-static const char *outbgcolor  = "#00ffff";
-static const char *outfgcolor  = "#000000";
+static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+static const char *colors[SchemeLast][2] = {
+	/*     fg         bg       */
+	[SchemeNorm] = { "#268bd2", "#eee8d5" },
+	[SchemeSel] = { "#657b83", "#fdf6e3" },
+	[SchemeOut] = { "#000000", "#00ffff" },
+};
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
+
+/*
+ * Characters not considered part of a word while deleting words
+ * for example: " /?\"&[]"
+ */
+static const char worddelimiters[] = " ";
