@@ -136,7 +136,7 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 0;
 unsigned int defaultbg = 15;
-static unsigned int defaultcs = 3;
+unsigned int defaultcs = 3;
 static unsigned int defaultrcs = 0;
 
 /*
