@@ -15,7 +15,7 @@ config.h
 config.mk
 )
 md5sums=(
-8f3ec49136f33e9f854a948014e5f986
+5fb8a2c8fdc272555bc32b249d4a6417
 1b363bf27dcd5f7416067b1179e00e5a
 )
 
