@@ -25,14 +25,8 @@ mod4 + z
 XF86MonBrightness{Down,Up}
 	sudo bakelite {-,+}10
 
-XF86Audio{Prev,Next}
-	mocp {--prev,--next}
-
-XF86AudioPlay
-	mocp --toggle-pause
-
 XF86AudioMute
-	amixer set Master toggle ; xsetroot -name "$(laptop-status)"
+	pulsemixer --toggle-mute ; xsetroot -name "$(laptop-status)"
 
 XF86Audio{Lower,Raise}Volume
-	amixer set Master playback 3%{-,+} ; xsetroot -name "$(laptop-status)"
+	pulsemixer --change-volume {-,+}3 ; xsetroot -name "$(laptop-status)"

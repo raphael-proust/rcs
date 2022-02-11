@@ -57,14 +57,7 @@ case $TERM in
 esac
 
 # aliases and functions
-alias gps='ps -ly -C '
 alias ls='ls -p'
-alias l='ls -AlhF'
-alias ll='ls -lh'
-alias l1='ls -1'
-alias la='ls -A'
-alias l1a='ls -1A'
-alias lla='ls -lAh'
 alias day="date '+%Y-%m-%d'"
 alias pacu='sudo pacman -Syu'
 alias pacs='sudo pacman -Ss'
@@ -73,8 +66,6 @@ alias pacr='sudo pacman -R'
 alias pacq='sudo pacman -Qi'
 alias pacl='sudo pacman -Ql'
 alias paco='sudo pacman -Qo'
-alias mp='mplayer -fs -af volume=4:1'
-fcolor() { find . -iname "*$1*" | grep -i --colour=auto "$1" }
 f() { find . -iname "*$1*" }
 md () { mkdir -p $1 && cd $1 }
 kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
@@ -103,20 +94,17 @@ fi
 export PS1="$ "
 if [ "x$SSH_CONNECTION" != "x" ]
 then
-	if [ "x$USER" != "xbnwr" ]
+	if [ "x$USER" != "xUSER" ]
 	then
 		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
 	else
 		export PS1="$(print '%n@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
 	fi
 else
-	if [ "x$USER" != "xbnwr" ]
+	if [ "x$USER" != "xUSER" ]
 	then
 		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%M \$ ')"
 	else
 		export PS1="$(print '%{\e[0;48;5;11m%}$ %{\e[0m%}')"
 	fi
 fi
-
-# OPAM configuration
-. /home/bnwr/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
