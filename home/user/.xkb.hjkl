@@ -1316,7 +1316,7 @@ xkb_symbols "pc+us+inet(evdev)+ctrl(nocaps)+compose(menu)+compose(prsc)" {
     };
     key <RALT> {
         type= "TWO_LEVEL",
-        symbols[Group1]= [           Alt_R,          Meta_R ]
+        symbols[Group1]= [       Multi_key,       Multi_key ]
     };
     key <LNFD> {         [        Linefeed ] };
     key <HOME> {         [            Home ] };
