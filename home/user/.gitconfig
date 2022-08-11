@@ -34,7 +34,7 @@
   co = commit
   st = status -b --short
   lg = !sh -c 'git log "HEAD~$0..HEAD"'
-  review = !sh -c 'nvim -c \"tabdo Gdiffsplit! $1\" -p $(git diff --name-only $*)' _
+  review = !sh -c 'git diff -z --name-only $* | uniq -z | xargs -0 nvim -c \"tabdo Gdiffsplit! $1\" -p' _
 [push]
   default = simple
 
