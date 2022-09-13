@@ -7,29 +7,21 @@ type is text
 data matches 'commit ([0-9a-f]+)'
 plumb start rc -c 'cd '$wdir'; git show '$1' >[2=1] | plumb -i -d edit -a ''action=showdata filename=/'$1''''
 
-# Ocaml error messages
+# OCaml error messages: example: in file "foo/bar.ml", line 155, characters 30-62
 type is text
-data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+)'
-arg isfile      $1
-data set        $file
-attr add        addr=$2
+data matches '.*[Ff]ile "([^"]+)", line ([0-9]+), characters ([0-9]+)-([0-9]+).*'$nl'?'
+arg isfile $1
+data set $file
+attr add addr=$2-#0+#$3,$2-#0+#$4
 plumb to edit
 plumb client $editor
 
+# OCaml error messages: example: File "tests/dune", line 2, characters 7-22:
 type is text
-data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+), characters ([0-9]+)-([0-9]+):?'
-arg isfile      $1
-data set        $file
-attr add        addr=$2-#0+#$3,$2-#0+#$4
-plumb to edit
-plumb client $editor
-
-#Custom OCaml error messages
-type is text
-data matches '([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-]):([0-9]+):([0-9]+)-([0-9]+)'
-arg isfile      $1
-data set        $file
-attr add        addr=$2-#0+#$3,$2-#0+#$4
+data matches '.*[Ff]ile "([^"]+)", lines ([0-9]+)-([0-9]+).*'$nl'?'
+arg isfile $1
+data set $file
+attr add addr=$2,$3
 plumb to edit
 plumb client $editor
 
