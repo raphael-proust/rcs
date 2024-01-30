@@ -25,6 +25,8 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tommcdo/vim-fugitive-blame-ext.git'
 Plugin 'will133/vim-dirdiff'
 Plugin 'raphael-proust/vacme'
+"Plugin 'neovim/nvim-lspconfig'
+"Plugin 'simrat39/rust-tools.nvim'
 call vundle#end()
 filetype plugin indent on
 
@@ -216,3 +218,5 @@ autocmd FileType ocaml nnoremap <LocalLeader>cI I(**)<Esc>hi
 autocmd FileType ocaml nnoremap <LocalLeader>ca a(**)<Esc>hi
 autocmd FileType ocaml nnoremap <LocalLeader>cA A(**)<Esc>hi
 autocmd FileType ocaml set comments=sr:(*,mb:\ ,ex:*)
+
+"lua require('rust-init')

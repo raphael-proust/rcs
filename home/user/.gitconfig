@@ -34,7 +34,8 @@
   co = commit
   st = status -b --short
   lg = !sh -c 'git log "HEAD~$0..HEAD"'
-  review = !sh -c 'git diff -z --name-only $* | uniq -z | xargs -0 nvim -c \"tabdo Gdiffsplit! $1\" -p' _
+  review = !sh -c 'nvim -c \"Git difftool -y $*\"' _
+  mergeview = !sh -c 'nvim -c \"Git mergetool -y $*\"' _
 [push]
   default = simple
 
@@ -54,3 +55,5 @@
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [pull]
 	ff = only
+[init]
+	defaultBranch = main

@@ -71,16 +71,6 @@ md () { mkdir -p $1 && cd $1 }
 kill9 () { kill -9 $(gps $1 | grep $1 | awk '{ print $3}') }
 
 #automatic function to change title of terminal
-if [ "x$SSH_CONNECTION" != "x" ]
-then
-chpwd () {
-	[[ -t 1 ]] || return
-	case $TERM in
-		(st*|*xterm*|rxvt*) print -Pn "\e]2;@%M - %/\a"
-		;;
-	esac
-}
-else
 chpwd () {
 	[[ -t 1 ]] || return
 	case $TERM in
@@ -88,23 +78,5 @@ chpwd () {
 		;;
 	esac
 }
-fi
 
-#PS
-export PS1="$ "
-if [ "x$SSH_CONNECTION" != "x" ]
-then
-	if [ "x$USER" != "xUSER" ]
-	then
-		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
-	else
-		export PS1="$(print '%n@%{\e[1;31m%}%M%{\e[0m%} \$ ')"
-	fi
-else
-	if [ "x$USER" != "xUSER" ]
-	then
-		export PS1="$(print '%{\e[1;31m%}%n%{\e[0m%}@%M \$ ')"
-	else
-		export PS1="$(print '%{\e[0;48;5;11m%}$ %{\e[0m%}')"
-	fi
-fi
+export PS1="$(print '%{\e[0;48;5;11m%}$ %{\e[0m%}')"
