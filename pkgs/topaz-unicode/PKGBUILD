@@ -1,0 +1,31 @@
+pkgname=topaz-unicode
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc='topaz unicode - a highly nostalgic typeface based on the amiga Topaz font'
+url='https://gitlab.com/Screwtapello/topaz-unicode'
+arch=('i686' 'x86_64')
+license=('ISC')
+depends=()
+makedepends=(unzip)
+source=(
+'https://gitlab.com/Screwtapello/topaz-unicode/-/jobs/artifacts/main/download?job=build'
+)
+md5sums=(
+c7669853d59537dd7fcd2e152ad9594e
+)
+
+provides=('topaz-unicode')
+
+build() {
+	#TODO: download the zip instead
+	unzip topaz-unicode.zip
+}
+
+package() {
+  cd "${srcdir}"
+  install -Dm644 'topaz_unicode_ks13-16.psf' "${pkgdir}/usr/share/consolefonts/topaz_unicode_ks13-16.psf"
+  install -Dm644 'topaz_unicode_ks13_bold.ttf' "${pkgdir}/usr/share/fonts/TTF/topaz_unicode_ks13_bold.ttf"
+  install -Dm644 'topaz_unicode_ks13_regular.ttf' "${pkgdir}/usr/share/fonts/TTF/topaz_unicode_ks13_regular.ttf"
+  install -Dm644 'LICENSE' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
