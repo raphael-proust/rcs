@@ -17,7 +17,6 @@ c7669853d59537dd7fcd2e152ad9594e
 provides=('topaz-unicode')
 
 build() {
-	#TODO: download the zip instead
 	unzip topaz-unicode.zip
 }
 
