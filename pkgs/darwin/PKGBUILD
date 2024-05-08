@@ -1,0 +1,32 @@
+pkgname=darwin
+pkgver="$(date +%Y%m%d)"
+pkgrel=1
+pkgdesc='Darwin - a font family optimized for academic, scientific, and book writing'
+url='https://darwintypeface.com/'
+arch=('i686' 'x86_64')
+license=('OFL-1.1')
+depends=()
+makedepends=('git')
+
+provides=('darwin')
+
+_gitroot='https://github.com/topological-modular-forms/'
+_gitrepo='Darwin-Typeface'
+_gitsuffix='.git'
+
+build() {
+  cd "${srcdir}"
+  cd "${_gitrepo}" && git pull && cd .. ||
+  git clone "${_gitroot}${_gitrepo}${_gitsuffix}"
+
+  rm -fr build; cp -a "${_gitrepo}"/output build
+  cp "${_gitrepo}"/LICENSE.md build
+}
+
+package() {
+  cd "${srcdir}/build"
+  install -Dm644 'DarwinSerif-Regular.otf' "${pkgdir}/usr/share/fonts/OTF/DarwinSerif-Regular.otf"
+  install -Dm644 'DarwinSerif-Regular.ttf' "${pkgdir}/usr/share/fonts/TTF/DarwinSerif-Regular.ttf"
+  install -Dm644 'LICENSE.md' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+}
+
