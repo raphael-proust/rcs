@@ -3,6 +3,7 @@ local config = wezterm.config_builder()
 -- BEGIN
 
 config.bold_brightens_ansi_colors = "No"
+config.pane_focus_follows_mouse = true
 config.font = wezterm.font { family = "Source Code Pro" }
 config.use_fancy_tab_bar = false
 
@@ -126,6 +127,21 @@ config.launch_menu = {
     cwd = os.getenv("HOME"),
   },
 }
+
+config.leader = { key = 'g', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.keys = {
+  {
+    key = '|',
+    mods = 'LEADER|SHIFT',
+    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = '-',
+    mods = 'LEADER',
+    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
+}
+
 
 
 -- END
