@@ -15,7 +15,7 @@ source=(
 config.h
 )
 md5sums=(
-3c4eacafdf4d498f793f3acd3232dcce
+a46224a2ebfd5f591aa0638f1b662be4
 )
 
 provides=('vis')
