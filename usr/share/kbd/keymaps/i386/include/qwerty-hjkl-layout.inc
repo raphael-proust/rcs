@@ -4,11 +4,11 @@ keycode  17 = w
 keycode  18 = e
 keycode  19 = r
 keycode  20 = t
-keycode  21 = y
-keycode  22 = u
-keycode  23 = i
-keycode  24 = o
-keycode  25 = p
+keycode  22 = y
+keycode  23 = u
+keycode  24 = i
+keycode  25 = o
+keycode  26 = p
 #
 keycode  30 = a
 keycode  31 = s
@@ -25,7 +25,7 @@ keycode  45 = x
 keycode  46 = c
 keycode  47 = v
 keycode  48 = b
-keycode  49 = n
-keycode  50 = m
+keycode  50 = n
+keycode  51 = m
 #
 include "compose"
