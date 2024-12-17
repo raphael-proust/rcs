@@ -30,8 +30,6 @@ Plugin 'raphael-proust/vacme'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme vacme
-
 
 "Vundle post-initialisation phase
 filetype plugin indent on
@@ -219,4 +217,4 @@ autocmd FileType ocaml nnoremap <LocalLeader>ca a(**)<Esc>hi
 autocmd FileType ocaml nnoremap <LocalLeader>cA A(**)<Esc>hi
 autocmd FileType ocaml set comments=sr:(*,mb:\ ,ex:*)
 
-"lua require('rust-init')
+colorscheme vacme

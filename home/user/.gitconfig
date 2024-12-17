@@ -32,6 +32,8 @@
 
 [alias]
   co = commit
+  sw = switch
+  br = branch
   st = status -b --short
   lg = !sh -c 'git log "HEAD~$0..HEAD"'
   review = !sh -c 'nvim -c \"Git difftool -y $*\"' _

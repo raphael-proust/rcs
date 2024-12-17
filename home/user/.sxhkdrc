@@ -30,3 +30,6 @@ XF86AudioMute
 
 XF86Audio{Lower,Raise}Volume
 	pulsemixer --change-volume {-,+}3 ; xsetroot -name "$(laptop-status)"
+
+mod4 + F8
+	xrandr-switch
