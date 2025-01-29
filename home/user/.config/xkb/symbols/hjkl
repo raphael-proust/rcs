@@ -1,11 +1,11 @@
 default partial alphanumeric_keys modifier_keys
-xkb_symbols "basic" {
+xkb_symbols "hjkl" {
 
     name[Group1]= "hjkl";
 
     replace key <CAPS> {[ Control_L ]};
     modifier_map Control { <CAPS> };
-    key <PRSC> {[ Multi_key ]};
+    key <PRSC> {[ Multi_key, Multi_key ]};
 
     key <TLDE>	{[   grave,	 asciitilde	]};
     key <AE01>	{[	 1,	 exclam		]};
